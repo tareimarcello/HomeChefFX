@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewController.login.LoginViewControllerInterf1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.login.LoginViewControllerInterf1">
     <children>
         <Button fx:id="loginButton" layoutX="115.0" layoutY="448.0" onAction="#switchToHomePage" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Login " textFill="#f2f2f2" />
         <FontAwesomeIconView glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />

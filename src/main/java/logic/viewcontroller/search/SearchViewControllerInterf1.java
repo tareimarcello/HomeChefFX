@@ -1,6 +1,6 @@
-package logic.viewController.search;
+package logic.viewcontroller.search;
 
-import logic.pageSwitch.PageMenu;
+import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

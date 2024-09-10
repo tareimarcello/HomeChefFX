@@ -1,4 +1,4 @@
-package logic.pageSwitch;
+package logic.pageswitch;
 
 import logic.HomeChefApplication;
 import javafx.event.ActionEvent;

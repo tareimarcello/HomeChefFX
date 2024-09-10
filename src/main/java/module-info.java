@@ -7,16 +7,16 @@ module com.example.homechef {
 
     opens logic to javafx.fxml;
     exports logic;
-    exports logic.viewController.login;
-    opens logic.viewController.login to javafx.fxml;
-    exports logic.viewController.recoverpasswd;
-    opens logic.viewController.recoverpasswd to javafx.fxml;
-    exports logic.viewController.search;
-    opens logic.viewController.search to javafx.fxml;
-    exports logic.viewController.signup;
-    opens logic.viewController.signup to javafx.fxml;
-    exports logic.viewController.signupchef;
-    opens logic.viewController.signupchef to javafx.fxml;
-    exports logic.viewController.settings;
-    opens logic.viewController.settings to javafx.fxml;
+    exports logic.viewcontroller.login;
+    opens logic.viewcontroller.login to javafx.fxml;
+    exports logic.viewcontroller.recoverpasswd;
+    opens logic.viewcontroller.recoverpasswd to javafx.fxml;
+    exports logic.viewcontroller.search;
+    opens logic.viewcontroller.search to javafx.fxml;
+    exports logic.viewcontroller.signup;
+    opens logic.viewcontroller.signup to javafx.fxml;
+    exports logic.viewcontroller.signupchef;
+    opens logic.viewcontroller.signupchef to javafx.fxml;
+    exports logic.viewcontroller.settings;
+    opens logic.viewcontroller.settings to javafx.fxml;
 }

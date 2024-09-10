@@ -1,9 +1,8 @@
 package logic;
 
-import logic.pageSwitch.PageMenu;
+import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class ButtonBarInterf2ViewController {
     PageMenu pageSwitch;

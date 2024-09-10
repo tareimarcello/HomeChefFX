@@ -1,7 +1,7 @@
-package logic.viewController.settings;
+package logic.viewcontroller.settings;
 
 import logic.HomeChefApplication;
-import logic.pageSwitch.PageMenu;
+import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

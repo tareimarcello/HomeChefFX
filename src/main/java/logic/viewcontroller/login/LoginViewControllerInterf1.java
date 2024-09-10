@@ -1,6 +1,6 @@
-package logic.viewController.login;
+package logic.viewcontroller.login;
 
-import logic.pageSwitch.Page;
+import logic.pageswitch.Page;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

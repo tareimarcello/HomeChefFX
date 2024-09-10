@@ -1,6 +1,6 @@
 package logic;
 
-import logic.pageSwitch.Exceptions;
+import logic.pageswitch.Exceptions;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

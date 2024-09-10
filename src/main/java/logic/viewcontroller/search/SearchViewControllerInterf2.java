@@ -1,4 +1,4 @@
-package logic.viewController.search;
+package logic.viewcontroller.search;
 
 import logic.HomeChefApplication;
 import javafx.fxml.FXML;

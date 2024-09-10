@@ -1,9 +1,10 @@
-package logic.viewController.signupchef;
+package logic.viewcontroller.signupchef;
 
-import logic.pageSwitch.Page;
+import logic.pageswitch.Page;
 import javafx.fxml.FXML;
 
-public class SignupChefViewControllerInterf2 {
+public class SignupChefViewControllerInterf1 {
+
 
     @FXML
     protected void goToLogin(){
@@ -22,5 +23,4 @@ public class SignupChefViewControllerInterf2 {
         // If ok salvataggio bean
 
     }
-
 }

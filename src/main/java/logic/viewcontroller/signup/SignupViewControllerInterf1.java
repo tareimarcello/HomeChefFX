@@ -1,12 +1,13 @@
-package logic.viewController.signup;
+package logic.viewcontroller.signup;
 
-import logic.pageSwitch.Page;
+import logic.pageswitch.Page;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 
-public class SignupViewControllerInterf2 {
+public class SignupViewControllerInterf1 {
+
 
     @FXML
     private TextField email;

@@ -1,6 +1,6 @@
-package logic.viewController.recoverpasswd;
+package logic.viewcontroller.recoverpasswd;
 
-import logic.pageSwitch.Page;
+import logic.pageswitch.Page;
 import javafx.fxml.FXML;
 
 public class RecoverPswdControllerInterf1 {

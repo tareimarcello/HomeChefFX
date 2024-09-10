@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewController.signupchef.SignupChefViewControllerInterf1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.signupchef.SignupChefViewControllerInterf1">
    <children>
       <FontAwesomeIconView glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
       <FontAwesomeIconView glyphName="WIFI" layoutX="331.0" layoutY="21.0" size="20" />

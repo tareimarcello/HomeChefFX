@@ -1,6 +1,6 @@
-package logic.viewController.settings;
+package logic.viewcontroller.settings;
 
-import logic.pageSwitch.PageMenu;
+import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

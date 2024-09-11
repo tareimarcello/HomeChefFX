@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class SettingsViewControllerInterf1 {
+public  class SettingsViewControllerInterf1 {
     private PageMenu pageSwitch;
     @FXML
     private TextField email;
@@ -30,10 +30,6 @@ public class SettingsViewControllerInterf1 {
     @FXML
     protected void goBack(){
         pageSwitch.backTo();
-    }
-    @FXML
-    protected void goEditProf(){
-
     }
     @FXML
     protected void setPswd(){

@@ -30,20 +30,13 @@ public class SearchViewControllerInterf1 {
     }
 
     @FXML
-    protected void search(){
-
+    protected void search(ActionEvent event){
+        pageSwitch.switchTo("resultsearch/interf1.fxml",event,"ResultSearch");
     }
 
     @FXML
     protected void goToSettings(ActionEvent event){
         pageSwitch.switchToSettings(event);
     }
-
-    @FXML
-    protected void goBack(){
-        pageSwitch.backTo();
-    }
-
-
 
 }

@@ -11,7 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class SettingsViewControllerInterf2 {
+public  class SettingsViewControllerInterf2 {
     private PageMenu pageSwitch;
     @FXML
     private TextField email;
@@ -38,10 +38,6 @@ public class SettingsViewControllerInterf2 {
     @FXML
     protected void goBack(){
         pageSwitch.backTo();
-    }
-    @FXML
-    protected void goEditProf(){
-
     }
     @FXML
     protected void setPswd(){

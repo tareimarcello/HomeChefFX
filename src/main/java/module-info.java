@@ -19,4 +19,6 @@ module com.example.homechef {
     opens logic.viewcontroller.signupchef to javafx.fxml;
     exports logic.viewcontroller.settings;
     opens logic.viewcontroller.settings to javafx.fxml;
+    exports logic.viewcontroller.resultsearch;
+    opens logic.viewcontroller.resultsearch to javafx.fxml;
 }

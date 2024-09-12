@@ -60,7 +60,6 @@
                 <FontAwesomeIconView glyphName="ENVELOPE_ALT" size="30" />
             </graphic>
         </Button>
-        <Button layoutX="28.0" layoutY="99.0" mnemonicParsing="false" onAction="#goEditProf" style="-fx-background-color: transparent;" />
         <Button layoutX="26.0" layoutY="117.0" mnemonicParsing="false" onAction="#signOut" prefWidth="35.0" style="-fx-background-color: transparent;" textFill="WHITE">
             <graphic>
                 <FontAwesomeIconView glyphName="SIGN_OUT" size="30" />
@@ -71,13 +70,13 @@
                 <FontAwesomeIconView glyphName="LOCK" size="30" />
             </graphic>
         </Button>
-        <Button layoutX="23.0" layoutY="405.0" mnemonicParsing="false" onAction="#setFeed" style="-fx-background-color: transparent;" />
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
       <Hyperlink layoutX="58.0" layoutY="408.0" onAction="#setPswd" styleClass="hiperlink_signup" text="Edit Restaurant" />
-      <Button layoutX="26.0" layoutY="385.0" mnemonicParsing="false" onAction="#setPswd" style="-fx-background-color: transparent;" />
       <TextField fx:id="email1" layoutX="28.0" layoutY="444.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="La Briciola" styleClass="textField" />
-      <Button layoutX="34.0" layoutY="404.0" mnemonicParsing="false" onAction="#setPswd" style="-fx-background-color: transparent;" />
-      <FontAwesomeIconView glyphName="CUTLERY" layoutX="32.0" layoutY="434.0" size="30" />
+      <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#setPswd" style="-fx-background-color: transparent;">
+         <graphic>
+            <FontAwesomeIconView glyphName="CUTLERY" size="30" />
+         </graphic></Button>
 
     </children>
 </AnchorPane>

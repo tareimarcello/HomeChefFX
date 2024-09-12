@@ -29,6 +29,12 @@ public class SearchViewControllerInterf2 {
     }
     @FXML
     protected void search(){
+        try {
+            resultVisit.getChildren().removeAll(resultVisit.getChildren());
+            resultVisit.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));
+        } catch (IOException e) {
+            resultVisit.getChildren().removeAll(resultVisit.getChildren());
+        }
     }
 
 }

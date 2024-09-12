@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="resultVisit" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf2">
+<AnchorPane fx:id="resultVisit" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf2">
    <children>
       <Text layoutX="284.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="textSubTitle" text="Results" wrappingWidth="187.39027404785156">
          <font>
@@ -29,13 +30,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -58,13 +59,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec1" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name1" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -87,13 +88,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec3" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -116,13 +117,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec2" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -145,13 +146,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text fx:id="des2" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec5" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name5" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res5" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -174,13 +175,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec4" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>

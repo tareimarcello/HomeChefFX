@@ -1,16 +1,44 @@
 package logic.viewcontroller.resultsearch;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.text.Text;
+import logic.pageswitch.PageMenu;
 
 public class ResultSearchViewControllerInterf1 {
-
+    private PageMenu pageSwitch;
     @FXML
-    protected void goBack(){
+    private Text name;
+    @FXML
+    private Text res;
+    @FXML
+    private Text spec;
+    @FXML
+    private Text name5;
+    @FXML
+    private Text res5;
+    @FXML
+    private Text spec5;
+    @FXML
+    private Text name6;
+    @FXML
+    private Text res6;
+    @FXML
+    private Text spec6;
+    @FXML
+    private Text name7;
+    @FXML
+    private Text res7;
+    @FXML
+    private Text spec7;
 
+
+    public ResultSearchViewControllerInterf1(){
+        pageSwitch = new PageMenu();
     }
     @FXML
-    protected void goToSearch(){
-
+    protected void goBack(){
+        pageSwitch.backTo();
     }
     @FXML
     protected void goToBook(){
@@ -25,8 +53,8 @@ public class ResultSearchViewControllerInterf1 {
 
     }
     @FXML
-    protected void visit(){
-
+    protected void visit(ActionEvent event){
+        pageSwitch.switchToHomeChef(event);
     }
     @FXML
     protected void touchChat(){

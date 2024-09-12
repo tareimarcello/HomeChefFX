@@ -22,17 +22,13 @@
             <font>
                 <Font size="36.0" />
             </font></Text>
-        <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToSearch" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
-         <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="SEARCH" selectionFill="#377dff" size="50" />
-         </graphic></Button>
-        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button layoutX="-47.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
             </graphic></Button>
-        <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+        <Button layoutX="237.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="20" text="" />
+                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="1.0" size="50" text="" />
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
@@ -57,13 +53,13 @@
             </Button>
             <Group fx:id="group5" layoutX="-18.0">
                <children>
-                  <Text fx:id="des2" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized :" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec5" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized :" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="userid2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name : " />
-                  <Text fx:id="goal2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant  :" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name5" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name : " />
+                  <Text fx:id="res5" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant  :" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -86,13 +82,13 @@
             </Button>
             <Group layoutX="-18.0" fx:id="group6">
                <children>
-                  <Text fx:id="des6" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec6" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="userid6" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name : " />
-                  <Text fx:id="goal6" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name6" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name : " />
+                  <Text fx:id="res6" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -115,13 +111,13 @@
             </Button>
             <Group layoutX="-18.0" fx:id="group7">
                <children>
-                  <Text fx:id="des7" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized: " wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec7" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized: " wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="userid7" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text fx:id="goal7" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name7" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
+                  <Text fx:id="res7" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -144,13 +140,13 @@
             </Button>
             <Group layoutX="-18.0">
                <children>
-                  <Text fx:id="des" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized: " wrappingWidth="297.7902374267578">
+                  <Text fx:id="spec" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized: " wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="userid" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name :" />
-                  <Text fx:id="goal" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
+                  <Text fx:id="name" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name :" />
+                  <Text fx:id="res" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant :" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>

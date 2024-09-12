@@ -17,6 +17,10 @@ public class SearchViewControllerInterf1 {
     }
 
     @FXML
+    protected void goToISC(){
+
+    }
+    @FXML
     protected void goToBook(){
 
 

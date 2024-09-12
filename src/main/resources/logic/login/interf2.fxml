@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
@@ -14,10 +14,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<AnchorPane maxHeight="1200.0" maxWidth="1300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.login.LoginViewControllerInterf2">
+<AnchorPane maxHeight="1200.0" maxWidth="1300.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.login.LoginViewControllerInterf2">
     <children>
-        <Button fx:id="loginButton" layoutX="570.0" layoutY="528.0" onAction="#switchToHomePage" mnemonicParsing="false" prefHeight="35.0" prefWidth="300.0" style="-fx-font-size: 18px;" styleClass="Button" text="Login " textFill="#f2f2f2" />
+        <Button fx:id="loginButton" layoutX="570.0" layoutY="528.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="35.0" prefWidth="300.0" style="-fx-font-size: 18px;" styleClass="Button" text="Login " textFill="#f2f2f2" />
         <TextField fx:id="labUser" layoutX="530.0" layoutY="335.0" prefHeight="50.0" prefWidth="370.0" promptText="User" styleClass="textField" />
         <PasswordField fx:id="labPassword" layoutX="530.0" layoutY="410.0" prefHeight="50.0" prefWidth="370.0" promptText="Password" styleClass="textField" />
         <Hyperlink layoutX="789.0" layoutY="462.0" onAction="#switchToRecoverPswd" styleClass="hiperlink" text="Forgot password?" textFill="#377dff">
@@ -51,11 +50,13 @@
                 <Image url="@../signup/photo/cappello_cuoco.jpg" />
             </image>
         </ImageView>
-        <Button fx:id="switchUiButton" layoutX="650.0" layoutY="280.0" mnemonicParsing="false" onAction="#resize" prefHeight="35.0" prefWidth="48.0" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
+        <Button fx:id="switchUiButton" layoutX="720.0" layoutY="268.0" mnemonicParsing="false" onAction="#resize" prefHeight="50.0" prefWidth="65.0" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
         <padding>
             <Insets left="2.0" top="5.0" />
         </padding>
+         <graphic>
+            <FontAwesomeIconView fill="#f5f0f0" glyphName="MOBILE" size="35.0" styleClass="Back_Row" />
+         </graphic>
     </Button>
     </children>
 </AnchorPane>
-

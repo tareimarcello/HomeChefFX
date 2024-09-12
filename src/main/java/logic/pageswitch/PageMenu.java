@@ -12,7 +12,7 @@ public  class PageMenu extends Page {
     public void switchToHome(ActionEvent event){
         this.switchTo("search/interf1.fxml",event,"Homepage");
     }
-    public void switchToHomeChef(ActionEvent event){this.switchTo("homeChef/interf1.fxml",event,"Homepage");}
+    public void switchToHomeChef(ActionEvent event){this.switchTo("visithomepagechef/interf1.fxml",event,"Homepage");}
     public void switchToISC(ActionEvent event)  {
         this.switchTo("initialSearchAndChat/interf1.fxml",event,"What do you need?  ");
     }

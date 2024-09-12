@@ -37,20 +37,15 @@ public class ResultSearchViewControllerInterf1 {
         pageSwitch = new PageMenu();
     }
     @FXML
-    protected void goBack(){
-        pageSwitch.backTo();
-    }
-    @FXML
     protected void goToBook(){
 
     }
     @FXML
-    protected void goToHome(){
-
+    protected void goToHome(ActionEvent event){
+        pageSwitch.switchToHome(event);
     }
     @FXML
-    protected void outputVal(){
-
+    protected void outputVal(ActionEvent event){
     }
     @FXML
     protected void visit(ActionEvent event){
@@ -58,6 +53,14 @@ public class ResultSearchViewControllerInterf1 {
     }
     @FXML
     protected void touchChat(){
+
+    }
+    @FXML
+    protected void goToSettings(ActionEvent event){
+        pageSwitch.switchToSettings(event);
+    }
+    @FXML
+    protected void goToISC(){
 
     }
 }

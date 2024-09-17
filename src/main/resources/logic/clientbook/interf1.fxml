@@ -42,7 +42,7 @@
         <Circle fill="DODGERBLUE" layoutX="194.0" layoutY="153.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" styleClass="Back_Row" />
         <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" layoutX="172.0" layoutY="170.0" size="50" wrappingWidth="51.4423828125" />
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-        <Button layoutX="-47.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToPersonalForm" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button layoutX="-47.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
             </graphic>
@@ -52,14 +52,14 @@
                 <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
             </graphic>
         </Button>
-      <DatePicker layoutX="33.0" layoutY="290.0" prefHeight="46.0" prefWidth="329.0" promptText="Select a date " />
+      <DatePicker fx:id="dateRes" layoutX="33.0" layoutY="290.0" prefHeight="46.0" prefWidth="329.0" promptText="Select a date " />
       <Text fill="#377dff" layoutX="63.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Insert a date for the reservation" />
-      <Text fill="#1def12" layoutX="38.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your reservation is done. The chef must accept the reservation " wrappingWidth="344.7837829589844">
+      <Text fx:id="bookDone" fill="#1def12" layoutX="38.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your reservation is done. The chef must accept the reservation " wrappingWidth="344.7837829589844">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text fill="#ff0202" layoutX="38.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The chef is not available for this date. " wrappingWidth="344.7837829589844">
+      <Text fx:id="bookFail" fill="#ff0202" layoutX="38.0" layoutY="520.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The chef is not available for this date. " wrappingWidth="344.7837829589844">
          <font>
             <Font size="18.0" />
          </font>

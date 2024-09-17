@@ -23,5 +23,7 @@ module com.example.homechef {
     opens logic.viewcontroller.resultsearch to javafx.fxml;
     exports logic.viewcontroller.visithomechef;
     opens logic.viewcontroller.visithomechef to javafx.fxml;
+    exports logic.viewcontroller.book;
+    opens logic.viewcontroller.book to javafx.fxml;
 
 }

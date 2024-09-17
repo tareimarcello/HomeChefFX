@@ -51,6 +51,12 @@ public class VisitHomeChefViewControllerInterf2 {
 
     @FXML
     protected void goToChefCalendarBook(){
+        try {
+            chefMenu.getChildren().removeAll(chefMenu.getChildren());
+            chefMenu.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("clientbook/interf2.fxml")));
+        } catch (IOException e) {
+            chefMenu.getChildren().removeAll(chefMenu.getChildren());
+        }
 
     }
     @FXML

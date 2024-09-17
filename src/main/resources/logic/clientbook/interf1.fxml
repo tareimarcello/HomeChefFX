@@ -64,5 +64,6 @@
             <Font size="18.0" />
          </font>
       </Text>
+      <Button layoutX="132.0" layoutY="576.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="133.0" style="-fx-font-size: 18px;" styleClass="Button" text="Confirm" textFill="#f2f2f2" />
     </children>
 </AnchorPane>

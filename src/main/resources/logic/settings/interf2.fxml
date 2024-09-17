@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
@@ -13,8 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.SettingsViewControllerInterf2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.SettingsViewControllerInterf2">
     <children>
         <Line endX="350.0" endY="-154.0" layoutX="-248.0" layoutY="153.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
         <Line endX="350.0" endY="-154.0" layoutX="294.0" layoutY="151.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
@@ -64,6 +63,11 @@
             <Hyperlink layoutX="77.0" layoutY="100.0" onAction="#signOut" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Sign Out" />
             <Hyperlink layoutX="80.0" layoutY="184.0" onAction="#setMail" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Mail" />
             <Hyperlink layoutX="79.0" layoutY="271.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Password" />
+            <Button layoutX="48.0" layoutY="46.0" mnemonicParsing="false" onAction="#backTo" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="20" />
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
     </children>

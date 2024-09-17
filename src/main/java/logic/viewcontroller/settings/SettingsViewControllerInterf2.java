@@ -55,4 +55,8 @@ public  class SettingsViewControllerInterf2 {
     protected void setFeed(){
 
     }
+    @FXML
+    protected void backTo(){
+        pageSwitch.backTo();
+    }
 }

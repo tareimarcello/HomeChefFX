@@ -33,8 +33,8 @@ public class VisitHomeChefViewControllerInterf1 {
     }
 
     @FXML
-    protected void goToChefChat(){
-
+    protected void goToChefChat(ActionEvent event){
+        pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");
     }
 
     @FXML

@@ -23,11 +23,6 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat1" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
-               </graphic>
-            </Button>
             <Group layoutX="-18.0">
                <children>
                   <Text fx:id="spec" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
@@ -50,11 +45,6 @@
             <Button fx:id="home2" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
-               </graphic>
-            </Button>
-            <Button fx:id="chat2" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
             </Button>
             <Group layoutX="-18.0">
@@ -81,11 +71,6 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat4" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
-               </graphic>
-            </Button>
             <Group layoutX="-18.0">
                <children>
                   <Text fx:id="spec3" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
@@ -108,11 +93,6 @@
             <Button fx:id="home3" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
-               </graphic>
-            </Button>
-            <Button fx:id="chat3" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
             </Button>
             <Group layoutX="-18.0">
@@ -139,11 +119,6 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
                </graphic>
             </Button>
-            <Button fx:id="chat6" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
-               </graphic>
-            </Button>
             <Group layoutX="-18.0">
                <children>
                   <Text fx:id="spec5" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
@@ -166,11 +141,6 @@
             <Button fx:id="home5" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
                   <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
-               </graphic>
-            </Button>
-            <Button fx:id="chat5" layoutX="41.0" layoutY="46.583984375" mnemonicParsing="false" onAction="#touchChat" style="-fx-background-color: rgba(139, 178, 249, 1);" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="PAPER_PLANE" layoutX="69.0" size="20" strokeWidth="0.5" />
                </graphic>
             </Button>
             <Group layoutX="-18.0">

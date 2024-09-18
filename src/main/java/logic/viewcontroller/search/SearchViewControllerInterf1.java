@@ -17,13 +17,11 @@ public class SearchViewControllerInterf1 {
     }
 
     @FXML
-    protected void goToISC(){
-
+    protected void goToISC(ActionEvent event){
+        pageSwitch.switchToISCUser(event);
     }
     @FXML
     protected void goToBook(){
-
-
 
     }
     @FXML

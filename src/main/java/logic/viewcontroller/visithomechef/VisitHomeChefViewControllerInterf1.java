@@ -51,8 +51,8 @@ public class VisitHomeChefViewControllerInterf1 {
 
     }
     @FXML
-    protected void goToISC(){
-
+    protected void goToISC(ActionEvent event){
+        pageSwitch.switchToISCUser(event);
     }
     @FXML
     protected void goToHome(ActionEvent event){

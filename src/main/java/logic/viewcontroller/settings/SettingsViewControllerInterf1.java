@@ -21,7 +21,7 @@ public  class SettingsViewControllerInterf1 {
 
     @FXML
     protected void goToChat(ActionEvent event){
-
+        pageSwitch.switchToISCUser(event);
     }
     @FXML
     protected void goToHome(ActionEvent event){

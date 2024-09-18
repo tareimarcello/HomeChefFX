@@ -12,8 +12,8 @@ public class ButtonBarInterf2ViewController {
     }
 
     @FXML
-    protected void goToChat(ActionEvent actionEvent) {
-        pageSwitch.switchToChat(actionEvent);
+    protected void goToIsc(ActionEvent actionEvent) {
+        pageSwitch.switchTo("chatuser/interf2.fxml",actionEvent,"Search and Chat");
     }
     @FXML
     protected void goToSettings(ActionEvent actionEvent) {

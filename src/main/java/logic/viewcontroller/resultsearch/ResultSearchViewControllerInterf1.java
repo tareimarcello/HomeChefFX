@@ -52,15 +52,11 @@ public class ResultSearchViewControllerInterf1 {
         pageSwitch.switchToHomeChef(event);
     }
     @FXML
-    protected void touchChat(){
-
-    }
-    @FXML
     protected void goToSettings(ActionEvent event){
         pageSwitch.switchToSettings(event);
     }
     @FXML
-    protected void goToISC(){
-
+    protected void goToISC(ActionEvent event){
+        pageSwitch.switchToISCUser(event);
     }
 }

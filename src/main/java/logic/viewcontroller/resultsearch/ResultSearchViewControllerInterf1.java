@@ -37,8 +37,8 @@ public class ResultSearchViewControllerInterf1 {
         pageSwitch = new PageMenu();
     }
     @FXML
-    protected void goToBook(){
-
+    protected void goToBook(ActionEvent event){
+        pageSwitch.switchToBookList(event);
     }
     @FXML
     protected void goToHome(ActionEvent event){

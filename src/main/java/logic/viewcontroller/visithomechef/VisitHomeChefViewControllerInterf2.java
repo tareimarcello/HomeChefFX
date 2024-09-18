@@ -43,7 +43,7 @@ public class VisitHomeChefViewControllerInterf2 {
     protected void chat(){
         try {
             chefMenu.getChildren().removeAll(chefMenu.getChildren());
-            chefMenu.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));
+            chefMenu.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatuser/chatVoid.fxml")));
         } catch (IOException e) {
             chefMenu.getChildren().removeAll(chefMenu.getChildren());
         }

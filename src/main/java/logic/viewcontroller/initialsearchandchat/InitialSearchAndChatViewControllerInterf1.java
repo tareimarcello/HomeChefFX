@@ -57,7 +57,8 @@ public class InitialSearchAndChatViewControllerInterf1 {
         //controllore per caricare altre chat
     }
     @FXML
-    protected  void goToBook(){
+    protected  void goToBook(ActionEvent event) {
         //metodo che va alle prenotazioni pendenti
+        pageswitch.switchToBookList(event);
     }
 }

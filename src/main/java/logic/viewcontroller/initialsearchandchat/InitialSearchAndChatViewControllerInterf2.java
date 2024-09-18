@@ -31,14 +31,26 @@ public class InitialSearchAndChatViewControllerInterf2 {
     @FXML
     private Group extGroup4;
     @FXML
-    AnchorPane anchorChat;
+    private AnchorPane anchorChat;
     @FXML
-    TextField searchBar;
+    private TextField searchBar;
     @FXML
-    AnchorPane listUtenti;
+    private AnchorPane listUtenti;
+    @FXML
+    private AnchorPane buttonBar;
+
     //vedere bene come fa apparire la lista degli utenti, messo un solo gruppo di prova
     public InitialSearchAndChatViewControllerInterf2(){
         pageswitch = new PageMenu();
+    }
+
+    public void initialize(){
+        try {
+            buttonBar.getChildren().removeAll(buttonBar.getChildren());
+            buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
+        } catch (IOException e) {
+            buttonBar.getChildren().removeAll(buttonBar.getChildren());
+        }
     }
 
     @FXML

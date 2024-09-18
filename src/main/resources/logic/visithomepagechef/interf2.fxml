@@ -13,40 +13,39 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.visithomechef.VisitHomeChefViewControllerInterf2">
     <children>
-        <Text fill="#377dff" layoutX="290.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textTitle" text="Homechef" wrappingWidth="206.94140625" />
-        <Circle fill="DODGERBLUE" layoutX="-307.0" layoutY="190.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" styleClass="Back_Row" translateX="700.0" />
-        <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" layoutX="372.0" layoutY="210.0" size="50" text="" wrappingWidth="42.64239501953125" />
-        <TextField fx:id="chefName" editable="false" layoutX="160.0" layoutY="282.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="455.0" styleClass="textField" />
+        <Text fill="#377dff" layoutX="247.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textTitle" text="Homechef" wrappingWidth="206.94140625" />
+        <Circle fill="DODGERBLUE" layoutX="-350.0" layoutY="193.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" styleClass="Back_Row" translateX="700.0" />
+        <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" layoutX="329.0" layoutY="210.0" size="50" text="" wrappingWidth="42.64239501953125" />
+        <TextField fx:id="chefName" editable="false" layoutX="160.0" layoutY="282.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
         <Text fill="#377dff" layoutX="163.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Name:" wrappingWidth="64.00372314453125" />
         <Text fill="#377dff" layoutX="160.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Best Dish:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <TextField fx:id="dishName" editable="false" layoutX="160.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="455.0" styleClass="textField" />
+        <TextField fx:id="dishName" editable="false" layoutX="160.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
         <Text fill="#377dff" layoutX="160.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Restaurant:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <TextField fx:id="resName" editable="false" layoutX="160.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="455.0" styleClass="textField" />
+        <TextField fx:id="resName" editable="false" layoutX="160.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
         <Text fill="#377dff" layoutX="160.0" layoutY="626.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Valutation:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <Slider fx:id="ratingSL" disable="true" layoutX="160.0" layoutY="655.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="494.0" showTickLabels="true" value="5.0" />
-        <Button layoutX="152.0" layoutY="688.0" mnemonicParsing="false" onAction="#chat" prefHeight="64.0" prefWidth="96.0" style="-fx-font-size: 18;" styleClass="Button" text="Chat" />
-        <Button layoutX="452.0" layoutY="688.0" mnemonicParsing="false" onAction="#goToChefCalendarBook" prefHeight="64.0" prefWidth="188.0" style="-fx-font-size: 18;" styleClass="Button" text="Check the booking" />
+        <Slider fx:id="ratingSL" disable="true" layoutX="160.0" layoutY="655.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="379.0" showTickLabels="true" value="5.0" />
+        <Button layoutX="179.0" layoutY="689.0" mnemonicParsing="false" onAction="#chat" prefHeight="64.0" prefWidth="96.0" style="-fx-font-size: 18;" styleClass="Button" text="Chat" />
+        <Button layoutX="329.0" layoutY="685.0" mnemonicParsing="false" onAction="#goToChefCalendarBook" prefHeight="71.0" prefWidth="186.0" style="-fx-font-size: 18;" styleClass="Button" text="Check the booking" />
       <Button layoutX="160.0" layoutY="72.0" mnemonicParsing="false" onAction="#backTo" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="20" />
          </graphic>
       </Button>
-      <Button layoutX="302.0" layoutY="688.0" mnemonicParsing="false" onAction="#goToRat" prefHeight="64.0" prefWidth="134.0" style="-fx-font-size: 18;" styleClass="Button" text="Rate the chef" />
       <AnchorPane fx:id="buttonBar" prefHeight="790.0" prefWidth="102.0" />
       <ProgressBar fx:id="progressBar" layoutX="-281.0" layoutY="384.0" prefHeight="23.0" prefWidth="790.0" progress="0.0" rotate="90.0" style="-fx-accent: #377DFF; -fx-opacity: 0.7;" />
-      <AnchorPane fx:id="chefMenu" layoutX="675.0" layoutY="1.0" prefHeight="790.0" prefWidth="765.0">
+      <AnchorPane fx:id="chefMenu" layoutX="549.0" layoutY="-7.0" prefHeight="790.0" prefWidth="891.0">
          <children>
             <Label layoutX="142.0" layoutY="187.0" opacity="0.49" prefHeight="71.0" prefWidth="482.0" style="-fx-font-size: 60;" styleClass="textSubTitle" text=" Chef Homepage" />
             <FontAwesomeIconView glyphName="HAND_ALT_LEFT" layoutX="283.0" layoutY="464.0" opacity="0.49" size="200" />

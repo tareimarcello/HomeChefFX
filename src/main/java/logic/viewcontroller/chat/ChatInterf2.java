@@ -22,6 +22,12 @@ public class ChatInterf2 {
     protected Decorator graphics;
     protected  boolean initializated;
 
+    public ChatInterf2() {
+        pageswitch = new PageMenu();
+        graphics = new Decorator(false);
+        initializated = false;
+    }
+
     public void initialize() {
         //metti nome giusto sopra la chat
     }

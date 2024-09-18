@@ -60,7 +60,7 @@ public class ChatInterf1 {
         pageswitch.switchToHome(event);
     }
     @FXML
-    protected void goToBook(){
-
+    protected void goToBook(ActionEvent event) {
+        pageswitch.switchToBookList(event);
     }
 }

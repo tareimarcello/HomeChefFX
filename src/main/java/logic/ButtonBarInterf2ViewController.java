@@ -24,7 +24,7 @@ public class ButtonBarInterf2ViewController {
         pageSwitch.switchToHome(actionEvent);
     }
     @FXML
-    protected void goToBooking(ActionEvent actionEvent) {
-        pageSwitch.switchToBook(actionEvent);
+    protected void goToBookList(ActionEvent actionEvent) {
+        pageSwitch.switchToBookList(actionEvent);
     }
 }

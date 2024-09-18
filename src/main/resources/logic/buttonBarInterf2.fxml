@@ -23,7 +23,7 @@
             <FontAwesomeIconView fill="#0059ff" glyphName="COG" size="40" text="" />
          </graphic>
       </Button>
-      <Button fx:id="home1" layoutX="18.0" layoutY="339.0" mnemonicParsing="false" onAction="#goToHome" opacity="0.5" prefHeight="44.0" prefWidth="53.0" styleClass="Label" textFill="WHITE">
+      <Button fx:id="book" layoutX="18.0" layoutY="339.0" mnemonicParsing="false" onAction="#goToBookList" opacity="0.5" prefHeight="44.0" prefWidth="53.0" styleClass="Label" textFill="WHITE">
          <graphic>
             <FontAwesomeIconView fill="#0059ff" glyphName="BOOK" size="40" text="" />
          </graphic>

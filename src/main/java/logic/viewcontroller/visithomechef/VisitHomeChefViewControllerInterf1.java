@@ -47,8 +47,8 @@ public class VisitHomeChefViewControllerInterf1 {
         pageSwitch.switchTo("clientbook/interf1.fxml",event,"Book Chef");
     }
     @FXML
-    protected void goToBook(){
-
+    protected void goToBook(ActionEvent event){
+        pageSwitch.switchToBookList(event);
     }
     @FXML
     protected void goToISC(ActionEvent event){

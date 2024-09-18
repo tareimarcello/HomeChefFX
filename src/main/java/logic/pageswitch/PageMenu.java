@@ -9,6 +9,9 @@ public  class PageMenu extends Page {
     public void switchToBook(ActionEvent event)  {
         this.switchTo("clientBook/interf1.fxml",event,"Booking");
     }
+    public void switchToBookList(ActionEvent event)  {
+        this.switchTo("booklist/interf1.fxml",event,"Book list");
+    }
     public void switchToHome(ActionEvent event){
         this.switchTo("search/interf1.fxml",event,"Homepage");
     }

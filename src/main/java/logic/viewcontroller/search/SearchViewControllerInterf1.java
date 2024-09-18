@@ -21,14 +21,12 @@ public class SearchViewControllerInterf1 {
         pageSwitch.switchToISCUser(event);
     }
     @FXML
-    protected void goToBook(){
-
+    protected void goToBook(ActionEvent event){
+        pageSwitch.switchToBookList(event);
     }
     @FXML
-    protected void goToHome(){
-
-
-
+    protected void goToHome(ActionEvent event){
+        pageSwitch.switchToHome(event);
     }
 
     @FXML

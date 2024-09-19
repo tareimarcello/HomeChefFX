@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.homepagechef.HomepageChefViewControllerInterf2">
+    <children>
+      <Text fill="#377dff" layoutX="540.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textTitle" text="Here's your homepage, Chef" wrappingWidth="541.94140625" />
+      <Circle fill="DODGERBLUE" layoutX="110.0" layoutY="166.0" radius="48.0" stroke="BLACK" strokeType="INSIDE" styleClass="Back_Row" translateX="700.0" />
+      <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" layoutX="789.0" layoutY="186.0" size="50" text="" wrappingWidth="42.64239501953125" />
+      <TextField fx:id="name" editable="false" layoutX="243.0" layoutY="283.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="511.0" styleClass="textField" />
+      <Text fill="#377dff" layoutX="243.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Name:" wrappingWidth="64.00372314453125" />
+      <Text fill="#377dff" layoutX="243.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Best Dish:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="chef" editable="false" layoutX="243.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="511.0" styleClass="textField" />
+      <Text fill="#377dff" layoutX="868.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Restaurant:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="res" editable="false" layoutX="862.0" layoutY="283.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="511.0" styleClass="textField" />
+      <Text fill="#377dff" layoutX="868.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Valutation:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Slider fx:id="ratSL" layoutX="871.0" layoutY="439.0" majorTickUnit="1.0" max="5.0" maxWidth="-Infinity" min="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="14.0" prefWidth="494.0" showTickLabels="true" value="5.0" />
+      <AnchorPane fx:id="buttonBar" prefHeight="790.0" prefWidth="102.0" />
+      <ProgressBar fx:id="progressBar" layoutX="-276.0" layoutY="384.0" prefHeight="18.0" prefWidth="780.0" progress="0.0" rotate="90.0" style="-fx-accent: #377DFF; -fx-opacity: 0.7;" />
+      <ImageView fitHeight="263.0" fitWidth="925.0" layoutX="416.0" layoutY="491.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../photo/trecuochi.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

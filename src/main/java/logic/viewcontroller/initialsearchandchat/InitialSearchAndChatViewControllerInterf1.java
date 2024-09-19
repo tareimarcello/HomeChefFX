@@ -30,7 +30,7 @@ public class InitialSearchAndChatViewControllerInterf1 {
     @FXML
     protected void visit(ActionEvent event) {
         //parte di controllo
-        pageswitch.switchToHomeChef(event);
+        pageswitch.switchTo("visithomepagechef/interf1.fxml",event,"Visit");
     }
     @FXML
     protected void touchChat(ActionEvent event){

@@ -36,7 +36,7 @@ public class LoginViewControllerInterf2 {
         // - Creazione bean utente
         // - Invocazione check sul controller utenza.
         // - aprire la pagina corretta
-        pageSwitch.switchTo("search/interf2.fxml",event,"Search");
+        pageSwitch.switchTo("homepagechef/interf2.fxml",event,"Search");
     }
     @FXML
     protected void switchToSignup(ActionEvent event) {

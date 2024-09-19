@@ -54,7 +54,7 @@ public class ResultSearchViewControllerInterf2 {
     }
     @FXML
     protected void visit(ActionEvent event){
-        pageSwitch.switchToHomeChef(event);
+        pageSwitch.switchTo("visithomepagechef/interf2.fxml",event,"Homepage");
     }
     @FXML
     protected void touchChat(){

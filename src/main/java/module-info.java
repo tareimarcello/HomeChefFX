@@ -31,4 +31,6 @@ module com.example.homechef {
     opens logic.viewcontroller.initialsearchandchat to javafx.fxml;
     exports logic.viewcontroller.booklist;
     opens logic.viewcontroller.booklist to javafx.fxml;
+    exports logic.viewcontroller.homepagechef;
+    opens logic.viewcontroller.homepagechef to javafx.fxml;
 }

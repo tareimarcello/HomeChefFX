@@ -49,7 +49,7 @@ public class ResultSearchViewControllerInterf1 {
     }
     @FXML
     protected void visit(ActionEvent event){
-        pageSwitch.switchToHomeChef(event);
+        pageSwitch.switchTo("visithomepagechef/interf1.fxml",event,"Homepage");
     }
     @FXML
     protected void goToSettings(ActionEvent event){

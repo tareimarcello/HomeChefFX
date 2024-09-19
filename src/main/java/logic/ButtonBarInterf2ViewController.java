@@ -5,7 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class ButtonBarInterf2ViewController {
-    PageMenu pageSwitch;
+    private PageMenu pageSwitch;
 
     public ButtonBarInterf2ViewController(){
         pageSwitch=new PageMenu();

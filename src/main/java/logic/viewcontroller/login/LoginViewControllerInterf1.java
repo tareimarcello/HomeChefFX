@@ -34,7 +34,7 @@ public class LoginViewControllerInterf1 {
                 // - Creazione bean utente
                 // - Invocazione check sul controller utenza.
                 // - aprire la pagina corretta
-                pageSwitch.switchTo("search/interf1.fxml",event,"Signup");
+                pageSwitch.switchTo("homepagechef/interf1.fxml",event,"HomePage");
 
         }
 

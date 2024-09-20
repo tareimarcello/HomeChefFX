@@ -45,8 +45,8 @@ public class ChatInterf1 {
     }
 
     public void recivemsgArr() {
-        String messageTry = inputmsg.getText();     //prova per vedere se funziona la chat senza controller applicativo altra
-                                                    //parte di controllo da aggiungere
+        String messageTry = inputmsg.getText();         //prova per vedere se funziona la chat senza controller applicativo altra
+                                                     //parte di controllo da aggiungere
         Label textmsg;
         graphics.setText(messageTry);
         textmsg = graphics.getMessageSended();
@@ -62,5 +62,13 @@ public class ChatInterf1 {
     @FXML
     protected void goToBook(ActionEvent event) {
         pageswitch.switchToBookList(event);
+    }
+    @FXML
+    protected void goToHomeChef(ActionEvent event){
+
+    }
+    @FXML
+    protected void goToBookListChef(ActionEvent event){
+
     }
 }

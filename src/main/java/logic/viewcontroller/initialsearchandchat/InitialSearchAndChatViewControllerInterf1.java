@@ -61,4 +61,26 @@ public class InitialSearchAndChatViewControllerInterf1 {
         //metodo che va alle prenotazioni pendenti
         pageswitch.switchToBookList(event);
     }
+    @FXML
+    protected void touchChatChef(ActionEvent event){
+        pageswitch.switchTo("chatchef/interf1.fxml",event,"Chat");
+    }
+
+    @FXML
+    protected void goToSettingsChef(ActionEvent event) {
+        pageswitch.switchToSettingsChef(event);
+    }
+    @FXML
+    protected void goToISCChef(ActionEvent event) {
+        pageswitch.switchToISCChef(event);
+    }
+    @FXML
+    protected  void goToBookListChef(ActionEvent event) {
+        //metodo che va alle prenotazioni pendenti
+        pageswitch.switchToBookListChef(event);
+    }
+    @FXML
+    protected void goToHomeChef(ActionEvent event){
+        pageswitch.switchToHomeChef(event);
+    }
 }

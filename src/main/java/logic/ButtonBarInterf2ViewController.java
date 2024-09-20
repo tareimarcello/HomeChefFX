@@ -27,4 +27,20 @@ public class ButtonBarInterf2ViewController {
     protected void goToBookList(ActionEvent actionEvent) {
         pageSwitch.switchToBookList(actionEvent);
     }
+    @FXML
+    protected void goToIscChef(ActionEvent actionEvent) {
+        pageSwitch.switchTo("chatchef/interf2.fxml",actionEvent,"Search and Chat");
+    }
+    @FXML
+    protected void goToSettingsChef(ActionEvent actionEvent) {
+        pageSwitch.switchToSettingsChef(actionEvent);
+    }
+    @FXML
+    protected void goToHomeChef(ActionEvent actionEvent) {
+        pageSwitch.switchToHomeChef(actionEvent);
+    }
+    @FXML
+    protected void goToBookListChef(ActionEvent actionEvent) {
+        pageSwitch.switchToBookList(actionEvent);
+    }
 }

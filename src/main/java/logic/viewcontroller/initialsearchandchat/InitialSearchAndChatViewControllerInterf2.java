@@ -71,4 +71,13 @@ public class InitialSearchAndChatViewControllerInterf2 {
     protected void searchMessage(){
 
     }
+    @FXML
+    protected void touchChatChef(ActionEvent event){
+        try {
+            anchorChat.getChildren().removeAll(anchorChat.getChildren());
+            anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatchef/chatVoid.fxml")));
+        } catch (IOException e) {
+            anchorChat.getChildren().removeAll(anchorChat.getChildren());
+        }
+    }
 }

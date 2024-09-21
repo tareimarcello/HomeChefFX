@@ -41,4 +41,12 @@ public class BookLIstViewControllerInterf2 {
     protected void outputVal(){
 
     }
+    @FXML
+    protected void acceptBook(){
+
+    }
+    @FXML
+    protected void refBook(){
+
+    }
 }

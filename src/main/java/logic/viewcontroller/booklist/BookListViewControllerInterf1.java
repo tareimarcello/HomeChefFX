@@ -49,4 +49,28 @@ public class BookListViewControllerInterf1 {
     protected void outputVal(){
 
     }
+    @FXML
+    protected void goToHomeChef(ActionEvent event) {
+        pageswitch.switchToHomeChef(event);
+    }
+    @FXML
+    protected void goToBookListChef(ActionEvent event) {
+        pageswitch.switchToBookListChef(event);
+    }
+    @FXML
+    protected void goToISCChef(ActionEvent event) {
+        pageswitch.switchToISCChef(event);
+    }
+    @FXML
+    protected void goToSettingsChef(ActionEvent event) {
+        pageswitch.switchToSettingsChef(event);
+    }
+    @FXML
+    protected void refBook(){
+        //metodo che rifiuta una prenotazione
+    }
+    @FXML
+    protected void acceptBook(){
+        //metodo che accetta una prenotazione
+    }
 }

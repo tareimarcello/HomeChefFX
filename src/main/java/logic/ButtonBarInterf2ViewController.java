@@ -41,6 +41,6 @@ public class ButtonBarInterf2ViewController {
     }
     @FXML
     protected void goToBookListChef(ActionEvent actionEvent) {
-        pageSwitch.switchToBookList(actionEvent);
+        pageSwitch.switchToBookListChef(actionEvent);
     }
 }

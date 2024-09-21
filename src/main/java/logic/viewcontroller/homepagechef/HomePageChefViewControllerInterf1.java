@@ -35,5 +35,7 @@ public class HomePageChefViewControllerInterf1 {
         pageswitch.switchToISCChef(event);
     }
     @FXML
-    protected void goToListBookChef(){    }
+    protected void goToListBookChef(ActionEvent event) {
+        pageswitch.switchToBookListChef(event);
+    }
 }

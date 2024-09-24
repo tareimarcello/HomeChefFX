@@ -20,7 +20,7 @@ public class VisitHomeChefViewControllerInterf2 {
     @FXML
     private TextField dishName;
     @FXML
-    private Slider ratingSL;
+    private TextField city;
     @FXML
     private AnchorPane buttonBar;
     @FXML

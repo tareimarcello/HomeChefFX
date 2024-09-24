@@ -26,6 +26,11 @@ public class SignupViewControllerInterf1 {
 
     @FXML
     private Label goalCheck;
+    @FXML
+    private TextField namesign;
+    @FXML
+    private TextField surnamesign;
+
 
 
 

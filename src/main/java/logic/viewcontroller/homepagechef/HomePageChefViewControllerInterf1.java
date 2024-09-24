@@ -13,6 +13,8 @@ public class HomePageChefViewControllerInterf1 {
     private TextField dish;
     @FXML
     private TextField res;
+    @FXML
+    private TextField city;
 
     public HomePageChefViewControllerInterf1() {
         pageswitch = new PageMenu();

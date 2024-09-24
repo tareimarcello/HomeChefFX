@@ -2,7 +2,9 @@ package logic.viewcontroller.book;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.pageswitch.PageMenu;
 
@@ -14,6 +16,10 @@ public class BookViewControllerInterf1 {
     private Text bookFail;
     @FXML
     private DatePicker dateRes;
+    @FXML
+    private TextField bookPlace;
+    @FXML
+    private ComboBox<String> whenBook;
 
     public BookViewControllerInterf1(){
         pageSwitch = new PageMenu();

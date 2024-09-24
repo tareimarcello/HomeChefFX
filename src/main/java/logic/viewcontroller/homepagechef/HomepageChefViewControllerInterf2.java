@@ -21,6 +21,8 @@ public class HomepageChefViewControllerInterf2 {
     private TextField dish;
     @FXML
     private TextField res;
+    @FXML
+    private TextField city;
 
     public HomepageChefViewControllerInterf2() {
         pageswitch = new PageMenu();

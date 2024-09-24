@@ -13,6 +13,8 @@ public class VisitHomeChefViewControllerInterf1 {
     private TextField bestDish;
     @FXML
     private TextField res;
+    @FXML
+    private TextField city1;
 
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();

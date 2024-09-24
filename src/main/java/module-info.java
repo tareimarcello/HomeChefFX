@@ -4,6 +4,8 @@ module com.example.homechef {
 
     requires org.controlsfx.controls;
     requires org.kordamp.ikonli.javafx;
+    requires java.sql;
+    requires java.management;
 
     opens logic to javafx.fxml;
     exports logic;

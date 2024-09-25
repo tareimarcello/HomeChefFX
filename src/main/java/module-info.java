@@ -6,6 +6,8 @@ module com.example.homechef {
     requires org.kordamp.ikonli.javafx;
     requires java.sql;
     requires java.management;
+    requires spring.context;
+    requires spring.jdbc;
 
     opens logic to javafx.fxml;
     exports logic;

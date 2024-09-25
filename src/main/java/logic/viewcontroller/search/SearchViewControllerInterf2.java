@@ -18,6 +18,8 @@ public class SearchViewControllerInterf2 {
     private TextField eatName;
     @FXML
     private TextField chefName;
+    @FXML
+    private TextField cityChef;
 
     public void initialize(){
         try {

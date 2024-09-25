@@ -11,6 +11,8 @@ public class SearchViewControllerInterf1 {
     private TextField chefName;
     @FXML
     private TextField eatName;
+    @FXML
+    private TextField cityChef;
 
     public SearchViewControllerInterf1(){
         pageSwitch=new PageMenu();

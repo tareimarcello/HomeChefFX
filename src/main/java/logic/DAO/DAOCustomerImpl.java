@@ -1,10 +1,11 @@
 package logic.DAO;
 
-import model.Customer;
+import logic.model.Customer;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import java.util.List;
 
-public class DAOCustomerImpl implements DAOInterface<Customer>{
+public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Customer>{
 
     private static final String SELECT_ALL_CUSTOMER = "SELECT * FROM customer";
     private static final String SELECT_QUERY = "SELECT * FROM customer WHERE idUser=?";
@@ -13,7 +14,8 @@ public class DAOCustomerImpl implements DAOInterface<Customer>{
     private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
     @Override
     public Customer get(long id) {
-        return null;
+        assert getJdbcTemplate() != null;
+        return (Customer) getJdbcTemplate().query(SELECT_QUERY, new CustomerRowMapper(), id).getFirst();
     }
 
     @Override
@@ -23,16 +25,19 @@ public class DAOCustomerImpl implements DAOInterface<Customer>{
 
     @Override
     public void save(Customer customer) {
-
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(INSERT_QUERY, customer.getID());
     }
 
     @Override
     public void update(Customer customer) {
-
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_QUERY,  customer.getID());
     }
 
     @Override
     public void delete(Customer customer) {
-
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(DELETE_QUERY, customer.getID());
     }
 }

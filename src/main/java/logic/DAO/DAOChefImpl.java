@@ -1,10 +1,13 @@
 package logic.DAO;
 
-import model.Chef;
+import logic.model.Chef;
+import logic.model.Customer;
+import logic.model.User;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import java.util.List;
 
-public class DAOChefImpl implements DAOInterface<Chef>{
+public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     private static final String SELECT_ALL_CHEF = "SELECT * FROM chef";
     private static final String SELECT_QUERY = "SELECT * FROM chef WHERE iduser=?";
     private static final String INSERT_QUERY = "INSERT INTO chef (iduser,restaurant,bestdish,city) VALUES (?,?,?,?)";
@@ -13,7 +16,8 @@ public class DAOChefImpl implements DAOInterface<Chef>{
 
     @Override
     public Chef get(long id) {
-        return null;
+        assert getJdbcTemplate() != null;
+        return (Chef) getJdbcTemplate().query(SELECT_QUERY, new ChefRowMapper(), id).getFirst();
     }
 
     @Override
@@ -23,16 +27,22 @@ public class DAOChefImpl implements DAOInterface<Chef>{
 
     @Override
     public void save(Chef chef) {
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(INSERT_QUERY, chef.getID(), chef.getRestaurant(),
+                chef.getBestDish(),chef.getCitta());
 
     }
 
     @Override
     public void update(Chef chef) {
-
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_QUERY,  chef.getID(), chef.getRestaurant(),
+                chef.getBestDish(),chef.getCitta());
     }
 
     @Override
     public void delete(Chef chef) {
-
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(DELETE_QUERY, chef.getID());
     }
 }

@@ -1,7 +1,7 @@
 package logic.DAO;
 
-import model.Customer;
-import model.User;
+import logic.model.Customer;
+import logic.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

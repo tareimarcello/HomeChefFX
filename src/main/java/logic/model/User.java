@@ -2,7 +2,7 @@ package logic.model;
 
 public abstract class User {
 
-    private long ID;
+    private long id;
     private String name;
     private String surname;
     private String email;
@@ -11,7 +11,7 @@ public abstract class User {
 
     public User (long id, String name, String surname, String email, String password){
 
-        this.ID = id;
+        this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -19,11 +19,11 @@ public abstract class User {
     }
 
     public long getID() {
-        return ID;
+        return id;
     }
 
     public void setID(long id) {
-        this.ID = id;
+        this.id = id;
     }
 
     public String getName() {

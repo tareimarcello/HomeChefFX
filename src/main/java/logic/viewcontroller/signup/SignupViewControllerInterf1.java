@@ -6,17 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 
-public class SignupViewControllerInterf1 {
-
-
-    @FXML
-    private TextField email;
-
-    @FXML
-    private PasswordField confirmPswd;
-
-    @FXML
-    private PasswordField pswd;
+public class SignupViewControllerInterf1 extends SignupViewController{
 
     @FXML
     private Label desCheck;
@@ -26,11 +16,6 @@ public class SignupViewControllerInterf1 {
 
     @FXML
     private Label goalCheck;
-    @FXML
-    private TextField namesign;
-    @FXML
-    private TextField surnamesign;
-
 
 
 

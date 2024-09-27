@@ -7,9 +7,9 @@ import javafx.fxml.FXML;
 public class SignupChefViewControllerInterf2 {
 
     @FXML
-    private TextField namesign;
+    private TextField bestDish;
     @FXML
-    private TextField surnamesign;
+    private TextField restaurant;
     @FXML
     private TextField citysign;
 

@@ -3,15 +3,16 @@ package logic.viewcontroller.signupchef;
 import javafx.scene.control.TextField;
 import logic.pageswitch.Page;
 import javafx.fxml.FXML;
+import logic.viewcontroller.signup.SignupViewController;
 
-public class SignupChefViewControllerInterf1 {
+public class SignupChefViewControllerInterf1 extends SignupViewController {
 
-    @FXML
-    private TextField namesign;
-    @FXML
-    private TextField surnamesign;
     @FXML
     private TextField citysign;
+    @FXML
+    private TextField bestDish;
+    @FXML
+    private TextField restaurant;
 
     @FXML
     protected void goToLogin(){

@@ -9,7 +9,7 @@ public abstract class User {
     private String password;
 
 
-    public User (long id, String name, String surname, String email, String password){
+    protected User (long id, String name, String surname, String email, String password){
 
         this.id = id;
         this.name = name;

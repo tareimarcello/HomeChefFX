@@ -22,8 +22,8 @@ public abstract class User {
         return ID;
     }
 
-    public void setID(long ID) {
-        this.ID = ID;
+    public void setID(long id) {
+        this.ID = id;
     }
 
     public String getName() {

@@ -1,8 +1,6 @@
-package logic.DAO;
+package logic.dao;
 
 import logic.model.Chef;
-import logic.model.Customer;
-import logic.model.User;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import java.util.List;

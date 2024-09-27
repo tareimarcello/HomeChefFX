@@ -1,4 +1,4 @@
-package logic.DAO;
+package logic.dao;
 
 import logic.model.Customer;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;

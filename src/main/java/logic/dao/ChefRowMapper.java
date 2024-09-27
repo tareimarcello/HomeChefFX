@@ -1,4 +1,4 @@
-package logic.DAO;
+package logic.dao;
 
 import logic.model.Chef;
 import logic.model.User;

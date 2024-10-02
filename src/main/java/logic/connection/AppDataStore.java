@@ -10,16 +10,14 @@ import javax.sql.DataSource;
 import java.util.Objects;
 
 @Configuration
-@ComponentScan("simonetutor.projects.fantaastamanager")
-@PropertySource("classpath:database.properties")
 public class AppDataStore {
 
     private static final ConfigFileReader reader = new ConfigFileReader();
 
-    private final String CONNECTION_URL = "url";
-    private final String LOGIN_USER = "dbuser";
-    private final String DRIVER_CLASS_NAME = "driver";
-    private final String LOGIN_PASS = "dbpassword";
+    private final String CONNECTION_URL = "CONNECTION_URL";
+    private final String LOGIN_USER = "LOGIN_USER";
+    private final String DRIVER_CLASS_NAME = "DRIVER_CLASS_NAME";
+    private final String LOGIN_PASS = "LOGIN_PASS";
 
     @Bean
     public DataSource dataSource() {

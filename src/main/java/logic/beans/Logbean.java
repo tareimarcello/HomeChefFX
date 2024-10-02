@@ -1,9 +1,10 @@
 package logic.beans;
 
-public class LogBean {
+public class Logbean {
 
     private String email;
     private String password;
+
 
     public String getEmail() {
         return email;

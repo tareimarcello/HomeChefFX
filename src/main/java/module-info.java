@@ -8,6 +8,7 @@ module com.example.homechef {
     requires java.management;
     requires spring.context;
     requires spring.jdbc;
+    requires org.testng;
 
     opens logic to javafx.fxml;
     exports logic;
@@ -19,8 +20,8 @@ module com.example.homechef {
     opens logic.viewcontroller.search to javafx.fxml;
     exports logic.viewcontroller.signup;
     opens logic.viewcontroller.signup to javafx.fxml;
-    exports logic.viewcontroller.signupchef;
-    opens logic.viewcontroller.signupchef to javafx.fxml;
+    exports logic.viewcontroller.signup.signupchef;
+    opens logic.viewcontroller.signup.signupchef to javafx.fxml;
     exports logic.viewcontroller.settings;
     opens logic.viewcontroller.settings to javafx.fxml;
     exports logic.viewcontroller.resultsearch;
@@ -37,4 +38,15 @@ module com.example.homechef {
     opens logic.viewcontroller.booklist to javafx.fxml;
     exports logic.viewcontroller.homepagechef;
     opens logic.viewcontroller.homepagechef to javafx.fxml;
+    exports logic.connection;
+    exports logic.beans;
+    exports logic.appcontroller;
+    exports logic.dao;
+    exports logic.model;
+    exports logic.viewcontroller.signup.signupcustomer;
+    opens logic.viewcontroller.signup.signupcustomer to javafx.fxml;
+    exports logic.patterns;
+    opens logic.patterns to javafx.fxml;
+    exports logic.dao.rowmapper;
+
 }

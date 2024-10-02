@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
+import java.util.Objects;
 
 
 public class Page {
@@ -46,7 +46,7 @@ public class Page {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             if(checkActive)name=check(name,stage);
             prevBack(event);
-            Parent root = FXMLLoader.load(HomeChefApplication.class.getResource(name));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(HomeChefApplication.class.getResource(name)));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle(title);

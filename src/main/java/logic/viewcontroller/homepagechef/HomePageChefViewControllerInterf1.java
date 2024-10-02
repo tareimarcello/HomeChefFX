@@ -3,6 +3,8 @@ package logic.viewcontroller.homepagechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.patterns.ViewSetter;
+import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 
 public class HomePageChefViewControllerInterf1 {
@@ -22,6 +24,18 @@ public class HomePageChefViewControllerInterf1 {
 
     public void initialize() {
         //scrivi nei text field nome res e piatto dello chef
+
+        HomeChefBean hcbean = ViewSetter.getInstance().getHcbean();
+
+        if (hcbean!=null) {
+
+            this.name.setText(hcbean.getName());
+            this.dish.setText(hcbean.getDish());
+            this.res.setText(hcbean.getRes());
+            this.city.setText(hcbean.getCity());
+
+        }
+
     }
 
     @FXML

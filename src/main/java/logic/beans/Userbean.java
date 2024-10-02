@@ -1,30 +1,22 @@
-package logic.model;
+package logic.beans;
 
-public class User {
+public abstract class Userbean {
 
-    private long id;
     private String name;
     private String surname;
     private String email;
     private String password;
 
 
-    public User (long id, String name, String surname, String email, String password){
 
-        this.id = id;
+    public Userbean (String name, String surname, String email, String password){
+
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.password = password;
     }
 
-    public long getID() {
-        return id;
-    }
-
-    public void setID(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -57,5 +49,4 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

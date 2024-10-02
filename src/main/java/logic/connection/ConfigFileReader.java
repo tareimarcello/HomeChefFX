@@ -10,7 +10,7 @@ public class ConfigFileReader {
 
     private Properties properties;
 
-    private final String configFilePath= "src/main/java/database.properties";
+    private final String configFilePath= "src/main/java/db.properties";
 
 
     public ConfigFileReader() {

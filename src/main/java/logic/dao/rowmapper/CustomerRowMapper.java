@@ -1,15 +1,14 @@
-package logic.dao;
+package logic.dao.rowmapper;
 
 import logic.model.Customer;
-import logic.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerRowMapper implements RowMapper<User> {
+public class CustomerRowMapper implements RowMapper<Customer> {
     @Override
-    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new Customer(
                 rs.getInt("iduser"),
                 rs.getString("name"),

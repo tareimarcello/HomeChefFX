@@ -1,15 +1,14 @@
-package logic.dao;
+package logic.dao.rowmapper;
 
 import logic.model.Chef;
-import logic.model.User;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ChefRowMapper implements RowMapper<User> {
+public class ChefRowMapper implements RowMapper<Chef> {
     @Override
-    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public Chef mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new Chef(
                 rs.getInt("iduser"),
                 rs.getString("name"),

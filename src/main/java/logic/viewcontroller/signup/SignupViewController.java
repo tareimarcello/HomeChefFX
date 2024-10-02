@@ -1,18 +1,32 @@
 package logic.viewcontroller.signup;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import logic.appcontroller.SignupController;
+import logic.beans.Customerbean;
 
-public class SignupViewController {
+public abstract class SignupViewController {
+
+
+    protected final static SignupController controller = new SignupController();
+
     @FXML
-    private TextField namesign;
+    protected TextField namesign;
     @FXML
-    private TextField surnamesign;
+    protected TextField surnamesign;
     @FXML
-    private PasswordField pswd;
+    protected PasswordField pswd;
     @FXML
-    private TextField email;
+    protected TextField email;
     @FXML
-    private PasswordField confirmPswd;
+    protected PasswordField confirmPswd;
+
+
+    protected abstract void goToLogin();
+
+
+    protected abstract void save();
+
 }

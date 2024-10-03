@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class TestDB {
 
     @Test
-    void assertCustomerInsert(){
-
+    void testCustomerInsert(){
+        //metti assert
         Customerbean customer = new Customerbean ("Marcello","Tarei","mtarei@gmail.com","1234");
         SignupController controller = new SignupController();
 

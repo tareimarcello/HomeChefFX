@@ -4,20 +4,21 @@ import logic.beans.Logbean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
+import logic.exceptions.LoginErrorException;
 import logic.model.User;
 
 import java.util.NoSuchElementException;
 
 public class LoginController {
 
-    public User loginUser(Logbean userBean) throws Exception{
+    public User loginUser(Logbean userBean) throws LoginErrorException {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
 
         if (!user.getPassword().equals(userBean.getPassword())){
 
-            throw new Exception(" password is not valid");
+            throw new LoginErrorException(" password is not valid");
         }
 
         return user;

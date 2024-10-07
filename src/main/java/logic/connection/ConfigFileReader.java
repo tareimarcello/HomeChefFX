@@ -16,12 +16,12 @@ public class ConfigFileReader {
     public ConfigFileReader() {
 
 
-        File ConfigFile=new File(configFilePath);
+        File configFile=new File(configFilePath);
 
 
         try {
 
-            FileInputStream configFileReader=new FileInputStream(ConfigFile);
+            FileInputStream configFileReader=new FileInputStream(configFile);
 
             properties = new Properties();
 

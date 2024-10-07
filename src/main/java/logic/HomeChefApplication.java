@@ -1,10 +1,9 @@
 package logic;
 
-import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.WindowEvent;
-import logic.pageswitch.Exceptions;
+import logic.exceptions.Exceptions;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +12,6 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.Optional;
 
 public class HomeChefApplication extends Application {

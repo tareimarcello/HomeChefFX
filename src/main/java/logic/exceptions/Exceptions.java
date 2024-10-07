@@ -1,8 +1,10 @@
-package logic.pageswitch;
+package logic.exceptions;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import logic.pageswitch.Page;
+import logic.pageswitch.PageMenu;
 
 import java.util.Optional;
 

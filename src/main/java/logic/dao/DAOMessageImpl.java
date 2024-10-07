@@ -38,7 +38,7 @@ public class DAOMessageImpl extends JdbcDaoSupport implements DAOInterface<Messa
 
     @Override
     public void update(Message message) {
-
+        //to be implemented
     }
 
 

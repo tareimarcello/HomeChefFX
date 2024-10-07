@@ -26,19 +26,11 @@ public class ConfigFileReader {
             properties = new Properties();
 
 
-            try {
 
                 properties.load(configFileReader);
 
                 configFileReader.close();
 
-            } catch (IOException e)
-
-            {
-
-                System.out.println(e.getMessage());
-
-            }
 
         }  catch (FileNotFoundException e)
 
@@ -47,6 +39,12 @@ public class ConfigFileReader {
             System.out.println(e.getMessage());
 
             throw new RuntimeException("config.properties not found at config file path " + CONFIG_FILE_PATH);
+
+        }catch (IOException e)
+
+        {
+
+            System.out.println(e.getMessage());
 
         }
 

@@ -12,10 +12,10 @@ public class AppDataStore {
 
     private static final ConfigFileReader reader = new ConfigFileReader();
 
-    private final String connectionUrl = "CONNECTION_URL";
-    private final String loginUser = "LOGIN_USER";
-    private final String driverClassName = "DRIVER_CLASS_NAME";
-    private final String loginPass = "LOGIN_PASS";
+    private static final String connectionUrl = "CONNECTION_URL";
+    private static final String loginUser = "LOGIN_USER";
+    private static final String driverClassName = "DRIVER_CLASS_NAME";
+    private static final String loginPass = "LOGIN_PASS";
 
     @Bean
     public DataSource dataSource() {

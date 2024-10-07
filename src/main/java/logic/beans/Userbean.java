@@ -9,7 +9,7 @@ public abstract class Userbean {
 
 
 
-    public Userbean (String name, String surname, String email, String password){
+    protected Userbean (String name, String surname, String email, String password){
 
         this.name = name;
         this.surname = surname;

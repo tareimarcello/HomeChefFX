@@ -10,13 +10,13 @@ public class ConfigFileReader {
 
     private Properties properties;
 
-    private final String configFilePath= "src/main/java/db.properties";
+    private static final String Config_File_Path= "src/main/java/db.properties";
 
 
     public ConfigFileReader() {
 
 
-        File configFile=new File(configFilePath);
+        File configFile=new File(Config_File_Path);
 
 
         try {
@@ -46,7 +46,7 @@ public class ConfigFileReader {
 
             System.out.println(e.getMessage());
 
-            throw new RuntimeException("config.properties not found at config file path " + configFilePath);
+            throw new RuntimeException("config.properties not found at config file path " + Config_File_Path);
 
         }
 
@@ -62,95 +62,4 @@ public class ConfigFileReader {
             throw new RuntimeException("Application property not specified in the config.properties file.");
 
     }
-
-    /*public String getDriver() {
-
-        String applicationurl= properties.getProperty("driver");
-
-        if(applicationurl != null)
-
-            return applicationurl;
-
-        else
-
-            throw new RuntimeException("Application url not specified in the config.properties file.");
-
-    }
-
-
-    public String getDbUser() {
-
-        String username= properties.getProperty("username");
-
-        if(username != null)
-
-            return username;
-
-        else
-
-            throw new RuntimeException("username not specified in the config.properties file.");
-
-    }
-
-
-    public String getDbPassword() {
-
-        String password= properties.getProperty("password");
-
-        if(password != null)
-
-            return password;
-
-        else
-
-            throw new RuntimeException("password not specified in the config.properties file.");
-
-    }
-
-
-    public String getDbUrl() {
-
-        String browser= properties.getProperty("url");
-
-
-        if(browser != null)
-
-            return browser;
-
-        else
-
-            throw new RuntimeException("browser not specified in the config.properties file.");
-
-    }
-
-
-    public  long getTimeout() {
-
-        String timeout= properties.getProperty("timeout");
-
-
-        if(timeout != null)
-
-            return Long.parseLong(timeout);
-
-        else
-
-            throw new RuntimeException("Timeout not specified in the config.properties file.");
-
-    }
-
-
-    public String getEnvironment() {
-
-        String environment= properties.getProperty("environment");
-
-        if(environment != null)
-
-            return environment;
-
-        else
-
-            throw new RuntimeException ("Environment not specified in the config.properties file.");
-
-    }*/
 }

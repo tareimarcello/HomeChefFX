@@ -14,7 +14,7 @@ import java.util.Objects;
 public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Customer>{
 
     private static final String SELECT_ALL_CUSTOMER = "SELECT * FROM customer";
-    private static final String SELECT_QUERY = "SELECT * FROM customer WHERE idUser=?";
+    private static final String SELECT_QUERY = "SELECT * FROM customer JOIN user ON (customer.idUser=user.iduser) WHERE customer.idUser=?";
     private static final String UPDATE_QUERY = "UPDATE customer SET idUser = ? WHERE idUser=?";
     private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
     private static final String SELECT_LAST_INSERT_ID = "SELECT LAST_INSERT_ID()";

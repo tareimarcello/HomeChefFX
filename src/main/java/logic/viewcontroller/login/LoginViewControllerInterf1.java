@@ -45,10 +45,10 @@ public class LoginViewControllerInterf1 {
                 // - prende le credenziali
 
                 Logbean logBean = new Logbean();
-                if (this.labUser.getText()==null
-                        ||this.labUser.getText().equals("")
-                        || this.labPassword.getText()==null
-                        || this.labPassword.getText().equals("")){
+                if (this.labUser.getText() == null
+                        || this.labUser.getText().equals("")
+                        || this.labPassword.getText() == null
+                        || this.labPassword.getText().equals("")) {
 
                         this.show.setText("EMAIL e PASSWORD obbligatorie");
                         return;
@@ -67,7 +67,7 @@ public class LoginViewControllerInterf1 {
 
                         if (user instanceof Customer)
                                 pageSwitch.switchToHome(event);
-                        else if (user instanceof Chef){
+                        else if (user instanceof Chef) {
                                 HomeChefBean hcbean = new HomeChefBean();
                                 hcbean.setName(user.getName());
                                 hcbean.setCity(((Chef) user).getCitta());
@@ -77,15 +77,16 @@ public class LoginViewControllerInterf1 {
                                 pageSwitch.switchToHomeChef(event);
                         }
 
-                }catch(Exception e){
+                } catch (Exception e) {
 
-                      if (e instanceof NoSuchElementException)
-                              this.show.setText("User not found");
-                      else
-                              this.show.setText(e.getMessage());
+                        if (e instanceof NoSuchElementException) {
+                                this.show.setText("User not found");
+                        } else {
+                                this.show.setText(e.getMessage());
 
+                        }
+                        this.show.setOpacity(1.0);
                 }
-
         }
 
         @FXML

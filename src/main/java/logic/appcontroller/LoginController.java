@@ -31,7 +31,6 @@ public class LoginController {
         try {
             user = cDAO.get(id);
         }catch(NoSuchElementException e){
-
             user = chDAO.get(id);
         }
 

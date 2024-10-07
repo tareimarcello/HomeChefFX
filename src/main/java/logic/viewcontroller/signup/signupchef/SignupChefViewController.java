@@ -9,7 +9,6 @@ import logic.viewcontroller.signup.SignupViewController;
 
 public class SignupChefViewController extends SignupViewController {
 
-
     @FXML
     private TextField citysign;
     @FXML
@@ -30,7 +29,7 @@ public class SignupChefViewController extends SignupViewController {
 
         // Controllo valori
 
-        Chefbean chBean = new Chefbean(super.namesign.getText(),super.surnamesign.getText(),super.email.getText(),super.pswd.getText(),this.citysign.getText(),this.bestDish.getText(),this.restaurant.getText());
+        Chefbean chBean = new Chefbean(super.namesign.getText(),super.surnamesign.getText(),super.email.getText(),super.pswd.getText(),this.citysign.getText(),this.restaurant.getText(),this.bestDish.getText());
         SignupController controller = new SignupController();
         controller.signup(chBean);
     }

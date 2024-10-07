@@ -17,7 +17,7 @@ public class ChefRowMapper implements RowMapper<Chef> {
                 rs.getString("password"),
                 rs.getString("restaurant"),
                 rs.getString("bestdish"),
-                rs.getString("citta")
+                rs.getString("city")
         );
     }
 }

@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     private static final String SELECT_ALL_CHEF = "SELECT * FROM chef";
-    private static final String SELECT_QUERY = "SELECT * FROM chef WHERE iduser=?";
+    private static final String SELECT_QUERY = "SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser) WHERE chef.iduser=?";
     private static final String UPDATE_QUERY = "UPDATE chef SET iduser = ?, restaurant = ?,bestdish = ?, city = ? WHERE iduser=?";
     private static final String DELETE_QUERY = "DELETE FROM chef WHERE iduser=?";
     private static final String SELECT_LAST_INSERT_ID = "SELECT LAST_INSERT_ID()";

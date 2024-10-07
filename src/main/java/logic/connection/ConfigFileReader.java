@@ -10,13 +10,13 @@ public class ConfigFileReader {
 
     private Properties properties;
 
-    private static final String Config_File_Path= "src/main/java/db.properties";
+    private static final String CONFIG_FILE_PATH= "src/main/java/db.properties";
 
 
     public ConfigFileReader() {
 
 
-        File configFile=new File(Config_File_Path);
+        File configFile=new File(CONFIG_FILE_PATH);
 
 
         try {
@@ -46,7 +46,7 @@ public class ConfigFileReader {
 
             System.out.println(e.getMessage());
 
-            throw new RuntimeException("config.properties not found at config file path " + Config_File_Path);
+            throw new RuntimeException("config.properties not found at config file path " + CONFIG_FILE_PATH);
 
         }
 

@@ -1,12 +1,18 @@
 package logic.patterns;
 
 import logic.beans.HomeChefBean;
+import logic.beans.ResultSearchBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ViewSetter {
 
     private static ViewSetter setter;
 
     private HomeChefBean hcbean;
+    private List<ResultSearchBean> chefList;
+
 
     private ViewSetter (){
 
@@ -29,5 +35,11 @@ public class ViewSetter {
         this.hcbean = hcbean;
     }
 
+    public List<ResultSearchBean> getChefList() {
+        return chefList;
+    }
 
+    public void setChefList(List<ResultSearchBean> chefList) {
+        this.chefList = chefList;
+    }
 }

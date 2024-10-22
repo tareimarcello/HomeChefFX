@@ -1,5 +1,6 @@
 package logic.dao;
 
+import logic.beans.SearchBean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.ChefRowMapper;
 import logic.dao.rowmapper.RowLastInsertIdMapper;
@@ -8,6 +9,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -65,9 +67,59 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         getJdbcTemplate().update(DELETE_QUERY, chef.getID());
     }
 
-    private Long getLastID (){
+
+    public List<Chef> getChefByParam(SearchBean searchParam) {
+
+        assert getJdbcTemplate() != null;
+        StringBuilder query = new StringBuilder();
+        boolean first = true;
+        String condKey = "WHERE";
+        String condition = "";
+        List<Object> queryArgs = new ArrayList<>();
+        query.append ("SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser)");
+        if (searchParam.getChefName()!= null && !searchParam.getChefName().equals("")){
+
+            condition = "name = '"+searchParam.getChefName()+"'";
+
+            query.append(" ").append(condKey).append(" ").append(condition);
+
+            first = false;
+        }
+
+
+        if (searchParam.getChefCity()!= null && !searchParam.getChefCity().equals("")){
+
+            if (!first) condKey = "AND";
+            else
+                first = false;
+
+            condition = "city = '"+searchParam.getChefCity()+"'";
+            query.append(" ").append(condKey).append(" ").append(condition);
+
+
+        }
+
+        if (searchParam.getChefBestDish()!= null && !searchParam.getChefBestDish().equals("")){
+
+            if (!first) condKey = "AND";
+            else
+                first = false;
+
+            condition = "bestdish = '"+searchParam.getChefBestDish()+"'";
+            query.append(" ").append(condKey).append(" ").append(condition);
+
+        }
+
+        System.out.println (query);
+
+        return  getJdbcTemplate().query(query.toString(), new ChefRowMapper());
+    }
+
+    private Long getLastID(){
 
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(SELECT_LAST_INSERT_ID, new RowLastInsertIdMapper()).getFirst();
     }
+
+
 }

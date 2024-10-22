@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf1">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf1">
     <children>
       <Button fx:id="uID1" layoutX="86.0" layoutY="116.0" minHeight="30.0" minWidth="130.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="130.0" styleClass="listUser" />
         <FontAwesomeIconView glyphName="WIFI" layoutX="331.0" layoutY="22.0" size="20" />
@@ -35,7 +35,7 @@
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
-      <Button layoutX="63.0" layoutY="536.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other chef" textFill="WHITE" />
+      <Button fx:id="loadNext" layoutX="63.0" layoutY="536.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other chef" textFill="WHITE" />
       <FontAwesomeIconView fill="WHITE" glyphName="INBOX" layoutX="321.0" layoutY="570.0" size="25" />
       <Group fx:id="group1" layoutX="26.0" layoutY="124.0">
          <children>

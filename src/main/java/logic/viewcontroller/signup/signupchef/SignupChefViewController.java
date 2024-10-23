@@ -29,7 +29,7 @@ public class SignupChefViewController extends SignupViewController {
 
         // Controllo valori
 
-        Chefbean chBean = new Chefbean(super.namesign.getText(),super.surnamesign.getText(),super.email.getText(),super.pswd.getText(),this.citysign.getText(),this.restaurant.getText(),this.bestDish.getText());
+        Chefbean chBean = new Chefbean(super.namesign.getText().toUpperCase(),super.surnamesign.getText().toUpperCase(),super.email.getText(),super.pswd.getText(),this.citysign.getText().toUpperCase(),this.restaurant.getText().toUpperCase(),this.bestDish.getText().toUpperCase());
         SignupController controller = new SignupController();
         controller.signup(chBean);
     }

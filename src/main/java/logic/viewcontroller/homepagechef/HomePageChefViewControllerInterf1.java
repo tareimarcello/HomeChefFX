@@ -23,6 +23,7 @@ public class HomePageChefViewControllerInterf1 {
     }
 
     public void initialize() {
+
         //scrivi nei text field nome res e piatto dello chef
 
         HomeChefBean hcbean = ViewSetter.getInstance().getHcbean();

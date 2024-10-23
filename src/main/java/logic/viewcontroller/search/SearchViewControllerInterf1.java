@@ -1,5 +1,7 @@
 package logic.viewcontroller.search;
 
+import logic.appcontroller.SearchController;
+import logic.beans.SearchBean;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,6 +35,18 @@ public class SearchViewControllerInterf1 {
 
     @FXML
     protected void search(ActionEvent event){
+
+        SearchBean searchBean = new SearchBean();
+        searchBean.setChefCity(this.cityChef.getText().toUpperCase());
+        searchBean.setChefName(this.chefName.getText().toUpperCase());
+        searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
+
+        /* Invocazione back end recupero lista chef */
+
+        SearchController controller = new SearchController();
+
+        controller.searchChefList(searchBean);
+
         pageSwitch.switchTo("resultsearch/interf1.fxml",event,"ResultSearch");
     }
 

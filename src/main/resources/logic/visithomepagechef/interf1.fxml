@@ -79,6 +79,6 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="city1" editable="false" layoutX="36.0" layoutY="519.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="342.0" styleClass="textField" />
+      <TextField fx:id="city" editable="false" layoutX="36.0" layoutY="519.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="342.0" styleClass="textField" />
    </children>
 </AnchorPane>

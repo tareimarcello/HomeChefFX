@@ -22,7 +22,7 @@ public class SignupCustomerViewController extends SignupViewController {
 
         // In caso di errore set opacity label
 
-        Customerbean cBean = new Customerbean(namesign.getText(),surnamesign.getText(),email.getText(), pswd.getText());
+        Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(),surnamesign.getText().toUpperCase(),email.getText(), pswd.getText());
         controller.signup(cBean);
     }
 

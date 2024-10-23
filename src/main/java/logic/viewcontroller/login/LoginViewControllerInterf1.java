@@ -69,7 +69,7 @@ public class LoginViewControllerInterf1 {
                                 pageSwitch.switchToHome(event);
                         else if (user instanceof Chef) {
                                 HomeChefBean hcbean = new HomeChefBean();
-                                hcbean.setName(user.getName());
+                                hcbean.setName(user.getName()+" "+user.getSurname());
                                 hcbean.setCity(((Chef) user).getCitta());
                                 hcbean.setDish(((Chef) user).getBestDish());
                                 hcbean.setRes(((Chef) user).getRestaurant());

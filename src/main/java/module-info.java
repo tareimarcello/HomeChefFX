@@ -9,6 +9,7 @@ module com.example.homechef {
     requires spring.context;
     requires spring.jdbc;
     requires org.testng;
+    requires java.naming;
 
     opens logic to javafx.fxml;
     exports logic;

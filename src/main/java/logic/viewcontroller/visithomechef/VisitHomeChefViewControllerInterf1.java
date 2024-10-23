@@ -3,7 +3,9 @@ package logic.viewcontroller.visithomechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ViewSetter;
 
 public class VisitHomeChefViewControllerInterf1 {
     private PageMenu pageSwitch;
@@ -14,14 +16,25 @@ public class VisitHomeChefViewControllerInterf1 {
     @FXML
     private TextField res;
     @FXML
-    private TextField city1;
+    private TextField city;
 
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();
     }
 
     public void initialize(){
-        //to be implemented
+
+
+        HomeChefBean hcbean = ViewSetter.getInstance().getHcvisitbean();
+
+        if (hcbean!=null) {
+
+            this.chefName.setText(hcbean.getName());
+            this.bestDish.setText(hcbean.getDish());
+            this.res.setText(hcbean.getRes());
+            this.city.setText(hcbean.getCity());
+
+        }
     }
 
     @FXML

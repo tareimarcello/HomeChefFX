@@ -16,9 +16,9 @@ public class SignupController {
             DAOCustomerImpl cuDao = new DAOCustomerImpl();
             Customer cu = new Customer(-1,cb.getName().toUpperCase(),cb.getSurname().toUpperCase(), cb.getEmail(), cb.getPassword());
             cuDao.save(cu);
-        }else if (user instanceof Chefbean){
+        }else if (user instanceof Chefbean chB){
             DAOChefImpl chDao = new DAOChefImpl();
-            Chef ch = new Chef(-1,user.getName().toUpperCase(),user.getSurname().toUpperCase(), user.getEmail(), user.getPassword(), ((Chefbean)user).getRestaurant().toUpperCase(), ((Chefbean)user).getBestDish().toUpperCase(), ((Chefbean)user).getCitta().toUpperCase());
+            Chef ch = new Chef(-1,chB.getName().toUpperCase(),chB.getSurname().toUpperCase(), chB.getEmail(), chB.getPassword(), chB.getRestaurant().toUpperCase(), chB.getBestDish().toUpperCase(), chB.getCitta().toUpperCase());
             chDao.save(ch);
         }else
             throw new IllegalArgumentException("User type not valid");

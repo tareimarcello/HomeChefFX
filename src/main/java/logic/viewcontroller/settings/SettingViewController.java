@@ -6,11 +6,11 @@ import javafx.scene.control.TextField;
 
 public abstract class SettingViewController {
     @FXML
-    private TextField email;
+    protected TextField email;
     @FXML
-    private TextField pswd;
+    protected TextField pswd;
     @FXML
-    private TextField confirmpswd;
+    protected TextField confirmpswd;
     @FXML
     protected abstract void goBack();
     @FXML

@@ -14,8 +14,7 @@
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="246.0" layoutY="692.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other chef" textFill="WHITE" />
-      <FontAwesomeIconView fill="WHITE" glyphName="INBOX" layoutX="492.0" layoutY="725.0" size="25" />
+      <Button fx:id="loadNext" layoutX="246.0" layoutY="692.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other chef" textFill="WHITE" />
       <Group fx:id="group1" layoutX="56.0" layoutY="103.0">
          <children>
             <Button fx:id="home1" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
@@ -112,5 +111,6 @@
             </Group>
          </children>
       </Group>
+      <Button fx:id="loadPrevious" layoutX="246.0" layoutY="628.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
    </children>
 </AnchorPane>

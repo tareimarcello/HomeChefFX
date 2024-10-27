@@ -7,14 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class SearchViewControllerInterf1 {
+public class SearchViewControllerInterf1 extends SearchViewController{
     private PageMenu pageSwitch;
-    @FXML
-    private TextField chefName;
-    @FXML
-    private TextField eatName;
-    @FXML
-    private TextField cityChef;
 
     public SearchViewControllerInterf1(){
         pageSwitch=new PageMenu();
@@ -36,10 +30,7 @@ public class SearchViewControllerInterf1 {
     @FXML
     protected void search(ActionEvent event){
 
-        SearchBean searchBean = new SearchBean();
-        searchBean.setChefCity(this.cityChef.getText().toUpperCase());
-        searchBean.setChefName(this.chefName.getText().toUpperCase());
-        searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
+        SearchBean searchBean = setBean();
 
         /* Invocazione back end recupero lista chef */
 

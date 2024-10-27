@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ResultSearchViewControllerInterf1 {
+public class ResultSearchViewControllerInterf1{
     private PageMenu pageSwitch;
     private int lastIndexChef;
     private static final int MAXCHEFVIEWED = 4;
@@ -70,8 +70,8 @@ public class ResultSearchViewControllerInterf1 {
             i++;
 
         }
-
          */
+
 
 
     }

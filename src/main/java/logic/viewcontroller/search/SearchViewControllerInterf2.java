@@ -11,17 +11,11 @@ import logic.beans.SearchBean;
 
 import java.io.IOException;
 
-public class SearchViewControllerInterf2 {
+public class SearchViewControllerInterf2 extends SearchViewController{
     @FXML
     private AnchorPane buttonBar;
     @FXML
     private AnchorPane resultVisit;
-    @FXML
-    private TextField eatName;
-    @FXML
-    private TextField chefName;
-    @FXML
-    private TextField cityChef;
 
     public void initialize(){
         try {
@@ -33,10 +27,18 @@ public class SearchViewControllerInterf2 {
     }
     @FXML
     protected void search(){
+        SearchBean searchBean = setBean();
+
+        /* Invocazione back end recupero lista chef */
+
+        SearchController controller = new SearchController();
+
+        controller.searchChefList(searchBean);
         try {
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
             resultVisit.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));
         } catch (IOException e) {
+            e.printStackTrace();
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
         }
     }

@@ -38,7 +38,6 @@ public class SearchViewControllerInterf2 extends SearchViewController{
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
             resultVisit.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));
         } catch (IOException e) {
-            e.printStackTrace();
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
         }
     }

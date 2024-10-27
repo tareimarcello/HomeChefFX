@@ -1,18 +1,12 @@
-package logic.viewcontroller.settings;
+package logic.viewcontroller.settings.settingscustomer;
 
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import logic.viewcontroller.settings.SettingViewController;
 
-public  class SettingsViewControllerInterf1 {
+public  class SettingsViewControllerInterf1 extends SettingViewController {
     private PageMenu pageSwitch;
-    @FXML
-    private TextField email;
-    @FXML
-    private TextField pswd;
-    @FXML
-    private TextField confirmpswd;
 
 
     public SettingsViewControllerInterf1(){
@@ -28,23 +22,13 @@ public  class SettingsViewControllerInterf1 {
         pageSwitch.switchToHome(event);
     }
     @FXML
+    @Override
     protected void goBack(){
         pageSwitch.backTo();
     }
     @FXML
-    protected void setPswd(){
-
-    }
-    @FXML
+    @Override
     protected void signOut(ActionEvent event){
         pageSwitch.switchTo("login/interf1.fxml",event,"Login");
-    }
-    @FXML
-    protected void setMail(){
-
-    }
-    @FXML
-    protected void setFeed(){
-
     }
 }

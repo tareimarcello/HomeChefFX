@@ -1,14 +1,15 @@
-package logic.viewcontroller.settings;
+package logic.viewcontroller.settings.settingschef;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
+import logic.viewcontroller.settings.settingscustomer.SettingsViewControllerInterf2;
 
 import java.io.IOException;
 
-public class SettingsChefViewControllerInterf2 extends SettingsViewControllerInterf2{
+public class SettingsChefViewControllerInterf2 extends SettingsViewControllerInterf2 {
     @FXML
     private AnchorPane buttonBar;
 
@@ -22,7 +23,7 @@ public class SettingsChefViewControllerInterf2 extends SettingsViewControllerInt
     }
     @FXML
     protected void goEditRestaurant() {
-
+        //to be implemented
     }
 
 }

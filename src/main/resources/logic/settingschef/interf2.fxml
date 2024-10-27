@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.SettingsChefViewControllerInterf2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.settingschef.SettingsChefViewControllerInterf2">
     <children>
         <Line endX="350.0" endY="-154.0" layoutX="-248.0" layoutY="153.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
         <Line endX="350.0" endY="-154.0" layoutX="294.0" layoutY="151.0" startX="350.0" startY="642.4666748046875" styleClass="line" />

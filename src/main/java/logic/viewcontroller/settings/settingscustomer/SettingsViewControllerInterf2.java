@@ -1,4 +1,4 @@
-package logic.viewcontroller.settings;
+package logic.viewcontroller.settings.settingscustomer;
 
 import logic.HomeChefApplication;
 import logic.pageswitch.PageMenu;
@@ -6,19 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import logic.viewcontroller.settings.SettingViewController;
 
 import java.io.IOException;
 
-public  class SettingsViewControllerInterf2 {
+public  class SettingsViewControllerInterf2 extends SettingViewController {
     private PageMenu pageSwitch;
-    @FXML
-    private TextField email;
-    @FXML
-    private TextField pswd;
-    @FXML
-    private TextField confirmpswd;
     @FXML
     private AnchorPane buttonBar;
 
@@ -36,27 +30,13 @@ public  class SettingsViewControllerInterf2 {
         }
     }
     @FXML
+    @Override
     protected void goBack(){
         pageSwitch.backTo();
     }
     @FXML
-    protected void setPswd(){
-
-    }
-    @FXML
+    @Override
     protected void signOut(ActionEvent event){
         pageSwitch.switchTo("login/interf1.fxml",event,"Login");
-    }
-    @FXML
-    protected void setMail(){
-
-    }
-    @FXML
-    protected void setFeed(){
-
-    }
-    @FXML
-    protected void backTo(){
-        pageSwitch.backTo();
     }
 }

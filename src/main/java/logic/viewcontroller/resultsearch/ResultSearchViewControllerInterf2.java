@@ -46,7 +46,8 @@ public class ResultSearchViewControllerInterf2 extends ResultSearchViewControlle
     }
     @FXML
     protected void outputVal(){
-
+        this.resetGroupOpacity();
+        this.setNextFourChef();
     }
     @FXML
     protected void visit(ActionEvent event){

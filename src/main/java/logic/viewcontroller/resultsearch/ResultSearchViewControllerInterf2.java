@@ -3,18 +3,11 @@ package logic.viewcontroller.resultsearch;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
-import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ResultSearchViewControllerInterf2 extends ResultSearchViewController{
     private PageMenu pageSwitch;

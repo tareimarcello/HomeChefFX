@@ -6,17 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ResultSearchViewControllerInterf1 extends ResultSearchViewController{
     private PageMenu pageSwitch;

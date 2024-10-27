@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="resultVisit" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf2">
+<AnchorPane fx:id="anchorPane" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.resultsearch.ResultSearchViewControllerInterf2">
    <children>
       <Text layoutX="284.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="textSubTitle" text="Results" wrappingWidth="187.39027404785156">
          <font>
@@ -40,7 +40,7 @@
             </Group>
          </children>
       </Group>
-      <Group fx:id="group2" layoutX="128.0" layoutY="197.0">
+      <Group fx:id="group2" layoutX="56.0" layoutY="239.0">
          <children>
             <Button fx:id="home2" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
@@ -64,31 +64,7 @@
             </Group>
          </children>
       </Group>
-      <Group fx:id="group4" layoutX="134.0" layoutY="397.0">
-         <children>
-            <Button fx:id="home4" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
-               </graphic>
-            </Button>
-            <Group layoutX="-18.0">
-               <children>
-                  <Text fx:id="spec3" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="name3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text fx:id="res3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Group>
-         </children>
-      </Group>
-      <Group fx:id="group3" layoutX="56.0" layoutY="301.0">
+      <Group fx:id="group3" layoutX="56.0" layoutY="373.0">
          <children>
             <Button fx:id="home3" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>
@@ -112,31 +88,7 @@
             </Group>
          </children>
       </Group>
-      <Group fx:id="group6" layoutX="140.0" layoutY="597.0">
-         <children>
-            <Button fx:id="home6" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
-               <graphic>
-                  <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
-               </graphic>
-            </Button>
-            <Group layoutX="-18.0">
-               <children>
-                  <Text fx:id="spec5" layoutX="98.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Specialized:" wrappingWidth="297.7902374267578">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="name5" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Name:" />
-                  <Text fx:id="res5" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Restaurant:" wrappingWidth="307.3902130126953">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Group>
-         </children>
-      </Group>
-      <Group fx:id="group5" layoutX="62.0" layoutY="501.0">
+      <Group fx:id="group5" layoutX="56.0" layoutY="501.0">
          <children>
             <Button fx:id="home5" layoutY="10.583984375" mnemonicParsing="false" onAction="#visit" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row">
                <graphic>

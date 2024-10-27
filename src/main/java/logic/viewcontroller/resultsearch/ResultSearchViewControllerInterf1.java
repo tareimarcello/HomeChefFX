@@ -59,8 +59,8 @@ public class ResultSearchViewControllerInterf1 {
 
 
         this.setNextFourChef();
-
-      /*  ObservableList<Node> cList = this.anchorPane.getChildren();
+        /*
+      ObservableList<Node> cList = this.anchorPane.getChildren();
         int i = 0;
         for (Node n : cList) {
 
@@ -69,7 +69,10 @@ public class ResultSearchViewControllerInterf1 {
 
             i++;
 
-        }*/
+        }
+
+         */
+
 
     }
 

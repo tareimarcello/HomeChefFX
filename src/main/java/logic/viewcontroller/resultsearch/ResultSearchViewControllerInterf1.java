@@ -18,35 +18,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ResultSearchViewControllerInterf1{
+public class ResultSearchViewControllerInterf1 extends ResultSearchViewController{
     private PageMenu pageSwitch;
-    private int lastIndexChef;
-    private static final int MAXCHEFVIEWED = 4;
-    private static final int G1INDEX = 10;
-    private static final int G2INDEX = 11;
-    private static final int G3INDEX = 12;
-    private static final int G4INDEX = 13;
-    //private static final int GROUPBUTTONINDEX = 0;
-    private static final int SUBGROUPINDEX = 1;
-    private static final int SPECIALIZEDINDEX = 0;
-    private static final int RESTAURANTINDEX = 2;
-    private static final int CHEFNAMEINDEX = 1;
-
-    private final List<ResultSearchBean> chefList = ViewSetter.getInstance().getChefList();
-    private final Map<String,ResultSearchBean> chefBeanMap = new HashMap<>();
-
-    @FXML
-    private AnchorPane anchorPane;
-
-    @FXML
-    private Button loadNext;
-
-    @FXML
-    private Button loadPrevious;
-
 
     public ResultSearchViewControllerInterf1(){
         pageSwitch = new PageMenu();
+        chefList = ViewSetter.getInstance().getChefList();
+        chefBeanMap = new HashMap<>();
+        g1Index=10;
+        g2Index=11;
+        g3Index=12;
+        g4Index=13;
     }
 
     public void initialize(){
@@ -128,41 +110,6 @@ public class ResultSearchViewControllerInterf1{
         pageSwitch.switchToISCUser(event);
     }
 
-    /**
-     * Populate next four chef from the list result of the search
-     */
-    private void setNextFourChef(){
-
-        int index = 0;
-        while (index < MAXCHEFVIEWED && lastIndexChef < chefList.size()) {
-
-            ResultSearchBean resBean = chefList.get(lastIndexChef);
-            Group current = (Group) anchorPane.getChildren().get(G1INDEX+index);
-            this.chefBeanMap.put(current.getId(),resBean);
-            Group subGroup = (Group) current.getChildren().get(SUBGROUPINDEX);
-            ObservableList<Node> paramList = subGroup.getChildren();
-            Text specialized = (Text)paramList.get(SPECIALIZEDINDEX);
-            Text nameChef = (Text)paramList.get(CHEFNAMEINDEX);
-            Text restaurant = (Text)paramList.get(RESTAURANTINDEX);
-            specialized.setText(resBean.getBestDish());
-            nameChef.setText(resBean.getNameChef());
-            restaurant.setText(resBean.getRestaurant());
-            current.setOpacity(1.0);
-            index++;
-            lastIndexChef++;
-        }
-
-        if (lastIndexChef<chefList.size())
-            this.loadNext.setVisible(true);
-        else
-            this.loadNext.setVisible(false);
-
-        if (lastIndexChef>MAXCHEFVIEWED)
-            this.loadPrevious.setVisible(true);
-        else
-            this.loadPrevious.setVisible(false);
-
-    }
 
     /**
      * this method reset the opacity of the main groups of the view
@@ -172,10 +119,10 @@ public class ResultSearchViewControllerInterf1{
 
         ObservableList<Node> children = anchorPane.getChildren();
 
-        children.get(G1INDEX).setOpacity(0.0);
-        children.get(G2INDEX).setOpacity(0.0);
-        children.get(G3INDEX).setOpacity(0.0);
-        children.get(G4INDEX).setOpacity(0.0);
+        children.get(g1Index).setOpacity(0.0);
+        children.get(g2Index).setOpacity(0.0);
+        children.get(g3Index).setOpacity(0.0);
+        children.get(g4Index).setOpacity(0.0);
     }
 
    /* private void setMapKey (){

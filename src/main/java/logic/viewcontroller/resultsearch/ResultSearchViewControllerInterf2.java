@@ -50,6 +50,14 @@ public class ResultSearchViewControllerInterf2 extends ResultSearchViewControlle
         this.setNextFourChef();
     }
     @FXML
+    protected void outputValPrevious(ActionEvent event){
+
+        this.resetGroupOpacity();
+        this.lastIndexChef-=(MAXCHEFVIEWED+1);
+        this.setNextFourChef();
+
+    }
+    @FXML
     protected void visit(ActionEvent event){
         pageSwitch.switchTo("visithomepagechef/interf2.fxml",event,"Homepage");
     }

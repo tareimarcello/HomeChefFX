@@ -111,6 +111,6 @@
             </Group>
          </children>
       </Group>
-      <Button fx:id="loadPrevious" layoutX="246.0" layoutY="628.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
+      <Button fx:id="loadPrevious" layoutX="246.0" layoutY="628.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
    </children>
 </AnchorPane>

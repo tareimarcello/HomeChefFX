@@ -1,11 +1,7 @@
 package testconn;
 
 import logic.appcontroller.LoginController;
-import logic.appcontroller.SearchController;
-import logic.appcontroller.SignupController;
-import logic.beans.Customerbean;
 import logic.beans.Logbean;
-import logic.beans.SearchBean;
 import logic.exceptions.LoginErrorException;
 import org.junit.jupiter.api.Test;
 

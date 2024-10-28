@@ -73,4 +73,8 @@ public class BookListViewControllerInterf1 {
     protected void acceptBook(){
         //metodo che accetta una prenotazione
     }
+    @FXML
+    protected void outputValPrevious(){
+        //to be implemented
+    }
 }

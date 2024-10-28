@@ -36,7 +36,6 @@
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
         <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
         <Button layoutX="63.0" layoutY="536.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
-        <FontAwesomeIconView fill="WHITE" glyphName="INBOX" layoutX="321.0" layoutY="570.0" size="25" />
         <Group fx:id="group1" layoutX="26.0" layoutY="124.0">
             <children>
                 <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
@@ -47,7 +46,7 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="num1" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" />
+                        <Text fx:id="num1" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                         <Text fx:id="chef1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
@@ -68,7 +67,7 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="num2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number" />
+                        <Text fx:id="num2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                         <Text fx:id="chef2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
@@ -89,7 +88,7 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="num4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" />
+                        <Text fx:id="num4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                         <Text fx:id="chef4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
@@ -110,7 +109,7 @@
                                 <Font size="36.0" />
                             </font>
                         </Text>
-                        <Text fx:id="num3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" />
+                        <Text fx:id="num3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                         <Text fx:id="chef3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                             <font>
                                 <Font size="36.0" />
@@ -134,5 +133,6 @@
                 <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" />
             </graphic>
         </Button>
+      <Button layoutX="63.0" layoutY="606.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
     </children>
 </AnchorPane>

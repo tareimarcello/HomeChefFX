@@ -83,4 +83,8 @@ public class InitialSearchAndChatViewControllerInterf1 {
     protected void goToHomeChef(ActionEvent event){
         pageswitch.switchToHomeChef(event);
     }
+    @FXML
+    protected void outputValChatPrevious(){
+        //to be implemented
+    }
 }

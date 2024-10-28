@@ -69,7 +69,7 @@ public class InitialSearchAndChatViewControllerInterf2 {
     }
     @FXML
     protected void searchMessage(){
-
+        //to be implemented
     }
     @FXML
     protected void touchChatChef(ActionEvent event){
@@ -79,5 +79,13 @@ public class InitialSearchAndChatViewControllerInterf2 {
         } catch (IOException e) {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
         }
+    }
+    @FXML
+    protected void outputValChat(){
+        //to be implemented
+    }
+    @FXML
+    protected void outputValChatPrevious(){
+        //to be implemented
     }
 }

@@ -39,14 +39,18 @@ public class BookLIstViewControllerInterf2 {
     }
     @FXML
     protected void outputVal(){
-
+        //To be implemented
     }
     @FXML
     protected void acceptBook(){
-
+        //To be implemented
     }
     @FXML
     protected void refBook(){
-
+        //to be implemented
+    }
+    @FXML
+    protected  void outputValPrevious(){
+        //to be implemented
     }
 }

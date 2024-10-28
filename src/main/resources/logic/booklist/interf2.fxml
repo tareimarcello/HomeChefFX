@@ -122,12 +122,12 @@
          </children>
       </Group>
       <Button layoutX="198.0" layoutY="632.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
-      <FontAwesomeIconView fill="WHITE" glyphName="INBOX" layoutX="463.0" layoutY="665.0" size="25" />
       <Text layoutX="278.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textSubTitle" text="Book List" wrappingWidth="146.0000003894288">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
+      <Button layoutX="198.0" layoutY="704.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load prevoius" textFill="WHITE" />
 
     </children>
 </AnchorPane>

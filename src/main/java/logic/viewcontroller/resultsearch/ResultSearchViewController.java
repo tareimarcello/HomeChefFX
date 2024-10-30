@@ -1,13 +1,17 @@
 package logic.viewcontroller.resultsearch;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.HomeChefUtil;
 import logic.beans.ResultSearchBean;
+import logic.pageswitch.PageMenu;
+
 import java.util.List;
 import java.util.Map;
 
@@ -19,9 +23,10 @@ public abstract class ResultSearchViewController {
     @FXML
     protected Button loadPrevious;
     protected int lastIndexChef;
+    protected int elementViewed;
     protected static final int MAXCHEFVIEWED = 4;
     protected   int g1Index;
-    protected   int g2Index ;
+    protected   int g2Index;
     protected   int g3Index;
     protected   int g4Index;
     //private static final int GROUPBUTTONINDEX = 0;
@@ -33,6 +38,38 @@ public abstract class ResultSearchViewController {
     protected List<ResultSearchBean> chefList;
     protected Map<String,ResultSearchBean> chefBeanMap;
 
+    protected PageMenu pageSwitch;
+    protected final HomeChefUtil util = new HomeChefUtil();
+
+    public void initialize(){
+
+        // Inizialize first 4 chef of the result list search
+        lastIndexChef = 0;
+        //resetGroupOpacity();
+        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.loadNext.setVisible(false);
+        this.loadPrevious.setVisible(false);
+
+        this.setNextFourChef();
+
+
+    }
+
+    @FXML
+    protected void outputVal(ActionEvent event){
+
+        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.setNextFourChef();
+
+    }
+    @FXML
+    protected void outputValPrevious(ActionEvent event){
+
+        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        lastIndexChef-=(MAXCHEFVIEWED+elementViewed);
+        this.setNextFourChef();
+
+    }
     protected void setNextFourChef(){
 
         int index = 0;
@@ -53,7 +90,7 @@ public abstract class ResultSearchViewController {
             index++;
             lastIndexChef++;
         }
-
+        this.elementViewed=index;
         if (lastIndexChef<chefList.size())
             this.loadNext.setVisible(true);
         else

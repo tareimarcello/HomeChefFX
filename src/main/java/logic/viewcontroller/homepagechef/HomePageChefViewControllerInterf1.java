@@ -3,6 +3,7 @@ package logic.viewcontroller.homepagechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.appcontroller.ISCController;
 import logic.patterns.ViewSetter;
 import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
@@ -49,6 +50,9 @@ public class HomePageChefViewControllerInterf1 {
     }
     @FXML
     protected void goToISC(ActionEvent event) {
+
+        ISCController controller = new ISCController();
+        ViewSetter.getInstance().setChatList(controller.getISCToUser());
         pageswitch.switchToISCChef(event);
     }
     @FXML

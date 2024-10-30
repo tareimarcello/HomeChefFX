@@ -15,7 +15,8 @@ public class MessageRowMapper implements RowMapper<Message> {
                 rs.getInt("sender"),
                 rs.getInt("receiver"),
                 rs.getString("text"),
-                rs.getTimestamp("timestamp")
+                rs.getTimestamp("timestamp"),
+                rs.getInt("chat")
         );
     }
 }

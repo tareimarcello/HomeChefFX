@@ -9,12 +9,17 @@ public class Message {
     private String text;
     private Timestamp time;
 
-    public Message(long idMsg, long sender, long receiver, String text, Timestamp time) {
+
+
+    private long idChat;
+
+    public Message(long idMsg, long sender, long receiver, String text, Timestamp time, long idChat) {
         this.idMsg = idMsg;
         this.sender = sender;
         this.receiver = receiver;
         this.text = text;
         this.time = time;
+        this.idChat = idChat;
     }
 
     public long getIdMsg() {
@@ -55,5 +60,13 @@ public class Message {
 
     public void setSender(long sender) {
         this.sender = sender;
+    }
+
+    public long getIdChat() {
+        return idChat;
+    }
+
+    public void setIdChat(long idChat) {
+        this.idChat = idChat;
     }
 }

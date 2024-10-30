@@ -3,39 +3,18 @@ package logic.viewcontroller.initialsearchandchat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
 import javafx.scene.Node;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
 import logic.pageswitch.PageMenu;
 
 import java.io.IOException;
 
-public class InitialSearchAndChatViewControllerInterf2 {
-    private PageMenu pageswitch;
-    @FXML
-    private Group group1;
-    @FXML
-    private Group group2;
-    @FXML
-    private Group group3;
-    @FXML
-    private Group group4;
-    @FXML
-    private Group extGroup1;
-    @FXML
-    private Group extGroup2;
-    @FXML
-    private Group extGroup3;
-    @FXML
-    private Group extGroup4;
+public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndChatViewController{
+
     @FXML
     private AnchorPane anchorChat;
-    @FXML
-    private TextField searchBar;
-    @FXML
-    private AnchorPane listUtenti;
+
     @FXML
     private AnchorPane buttonBar;
 
@@ -44,7 +23,14 @@ public class InitialSearchAndChatViewControllerInterf2 {
         pageswitch = new PageMenu();
     }
 
+
     public void initialize(){
+
+        subGroupMap.put(0,this.group1);
+        subGroupMap.put(1,this.group2);
+        subGroupMap.put(2,this.group3);
+        subGroupMap.put(3,this.group4);
+
         try {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());
             buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
@@ -80,12 +66,5 @@ public class InitialSearchAndChatViewControllerInterf2 {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
         }
     }
-    @FXML
-    protected void outputValChat(){
-        //to be implemented
-    }
-    @FXML
-    protected void outputValChatPrevious(){
-        //to be implemented
-    }
+
 }

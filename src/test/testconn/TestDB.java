@@ -1,31 +1,48 @@
-package testconn;
-
-import logic.appcontroller.SearchController;
-import logic.appcontroller.SignupController;
-import logic.beans.Customerbean;
-import logic.beans.SearchBean;
+import logic.appcontroller.LoginController;
+import logic.beans.Logbean;
+import logic.exceptions.LoginErrorException;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class TestDB {
 
-    @Test
-    void testCustomerInsert(){
-        //metti assert
-        Customerbean customer = new Customerbean ("Marcello","Tarei","marcellotarei1@gmail.com","1234");
-        SignupController controller = new SignupController();
+    public boolean logTestSucc(){
+        LoginController controller = new LoginController();
+        Logbean log = new Logbean();
+        log.setEmail("mtarei@gmail.com");
+        log.setPassword("1234");
+        try{
+            controller.loginUser(log);
+        }catch(LoginErrorException e){
+            return false;
+        }
+        return true;
+    }
 
-        controller.signup(customer);
+    public boolean logTestFailed(){
+        LoginController controller = new LoginController();
+        Logbean log = new Logbean();
+        log.setEmail("mtarei@gmail.com");
+        log.setPassword("1245");
+        try{
+            controller.loginUser(log);
+        }catch(LoginErrorException e){
+            return false;
+        }
+        return true;
+    }
+
+
+    //testare poi altri tipi di controlli che andremo a inserire, tipo un check della mail o della formattazione della mail
+    @Test
+    void testLoginSuccess(){
+        assertTrue(logTestSucc());
     }
 
     @Test
-    void testChefSearch(){
-        //metti assert
-        SearchBean bean = new SearchBean();
-        bean.setChefCity("ROMA");
-        bean.setChefBestDish("lungarotti");
-        bean.setChefName("CHEF4");
-        SearchController controller = new SearchController();
-        controller.searchChefList(bean);
-
+    void testLoginFail(){
+        assertFalse(logTestFailed());
     }
 }

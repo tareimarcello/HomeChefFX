@@ -1,9 +1,9 @@
 package logic.patterns;
 
 import logic.beans.HomeChefBean;
+import logic.beans.ISCBean;
 import logic.beans.ResultSearchBean;
-
-import java.util.ArrayList;
+import logic.beans.SessionParamBean;
 import java.util.List;
 
 public class ViewSetter {
@@ -12,8 +12,13 @@ public class ViewSetter {
 
     private HomeChefBean hcbean;
     private HomeChefBean hcvisitbean;
-    private List<ResultSearchBean> chefList;
 
+
+
+    private List<ResultSearchBean> chefList;
+    private SessionParamBean sessionParam;
+
+    private List<ISCBean> chatList;
 
     private ViewSetter (){
 
@@ -51,4 +56,22 @@ public class ViewSetter {
     public void setHcvisitbean(HomeChefBean hcvisitbean) {
         this.hcvisitbean = hcvisitbean;
     }
+
+    public SessionParamBean getSessionParam() {
+        return sessionParam;
+    }
+
+    public void setSessionParam(SessionParamBean sessionParam) {
+        this.sessionParam = sessionParam;
+    }
+
+    public List<ISCBean> getChatList() {
+        return chatList;
+    }
+
+    public void setChatList(List<ISCBean> chatList) {
+        this.chatList = chatList;
+    }
+
+
 }

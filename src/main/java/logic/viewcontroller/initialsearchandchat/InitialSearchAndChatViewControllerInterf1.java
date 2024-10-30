@@ -3,29 +3,32 @@ package logic.viewcontroller.initialsearchandchat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.control.Button;
+import logic.beans.ISCBean;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ViewSetter;
+import java.util.HashMap;
 
-public class InitialSearchAndChatViewControllerInterf1 {
-    private PageMenu pageswitch;
-    @FXML
-    private Group group1;
-    @FXML
-    private Group group2;
-    @FXML
-    private Group group3;
-    @FXML
-    private Group group4;
-    @FXML
-    private Group extGroup1;
-    @FXML
-    private Group extGroup2;
-    @FXML
-    private Group extGroup3;
-    @FXML
-    private Group extGroup4;
+
+public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndChatViewController{
+
+    public void initialize(){
+
+        subGroupMap.put(0,this.group1);
+        subGroupMap.put(1,this.group2);
+        subGroupMap.put(2,this.group3);
+        subGroupMap.put(3,this.group4);
+
+    }
 
     public InitialSearchAndChatViewControllerInterf1() {
         pageswitch = new PageMenu();
+        chatList = ViewSetter.getInstance().getChatList();
+        iscBeanMap = new HashMap<>();
+        g1Index=13;
+        g2Index=14;
+        g3Index=15;
+        g4Index=16;
     }
     @FXML
     protected void visit(ActionEvent event) {
@@ -34,6 +37,11 @@ public class InitialSearchAndChatViewControllerInterf1 {
     }
     @FXML
     protected void touchChat(ActionEvent event){
+
+        Button clicked = (Button)event.getSource();
+        Group parent = (Group) clicked.getParent();
+        ISCBean selected = this.iscBeanMap.get(parent.getId());
+        super.updateSessionParam(selected.getChat().getId(),selected.getDestUser().getID());
         pageswitch.switchTo("chatuser/interf1.fxml",event,"Chat");
     }
     @FXML

@@ -6,6 +6,8 @@ import javafx.scene.Group;
 import javafx.scene.control.Button;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
+import logic.beans.SessionParamBean;
+import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -40,6 +42,8 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
         Button clicked = (Button) event.getSource();
         Group parentGroup = (Group) clicked.getParent();
         ResultSearchBean rsb = this.chefBeanMap.get(parentGroup.getId());
+        SessionParamBean sessionParam = ViewSetter.getInstance().getSessionParam();
+        sessionParam.setCurrentReceiverId(rsb.getIdChef());
         HomeChefBean hbvisit = new HomeChefBean();
         hbvisit.setRes(rsb.getRestaurant());
         hbvisit.setDish(rsb.getBestDish());

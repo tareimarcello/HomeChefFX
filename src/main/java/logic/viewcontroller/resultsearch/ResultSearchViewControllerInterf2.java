@@ -1,9 +1,7 @@
 package logic.viewcontroller.resultsearch;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 

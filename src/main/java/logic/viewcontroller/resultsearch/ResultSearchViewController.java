@@ -90,15 +90,7 @@ public abstract class ResultSearchViewController {
             lastIndexChef++;
         }
         this.elementViewed=index;
-        if (lastIndexChef<chefList.size())
-            this.loadNext.setVisible(true);
-        else
-            this.loadNext.setVisible(false);
-
-        if (lastIndexChef>MAXCHEFVIEWED)
-            this.loadPrevious.setVisible(true);
-        else
-            this.loadPrevious.setVisible(false);
-
+        HomeChefUtil.disEnButtonNext(this.loadNext,lastIndexChef,chefList.size());
+        HomeChefUtil.disEnButtonPrev(this.loadPrevious,lastIndexChef,MAXCHEFVIEWED);
     }
 }

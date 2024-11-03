@@ -84,12 +84,8 @@ public  abstract class  InitialSearchAndChatViewController {
             index++;
             lastIndexChat++;
         }
-        this.elementViewed=index;
-        if (lastIndexChat<chatList.size())
-            this.loadNext.setVisible(true);
-        else
-            this.loadNext.setVisible(false);
-
+        HomeChefUtil.disEnButtonNext(this.loadNext, lastIndexChat,chatList.size());
+        HomeChefUtil.disEnButtonPrev(this.loadPrevious, lastIndexChat,MAXCHATVIEWED);
         if (lastIndexChat>MAXCHATVIEWED)
             this.loadPrevious.setVisible(true);
         else

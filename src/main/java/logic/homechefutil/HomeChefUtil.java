@@ -2,6 +2,7 @@ package logic.homechefutil;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.dao.DAOUserImpl;
 import logic.model.User;
@@ -31,4 +32,18 @@ public class HomeChefUtil {
         return userDao.get(id);
     }
 
+
+    public static void disEnButtonNext(Button butt, int index, int size){
+        if (index<size)
+            butt.setVisible(true);
+        else
+            butt.setVisible(false);
+    }
+
+    public static void disEnButtonPrev(Button butt, int index, int size){
+        if (index>size)
+            butt.setVisible(true);
+        else
+            butt.setVisible(false);
+    }
 }

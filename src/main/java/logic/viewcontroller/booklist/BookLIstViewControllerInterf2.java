@@ -9,25 +9,9 @@ import logic.HomeChefApplication;
 
 import java.io.IOException;
 
-public class BookLIstViewControllerInterf2 {
+public class BookLIstViewControllerInterf2 extends BookListViewController{
     @FXML
     private AnchorPane buttonBar;
-    @FXML
-    private Group group1;
-    @FXML
-    private Group group2;
-    @FXML
-    private Group group3;
-    @FXML
-    private Group group4;
-    @FXML
-    private Group group5;
-    @FXML
-    private Group group6;
-    @FXML
-    private Group group7;
-    @FXML
-    private Group group8;
 
     public void initialize(){
         try {
@@ -36,21 +20,5 @@ public class BookLIstViewControllerInterf2 {
         } catch (IOException e) {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());
         }
-    }
-    @FXML
-    protected void outputVal(){
-        //To be implemented
-    }
-    @FXML
-    protected void acceptBook(){
-        //To be implemented
-    }
-    @FXML
-    protected void refBook(){
-        //to be implemented
-    }
-    @FXML
-    protected  void outputValPrevious(){
-        //to be implemented
     }
 }

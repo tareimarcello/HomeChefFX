@@ -1,3 +1,4 @@
+package testlog;
 
 import logic.appcontroller.LoginController;
 import logic.beans.Logbean;

@@ -59,10 +59,6 @@ public class VisitHomeChefViewControllerInterf2 {
         }
 
     }
-    @FXML
-    protected void goToRat(){
-
-    }
 
     @FXML
     protected void backTo(){

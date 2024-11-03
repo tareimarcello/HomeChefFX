@@ -18,35 +18,35 @@ public abstract class Userbean {
     }
 
 
-    public String getName() {
+    public String getNameBean() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setNameBean(String name) {
         this.name = name;
     }
 
-    public String getSurname() {
+    public String getSurnameBean() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurnameBean(String surname) {
         this.surname = surname;
     }
 
-    public String getEmail() {
+    public String getEmailBean() {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmailBean(String email) {
         this.email = email;
     }
 
-    public String getPassword() {
+    public String getPasswordBean() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPasswordBean(String password) {
         this.password = password;
     }
 }

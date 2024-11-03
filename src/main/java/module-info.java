@@ -54,5 +54,7 @@ module com.example.homechef {
     exports logic.viewcontroller.settings.settingschef;
     opens logic.viewcontroller.settings.settingschef to javafx.fxml;
     opens logic.beans to javafx.fxml;
+    exports logic.homechefutil;
+    opens logic.homechefutil to javafx.fxml;
 
 }

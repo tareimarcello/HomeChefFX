@@ -2,7 +2,6 @@ package logic.dao;
 
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.ChatRowMapper;
-import logic.dao.rowmapper.MessageRowMapper;
 import logic.model.Chat;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 

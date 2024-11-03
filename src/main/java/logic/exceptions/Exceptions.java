@@ -16,15 +16,6 @@ public final class Exceptions {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Invalid resources ");
         alert.setHeaderText("we found found some trouble during the execution of the program");
-        alert.setContentText("go to settings and report the problem");
-        Optional<ButtonType> result = alert.showAndWait();
-        /*if(result.isPresent() && result.get() == ButtonType.OK){
-            ConnectionDBMS.closeConn();
-            System.exit(0);
-        }
-        Platform.exit();
-
-         */
     }
     public static void exceptionConnectionOccurred(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -35,10 +26,6 @@ public final class Exceptions {
         if(result.isPresent() && result.get() == ButtonType.OK){
             System.exit(0);
         }
-       /* ConnectionDBMS.closeConn();
-        Platform.exit();
-
-        */
     }
     public static void exceptionSignupOccurred(ActionEvent event){
         Alert alert = new Alert(Alert.AlertType.WARNING);

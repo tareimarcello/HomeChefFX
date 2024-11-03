@@ -8,7 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import logic.HomeChefUtil;
+import logic.homechefutil.HomeChefUtil;
 import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 
@@ -39,14 +39,13 @@ public abstract class ResultSearchViewController {
     protected Map<String,ResultSearchBean> chefBeanMap;
 
     protected PageMenu pageSwitch;
-    protected final HomeChefUtil util = new HomeChefUtil();
 
     public void initialize(){
 
         // Inizialize first 4 chef of the result list search
         lastIndexChef = 0;
         //resetGroupOpacity();
-        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         this.loadNext.setVisible(false);
         this.loadPrevious.setVisible(false);
 
@@ -58,14 +57,14 @@ public abstract class ResultSearchViewController {
     @FXML
     protected void outputVal(ActionEvent event){
 
-        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         this.setNextFourChef();
 
     }
     @FXML
     protected void outputValPrevious(ActionEvent event){
 
-        util.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         lastIndexChef-=(MAXCHEFVIEWED+elementViewed);
         this.setNextFourChef();
 

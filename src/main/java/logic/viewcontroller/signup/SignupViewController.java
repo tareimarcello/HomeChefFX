@@ -10,7 +10,7 @@ import logic.beans.Customerbean;
 public abstract class SignupViewController {
 
 
-    protected final static SignupController controller = new SignupController();
+    protected static final SignupController controller = new SignupController();
 
     @FXML
     protected TextField namesign;

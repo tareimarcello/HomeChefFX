@@ -1,7 +1,6 @@
 package logic.dao.rowmapper;
 
 import logic.model.Chat;
-import logic.model.Message;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

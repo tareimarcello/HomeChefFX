@@ -3,13 +3,11 @@ package logic.dao;
 import logic.beans.SearchBean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.ChefRowMapper;
-import logic.dao.rowmapper.RowLastInsertIdMapper;
 import logic.model.Chef;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 

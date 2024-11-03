@@ -1,4 +1,3 @@
-package testconn;
 
 import logic.appcontroller.LoginController;
 import logic.beans.Logbean;

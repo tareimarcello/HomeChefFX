@@ -1,6 +1,6 @@
 package logic.appcontroller;
 
-import logic.HomeChefUtil;
+import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
 import logic.dao.DAOChatImpl;
 import logic.dao.DAOMessageImpl;

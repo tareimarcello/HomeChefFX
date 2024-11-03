@@ -1,4 +1,4 @@
-package logic;
+package logic.homechefutil;
 
 import javafx.collections.ObservableList;
 import javafx.scene.Node;
@@ -7,6 +7,9 @@ import logic.dao.DAOUserImpl;
 import logic.model.User;
 
 public class HomeChefUtil {
+
+    private HomeChefUtil(){
+    }
 
 
     /**

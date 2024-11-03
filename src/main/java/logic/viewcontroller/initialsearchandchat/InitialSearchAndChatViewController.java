@@ -8,9 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import logic.HomeChefUtil;
+import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
-import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -49,7 +48,6 @@ public  abstract class  InitialSearchAndChatViewController {
     private static final int CHATNAMEINDEX = 1;
     private static final int LASTMSGINDEX = 0;
 
-    protected PageMenu pageSwitch;
 
 
     @FXML

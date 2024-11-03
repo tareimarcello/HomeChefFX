@@ -23,7 +23,7 @@ public abstract class ChatViewController {
     protected Decorator graphics;
     protected  boolean initializated;
 
-    public ChatViewController() {
+    protected ChatViewController() {
         pageswitch = new PageMenu();
         initializated = false;
     }

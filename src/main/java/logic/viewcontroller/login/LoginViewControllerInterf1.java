@@ -68,19 +68,23 @@ public class LoginViewControllerInterf1 {
                         ViewSetter.getInstance().setSessionParam(sessionParam);
                         user = controller.checkType(user.getID());
                         // - aprire la pagina corretta
-
-                        if (user instanceof Customer)
-                                pageSwitch.switchToHome(event);
-                        else if (user instanceof Chef) {
-                                HomeChefBean hcbean = new HomeChefBean();
-                                hcbean.setName(user.getName()+" "+user.getSurname());
-                                hcbean.setCity(((Chef) user).getCitta());
-                                hcbean.setDish(((Chef) user).getBestDish());
-                                hcbean.setRes(((Chef) user).getRestaurant());
-                                ViewSetter.getInstance().setHcbean(hcbean);
-                                pageSwitch.switchToHomeChef(event);
+                        switch(user){
+                                case Customer cu ->{
+                                        pageSwitch.switchToHome(event);
+                                }
+                                case Chef ch->{
+                                        HomeChefBean hcbean = new HomeChefBean();
+                                        hcbean.setName(user.getName()+" "+user.getSurname());
+                                        hcbean.setCity(ch.getCitta());
+                                        hcbean.setDish(ch.getBestDish());
+                                        hcbean.setRes(ch.getRestaurant());
+                                        ViewSetter.getInstance().setHcbean(hcbean);
+                                        pageSwitch.switchToHomeChef(event);
+                                }
+                                default -> {
+                                        throw new IllegalArgumentException("User type not valid");
+                                }
                         }
-
                 } catch (Exception e) {
 
                         if (e instanceof NoSuchElementException) {

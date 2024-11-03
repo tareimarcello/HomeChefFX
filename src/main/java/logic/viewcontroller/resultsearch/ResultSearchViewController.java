@@ -29,7 +29,6 @@ public abstract class ResultSearchViewController {
     protected   int g2Index;
     protected   int g3Index;
     protected   int g4Index;
-    //private static final int GROUPBUTTONINDEX = 0;
     protected static final int SUBGROUPINDEX = 1;
     protected static final int SPECIALIZEDINDEX = 0;
     protected static final int RESTAURANTINDEX = 2;
@@ -44,7 +43,6 @@ public abstract class ResultSearchViewController {
 
         // Inizialize first 4 chef of the result list search
         lastIndexChef = 0;
-        //resetGroupOpacity();
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         this.loadNext.setVisible(false);
         this.loadPrevious.setVisible(false);

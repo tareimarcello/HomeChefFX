@@ -7,7 +7,7 @@ public class RecoverPswdControllerInterf2 {
 
     @FXML
     protected void sendMail(){
-
+        //to be implemented
     }
 
 

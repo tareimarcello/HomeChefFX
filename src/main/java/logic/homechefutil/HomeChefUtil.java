@@ -34,16 +34,10 @@ public class HomeChefUtil {
 
 
     public static void disEnButtonNext(Button butt, int index, int size){
-        if (index<size)
-            butt.setVisible(true);
-        else
-            butt.setVisible(false);
+        butt.setVisible(index < size);
     }
 
     public static void disEnButtonPrev(Button butt, int index, int size){
-        if (index>size)
-            butt.setVisible(true);
-        else
-            butt.setVisible(false);
+        butt.setVisible(index > size);
     }
 }

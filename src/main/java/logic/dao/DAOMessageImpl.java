@@ -2,7 +2,6 @@ package logic.dao;
 
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.MessageRowMapper;
-import logic.homechefutil.HomeChefUtil;
 import logic.model.Message;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 

@@ -78,6 +78,7 @@ public class LoginViewControllerInterf1 {
                                         hcbean.setCity(ch.getCitta());
                                         hcbean.setDish(ch.getBestDish());
                                         hcbean.setRes(ch.getRestaurant());
+                                        hcbean.setId(ch.getID());
                                         ViewSetter.getInstance().setHcbean(hcbean);
                                         pageSwitch.switchToHomeChef(event);
                                 }

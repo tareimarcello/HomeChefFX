@@ -16,6 +16,7 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
     private static final String INSERT_CHAT_QUERY = "INSERT INTO chat (customer,chef) VALUES (?,?)";
     private static final String UPDATE_CHAT_QUERY = "UPDATE chat SET customer = ?,chef = ?  WHERE idchat = ?";
     private static final String DELETE_QUERY = "DELETE FROM chat WHERE idchat=?";
+    private static final String SELECT_CHAT_BY_CHEFCUST = "SELECT * FROM chat WHERE customer = ? && chef = ?";
 
     public DAOChatImpl() {
 
@@ -27,6 +28,13 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(SELECT_QUERY_BY_CUST, new ChatRowMapper(), idCustomer);
     }
+
+    public List<Chat> getChatByCustChef(long idCustomer, long idChef){
+
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().query(SELECT_CHAT_BY_CHEFCUST, new ChatRowMapper(), idCustomer, idChef);
+    }
+
 
     public List<Chat> getAllChatByChef(long idChef){
 

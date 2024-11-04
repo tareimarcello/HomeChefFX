@@ -3,6 +3,7 @@ package logic.viewcontroller.visithomechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.appcontroller.VisitHomeChefController;
 import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -18,6 +19,8 @@ public class VisitHomeChefViewControllerInterf1 {
     @FXML
     private TextField city;
 
+    private HomeChefBean hcbean;
+
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();
     }
@@ -25,7 +28,7 @@ public class VisitHomeChefViewControllerInterf1 {
     public void initialize(){
 
 
-        HomeChefBean hcbean = ViewSetter.getInstance().getHcvisitbean();
+        hcbean  = ViewSetter.getInstance().getHcvisitbean();
 
         if (hcbean!=null) {
 
@@ -50,6 +53,8 @@ public class VisitHomeChefViewControllerInterf1 {
     @FXML
     protected void goToChefChat(ActionEvent event){
 
+        VisitHomeChefController controller = new VisitHomeChefController();
+        controller.loadChat(this.hcbean);
         pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");
     }
 

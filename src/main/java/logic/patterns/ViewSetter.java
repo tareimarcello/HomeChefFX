@@ -12,12 +12,11 @@ public class ViewSetter {
 
     private HomeChefBean hcbean;
     private HomeChefBean hcvisitbean;
-
-
-
     private List<ResultSearchBean> chefList;
     private SessionParamBean sessionParam;
 
+
+    private ISCBean openChat;
     private List<ISCBean> chatList;
 
     private ViewSetter (){
@@ -33,6 +32,14 @@ public class ViewSetter {
         return setter;
     }
 
+
+    public ISCBean getOpenChat() {
+        return openChat;
+    }
+
+    public void setOpenChat(ISCBean openChat) {
+        this.openChat = openChat;
+    }
     public HomeChefBean getHcbean() {
         return hcbean;
     }

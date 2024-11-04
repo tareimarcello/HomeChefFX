@@ -93,11 +93,4 @@ public  abstract class  InitialSearchAndChatViewController {
 
     }
 
-    protected void updateSessionParam(long chatId, long receiverId){
-
-        ViewSetter.getInstance().getSessionParam().setCurrentChatId(chatId);
-        ViewSetter.getInstance().getSessionParam().setCurrentReceiverId(receiverId);
-
-    }
-
 }

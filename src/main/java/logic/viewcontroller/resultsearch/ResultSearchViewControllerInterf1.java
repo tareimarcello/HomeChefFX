@@ -42,13 +42,12 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
         Button clicked = (Button) event.getSource();
         Group parentGroup = (Group) clicked.getParent();
         ResultSearchBean rsb = this.chefBeanMap.get(parentGroup.getId());
-        SessionParamBean sessionParam = ViewSetter.getInstance().getSessionParam();
-        sessionParam.setCurrentReceiverId(rsb.getIdChef());
         HomeChefBean hbvisit = new HomeChefBean();
         hbvisit.setRes(rsb.getRestaurant());
         hbvisit.setDish(rsb.getBestDish());
         hbvisit.setCity(rsb.getCity());
         hbvisit.setName(rsb.getNameChef());
+        hbvisit.setId(rsb.getIdChef());
 
         ViewSetter.getInstance().setHcvisitbean(hbvisit);
         pageSwitch.switchTo("visithomepagechef/interf1.fxml",event,"Homepage");

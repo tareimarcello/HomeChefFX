@@ -41,7 +41,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
-        super.updateSessionParam(selected.getChat().getId(),selected.getDestUser().getID());
+        ViewSetter.getInstance().setOpenChat(selected);
         pageswitch.switchTo("chatuser/interf1.fxml",event,"Chat");
     }
     @FXML

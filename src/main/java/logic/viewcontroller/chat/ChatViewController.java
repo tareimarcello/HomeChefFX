@@ -6,6 +6,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import logic.appcontroller.ChatController;
+import logic.beans.ISCBean;
 import logic.beans.MessageBean;
 import logic.beans.SessionParamBean;
 import logic.pageswitch.PageMenu;
@@ -17,15 +18,19 @@ public abstract class ChatViewController {
     @FXML
     private TextArea inputmsg;
     @FXML
-    private AnchorPane message;
+    protected AnchorPane message;
     @FXML
-    private ScrollPane scrollpane;
+    protected ScrollPane scrollpane;
     protected Decorator graphics;
     protected  boolean initializated;
+
+    protected ISCBean currentChat;
 
     protected ChatViewController() {
         pageswitch = new PageMenu();
         initializated = false;
+        currentChat = ViewSetter.getInstance().getOpenChat();
+
     }
     @FXML
     protected void sendMsg() {
@@ -34,9 +39,9 @@ public abstract class ChatViewController {
         MessageBean msgBean = new MessageBean();
         SessionParamBean sessionParam = ViewSetter.getInstance().getSessionParam();
 
-        msgBean.setIdChat(sessionParam.getCurrentChatId());
+        msgBean.setIdChat(this.currentChat.getChat().getId());
         msgBean.setIdSender(sessionParam.getCurrentUserId());
-        msgBean.setIdReceiver(sessionParam.getCurrentReceiverId());
+        msgBean.setIdReceiver(this.currentChat.getDestUser().getID());
         msgBean.setText(inputmsg.getText());
 
         ChatController chat = new ChatController();

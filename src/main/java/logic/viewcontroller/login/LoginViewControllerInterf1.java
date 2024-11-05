@@ -62,11 +62,11 @@ public class LoginViewControllerInterf1 {
 
                 try {
                         // - Invocazione check sul controller utenza.
-                        User user = controller.loginUser(logBean);
+                        User user = controller.loginUser(logBean).getReturnUser();
                         SessionParamBean sessionParam = new SessionParamBean();
                         sessionParam.setCurrentUserId(user.getID());
                         ViewSetter.getInstance().setSessionParam(sessionParam);
-                        user = controller.checkType(user.getID());
+                        user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
                         switch(user){
                                 case Customer cu ->{
@@ -117,7 +117,5 @@ public class LoginViewControllerInterf1 {
         protected void resize(ActionEvent event) {
             pageSwitch.setSize("login/interf1.fxml",event);
         }
-
-
 
 }

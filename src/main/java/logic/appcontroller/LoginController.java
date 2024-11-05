@@ -1,6 +1,7 @@
 package logic.appcontroller;
 
 import logic.beans.Logbean;
+import logic.beans.ReturnLoginBean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
@@ -11,7 +12,8 @@ import java.util.NoSuchElementException;
 
 public class LoginController {
 
-    public User loginUser(Logbean userBean) throws LoginErrorException {
+
+    public ReturnLoginBean loginUser(Logbean userBean) throws LoginErrorException {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
@@ -20,11 +22,12 @@ public class LoginController {
 
             throw new LoginErrorException(" password is not valid");
         }
-
-        return user;
+        ReturnLoginBean retBean = new ReturnLoginBean();
+        retBean.setReturnUser(user);
+        return retBean;
     }
 
-    public User checkType(long id){
+    public ReturnLoginBean checkType(long id){
 
         DAOCustomerImpl cDAO = new DAOCustomerImpl();
         DAOChefImpl chDAO = new DAOChefImpl();
@@ -34,7 +37,8 @@ public class LoginController {
         }catch(NoSuchElementException e){
             user = chDAO.get(id);
         }
-
-        return user;
+        ReturnLoginBean retBean = new ReturnLoginBean();
+        retBean.setReturnUser(user);
+        return retBean;
     }
 }

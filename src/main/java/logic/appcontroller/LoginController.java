@@ -13,11 +13,10 @@ import java.util.NoSuchElementException;
 public class LoginController {
 
 
-    public ReturnLoginBean loginUser(Logbean userBean) throws LoginErrorException {
+    public ReturnLoginBean loginUser(Logbean userBean) throws LoginErrorException{
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
-
         if (!user.getPassword().equals(userBean.getPassword())){
 
             throw new LoginErrorException(" password is not valid");

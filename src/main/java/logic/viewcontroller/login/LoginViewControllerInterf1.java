@@ -68,13 +68,13 @@ public class LoginViewControllerInterf1 {
                         ViewSetter.getInstance().setSessionParam(sessionParam);
                         user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
-                        switch(user){
-                                case Customer cu ->{
+                        switch (user) {
+                                case Customer cu -> {
                                         pageSwitch.switchToHome(event);
                                 }
-                                case Chef ch->{
+                                case Chef ch -> {
                                         HomeChefBean hcbean = new HomeChefBean();
-                                        hcbean.setName(user.getName()+" "+user.getSurname());
+                                        hcbean.setName(user.getName() + " " + user.getSurname());
                                         hcbean.setCity(ch.getCitta());
                                         hcbean.setDish(ch.getBestDish());
                                         hcbean.setRes(ch.getRestaurant());
@@ -89,7 +89,7 @@ public class LoginViewControllerInterf1 {
                 } catch (Exception e) {
 
                         if (e instanceof NoSuchElementException) {
-                                this.show.setText("User not found");
+                                this.show.setText("Email is incorrect");
                         } else {
                                 this.show.setText(e.getMessage());
 

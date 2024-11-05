@@ -7,7 +7,13 @@ import javafx.scene.layout.AnchorPane;
 import logic.dao.DAOUserImpl;
 import logic.model.User;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class HomeChefUtil {
+
+    private static final String EMAIL_REGEX = "^[\\w-\\.]+@[\\w-]+\\.[a-zA-Z]{2,}$";
+
 
     private HomeChefUtil(){
     }
@@ -25,6 +31,12 @@ public class HomeChefUtil {
         children.get(g2Index).setOpacity(0.0);
         children.get(g3Index).setOpacity(0.0);
         children.get(g4Index).setOpacity(0.0);
+    }
+
+    public static boolean isValidEmail(String email) {
+        Pattern pattern = Pattern.compile(EMAIL_REGEX);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
     }
 
     public static User getUserByID (long id) {

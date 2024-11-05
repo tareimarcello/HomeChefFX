@@ -1,5 +1,7 @@
 package logic.connection;
 
+import logic.exceptions.ConnectionException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,9 +38,7 @@ public class ConfigFileReader {
 
         {
 
-            System.out.println(e.getMessage());
-
-            throw new RuntimeException("config.properties not found at config file path " + CONFIG_FILE_PATH);
+            throw new ConnectionException("config.properties not found at config file path " + CONFIG_FILE_PATH);
 
         }catch (IOException e)
 
@@ -57,7 +57,7 @@ public class ConfigFileReader {
             return value;
 
         else
-            throw new RuntimeException("Application property not specified in the config.properties file.");
+            throw new ConnectionException("Application property not specified in the config.properties file.");
 
     }
 }

@@ -1,11 +1,11 @@
 package logic.viewcontroller.signup;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import logic.appcontroller.SignupController;
-import logic.beans.Customerbean;
+
 
 public abstract class SignupViewController {
 

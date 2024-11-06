@@ -2,42 +2,18 @@ package logic.viewcontroller.visithomechef;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
 import logic.appcontroller.VisitHomeChefController;
-import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
 
-public class VisitHomeChefViewControllerInterf1 {
-    private PageMenu pageSwitch;
-    @FXML
-    private TextField chefName;
-    @FXML
-    private TextField bestDish;
-    @FXML
-    private TextField res;
-    @FXML
-    private TextField city;
+public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewController{
 
-    private HomeChefBean hcbean;
 
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();
     }
 
     public void initialize(){
-
-
-        hcbean  = ViewSetter.getInstance().getHcvisitbean();
-
-        if (hcbean!=null) {
-
-            this.chefName.setText(hcbean.getName());
-            this.bestDish.setText(hcbean.getDish());
-            this.res.setText(hcbean.getRes());
-            this.city.setText(hcbean.getCity());
-
-        }
+        downLoadHcBean();
     }
 
     @FXML

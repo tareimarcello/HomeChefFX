@@ -39,17 +39,7 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
     @FXML
     protected void visit(ActionEvent event){
 
-        Button clicked = (Button) event.getSource();
-        Group parentGroup = (Group) clicked.getParent();
-        ResultSearchBean rsb = this.chefBeanMap.get(parentGroup.getId());
-        HomeChefBean hbvisit = new HomeChefBean();
-        hbvisit.setRes(rsb.getRestaurant());
-        hbvisit.setDish(rsb.getBestDish());
-        hbvisit.setCity(rsb.getCity());
-        hbvisit.setName(rsb.getNameChef());
-        hbvisit.setId(rsb.getIdChef());
-
-        ViewSetter.getInstance().setHcvisitbean(hbvisit);
+        loadHcBean(event);
         pageSwitch.switchTo("visithomepagechef/interf1.fxml",event,"Homepage");
     }
     @FXML

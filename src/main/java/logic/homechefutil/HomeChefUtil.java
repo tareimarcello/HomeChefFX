@@ -1,11 +1,16 @@
 package logic.homechefutil;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import logic.beans.HomeChefBean;
+import logic.beans.ResultSearchBean;
 import logic.dao.DAOUserImpl;
 import logic.model.User;
+import logic.patterns.ViewSetter;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -52,4 +57,5 @@ public class HomeChefUtil {
     public static void disEnButtonPrev(Button butt, int index, int size){
         butt.setVisible(index > size);
     }
+
 }

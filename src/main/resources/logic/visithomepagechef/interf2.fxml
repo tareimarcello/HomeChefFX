@@ -22,13 +22,13 @@
                 <Font size="18.0" />
             </font>
         </Text>
-        <TextField fx:id="dishName" editable="false" layoutX="160.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
+        <TextField fx:id="bestDish" editable="false" layoutX="160.0" layoutY="403.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
         <Text fill="#377dff" layoutX="160.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Restaurant:">
             <font>
                 <Font size="18.0" />
             </font>
         </Text>
-        <TextField fx:id="resName" editable="false" layoutX="160.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
+        <TextField fx:id="res" editable="false" layoutX="160.0" layoutY="523.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="379.0" styleClass="textField" />
         <Button layoutX="179.0" layoutY="709.0" mnemonicParsing="false" onAction="#chat" prefHeight="64.0" prefWidth="96.0" style="-fx-font-size: 18;" styleClass="Button" text="Chat" />
         <Button layoutX="329.0" layoutY="705.0" mnemonicParsing="false" onAction="#goToChefCalendarBook" prefHeight="71.0" prefWidth="186.0" style="-fx-font-size: 18;" styleClass="Button" text="Check the booking" />
       <Button layoutX="160.0" layoutY="72.0" mnemonicParsing="false" onAction="#backTo" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">

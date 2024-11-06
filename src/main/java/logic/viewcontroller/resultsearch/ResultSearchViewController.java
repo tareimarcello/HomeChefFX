@@ -8,9 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.beans.HomeChefBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ViewSetter;
 
 import java.util.List;
 import java.util.Map;
@@ -90,5 +92,19 @@ public abstract class ResultSearchViewController {
         this.elementViewed=index;
         HomeChefUtil.disEnButtonNext(this.loadNext,lastIndexChef,chefList.size());
         HomeChefUtil.disEnButtonPrev(this.loadPrevious,lastIndexChef,MAXCHEFVIEWED);
+    }
+
+    protected void loadHcBean(ActionEvent event){
+        Button clicked = (Button) event.getSource();
+        Group parentGroup = (Group) clicked.getParent();
+        ResultSearchBean rsb = this.chefBeanMap.get(parentGroup.getId());
+        HomeChefBean hbvisit = new HomeChefBean();
+        hbvisit.setRes(rsb.getRestaurant());
+        hbvisit.setDish(rsb.getBestDish());
+        hbvisit.setCity(rsb.getCity());
+        hbvisit.setName(rsb.getNameChef());
+        hbvisit.setId(rsb.getIdChef());
+
+        ViewSetter.getInstance().setHcvisitbean(hbvisit);
     }
 }

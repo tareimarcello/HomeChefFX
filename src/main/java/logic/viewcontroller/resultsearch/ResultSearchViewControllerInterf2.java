@@ -2,6 +2,10 @@ package logic.viewcontroller.resultsearch;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Group;
+import javafx.scene.control.Button;
+import logic.beans.HomeChefBean;
+import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -22,6 +26,7 @@ public class ResultSearchViewControllerInterf2 extends ResultSearchViewControlle
 
     @FXML
     protected void visit(ActionEvent event){
+        loadHcBean(event);
         pageSwitch.switchTo("visithomepagechef/interf2.fxml",event,"Homepage");
     }
 

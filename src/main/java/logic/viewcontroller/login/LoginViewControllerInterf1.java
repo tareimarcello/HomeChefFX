@@ -2,6 +2,7 @@ package logic.viewcontroller.login;
 
 import javafx.scene.control.Label;
 import logic.beans.SessionParamBean;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.patterns.ViewSetter;
 import logic.appcontroller.LoginController;
@@ -82,15 +83,10 @@ public class LoginViewControllerInterf1 {
                                 }
                                 default -> throw new IllegalArgumentException("User type not valid");
                         }
-                } catch (Exception e) {
-
-                        if (e instanceof NoSuchElementException) {
-                                this.show.setText("Email is incorrect");
-                        } else {
-                                Exceptions.exceptionConnectionOccurred();
-                                this.show.setText(e.getMessage());
-
-                        }
+                } catch (ConnectionException e) {
+                        Exceptions.exceptionConnectionOccurred();
+                }catch(NoSuchElementException ex) {
+                        this.show.setText("Email is incorrect");
                         this.show.setOpacity(1.0);
                 }
         }

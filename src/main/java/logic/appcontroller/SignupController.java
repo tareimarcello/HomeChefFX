@@ -5,12 +5,13 @@ import logic.beans.Customerbean;
 import logic.beans.Userbean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
+import logic.exceptions.ConnectionException;
 import logic.model.Chef;
 import logic.model.Customer;
 
 public class SignupController {
 
-    public void signup(Userbean user) throws Exception {
+    public void signup(Userbean user) throws ConnectionException{
         switch (user) {
             case Customerbean cb -> {
                 DAOCustomerImpl cuDao = new DAOCustomerImpl();

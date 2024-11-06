@@ -56,5 +56,6 @@ module com.example.homechef {
     opens logic.beans to javafx.fxml;
     exports logic.homechefutil;
     opens logic.homechefutil to javafx.fxml;
+    exports logic.exceptions;
 
 }

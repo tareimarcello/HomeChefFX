@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import logic.appcontroller.SignupController;
 import logic.beans.Chefbean;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.Page;
 import logic.viewcontroller.signup.SignupViewController;
@@ -34,7 +35,7 @@ public class SignupChefViewController extends SignupViewController {
         SignupController controller = new SignupController();
         try {
             controller.signup(chBean);
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
     }

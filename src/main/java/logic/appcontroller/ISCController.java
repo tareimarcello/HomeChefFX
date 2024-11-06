@@ -1,5 +1,6 @@
 package logic.appcontroller;
 
+import logic.exceptions.ConnectionException;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
 import logic.dao.DAOChatImpl;
@@ -8,12 +9,13 @@ import logic.model.Chat;
 import logic.model.Message;
 import logic.patterns.ViewSetter;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ISCController {
 
-    public List<ISCBean> getISCToUser() throws Exception {
+    public List<ISCBean> getISCToUser() throws ConnectionException {
 
         /** Recupero chat dove lo chef è l'utente corrente **/
 
@@ -39,7 +41,7 @@ public class ISCController {
 
     }
 
-    public List<ISCBean> getISCToChef() throws Exception {
+    public List<ISCBean> getISCToChef() throws ConnectionException {
 
         /** Recupero chat dove il customer è l'utente corrente **/
         DAOChatImpl chatDao = new DAOChatImpl();

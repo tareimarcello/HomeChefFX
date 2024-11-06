@@ -3,6 +3,7 @@ package logic.dao;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.CustomerRowMapper;
 import logic.dao.rowmapper.RowLastInsertIdMapper;
+import logic.exceptions.ConnectionException;
 import logic.model.Customer;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
@@ -21,7 +22,7 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
 
 
 
-    public DAOCustomerImpl() throws Exception {
+    public DAOCustomerImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

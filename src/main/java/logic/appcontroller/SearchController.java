@@ -3,6 +3,7 @@ package logic.appcontroller;
 import logic.beans.ResultSearchBean;
 import logic.beans.SearchBean;
 import logic.dao.DAOChefImpl;
+import logic.exceptions.ConnectionException;
 import logic.model.Chef;
 import logic.patterns.ViewSetter;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.List;
 public class SearchController {
 
 
-    public void searchChefList(SearchBean chefBean) throws Exception {
+    public void searchChefList(SearchBean chefBean) throws ConnectionException {
 
         DAOChefImpl daoChef = new DAOChefImpl();
         List<Chef> chefListResult = daoChef.getChefByParam(chefBean);

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import logic.appcontroller.ISCController;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.patterns.ViewSetter;
 import logic.beans.HomeChefBean;
@@ -55,7 +56,7 @@ public class HomePageChefViewControllerInterf1 {
         ISCController controller = new ISCController();
         try {
             ViewSetter.getInstance().setChatList(controller.getISCToUser());
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
         pageswitch.switchToISCChef(event);

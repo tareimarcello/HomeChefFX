@@ -9,9 +9,11 @@ import javafx.scene.layout.AnchorPane;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
 import logic.dao.DAOUserImpl;
+import logic.exceptions.ConnectionException;
 import logic.model.User;
 import logic.patterns.ViewSetter;
 
+import java.net.ConnectException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +46,7 @@ public class HomeChefUtil {
         return matcher.matches();
     }
 
-    public static User getUserByID (long id) throws Exception {
+    public static User getUserByID (long id) throws ConnectionException {
         DAOUserImpl userDao = new DAOUserImpl();
         return userDao.get(id);
     }

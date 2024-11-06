@@ -5,6 +5,7 @@ import logic.beans.ISCBean;
 import logic.dao.DAOChatImpl;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOMessageImpl;
+import logic.exceptions.ConnectionException;
 import logic.model.Chat;
 import logic.model.Message;
 import logic.patterns.ViewSetter;
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class VisitHomeChefController {
 
-    public void loadChat(HomeChefBean chefBean) throws Exception {
+    public void loadChat(HomeChefBean chefBean) throws ConnectionException {
 
         /**
          * Verifico se ho già una chat attiva tra utente e chef **/

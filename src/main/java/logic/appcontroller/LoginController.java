@@ -5,6 +5,7 @@ import logic.beans.ReturnLoginBean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.LoginErrorException;
 import logic.model.User;
 
@@ -13,7 +14,7 @@ import java.util.NoSuchElementException;
 public class LoginController {
 
 
-    public ReturnLoginBean loginUser(Logbean userBean) throws Exception {
+    public ReturnLoginBean loginUser(Logbean userBean) throws ConnectionException,LoginErrorException {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);

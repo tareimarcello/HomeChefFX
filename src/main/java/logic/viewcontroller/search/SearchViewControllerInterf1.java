@@ -3,6 +3,7 @@ package logic.viewcontroller.search;
 import logic.appcontroller.ISCController;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
@@ -23,7 +24,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
         ISCController controller = new ISCController();
         try {
             ViewSetter.getInstance().setChatList(controller.getISCToChef());
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
 
@@ -49,7 +50,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
         try {
             controller.searchChefList(searchBean);
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
            Exceptions.exceptionConnectionOccurred();
         }
 

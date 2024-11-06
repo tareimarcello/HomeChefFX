@@ -3,6 +3,7 @@ package logic.dao;
 import logic.beans.SearchBean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.ChefRowMapper;
+import logic.exceptions.ConnectionException;
 import logic.model.Chef;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
@@ -18,7 +19,7 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     private static final String DELETE_QUERY = "DELETE FROM chef WHERE iduser=?";
 
 
-    public DAOChefImpl() throws Exception {
+    public DAOChefImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

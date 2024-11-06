@@ -3,6 +3,7 @@ package logic.viewcontroller.visithomechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.appcontroller.VisitHomeChefController;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 
@@ -33,7 +34,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
         VisitHomeChefController controller = new VisitHomeChefController();
         try {
             controller.loadChat(this.hcbean);
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
         pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");

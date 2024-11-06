@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class SearchViewControllerInterf2 extends SearchViewController{
 
         try {
             controller.searchChefList(searchBean);
-        } catch (Exception e) {
+        } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
         try {

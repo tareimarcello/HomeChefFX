@@ -2,6 +2,7 @@ package logic.dao;
 
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.ChatRowMapper;
+import logic.exceptions.ConnectionException;
 import logic.model.Chat;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
@@ -18,13 +19,8 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
     private static final String DELETE_QUERY = "DELETE FROM chat WHERE idchat=?";
     private static final String SELECT_CHAT_BY_CHEFCUST = "SELECT * FROM chat WHERE customer = ? && chef = ?";
 
-    public DAOChatImpl() throws Exception {
-
-        try {
+    public DAOChatImpl() throws ConnectionException {
             this.setDataSource(new AppDataStore().dataSource());
-        } catch (Exception e) {
-            throw new Exception(e);
-        }
     }
 
     public List<Chat> getAllChatByCust(long idCustomer){

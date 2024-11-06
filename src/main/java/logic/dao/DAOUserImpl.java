@@ -4,6 +4,7 @@ package logic.dao;
 import logic.beans.Logbean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.UserRowMapper;
+import logic.exceptions.ConnectionException;
 import logic.model.User;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
@@ -13,7 +14,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
 
-    public DAOUserImpl() throws Exception {
+    public DAOUserImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

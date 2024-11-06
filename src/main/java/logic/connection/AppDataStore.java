@@ -1,5 +1,6 @@
 package logic.connection;
 
+import logic.exceptions.ConnectionException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -18,16 +19,12 @@ public class AppDataStore {
     private static final String LOGIN_PASS = "LOGIN_PASS";
 
     @Bean
-    public DataSource dataSource() throws Exception {
+    public DataSource dataSource() throws ConnectionException {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        try {
-            driverManagerDataSource.setUrl(reader.getPropertyValue(CONNECTION_URL));
-            driverManagerDataSource.setUsername(reader.getPropertyValue(LOGIN_USER));
-            driverManagerDataSource.setPassword(reader.getPropertyValue(LOGIN_PASS));
-            driverManagerDataSource.setDriverClassName(Objects.requireNonNull(reader.getPropertyValue(DRIVER_CLASS_NAME)));
-        } catch (Exception e) {
-            throw new Exception(e);
-        }
+        driverManagerDataSource.setUrl(reader.getPropertyValue(CONNECTION_URL));
+        driverManagerDataSource.setUsername(reader.getPropertyValue(LOGIN_USER));
+        driverManagerDataSource.setPassword(reader.getPropertyValue(LOGIN_PASS));
+        driverManagerDataSource.setDriverClassName(Objects.requireNonNull(reader.getPropertyValue(DRIVER_CLASS_NAME)));
         return driverManagerDataSource;
     }
 }

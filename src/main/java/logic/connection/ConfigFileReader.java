@@ -1,5 +1,7 @@
 package logic.connection;
 
+import logic.exceptions.ConnectionException;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -48,14 +50,14 @@ public class ConfigFileReader {
 
     }
 
-    public String getPropertyValue(String property) throws Exception {
+    public String getPropertyValue(String property) throws ConnectionException {
 
         String value = properties.getProperty(property);
         if (value!=null)
             return value;
 
         else
-            throw new Exception("Application property not specified in the config.properties file.");
+            throw new ConnectionException("Application property not specified in the config.properties file.");
 
     }
 }

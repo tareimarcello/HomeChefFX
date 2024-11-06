@@ -9,15 +9,16 @@ import java.sql.SQLException;
 public class ChefRowMapper implements RowMapper<Chef> {
     @Override
     public Chef mapRow(ResultSet rs, int rowNum) throws SQLException {
-        return new Chef(
+        Chef ch=new Chef(
                 rs.getInt("iduser"),
                 rs.getString("name"),
                 rs.getString("surname"),
                 rs.getString("email"),
                 rs.getString("password"),
                 rs.getString("restaurant"),
-                rs.getString("bestdish"),
-                rs.getString("city")
+                rs.getString("bestdish")
         );
+        ch.setCitta(rs.getString("city"));
+        return ch;
     }
 }

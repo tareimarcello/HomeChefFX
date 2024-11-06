@@ -37,7 +37,6 @@ public class LoginViewControllerInterf1 {
 
         public LoginViewControllerInterf1(){
             pageSwitch =new PageMenu();
-            //clicked=false;
         }
         @FXML
         protected void switchToHomePage(ActionEvent event) {

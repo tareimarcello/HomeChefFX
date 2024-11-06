@@ -22,7 +22,8 @@ public class SignupController {
                 DAOChefImpl chDao = new DAOChefImpl();
                 Chef ch = new Chef(-1, chB.getNameBean().toUpperCase(), chB.getSurnameBean().toUpperCase(),
                         chB.getEmailBean(), chB.getPasswordBean(), chB.getRestaurant().toUpperCase(),
-                        chB.getBestDish().toUpperCase(), chB.getCitta().toUpperCase());
+                        chB.getBestDish().toUpperCase());
+                ch.setCitta(chB.getCitta().toUpperCase());
                 chDao.save(ch);
             }
             default -> throw new IllegalArgumentException("User type not valid");

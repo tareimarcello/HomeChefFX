@@ -6,12 +6,11 @@ public class Chef extends User{
     private String bestDish;
     private String citta;
 
-    public Chef (long id, String name, String surname, String email, String password,String restaurant, String bestDish,String citta){
+    public Chef (long id, String name, String surname, String email, String password,String restaurant, String bestDish){
 
         super(id,name,surname,email,password);
         this.restaurant = restaurant;
         this.bestDish = bestDish;
-        this.citta = citta;
 
     }
 

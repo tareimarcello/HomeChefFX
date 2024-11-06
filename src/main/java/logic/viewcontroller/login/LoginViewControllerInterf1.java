@@ -69,9 +69,7 @@ public class LoginViewControllerInterf1 {
                         user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
                         switch (user) {
-                                case Customer cu -> {
-                                        pageSwitch.switchToHome(event);
-                                }
+                                case Customer cu -> pageSwitch.switchToHome(event);
                                 case Chef ch -> {
                                         HomeChefBean hcbean = new HomeChefBean();
                                         hcbean.setName(user.getName() + " " + user.getSurname());
@@ -82,9 +80,7 @@ public class LoginViewControllerInterf1 {
                                         ViewSetter.getInstance().setHcbean(hcbean);
                                         pageSwitch.switchToHomeChef(event);
                                 }
-                                default -> {
-                                        throw new IllegalArgumentException("User type not valid");
-                                }
+                                default -> throw new IllegalArgumentException("User type not valid");
                         }
                 } catch (Exception e) {
 

@@ -1,6 +1,7 @@
 package logic.connection;
 
 import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -11,7 +12,15 @@ import java.util.Objects;
 @Configuration
 public class AppDataStore {
 
-    private static final ConfigFileReader reader = new ConfigFileReader();
+    private static ConfigFileReader reader;
+
+    static {
+        try {
+            reader = new ConfigFileReader();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+    }
 
     private static final String CONNECTION_URL = "CONNECTION_URL";
     private static final String LOGIN_USER = "LOGIN_USER";

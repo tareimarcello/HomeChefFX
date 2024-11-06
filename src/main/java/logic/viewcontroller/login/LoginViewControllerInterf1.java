@@ -71,7 +71,6 @@ public class LoginViewControllerInterf1 {
                         switch (user) {
                                 case Customer cu -> {
                                         pageSwitch.switchToHome(event);
-                                        break;
                                 }
                                 case Chef ch -> {
                                         HomeChefBean hcbean = new HomeChefBean();

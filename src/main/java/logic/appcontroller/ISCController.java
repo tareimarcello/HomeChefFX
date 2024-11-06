@@ -9,7 +9,6 @@ import logic.model.Chat;
 import logic.model.Message;
 import logic.patterns.ViewSetter;
 
-import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 

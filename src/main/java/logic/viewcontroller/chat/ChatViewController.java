@@ -9,6 +9,7 @@ import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
 import logic.beans.MessageBean;
 import logic.beans.SessionParamBean;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
 import logic.patterns.ViewSetter;
@@ -45,7 +46,11 @@ public abstract class ChatViewController {
         msgBean.setText(inputmsg.getText());
 
         ChatController chat = new ChatController();
-        chat.saveMessage(msgBean);
+        try {
+            chat.saveMessage(msgBean);
+        } catch (Exception e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
 
     }
 

@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 public class LoginController {
 
 
-    public ReturnLoginBean loginUser(Logbean userBean) throws LoginErrorException{
+    public ReturnLoginBean loginUser(Logbean userBean) throws Exception {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
@@ -26,7 +26,7 @@ public class LoginController {
         return retBean;
     }
 
-    public ReturnLoginBean checkType(long id){
+    public ReturnLoginBean checkType(long id) throws Exception {
 
         DAOCustomerImpl cDAO = new DAOCustomerImpl();
         DAOChefImpl chDAO = new DAOChefImpl();

@@ -48,14 +48,14 @@ public class ConfigFileReader {
 
     }
 
-    public String getPropertyValue(String property){
+    public String getPropertyValue(String property) throws Exception {
 
         String value = properties.getProperty(property);
         if (value!=null)
             return value;
 
         else
-            throw new RuntimeException("Application property not specified in the config.properties file.");
+            throw new Exception("Application property not specified in the config.properties file.");
 
     }
 }

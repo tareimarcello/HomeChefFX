@@ -13,7 +13,7 @@ import java.util.List;
 
 public class VisitHomeChefController {
 
-    public void loadChat(HomeChefBean chefBean){
+    public void loadChat(HomeChefBean chefBean) throws Exception {
 
         /**
          * Verifico se ho già una chat attiva tra utente e chef **/

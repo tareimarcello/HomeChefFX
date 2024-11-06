@@ -47,7 +47,7 @@ public class HomeChefApplication extends Application {
             });
             stage.show();
         } catch (Exception e) {
-        Exceptions.exceptionPageOccurred();
+            Exceptions.exceptionPageOccurred();
         }
     }
 

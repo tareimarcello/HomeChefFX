@@ -2,6 +2,7 @@ package logic.viewcontroller.signup.signupcustomer;
 
 import javafx.fxml.FXML;
 import logic.beans.Customerbean;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.Page;
 import logic.viewcontroller.signup.SignupViewController;
 
@@ -23,7 +24,11 @@ public class SignupCustomerViewController extends SignupViewController {
         // In caso di errore set opacity label
 
         Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(),surnamesign.getText().toUpperCase(),email.getText(), pswd.getText());
-        controller.signup(cBean);
+        try {
+            controller.signup(cBean);
+        } catch (Exception e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
     }
 
 }

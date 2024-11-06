@@ -17,7 +17,7 @@ public class DAOMessageImpl extends JdbcDaoSupport implements DAOInterface<Messa
     private static final String UPDATE_MSG_QUERY = "UPDATE message SET sender = ?, receiver = ?,text = ?,timestamp = ?, chat = ? WHERE idmessage = ?";
     private static final String DELETE_QUERY = "DELETE FROM message WHERE idmessage=?";
 
-    public DAOMessageImpl(){
+    public DAOMessageImpl() throws Exception {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 public class ChatController {
 
 
-    public void saveMessage(MessageBean messageBean){
+    public void saveMessage(MessageBean messageBean) throws Exception {
 
         DAOMessageImpl msgDao = new DAOMessageImpl();
         Message msg = new Message(-1,messageBean.getIdSender(), messageBean.getIdReceiver(), messageBean.getText(), new Timestamp(System.currentTimeMillis()), messageBean.getIdChat());

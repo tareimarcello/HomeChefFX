@@ -21,7 +21,7 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
 
 
 
-    public DAOCustomerImpl(){
+    public DAOCustomerImpl() throws Exception {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

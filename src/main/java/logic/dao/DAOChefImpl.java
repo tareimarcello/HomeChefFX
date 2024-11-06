@@ -18,7 +18,7 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     private static final String DELETE_QUERY = "DELETE FROM chef WHERE iduser=?";
 
 
-    public DAOChefImpl(){
+    public DAOChefImpl() throws Exception {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

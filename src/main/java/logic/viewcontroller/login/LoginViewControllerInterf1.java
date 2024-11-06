@@ -2,6 +2,7 @@ package logic.viewcontroller.login;
 
 import javafx.scene.control.Label;
 import logic.beans.SessionParamBean;
+import logic.exceptions.Exceptions;
 import logic.patterns.ViewSetter;
 import logic.appcontroller.LoginController;
 import logic.beans.HomeChefBean;
@@ -86,6 +87,7 @@ public class LoginViewControllerInterf1 {
                         if (e instanceof NoSuchElementException) {
                                 this.show.setText("Email is incorrect");
                         } else {
+                                Exceptions.exceptionConnectionOccurred();
                                 this.show.setText(e.getMessage());
 
                         }

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ISCController {
 
-    public List<ISCBean> getISCToUser(){
+    public List<ISCBean> getISCToUser() throws Exception {
 
         /** Recupero chat dove lo chef è l'utente corrente **/
 
@@ -39,7 +39,7 @@ public class ISCController {
 
     }
 
-    public List<ISCBean> getISCToChef(){
+    public List<ISCBean> getISCToChef() throws Exception {
 
         /** Recupero chat dove il customer è l'utente corrente **/
         DAOChatImpl chatDao = new DAOChatImpl();

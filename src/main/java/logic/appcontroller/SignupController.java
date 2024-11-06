@@ -10,7 +10,7 @@ import logic.model.Customer;
 
 public class SignupController {
 
-    public void signup(Userbean user) {
+    public void signup(Userbean user) throws Exception {
         switch (user) {
             case Customerbean cb -> {
                 DAOCustomerImpl cuDao = new DAOCustomerImpl();

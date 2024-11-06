@@ -11,7 +11,7 @@ import java.util.List;
 public class SearchController {
 
 
-    public void searchChefList(SearchBean chefBean){
+    public void searchChefList(SearchBean chefBean) throws Exception {
 
         DAOChefImpl daoChef = new DAOChefImpl();
         List<Chef> chefListResult = daoChef.getChefByParam(chefBean);

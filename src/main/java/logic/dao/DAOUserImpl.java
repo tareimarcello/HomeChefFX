@@ -13,7 +13,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
 
-    public DAOUserImpl(){
+    public DAOUserImpl() throws Exception {
 
         this.setDataSource(new AppDataStore().dataSource());
     }

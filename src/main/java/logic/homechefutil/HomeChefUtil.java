@@ -44,7 +44,7 @@ public class HomeChefUtil {
         return matcher.matches();
     }
 
-    public static User getUserByID (long id) {
+    public static User getUserByID (long id) throws Exception {
         DAOUserImpl userDao = new DAOUserImpl();
         return userDao.get(id);
     }

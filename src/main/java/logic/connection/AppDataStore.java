@@ -18,12 +18,16 @@ public class AppDataStore {
     private static final String LOGIN_PASS = "LOGIN_PASS";
 
     @Bean
-    public DataSource dataSource() {
+    public DataSource dataSource() throws Exception {
         DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
-        driverManagerDataSource.setUrl(reader.getPropertyValue(CONNECTION_URL));
-        driverManagerDataSource.setUsername(reader.getPropertyValue(LOGIN_USER));
-        driverManagerDataSource.setPassword(reader.getPropertyValue(LOGIN_PASS));
-        driverManagerDataSource.setDriverClassName(Objects.requireNonNull(reader.getPropertyValue(DRIVER_CLASS_NAME)));
+        try {
+            driverManagerDataSource.setUrl(reader.getPropertyValue(CONNECTION_URL));
+            driverManagerDataSource.setUsername(reader.getPropertyValue(LOGIN_USER));
+            driverManagerDataSource.setPassword(reader.getPropertyValue(LOGIN_PASS));
+            driverManagerDataSource.setDriverClassName(Objects.requireNonNull(reader.getPropertyValue(DRIVER_CLASS_NAME)));
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
         return driverManagerDataSource;
     }
 }

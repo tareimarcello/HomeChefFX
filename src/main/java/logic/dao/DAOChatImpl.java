@@ -18,9 +18,13 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
     private static final String DELETE_QUERY = "DELETE FROM chat WHERE idchat=?";
     private static final String SELECT_CHAT_BY_CHEFCUST = "SELECT * FROM chat WHERE customer = ? && chef = ?";
 
-    public DAOChatImpl() {
+    public DAOChatImpl() throws Exception {
 
-        this.setDataSource(new AppDataStore().dataSource());
+        try {
+            this.setDataSource(new AppDataStore().dataSource());
+        } catch (Exception e) {
+            throw new Exception(e);
+        }
     }
 
     public List<Chat> getAllChatByCust(long idCustomer){

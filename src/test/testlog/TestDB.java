@@ -2,6 +2,7 @@ package testlog;
 
 import logic.appcontroller.LoginController;
 import logic.beans.Logbean;
+import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +21,8 @@ class TestDB {
             controller.loginUser(log);
         }catch(LoginErrorException e){
             return false;
+        } catch (Exception e) {
+            Exceptions.exceptionConnectionOccurred();
         }
         return true;
     }
@@ -33,6 +36,8 @@ class TestDB {
             controller.loginUser(log);
         }catch(LoginErrorException e){
             return false;
+        } catch (Exception e) {
+            Exceptions.exceptionConnectionOccurred();
         }
         return true;
     }

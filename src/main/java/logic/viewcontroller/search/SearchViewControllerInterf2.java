@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
+import logic.exceptions.Exceptions;
 
 import java.io.IOException;
 
@@ -33,7 +34,11 @@ public class SearchViewControllerInterf2 extends SearchViewController{
 
         SearchController controller = new SearchController();
 
-        controller.searchChefList(searchBean);
+        try {
+            controller.searchChefList(searchBean);
+        } catch (Exception e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         try {
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
             resultVisit.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));

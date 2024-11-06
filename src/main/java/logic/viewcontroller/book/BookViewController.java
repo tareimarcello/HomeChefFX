@@ -1,5 +1,7 @@
 package logic.viewcontroller.book;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -23,5 +25,15 @@ public abstract  class BookViewController {
     @FXML
     protected void backTo() {
         pageSwitch.backTo();
+    }
+
+    public void initialize(){
+        ObservableList<String> comboItems = FXCollections.observableArrayList(
+                "Lunch",
+                "Dinner"
+        );
+        whenBook.setItems(comboItems);
+        bookDone.setOpacity(0.0);
+        bookFail.setOpacity(0.0);
     }
 }

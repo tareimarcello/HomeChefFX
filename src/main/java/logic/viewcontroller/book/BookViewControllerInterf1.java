@@ -1,8 +1,13 @@
 package logic.viewcontroller.book;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.pageswitch.PageMenu;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BookViewControllerInterf1 extends BookViewController{
 
@@ -10,10 +15,6 @@ public class BookViewControllerInterf1 extends BookViewController{
         pageSwitch = new PageMenu();
     }
 
-    public void initialize(){
-        bookDone.setOpacity(0.0);
-        bookFail.setOpacity(0.0);
-    }
 
     @FXML
     protected void goToSettings(ActionEvent event) {

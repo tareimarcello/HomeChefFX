@@ -53,7 +53,6 @@ public class Page {
             stage.setTitle(title);
             stage.show();
         } catch (IOException e) {
-            e.printStackTrace();
             Exceptions.exceptionPageOccurred();
         }
     }

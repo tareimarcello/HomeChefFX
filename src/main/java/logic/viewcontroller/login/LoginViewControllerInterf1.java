@@ -4,6 +4,7 @@ import javafx.scene.control.Label;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.exceptions.LoginErrorException;
 import logic.patterns.ViewSetter;
 import logic.appcontroller.LoginController;
 import logic.beans.HomeChefBean;
@@ -70,7 +71,11 @@ public class LoginViewControllerInterf1 {
                         user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
                         switch (user) {
-                                case Customer cu -> pageSwitch.switchToHome(event);
+                                case Customer cu -> {
+                                        ViewSetter.getInstance().getSessionParam().setUserType(SessionParamBean.userType.CUSTOMER);
+                                        pageSwitch.switchToHome(event);
+
+                                }
                                 case Chef ch -> {
                                         HomeChefBean hcbean = new HomeChefBean();
                                         hcbean.setName(user.getName() + " " + user.getSurname());
@@ -79,6 +84,7 @@ public class LoginViewControllerInterf1 {
                                         hcbean.setRes(ch.getRestaurant());
                                         hcbean.setId(ch.getID());
                                         ViewSetter.getInstance().setHcbean(hcbean);
+                                        ViewSetter.getInstance().getSessionParam().setUserType(SessionParamBean.userType.CHEF);
                                         pageSwitch.switchToHomeChef(event);
                                 }
                                 default -> throw new IllegalArgumentException("User type not valid");
@@ -87,6 +93,9 @@ public class LoginViewControllerInterf1 {
                         Exceptions.exceptionConnectionOccurred();
                 }catch(NoSuchElementException ex) {
                         this.show.setText("Email is incorrect");
+                        this.show.setOpacity(1.0);
+                }catch(LoginErrorException ex) {
+                        this.show.setText(ex.getMessage());
                         this.show.setOpacity(1.0);
                 }
         }

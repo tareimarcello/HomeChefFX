@@ -3,6 +3,7 @@ package logic.beans;
 public class SearchBean {
 
     private String chefName;
+    private String chefSurname;
     private String chefBestDish;
     private String chefCity;
 
@@ -28,5 +29,13 @@ public class SearchBean {
 
     public void setChefCity(String chefCity) {
         this.chefCity = chefCity;
+    }
+
+    public String getChefSurname() {
+        return chefSurname;
+    }
+
+    public void setChefSurname(String chefSurname) {
+        this.chefSurname = chefSurname;
     }
 }

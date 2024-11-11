@@ -54,9 +54,11 @@ public class HomePageChefViewControllerInterf1 {
     protected void goToISC(ActionEvent event) {
 
         ISCController controller = new ISCController();
+        System.out.println("Sono lo chef Voglio la lista delle chat");
         try {
             ViewSetter.getInstance().setChatList(controller.getISCToUser());
         } catch (ConnectionException e) {
+            System.out.println(e.getMessage());
             Exceptions.exceptionConnectionOccurred();
         }
         pageswitch.switchToISCChef(event);

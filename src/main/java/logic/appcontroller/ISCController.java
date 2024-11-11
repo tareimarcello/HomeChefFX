@@ -27,6 +27,8 @@ public class ISCController {
 
         for (Chat chat : chatList){
 
+            System.out.println("Sono lo chef - Lista chat");
+
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);
@@ -55,7 +57,9 @@ public class ISCController {
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);
+            System.out.println("ID DEST: "+chat.getChef());
             iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getChef()));
+            System.out.println(iscBean.getDestUser());
             iscBean.getChatMessages().addAll(messages);
             iscBeanList.add(iscBean);
 

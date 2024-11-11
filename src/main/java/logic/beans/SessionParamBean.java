@@ -2,9 +2,16 @@ package logic.beans;
 
 public class SessionParamBean {
 
+    public enum userType{
+        CUSTOMER,
+        CHEF
+    }
    // private long currentChatId;
     private long currentUserId;
-   // private long currentReceiverId;
+
+
+
+    private userType userType;
 
     
     public long getCurrentUserId() {
@@ -15,5 +22,12 @@ public class SessionParamBean {
         this.currentUserId = currentUserId;
     }
 
+    public SessionParamBean.userType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(SessionParamBean.userType userType) {
+        this.userType = userType;
+    }
 
 }

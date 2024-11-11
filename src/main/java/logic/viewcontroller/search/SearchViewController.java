@@ -14,8 +14,10 @@ public abstract class SearchViewController {
 
     protected SearchBean setBean(){
         SearchBean searchBean = new SearchBean();
+        String [] words= this.chefName.getText().split(" ");
         searchBean.setChefCity(this.cityChef.getText().toUpperCase());
-        searchBean.setChefName(this.chefName.getText().toUpperCase());
+        searchBean.setChefName(words[0].toUpperCase());
+        searchBean.setChefSurname(words[1].toUpperCase());
         searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
         return searchBean;
     }

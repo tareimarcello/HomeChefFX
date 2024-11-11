@@ -1,10 +1,13 @@
 package logic.viewcontroller.initialsearchandchat;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import logic.beans.ISCBean;
+import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 import java.util.HashMap;
@@ -14,21 +17,26 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
 
     public void initialize(){
 
+
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);
         subGroupMap.put(3,this.group4);
 
+        HomeChefUtil.resetGroupOpacity(this.anchorPane,this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.setNextFourChat();
     }
 
     public InitialSearchAndChatViewControllerInterf1() {
         pageswitch = new PageMenu();
-        chatList = ViewSetter.getInstance().getChatList();
         iscBeanMap = new HashMap<>();
+        subGroupMap = new HashMap<>();
+        chatList = ViewSetter.getInstance().getChatList();
         g1Index=13;
         g2Index=14;
         g3Index=15;
         g4Index=16;
+        this.lastIndexChat=0;
     }
     @FXML
     protected void visit(ActionEvent event) {

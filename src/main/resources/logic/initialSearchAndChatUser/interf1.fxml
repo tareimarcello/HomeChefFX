@@ -52,7 +52,7 @@
             </TextField>
          </content>
       </ScrollPane>
-      <Button layoutX="99.0" layoutY="522.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="70.0" prefWidth="217.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
+      <Button fx:id="loadNext" layoutX="99.0" layoutY="522.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="70.0" prefWidth="217.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
          <graphic>
             <Group>
                <children>
@@ -166,7 +166,7 @@
             <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
          </graphic>
       </Button>
-      <Button layoutX="98.0" layoutY="598.0" mnemonicParsing="false" onAction="#outputValChatPrevious" opacity="0.76" prefHeight="70.0" prefWidth="217.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
+      <Button fx:id="loadPrevious" layoutX="98.0" layoutY="598.0" mnemonicParsing="false" onAction="#outputValChatPrevious" opacity="0.76" prefHeight="70.0" prefWidth="217.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
          <graphic>
             <Group>
                <children>

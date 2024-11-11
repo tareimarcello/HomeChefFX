@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
+import logic.appcontroller.ChatController;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
@@ -60,6 +63,13 @@ public class ChatInterf1 extends ChatViewController{
 
     @FXML
     protected void goBack() {
+
+        ChatController controller = new ChatController();
+        try {
+            controller.refreshISC();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageswitch.backTo();
     }
 

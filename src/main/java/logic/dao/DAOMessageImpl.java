@@ -12,7 +12,7 @@ public class DAOMessageImpl extends JdbcDaoSupport implements DAOInterface<Messa
 
     private static final String SELECT_ALL_MESSAGE = "SELECT * FROM message";
     private static final String SELECT_QUERY_BY_SENDREC = "SELECT * FROM message WHERE receiver=? && sender=?";
-    private static final String SELECT_QUERY_BY_CHATID = "SELECT * FROM message WHERE chat = ? ORDER BY timestamp DESC";
+    private static final String SELECT_QUERY_BY_CHATID = "SELECT * FROM message WHERE chat = ? ORDER BY timestamp";
     private static final String SELECT_QUERY_BY_ID = "SELECT * FROM message WHERE idmessage=?";
     private static final String INSERT_MSG_QUERY = "INSERT INTO message (sender,receiver,text,timestamp,chat) VALUES (?,?,?,?,?)";
     private static final String UPDATE_MSG_QUERY = "UPDATE message SET sender = ?, receiver = ?,text = ?,timestamp = ?, chat = ? WHERE idmessage = ?";

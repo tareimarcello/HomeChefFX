@@ -13,6 +13,8 @@ import java.util.List;
 public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
+    private static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE iduser = ?";
+
 
     public DAOUserImpl() throws ConnectionException {
 
@@ -21,7 +23,10 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     @Override
     public User get(long id) {
-        return null;
+
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().query(SELECT_USER_BY_ID, new UserRowMapper(), id).getFirst();
+
     }
 
     @Override

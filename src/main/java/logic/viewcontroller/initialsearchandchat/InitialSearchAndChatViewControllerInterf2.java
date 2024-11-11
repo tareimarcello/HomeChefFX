@@ -9,6 +9,7 @@ import logic.HomeChefApplication;
 import logic.pageswitch.PageMenu;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndChatViewController{
 
@@ -20,7 +21,9 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     //vedere bene come fa apparire la lista degli utenti, messo un solo gruppo di prova
     public InitialSearchAndChatViewControllerInterf2(){
+
         pageswitch = new PageMenu();
+        subGroupMap = new HashMap<>();
     }
 
 

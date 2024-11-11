@@ -5,9 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -64,7 +62,7 @@
       <Label fx:id="lb2" layoutX="626.0" layoutY="218.0" prefHeight="18.0" prefWidth="1.0" />
       <Label fx:id="lb3" layoutX="626.0" layoutY="280.0" />
       <Label fx:id="lb4" layoutX="417.0" layoutY="571.0" prefHeight="18.0" prefWidth="10.0" />
-      <Text layoutX="139.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" styleClass="textContent_signup" text="Insert chef name ">
+      <Text layoutX="139.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25;" styleClass="textContent_signup" text="Insert chef surname ">
          <font>
             <Font size="24.0" />
          </font>

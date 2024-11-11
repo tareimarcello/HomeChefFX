@@ -57,7 +57,7 @@
         <Label fx:id="lb2" layoutX="276.0" layoutY="148.0" />
         <Label fx:id="lb3" layoutX="275.0" layoutY="197.0" />
         <Label fx:id="lb4" layoutX="260.0" layoutY="471.0" prefHeight="17.0" prefWidth="13.0" />
-        <Text layoutX="28.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Insert the chef name" wrappingWidth="357.6" />
+        <Text layoutX="28.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Insert the chef surname" wrappingWidth="357.6" />
         <TextField fx:id="chefName" layoutX="17.0" layoutY="172.0" prefHeight="50.0" prefWidth="382.0" styleClass="textField" />
         <Text layoutX="27.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="You can also search a chef based on him city or him best dish" wrappingWidth="357.6" />
         <Button layoutX="360.0" layoutY="50.0" mnemonicParsing="false" onAction="#goToSettings" styleClass="Back_Row">

@@ -77,25 +77,12 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         query.append ("SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser)");
         if (searchParam.getChefName()!= null && !searchParam.getChefName().equals("")){
 
-            condition = "name = '"+searchParam.getChefName()+"'";
+            condition = "surname = '"+searchParam.getChefName()+"'";
 
             query.append(" ").append(condKey).append(" ").append(condition);
 
             first = false;
         }
-
-        if (searchParam.getChefSurname()!= null && !searchParam.getChefSurname().equals("")){
-
-            if (!first) condKey = "AND";
-            else
-                first = false;
-
-            condition = "surname = '"+searchParam.getChefSurname()+"'";
-
-            query.append(" ").append(condKey).append(" ").append(condition);
-
-        }
-
 
         if (searchParam.getChefCity()!= null && !searchParam.getChefCity().equals("")){
 

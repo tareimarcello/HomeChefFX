@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
+import logic.beans.SearchBean;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
@@ -59,5 +60,6 @@ public class HomeChefUtil {
     public static void disEnButtonPrev(Button butt, int index, int size){
         butt.setVisible(index > size);
     }
+
 
 }

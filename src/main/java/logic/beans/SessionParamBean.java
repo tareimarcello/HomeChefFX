@@ -13,6 +13,7 @@ public class SessionParamBean {
 
     private userType userType;
 
+
     
     public long getCurrentUserId() {
         return currentUserId;

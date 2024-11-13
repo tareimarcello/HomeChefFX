@@ -3,9 +3,11 @@ package logic.viewcontroller.visithomechef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.appcontroller.VisitHomeChefController;
+import logic.beans.IsHomeVisitBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ViewSetter;
 
 public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewController{
 
@@ -37,6 +39,9 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
+        IsHomeVisitBean ishBean = new IsHomeVisitBean();
+        ishBean.setHome(true);
+        ViewSetter.getInstance().setIsHomeVisitBean(ishBean);
         pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");
     }
 

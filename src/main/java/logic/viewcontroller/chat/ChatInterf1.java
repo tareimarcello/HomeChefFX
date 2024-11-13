@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import logic.appcontroller.ChatController;
+import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.model.Message;
@@ -62,15 +63,23 @@ public class ChatInterf1 extends ChatViewController{
     }
 
     @FXML
-    protected void goBack() {
-
+    protected void goBack(ActionEvent event) {
         ChatController controller = new ChatController();
         try {
             controller.refreshISC();
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        pageswitch.backTo();
+        SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
+        if(ViewSetter.getInstance().getIsHomeVisitBean()!=null && ViewSetter.getInstance().getIsHomeVisitBean().isHome()){
+            pageswitch.backTo();
+        }
+        else if(type==SessionParamBean.userType.CHEF){
+           pageswitch.switchToISCChef(event);
+       }
+       else{
+           pageswitch.switchToISCUser(event);
+       }
     }
 
     @FXML

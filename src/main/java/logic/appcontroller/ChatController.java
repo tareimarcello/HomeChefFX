@@ -64,7 +64,7 @@ public class ChatController {
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);
-            iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getCustomer()));
+            iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getChef()));
             iscBean.getChatMessages().addAll(messages);
             iscBeanList.add(iscBean);
 

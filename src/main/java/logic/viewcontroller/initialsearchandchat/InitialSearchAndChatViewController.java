@@ -83,7 +83,6 @@ public  abstract class  InitialSearchAndChatViewController {
             Text nameChat = (Text)paramList.get(CHATNAMEINDEX);
 
             lastMsg.setText(resBean.getChatMessages().getLast().getText());
-
             nameChat.setText(resBean.getDestUser().getName()+" "+resBean.getDestUser().getSurname());
 
             current.setOpacity(1.0);

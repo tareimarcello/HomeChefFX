@@ -61,8 +61,6 @@ public class ChatController {
 
         for (Chat chat : chatListUpdated){
 
-            System.out.println("Sono lo chef - Lista chat");
-
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);

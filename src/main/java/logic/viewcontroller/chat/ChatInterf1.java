@@ -72,6 +72,7 @@ public class ChatInterf1 extends ChatViewController{
         }
         SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
         if(ViewSetter.getInstance().getIsHomeVisitBean()!=null && ViewSetter.getInstance().getIsHomeVisitBean().isHome()){
+            ViewSetter.getInstance().getIsHomeVisitBean().setHome(false);
             pageswitch.backTo();
         }
         else if(type==SessionParamBean.userType.CHEF){
@@ -80,6 +81,7 @@ public class ChatInterf1 extends ChatViewController{
        else{
            pageswitch.switchToISCUser(event);
        }
+
     }
 
     @FXML

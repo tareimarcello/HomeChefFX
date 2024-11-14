@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewControllerInterf2">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewControllerInterf2">
     <children>
         <TextField fx:id="searchBar" layoutX="131.0" layoutY="97.0" prefHeight="40.0" prefWidth="392.0" styleClass="search" />
         <Text layoutX="235.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40;" styleClass="textSubTitle" text="Chats">
@@ -42,7 +42,7 @@
             </Button>
             <Button fx:id="chat11" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <Group fx:id="group11">
+                  <Group fx:id="group1">
                      <children>
                         <Text fx:id="lst11" layoutX="72.0" layoutY="48.576171875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="278.45692443847656">
                            <font>
@@ -65,7 +65,7 @@
             </Button>
             <Button fx:id="chat111" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <Group fx:id="group111">
+                  <Group fx:id="group2">
                      <children>
                         <Text fx:id="lst111" layoutX="72.0" layoutY="48.576171875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="278.45692443847656">
                            <font>
@@ -88,7 +88,7 @@
             </Button>
             <Button fx:id="chat1111" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <Group fx:id="group1111">
+                  <Group fx:id="group3">
                      <children>
                         <Text fx:id="lst1111" layoutX="72.0" layoutY="48.576171875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="278.45692443847656">
                            <font>
@@ -111,7 +111,7 @@
             </Button>
             <Button fx:id="chat11111" layoutX="63.0" mnemonicParsing="false" onAction="#touchChat" prefHeight="75.0" prefWidth="267.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <Group fx:id="group11111">
+                  <Group fx:id="group4">
                      <children>
                         <Text fx:id="lst11111" layoutX="72.0" layoutY="48.576171875" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="..." wrappingWidth="278.45692443847656">
                            <font>
@@ -125,7 +125,7 @@
             </Button>
          </children>
       </Group>
-      <Button layoutX="155.0" layoutY="593.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
+      <Button fx:id="loadNext" layoutX="155.0" layoutY="593.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
          <graphic>
             <Group>
                <children>
@@ -134,7 +134,7 @@
             </Group>
          </graphic>
       </Button>
-      <Button layoutX="155.0" layoutY="689.0" mnemonicParsing="false" onAction="#outputValChatPrevious" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
+      <Button fx:id="loadPrevious" layoutX="155.0" layoutY="689.0" mnemonicParsing="false" onAction="#outputValChatPrevious" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
          <graphic>
             <Group>
                <children>

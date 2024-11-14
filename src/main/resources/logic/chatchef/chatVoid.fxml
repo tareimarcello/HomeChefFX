@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="anchorChat" prefHeight="786.0" prefWidth="891.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.chat.ChatInterf2">
    <children>
-      <Text fx:id="chatUserName" layoutX="214.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" styleClass="textContent_signup" text="Name:" wrappingWidth="392.0" />
+      <Text fx:id="userName" layoutX="214.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" styleClass="textContent_signup" text="Name:" wrappingWidth="392.0" />
       <Button layoutX="596.0" layoutY="7.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="71.0" styleClass="Back_Row">
          <graphic>
             <FontAwesomeIconView fill="#fff6f6" glyphName="USER" size="40" />

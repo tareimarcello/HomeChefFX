@@ -1,8 +1,12 @@
 package logic;
 
+import logic.appcontroller.ISCController;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.patterns.ViewSetter;
 
 public class ButtonBarInterf2ViewController {
     private PageMenu pageSwitch;
@@ -13,6 +17,12 @@ public class ButtonBarInterf2ViewController {
 
     @FXML
     protected void goToIsc(ActionEvent actionEvent) {
+        ISCController controller = new ISCController();
+        try {
+            ViewSetter.getInstance().setChatList(controller.getISCToChef());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchTo("chatuser/interf2.fxml",actionEvent,"Search and Chat");
     }
     @FXML
@@ -29,6 +39,12 @@ public class ButtonBarInterf2ViewController {
     }
     @FXML
     protected void goToIscChef(ActionEvent actionEvent) {
+        ISCController controller = new ISCController();
+        try {
+            ViewSetter.getInstance().setChatList(controller.getISCToUser());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchTo("chatchef/interf2.fxml",actionEvent,"Search and Chat");
     }
     @FXML

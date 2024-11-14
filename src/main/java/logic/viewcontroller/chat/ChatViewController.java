@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
 import logic.beans.MessageBean;
@@ -13,18 +14,23 @@ import logic.dao.DAOChatImpl;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.model.Chat;
+import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
 import logic.patterns.ViewSetter;
 
+import java.util.List;
+
 public abstract class ChatViewController {
-    private PageMenu pageswitch;
+    protected PageMenu pageswitch;
     @FXML
     private TextArea inputmsg;
     @FXML
     protected AnchorPane message;
     @FXML
     protected ScrollPane scrollpane;
+    @FXML
+    protected Text userName;
     protected Decorator graphics;
     protected  boolean initializated;
 
@@ -36,6 +42,44 @@ public abstract class ChatViewController {
         currentChat = ViewSetter.getInstance().getOpenChat();
 
     }
+
+    public void initialize() {
+
+        if (this.currentChat!=null) {
+            this.userName.setText(currentChat.getDestUser().getName()+" "+currentChat.getDestUser().getSurname());
+            List<Message> messages = currentChat.getChatMessages();
+            Label textmsg = null;
+
+            for (Message mess : messages){
+                this.graphics.setText(mess.getText());
+
+                if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getSender()){
+
+                    /* Visualizzare il messaggio come inviato */
+                    textmsg=this.graphics.getMessageSended();
+
+                }else if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getReceiver()) {
+
+                    /* Visualizzare il messaggio come ricevuto */
+
+                    textmsg=this.graphics.getMessageRecived();
+
+                }else
+                {
+                    /** EXCEPTION MESSAGGIO dove l'utente corrente non compare ne come sender, ne come receiver **/
+                }
+
+                message.getChildren().add(textmsg);
+                message.setPrefHeight(graphics.getAumenta());
+                scrollpane.setVvalue(1.0);
+                initializated=true;
+
+            }
+
+        }
+
+    }
+
     @FXML
     protected void sendMsg(){
 

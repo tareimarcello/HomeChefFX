@@ -69,17 +69,12 @@ public  abstract class  InitialSearchAndChatViewController {
 
         int index = 0;
         while (index < MAXCHATVIEWED && lastIndexChat < chatList.size()) {
-
             ISCBean resBean = chatList.get(lastIndexChat);
             Group current = (Group) anchorPane.getChildren().get(g1Index+index);
             this.iscBeanMap.put(current.getId(),resBean);
-
             Group subGroup =  subGroupMap.get(index);
-
             ObservableList<Node> paramList = subGroup.getChildren();
-
             Text lastMsg = (Text)paramList.get(LASTMSGINDEX);
-
             Text nameChat = (Text)paramList.get(CHATNAMEINDEX);
 
             lastMsg.setText(resBean.getChatMessages().getLast().getText());

@@ -17,7 +17,8 @@ import java.io.IOException;
 import java.util.HashMap;
 
 public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndChatViewController{
-
+    @FXML
+    private AnchorPane anchorPane;
     @FXML
     private AnchorPane anchorChat;
 
@@ -26,19 +27,21 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     //vedere bene come fa apparire la lista degli utenti, messo un solo gruppo di prova
     public InitialSearchAndChatViewControllerInterf2(){
+
             pageswitch = new PageMenu();
             iscBeanMap = new HashMap<>();
             subGroupMap = new HashMap<>();
             chatList = ViewSetter.getInstance().getChatList();
-            g1Index=13;         //indici da rivedere perchè non sono giusti
-            g2Index=14;
-            g3Index=15;
-            g4Index=16;
+            g1Index=7;         //indici da rivedere perchè non sono giusti
+            g2Index=8;
+            g3Index=9;
+            g4Index=10;
             this.lastIndexChat=0;
     }
 
 
     public void initialize(){
+
 
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);

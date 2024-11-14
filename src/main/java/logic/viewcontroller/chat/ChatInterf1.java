@@ -16,50 +16,10 @@ import logic.patterns.ViewSetter;
 import java.util.List;
 
 public class ChatInterf1 extends ChatViewController{
-    private PageMenu pageswitch;
-    @FXML
-    private Text userName;
 
     public ChatInterf1() {
         pageswitch = new PageMenu();
         graphics = new Decorator(true);
-    }
-
-    public void initialize() {
-
-        if (this.currentChat!=null) {
-            this.userName.setText(currentChat.getDestUser().getName()+" "+currentChat.getDestUser().getSurname());
-            List<Message> messages = currentChat.getChatMessages();
-            Label textmsg = null;
-
-            for (Message mess : messages){
-                this.graphics.setText(mess.getText());
-
-                if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getSender()){
-
-                    /* Visualizzare il messaggio come inviato */
-                    textmsg=this.graphics.getMessageSended();
-
-                }else if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getReceiver()) {
-
-                    /* Visualizzare il messaggio come ricevuto */
-
-                    textmsg=this.graphics.getMessageRecived();
-
-                }else
-                {
-                    /** EXCEPTION MESSAGGIO dove l'utente corrente non compare ne come sender, ne come receiver **/
-                }
-
-                message.getChildren().add(textmsg);
-                message.setPrefHeight(graphics.getAumenta());
-                scrollpane.setVvalue(1.0);
-                initializated=true;
-
-            }
-
-        }
-
     }
 
     @FXML

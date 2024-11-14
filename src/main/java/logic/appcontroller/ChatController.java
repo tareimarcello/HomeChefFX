@@ -6,13 +6,11 @@ import logic.beans.SessionParamBean;
 import logic.dao.DAOChatImpl;
 import logic.dao.DAOMessageImpl;
 import logic.exceptions.ConnectionException;
-import logic.homechefutil.HomeChefUtil;
 import logic.model.Chat;
 import logic.model.Message;
 import logic.patterns.ViewSetter;
 
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatController {

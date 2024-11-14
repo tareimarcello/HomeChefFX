@@ -6,7 +6,6 @@ public class SessionParamBean {
         CUSTOMER,
         CHEF
     }
-   // private long currentChatId;
     private long currentUserId;
 
 

@@ -18,8 +18,6 @@ import java.util.HashMap;
 
 public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndChatViewController{
     @FXML
-    private AnchorPane anchorPane;
-    @FXML
     private AnchorPane anchorChat;
 
     @FXML

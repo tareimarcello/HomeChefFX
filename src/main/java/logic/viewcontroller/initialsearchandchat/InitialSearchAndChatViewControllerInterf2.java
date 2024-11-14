@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
 import logic.beans.ISCBean;
+import logic.beans.SessionParamBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -30,7 +31,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
             iscBeanMap = new HashMap<>();
             subGroupMap = new HashMap<>();
             chatList = ViewSetter.getInstance().getChatList();
-            g1Index=7;         //indici da rivedere perchè non sono giusti
+            g1Index=7;
             g2Index=8;
             g3Index=9;
             g4Index=10;
@@ -40,19 +41,27 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     public void initialize(){
 
-
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);
         subGroupMap.put(3,this.group4);
 
-        try {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
-            buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
-        } catch (IOException e) {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
+        if(ViewSetter.getInstance().getSessionParam().getUserType()== SessionParamBean.userType.CUSTOMER) {
+            try {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
+            } catch (IOException e) {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+            }
+        }else{
+            try {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarChefInterf2.fxml")));
+            } catch (IOException e) {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+            }
         }
-        HomeChefUtil.resetGroupOpacity(this.anchorPane,this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index, this.g2Index, this.g3Index, this.g4Index);
         this.setNextFourChat();
     }
 
@@ -80,6 +89,10 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
     }
     @FXML
     protected void touchChatChef(ActionEvent event){
+        Button clicked = (Button)event.getSource();
+        Group parent = (Group) clicked.getParent();
+        ISCBean selected = this.iscBeanMap.get(parent.getId());
+        ViewSetter.getInstance().setOpenChat(selected);
         try {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
             anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatchef/chatVoid.fxml")));

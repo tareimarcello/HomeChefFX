@@ -44,7 +44,6 @@ public class LoginViewControllerInterf1 {
         @FXML
         protected void switchToHomePage(ActionEvent event) {
 
-                // TO BE IMPLEMENTED
                 // - prende le credenziali
 
                 Logbean logBean = new Logbean();

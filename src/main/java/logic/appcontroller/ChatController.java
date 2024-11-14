@@ -41,36 +41,19 @@ public class ChatController {
 
     public void refreshISC() throws ConnectionException{
 
-        long idUser = ViewSetter.getInstance().getSessionParam().getCurrentUserId();
         SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
-        DAOChatImpl daoChat =new DAOChatImpl();
-        DAOMessageImpl messDao = new DAOMessageImpl();
-        List<ISCBean> iscBeanList = new ArrayList<>();
-        List<Chat> chatListUpdated = new ArrayList<>();
+
+        ISCController ISCController = new ISCController();
+
         if (type==SessionParamBean.userType.CUSTOMER){
 
-            chatListUpdated.addAll(daoChat.getAllChatByCust(idUser));
+            ViewSetter.getInstance().setChatList(ISCController.getISCToChef());
 
         }else {
 
-            chatListUpdated.addAll(daoChat.getAllChatByChef(idUser));
+            ViewSetter.getInstance().setChatList(ISCController.getISCToUser());
 
         }
 
-        /** Per ogni chat recupero messaggi **/
-
-        for (Chat chat : chatListUpdated){
-
-            List<Message> messages = messDao.getAllByChat(chat.getId());
-            ISCBean iscBean = new ISCBean();
-            iscBean.setChat(chat);
-            iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getChef()));
-            iscBean.getChatMessages().addAll(messages);
-            iscBeanList.add(iscBean);
-
-        }
-
-        ViewSetter.getInstance().setChatList(iscBeanList);
     }
-
 }

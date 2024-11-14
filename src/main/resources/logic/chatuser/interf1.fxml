@@ -39,7 +39,7 @@
                 <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-        <Text fx:id="chefName" layoutX="90.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Name:" wrappingWidth="235.39027404785156" />
+        <Text fx:id="userName" layoutX="90.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textContent_signup" text="Name:" wrappingWidth="235.39027404785156" />
         <Button layoutX="18.0" layoutY="48.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
             <graphic>
                 <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="15" strokeWidth="0.5" text="" />

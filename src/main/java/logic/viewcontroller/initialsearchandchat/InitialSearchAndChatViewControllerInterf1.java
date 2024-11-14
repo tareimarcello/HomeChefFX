@@ -46,10 +46,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     @FXML
     protected void touchChat(ActionEvent event){
 
-        Button clicked = (Button)event.getSource();
-        Group parent = (Group) clicked.getParent();
-        ISCBean selected = this.iscBeanMap.get(parent.getId());
-        ViewSetter.getInstance().setOpenChat(selected);
+        this.openChatToView(event);
         pageswitch.switchTo("chatuser/interf1.fxml",event,"Chat");
     }
     @FXML
@@ -79,6 +76,8 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected void touchChatChef(ActionEvent event){
+
+        this.openChatToView(event);
         pageswitch.switchTo("chatchef/interf1.fxml",event,"Chat");
     }
 
@@ -103,4 +102,14 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     protected void outputValChatPrevious(){
         //to be implemented
     }
+
+    private void openChatToView(ActionEvent event){
+
+        Button clicked = (Button)event.getSource();
+        Group parent = (Group) clicked.getParent();
+        ISCBean selected = this.iscBeanMap.get(parent.getId());
+        ViewSetter.getInstance().setOpenChat(selected);
+
+    }
+
 }

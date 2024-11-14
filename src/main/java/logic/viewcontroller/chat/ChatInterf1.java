@@ -18,7 +18,7 @@ import java.util.List;
 public class ChatInterf1 extends ChatViewController{
     private PageMenu pageswitch;
     @FXML
-    private Text chefName;
+    private Text userName;
 
     public ChatInterf1() {
         pageswitch = new PageMenu();
@@ -28,7 +28,7 @@ public class ChatInterf1 extends ChatViewController{
     public void initialize() {
 
         if (this.currentChat!=null) {
-
+            this.userName.setText(currentChat.getDestUser().getName()+" "+currentChat.getDestUser().getSurname());
             List<Message> messages = currentChat.getChatMessages();
             Label textmsg = null;
 

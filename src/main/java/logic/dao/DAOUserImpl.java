@@ -2,6 +2,7 @@ package logic.dao;
 
 
 import logic.beans.Logbean;
+import logic.beans.UpdatePswdBean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.UserRowMapper;
 import logic.exceptions.ConnectionException;
@@ -14,6 +15,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
     private static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE iduser = ?";
+    private static final String UPDATE_PSWD_BY_ID = "UPDATE user SET password = ? WHERE iduser = ?";
 
 
     public DAOUserImpl() throws ConnectionException {
@@ -54,5 +56,10 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(SELECT_USER_BY_EMAIL, new UserRowMapper(), logBean.getEmail()).getFirst();
 
+    }
+
+    public void updatePswd(UpdatePswdBean updatePswdBean){
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_PSWD_BY_ID, updatePswdBean.getPswd(),updatePswdBean.getUserId());
     }
 }

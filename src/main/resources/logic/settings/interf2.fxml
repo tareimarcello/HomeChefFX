@@ -68,6 +68,16 @@
                   <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" size="20" />
                </graphic>
             </Button>
+            <Text fx:id="errMsg" fill="#f20b0b" layoutX="48.0" layoutY="508.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error message " wrappingWidth="612.6708984375">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text fx:id="rightMsg" fill="#0cf045" layoutX="48.0" layoutY="589.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Message " wrappingWidth="612.6708984375">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
     </children>

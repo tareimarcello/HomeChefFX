@@ -2,18 +2,22 @@ package logic.homechefutil;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import logic.HomeChefApplication;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
 import logic.beans.SearchBean;
+import logic.beans.SessionParamBean;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
 import logic.patterns.ViewSetter;
 
+import java.io.IOException;
 import java.net.ConnectException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -61,5 +65,21 @@ public class HomeChefUtil {
         butt.setVisible(index > size);
     }
 
-
+    public static void linkButtonBarInterf2(AnchorPane buttonBar){
+        if(ViewSetter.getInstance().getSessionParam().getUserType()== SessionParamBean.userType.CUSTOMER) {
+            try {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
+            } catch (IOException e) {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+            }
+        }else{
+            try {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarChefInterf2.fxml")));
+            } catch (IOException e) {
+                buttonBar.getChildren().removeAll(buttonBar.getChildren());
+            }
+        }
+    }
 }

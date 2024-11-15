@@ -43,8 +43,8 @@ public abstract class SettingViewController {
             errMsg.setOpacity(1.0);
             errMsg.setText("Passwords don't match");
         }else{
-            resetMailAndPassword();
             EditProfileBean bean = new EditProfileBean("",pswd.getText(), ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+            resetMailAndPassword();
             SettingsController controller = new SettingsController();
             try {
                 controller.updatePswd(bean);
@@ -72,12 +72,10 @@ public abstract class SettingViewController {
             errMsg.setOpacity(1.0);
             errMsg.setText("Email format is not valid");
         } else {
-            resetMailAndPassword();
             errMsg.setOpacity(0.0);
             rightMsg.setOpacity(0.0);
-            email.setText("");
-            pswd.setText("");
             EditProfileBean updateEmail = new EditProfileBean(email.getText(), "", ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+            resetMailAndPassword();
             SettingsController controller = new SettingsController();
             try {
                 controller.updateMail(updateEmail);

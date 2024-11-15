@@ -46,21 +46,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         subGroupMap.put(2,this.group3);
         subGroupMap.put(3,this.group4);
 
-        if(ViewSetter.getInstance().getSessionParam().getUserType()== SessionParamBean.userType.CUSTOMER) {
-            try {
-                buttonBar.getChildren().removeAll(buttonBar.getChildren());
-                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
-            } catch (IOException e) {
-                buttonBar.getChildren().removeAll(buttonBar.getChildren());
-            }
-        }else{
-            try {
-                buttonBar.getChildren().removeAll(buttonBar.getChildren());
-                buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarChefInterf2.fxml")));
-            } catch (IOException e) {
-                buttonBar.getChildren().removeAll(buttonBar.getChildren());
-            }
-        }
+        HomeChefUtil.linkButtonBarInterf2(buttonBar);
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index, this.g2Index, this.g3Index, this.g4Index);
         this.setNextFourChat();
     }

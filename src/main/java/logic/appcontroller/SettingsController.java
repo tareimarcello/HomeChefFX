@@ -21,7 +21,7 @@ public class SettingsController {
         dao.updatePswd(bean);
     }
 
-    public void updateMail(EditProfileBean bean) throws ConnectionException {
+    public void updateMail(EditProfileBean bean) throws ConnectionException,MailUsedException,SameEmailException {
         DAOUserImpl dao = new DAOUserImpl();
         User user = dao.get(bean.getUserId());
         if(bean.getEmail().equals(user.getEmail())){

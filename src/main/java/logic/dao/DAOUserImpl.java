@@ -2,13 +2,18 @@ package logic.dao;
 
 
 import logic.beans.Logbean;
-import logic.beans.UpdatePswdBean;
+import logic.beans.EditProfileBean;
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.UserRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
+import org.springframework.dao.DataAccessException;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
@@ -16,6 +21,8 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
     private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
     private static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE iduser = ?";
     private static final String UPDATE_PSWD_BY_ID = "UPDATE user SET password = ? WHERE iduser = ?";
+    private static final String UPDATE_EMAIL_BY_ID = "UPDATE user SET email = ? WHERE iduser = ?";
+    private static final String SELECT_LIST_MAIL =  "SELECT email FROM user";
 
 
     public DAOUserImpl() throws ConnectionException {
@@ -58,8 +65,28 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     }
 
-    public void updatePswd(UpdatePswdBean updatePswdBean){
+    public void updatePswd(EditProfileBean updatePswdBean){
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(UPDATE_PSWD_BY_ID, updatePswdBean.getPswd(),updatePswdBean.getUserId());
+    }
+
+    public void updateMail(EditProfileBean updateMailBean){
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_EMAIL_BY_ID, updateMailBean.getEmail(),updateMailBean.getUserId());
+    }
+
+    public List<String> getUsersMail(){
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().query(SELECT_LIST_MAIL, new ResultSetExtractor<List<String>>(){
+            public List<String> extractData(ResultSet rs) throws SQLException, DataAccessException {
+                List<String> mailDetailList = new ArrayList<String>();
+                String mail;
+                while(rs.next()) {
+                    mail=(rs.getString(1));
+                    mailDetailList.add(mail);
+                }
+                return mailDetailList;
+            }
+        });
     }
 }

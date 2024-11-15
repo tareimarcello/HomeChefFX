@@ -5,10 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.appcontroller.SettingsController;
-import logic.beans.UpdatePswdBean;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
-import logic.exceptions.SamePasswordException;
+import logic.beans.EditProfileBean;
+import logic.exceptions.*;
+import logic.homechefutil.HomeChefUtil;
 import logic.patterns.ViewSetter;
 
 import java.util.Objects;
@@ -29,17 +28,23 @@ public abstract class SettingViewController {
 
     @FXML
     protected void setPswd(){
+        errMsg.setOpacity(0.0);
+        rightMsg.setOpacity(0.0);
         if(pswd.getText().equals("")){
+            resetMailAndPassword();
             errMsg.setOpacity(1.0);
             errMsg.setText("Password is empty");
         }else if (confirmpswd.getText().equals("")){
+            resetMailAndPassword();
             errMsg.setOpacity(1.0);
             errMsg.setText("ConfirmPassword is empty");
         }else if(!Objects.equals(pswd.getText(), confirmpswd.getText())){
+            resetMailAndPassword();
             errMsg.setOpacity(1.0);
             errMsg.setText("Passwords don't match");
         }else{
-            UpdatePswdBean bean = new UpdatePswdBean(pswd.getText(), ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+            resetMailAndPassword();
+            EditProfileBean bean = new EditProfileBean("",pswd.getText(), ViewSetter.getInstance().getSessionParam().getCurrentUserId());
             SettingsController controller = new SettingsController();
             try {
                 controller.updatePswd(bean);
@@ -57,11 +62,44 @@ public abstract class SettingViewController {
     @FXML
     protected abstract void signOut(ActionEvent event);
     @FXML
-    protected void setMail(){
-        //to be implemented
+    protected void setMail() {
+        if (email.getText().equals("")) {
+            resetMailAndPassword();
+            errMsg.setOpacity(1.0);
+            errMsg.setText("Email is empty");
+        } else if (!HomeChefUtil.isValidEmail(email.getText())) {
+            resetMailAndPassword();
+            errMsg.setOpacity(1.0);
+            errMsg.setText("Email format is not valid");
+        } else {
+            resetMailAndPassword();
+            errMsg.setOpacity(0.0);
+            rightMsg.setOpacity(0.0);
+            email.setText("");
+            pswd.setText("");
+            EditProfileBean updateEmail = new EditProfileBean(email.getText(), "", ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+            SettingsController controller = new SettingsController();
+            try {
+                controller.updateMail(updateEmail);
+                rightMsg.setOpacity(1.0);
+                rightMsg.setText("Email updated");
+            } catch (ConnectionException e) {
+                Exceptions.exceptionConnectionOccurred();
+            } catch (SameEmailException | MailUsedException e) {
+                errMsg.setOpacity(1.0);
+                errMsg.setText(e.getMessage());
+            }
+
+        }
     }
     @FXML
     protected void setFeed(){
         //to be implemented
+    }
+
+    private void resetMailAndPassword(){
+        email.setText("");
+        pswd.setText("");
+        confirmpswd.setText("");
     }
 }

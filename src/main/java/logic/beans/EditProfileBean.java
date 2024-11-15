@@ -1,15 +1,18 @@
 package logic.beans;
 
-public class UpdatePswdBean {
+public class EditProfileBean {
 
     private String pswd;
     private long userId;
+    private String email;
 
 
-    public UpdatePswdBean(String pswd, long userId) {
+    public EditProfileBean(String mail, String pswd, long userId) {
+        this.email = mail;
         this.userId=userId;
         this.pswd=pswd;
     }
+
 
     public String getPswd() {
         return pswd;
@@ -25,5 +28,13 @@ public class UpdatePswdBean {
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

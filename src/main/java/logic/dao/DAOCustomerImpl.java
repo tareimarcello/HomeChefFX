@@ -64,10 +64,4 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
         getJdbcTemplate().update(DELETE_QUERY, customer.getID());
     }
 
-
-    private Long getLastID (){
-
-        assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_LAST_INSERT_ID, new RowLastInsertIdMapper()).getFirst();
-    }
 }

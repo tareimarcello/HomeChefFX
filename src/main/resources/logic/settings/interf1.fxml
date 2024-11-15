@@ -78,7 +78,6 @@
                 <FontAwesomeIconView glyphName="LOCK" size="30" />
             </graphic>
         </Button>
-        <Button layoutX="23.0" layoutY="405.0" mnemonicParsing="false" onAction="#setFeed" style="-fx-background-color: transparent;" />
         <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
       <Text fx:id="errMsg" fill="#f20b0b" layoutX="21.0" layoutY="517.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message" textAlignment="CENTER" wrappingWidth="355.482421875">
          <font>

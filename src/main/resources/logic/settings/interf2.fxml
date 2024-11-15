@@ -52,7 +52,6 @@
                   <FontAwesomeIconView glyphName="LOCK" size="50" />
                </graphic>
             </Button>
-            <Button layoutX="10.0" layoutY="348.0" mnemonicParsing="false" onAction="#setFeed" style="-fx-background-color: transparent;" />
             <Text layoutX="288.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 50;" styleClass="textSubTitle" text="Settings">
                <font>
                   <Font size="48.0" />

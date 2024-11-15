@@ -90,12 +90,7 @@ public abstract class SettingViewController {
 
         }
     }
-    @FXML
-    protected void setFeed(){
-        //to be implemented
-    }
-
-    private void resetMailAndPassword(){
+    protected void resetMailAndPassword(){
         email.setText("");
         pswd.setText("");
         confirmpswd.setText("");

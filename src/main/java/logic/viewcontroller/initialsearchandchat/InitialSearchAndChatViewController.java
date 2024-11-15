@@ -8,11 +8,16 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.appcontroller.ISCController;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
+import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -22,6 +27,7 @@ public  abstract class  InitialSearchAndChatViewController {
     protected List<ISCBean> chatList;
     protected Map<String, ISCBean> iscBeanMap;
     protected Map<Integer, Group> subGroupMap;
+    protected static final Map<Long,Group> keyChatMap = new HashMap<>();
     protected   int g1Index;
     protected   int g2Index ;
     protected   int g3Index;
@@ -50,6 +56,7 @@ public  abstract class  InitialSearchAndChatViewController {
 
 
 
+
     @FXML
     protected void outputValChat(ActionEvent event){
 
@@ -73,6 +80,7 @@ public  abstract class  InitialSearchAndChatViewController {
             Group current = (Group) anchorPane.getChildren().get(g1Index+index);
             this.iscBeanMap.put(current.getId(),resBean);
             Group subGroup =  subGroupMap.get(index);
+            keyChatMap.put(resBean.getChat().getId(), subGroup);
             ObservableList<Node> paramList = subGroup.getChildren();
             Text lastMsg = (Text)paramList.get(LASTMSGINDEX);
             Text nameChat = (Text)paramList.get(CHATNAMEINDEX);
@@ -86,6 +94,25 @@ public  abstract class  InitialSearchAndChatViewController {
         }
         HomeChefUtil.disEnButtonNext(this.loadNext, lastIndexChat,chatList.size());
         HomeChefUtil.disEnButtonPrev(this.loadPrevious, lastIndexChat,MAXCHATVIEWED);
+
+    }
+
+    public static void updateLastMessage(){
+
+        ISCController controller = new ISCController();
+        ISCBean currentChatBean = ViewSetter.getInstance().getOpenChat();
+        try {
+            Message msgLast = controller.getLastChatMessage(currentChatBean);
+            currentChatBean.getChatMessages().add(msgLast);
+            Group subGroupChatSeleted = keyChatMap.get(currentChatBean.getChat().getId());
+            ObservableList<Node> paramList = subGroupChatSeleted.getChildren();
+            Text lastMsg = (Text)paramList.get(LASTMSGINDEX);
+            lastMsg.setText(msgLast.getText());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+
+
 
     }
 

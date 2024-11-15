@@ -106,6 +106,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
+
         ViewSetter.getInstance().setOpenChat(selected);
 
     }

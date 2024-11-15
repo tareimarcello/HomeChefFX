@@ -66,18 +66,13 @@ public class ISCController {
 
     }
 
+    public Message getLastChatMessage (ISCBean chat) throws ConnectionException{
 
+        DAOMessageImpl daoMsg = new DAOMessageImpl();
+        List<Message> messages = daoMsg.getAllByChat(chat.getChat().getId());
 
-    private List<Message>  getAllChatMessage (long chatId){
-
-        /** Chiamo DAO per recuperare la lista dei messaggi con il chat id passato in Input **/
-
-
-        return null;
+        return messages.getLast();
 
     }
-
-
-
 
 }

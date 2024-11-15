@@ -10,14 +10,13 @@ import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
 import logic.beans.MessageBean;
 import logic.beans.SessionParamBean;
-import logic.dao.DAOChatImpl;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
-import logic.model.Chat;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
 import logic.patterns.ViewSetter;
+import logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewController;
 
 import java.util.List;
 
@@ -109,9 +108,12 @@ public abstract class ChatViewController {
 
         try {
             chat.saveMessage(msgBean);
+            InitialSearchAndChatViewController.updateLastMessage();
+            inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
+
 
     }
 

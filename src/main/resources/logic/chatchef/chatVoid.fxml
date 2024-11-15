@@ -26,7 +26,7 @@
             <Font size="30.0" />
          </font>
       </TextArea>
-      <Button layoutX="827.0" layoutY="633.0" minWidth="42.0" mnemonicParsing="false" onAction="#sendMsgInterf2" prefHeight="154.0" prefWidth="64.0" styleClass="button_pen">
+      <Button layoutX="827.0" layoutY="633.0" minWidth="42.0" mnemonicParsing="false" onAction="#sendMsg" prefHeight="154.0" prefWidth="64.0" styleClass="button_pen">
          <graphic>
             <FontAwesomeIconView glyphName="PENCIL_SQUARE_ALT" opacity="0.5" size="30" text="" wrappingWidth="30.0" />
          </graphic>

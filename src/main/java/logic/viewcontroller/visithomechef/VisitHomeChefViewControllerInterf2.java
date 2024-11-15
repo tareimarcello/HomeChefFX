@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
+import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 
 
@@ -23,12 +24,7 @@ public class VisitHomeChefViewControllerInterf2 extends VisitHomeChefViewControl
 
     public void initialize(){
         downLoadHcBean();
-        try {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
-            buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
-        } catch (IOException e) {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
-        }
+        HomeChefUtil.linkButtonBarInterf2(buttonBar);
     }
 
     @FXML

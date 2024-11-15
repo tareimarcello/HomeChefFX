@@ -10,6 +10,7 @@ import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.homechefutil.HomeChefUtil;
 
 import java.io.IOException;
 
@@ -20,12 +21,7 @@ public class SearchViewControllerInterf2 extends SearchViewController{
     private AnchorPane resultVisit;
 
     public void initialize(){
-        try {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
-            buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));
-        } catch (IOException e) {
-            buttonBar.getChildren().removeAll(buttonBar.getChildren());
-        }
+        HomeChefUtil.linkButtonBarInterf2(buttonBar);
     }
     @FXML
     protected void search(){

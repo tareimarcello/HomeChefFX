@@ -17,11 +17,14 @@ public  class SettingsViewControllerInterf2 extends SettingViewController {
     private AnchorPane buttonBar;
 
 
+
     public SettingsViewControllerInterf2(){
         pageSwitch=new PageMenu();
     }
 
     public void initialize(){
+        errMsg.setOpacity(0.0);
+        rightMsg.setOpacity(0.0);
         try {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());
             buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));

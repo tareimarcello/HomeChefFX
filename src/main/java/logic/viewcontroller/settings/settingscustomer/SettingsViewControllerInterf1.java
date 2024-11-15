@@ -8,6 +8,10 @@ import logic.viewcontroller.settings.SettingViewController;
 public  class SettingsViewControllerInterf1 extends SettingViewController {
     private PageMenu pageSwitch;
 
+    public void initialize(){
+        errMsg.setOpacity(0.0);
+        rightMsg.setOpacity(0.0);
+    }
 
     public SettingsViewControllerInterf1(){
         pageSwitch=new PageMenu();

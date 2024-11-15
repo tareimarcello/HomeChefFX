@@ -27,10 +27,6 @@ public abstract class SettingViewController {
     @FXML
     protected abstract void goBack();
 
-    public void initialize(){
-        errMsg.setOpacity(0.0);
-        rightMsg.setOpacity(0.0);
-    }
     @FXML
     protected void setPswd(){
         if(pswd.getText().equals("")){

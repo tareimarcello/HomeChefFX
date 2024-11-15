@@ -6,6 +6,12 @@ import logic.viewcontroller.settings.SettingViewController;
 import logic.viewcontroller.settings.settingscustomer.SettingsViewControllerInterf1;
 
 public class SettingsChefViewController1 extends SettingViewController {
+
+    public void initialize(){
+        errMsg.setOpacity(0.0);
+        rightMsg.setOpacity(0.0);
+    }
+
     @FXML
     protected void goEditRestaurant(){
         //to be implemented

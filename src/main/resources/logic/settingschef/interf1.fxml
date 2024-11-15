@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -31,17 +29,11 @@
                 <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goBack" size="20" />
             </graphic>
         </Button>
-        <FontAwesomeIconView glyphName="FLAG" layoutX="25.0" layoutY="561.0" size="20" text="" />
         <Text layoutX="60.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink" />
         <Text layoutX="60.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" />
         <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="372.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
 
         </ImageView>
-        <ComboBox fx:id="comb" layoutX="69.0" layoutY="534.0" prefHeight="41.0" prefWidth="230.0" promptText="Change Language">
-            <styleClass>
-                <String fx:value="search" />
-                <String fx:value="hiperlink_signup" />
-            </styleClass></ComboBox>
         <Line endX="301.5000305175781" endY="14.0" layoutX="83.0" layoutY="134.0" startX="-10.0" startY="13.999998092651367" styleClass="line" />
         <Text layoutX="59.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" />
         <Hyperlink layoutX="65.0" layoutY="298.0" onAction="#setPswd" styleClass="hiperlink_signup" text="Edit Password" />
@@ -72,21 +64,28 @@
         </Button>
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
       <Hyperlink layoutX="58.0" layoutY="408.0" onAction="#goEditRestaurant" styleClass="hiperlink_signup" text="Edit Restaurant" />
-      <TextField fx:id="email1" layoutX="28.0" layoutY="444.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="La Briciola" styleClass="textField" />
+      <TextField fx:id="restaurant" layoutX="28.0" layoutY="444.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="La Briciola" styleClass="textField" />
       <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
          <graphic>
             <FontAwesomeIconView glyphName="CUTLERY" size="30" />
          </graphic></Button>
-      <Text fx:id="errMsg" fill="#f20b0b" layoutX="26.0" layoutY="617.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message" textAlignment="CENTER" wrappingWidth="355.482421875">
+      <Text fx:id="errMsg" fill="#f20b0b" layoutX="26.0" layoutY="638.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message" textAlignment="CENTER" wrappingWidth="355.482421875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text fx:id="rightMsg" fill="#0cf045" layoutX="29.0" layoutY="669.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Message " textAlignment="CENTER" wrappingWidth="355.482421875">
+      <Text fx:id="rightMsg" fill="#0cf045" layoutX="26.0" layoutY="689.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Message " textAlignment="CENTER" wrappingWidth="355.482421875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
+      <TextField fx:id="city" layoutX="28.0" layoutY="555.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="Roma" styleClass="textField" />
+      <Button layoutX="26.0" layoutY="514.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
+         <graphic>
+            <FontAwesomeIconView glyphName="HOME" size="30" />
+         </graphic>
+      </Button>
+      <Hyperlink layoutX="58.0" layoutY="519.0" onAction="#updateCity" styleClass="hiperlink_signup" text="Edit City" />
 
     </children>
 </AnchorPane>

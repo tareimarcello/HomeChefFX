@@ -1,11 +1,11 @@
 package logic.appcontroller;
 
+import logic.beans.EditChefProfileBean;
 import logic.beans.EditProfileBean;
+import logic.dao.DAOChefImpl;
 import logic.dao.DAOUserImpl;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.MailUsedException;
-import logic.exceptions.SameEmailException;
-import logic.exceptions.SamePasswordException;
+import logic.exceptions.*;
+import logic.model.Chef;
 import logic.model.User;
 
 import java.util.List;
@@ -34,5 +34,15 @@ public class SettingsController {
             }
         }
         dao.updateMail(bean);
+    }
+
+    public void updateRes(EditChefProfileBean bean) throws ConnectionException, SameResException {
+        DAOChefImpl dao = new DAOChefImpl();
+        Chef chef = dao.get(bean.getUserId());
+        if(bean.getRes().equals(chef.getRestaurant())){
+            throw new SameResException("The restaurant cannot be the same ");
+        }
+        chef.setRestaurant(bean.getRes());
+        dao.update(chef);
     }
 }

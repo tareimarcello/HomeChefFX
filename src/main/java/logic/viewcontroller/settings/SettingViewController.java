@@ -8,6 +8,7 @@ import logic.appcontroller.SettingsController;
 import logic.beans.EditProfileBean;
 import logic.exceptions.*;
 import logic.homechefutil.HomeChefUtil;
+import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
 import java.util.Objects;
@@ -23,6 +24,7 @@ public abstract class SettingViewController {
     protected Text rightMsg;
     @FXML
     protected Text errMsg;
+    protected PageMenu pageSwitch;
     @FXML
     protected abstract void goBack();
 

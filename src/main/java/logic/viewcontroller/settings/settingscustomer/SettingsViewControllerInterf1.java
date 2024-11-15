@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import logic.viewcontroller.settings.SettingViewController;
 
 public  class SettingsViewControllerInterf1 extends SettingViewController {
-    private PageMenu pageSwitch;
 
     public void initialize(){
         errMsg.setOpacity(0.0);

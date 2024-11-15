@@ -9,9 +9,8 @@ import logic.viewcontroller.settings.SettingViewController;
 
 
 public  class SettingsViewControllerInterf2 extends SettingViewController {
-    private PageMenu pageSwitch;
     @FXML
-    private AnchorPane buttonBar;
+    protected AnchorPane buttonBar;
 
 
 

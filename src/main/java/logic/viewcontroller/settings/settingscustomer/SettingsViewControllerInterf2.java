@@ -32,6 +32,6 @@ public  class SettingsViewControllerInterf2 extends SettingViewController {
     @FXML
     @Override
     protected void signOut(ActionEvent event){
-        pageSwitch.switchTo("login/interf1.fxml",event,"Login");
+        pageSwitch.switchTo("login/interf2.fxml",event,"Login");
     }
 }

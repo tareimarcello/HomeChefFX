@@ -31,13 +31,13 @@
                 <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goBack" size="20" />
             </graphic>
         </Button>
-        <FontAwesomeIconView glyphName="FLAG" layoutX="29.0" layoutY="602.0" size="20" text="" />
+        <FontAwesomeIconView glyphName="FLAG" layoutX="25.0" layoutY="561.0" size="20" text="" />
         <Text layoutX="60.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink" />
         <Text layoutX="60.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" />
         <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="372.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
 
         </ImageView>
-        <ComboBox fx:id="comb" layoutX="70.0" layoutY="578.0" prefHeight="41.0" prefWidth="230.0" promptText="Change Language">
+        <ComboBox fx:id="comb" layoutX="69.0" layoutY="534.0" prefHeight="41.0" prefWidth="230.0" promptText="Change Language">
             <styleClass>
                 <String fx:value="search" />
                 <String fx:value="hiperlink_signup" />
@@ -71,12 +71,22 @@
             </graphic>
         </Button>
       <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
-      <Hyperlink layoutX="58.0" layoutY="408.0" onAction="#setPswd" styleClass="hiperlink_signup" text="Edit Restaurant" />
+      <Hyperlink layoutX="58.0" layoutY="408.0" onAction="#goEditRestaurant" styleClass="hiperlink_signup" text="Edit Restaurant" />
       <TextField fx:id="email1" layoutX="28.0" layoutY="444.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="La Briciola" styleClass="textField" />
-      <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#setPswd" style="-fx-background-color: transparent;">
+      <Button layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
          <graphic>
             <FontAwesomeIconView glyphName="CUTLERY" size="30" />
          </graphic></Button>
+      <Text fx:id="errMsg" fill="#f20b0b" layoutX="26.0" layoutY="617.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error Message" textAlignment="CENTER" wrappingWidth="355.482421875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="rightMsg" fill="#0cf045" layoutX="29.0" layoutY="669.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Message " textAlignment="CENTER" wrappingWidth="355.482421875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
 
     </children>
 </AnchorPane>

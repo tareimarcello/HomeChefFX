@@ -70,13 +70,23 @@
             <Hyperlink layoutX="77.0" layoutY="100.0" onAction="#signOut" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Sign Out" />
             <Hyperlink layoutX="80.0" layoutY="184.0" onAction="#setMail" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Mail" />
             <Hyperlink layoutX="79.0" layoutY="271.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Password" />
-            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#setPswd" style="-fx-background-color: transparent;">
+            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="CUTLERY" size="50" />
                </graphic>
             </Button>
             <Hyperlink layoutX="79.0" layoutY="358.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Restaurant" />
             <TextField fx:id="email1" layoutX="336.0" layoutY="362.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="412.0" promptText="mariorossi@gmail.com" styleClass="textField" />
+            <Text fx:id="errMsg" fill="#f20b0b" layoutX="103.0" layoutY="619.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error message " textAlignment="CENTER" wrappingWidth="612.6708984375">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+            <Text fx:id="rightMsg" fill="#0cf045" layoutX="103.0" layoutY="694.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Right Message " textAlignment="CENTER" wrappingWidth="612.6708984375">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
     </children>

@@ -41,15 +41,15 @@ public class ChatController {
 
         SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
 
-        ISCController IscController = new ISCController();
+        ISCController iscController = new ISCController();
 
         if (type==SessionParamBean.userType.CUSTOMER){
 
-            ViewSetter.getInstance().setChatList(IscController.getISCToChef());
+            ViewSetter.getInstance().setChatList(iscController.getISCToChef());
 
         }else {
 
-            ViewSetter.getInstance().setChatList(IscController.getISCToUser());
+            ViewSetter.getInstance().setChatList(iscController.getISCToUser());
 
         }
 

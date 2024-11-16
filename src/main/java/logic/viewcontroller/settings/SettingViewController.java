@@ -34,14 +34,17 @@ public abstract class SettingViewController {
         rightMsg.setOpacity(0.0);
         if(pswd.getText().equals("")){
             resetMailAndPassword();
+            rightMsg.setOpacity(1.0);
             errMsg.setOpacity(1.0);
             errMsg.setText("Password is empty");
         }else if (confirmpswd.getText().equals("")){
             resetMailAndPassword();
+            rightMsg.setOpacity(1.0);
             errMsg.setOpacity(1.0);
             errMsg.setText("ConfirmPassword is empty");
         }else if(!Objects.equals(pswd.getText(), confirmpswd.getText())){
             resetMailAndPassword();
+            rightMsg.setOpacity(1.0);
             errMsg.setOpacity(1.0);
             errMsg.setText("Passwords don't match");
         }else{
@@ -50,11 +53,13 @@ public abstract class SettingViewController {
             SettingsController controller = new SettingsController();
             try {
                 controller.updatePswd(bean);
+                errMsg.setOpacity(0.0);
                 rightMsg.setOpacity(1.0);
                 rightMsg.setText("Password updated");
             } catch (ConnectionException e) {
                 Exceptions.exceptionConnectionOccurred();
             }catch(SamePasswordException e){
+                rightMsg.setOpacity(1.0);
                 errMsg.setOpacity(1.0);
                 errMsg.setText(e.getMessage());
             }
@@ -67,10 +72,12 @@ public abstract class SettingViewController {
     protected void setMail() {
         if (email.getText().equals("")) {
             resetMailAndPassword();
+            rightMsg.setOpacity(1.0);
             errMsg.setOpacity(1.0);
             errMsg.setText("Email is empty");
         } else if (!HomeChefUtil.isValidEmail(email.getText())) {
             resetMailAndPassword();
+            rightMsg.setOpacity(1.0);
             errMsg.setOpacity(1.0);
             errMsg.setText("Email format is not valid");
         } else {
@@ -81,11 +88,13 @@ public abstract class SettingViewController {
             SettingsController controller = new SettingsController();
             try {
                 controller.updateMail(updateEmail);
+                errMsg.setOpacity(0.0);
                 rightMsg.setOpacity(1.0);
                 rightMsg.setText("Email updated");
             } catch (ConnectionException e) {
                 Exceptions.exceptionConnectionOccurred();
             } catch (SameEmailException | MailUsedException e) {
+                rightMsg.setOpacity(1.0);
                 errMsg.setOpacity(1.0);
                 errMsg.setText(e.getMessage());
             }

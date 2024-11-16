@@ -57,7 +57,7 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     public void update(Chef chef) {
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(UPDATE_QUERY,  chef.getID(), chef.getRestaurant(),
-                chef.getBestDish(),chef.getCitta());
+                chef.getBestDish(),chef.getCitta(), chef.getID());
     }
 
     @Override

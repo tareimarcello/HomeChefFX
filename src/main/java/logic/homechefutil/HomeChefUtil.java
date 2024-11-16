@@ -2,18 +2,21 @@ package logic.homechefutil;
 
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import logic.HomeChefApplication;
-import logic.beans.HomeChefBean;
-import logic.beans.ResultSearchBean;
-import logic.beans.SearchBean;
-import logic.beans.SessionParamBean;
+import logic.appcontroller.SettingsController;
+import logic.beans.*;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
+import logic.exceptions.EditProfException;
+import logic.exceptions.Exceptions;
 import logic.model.User;
 import logic.patterns.ViewSetter;
 

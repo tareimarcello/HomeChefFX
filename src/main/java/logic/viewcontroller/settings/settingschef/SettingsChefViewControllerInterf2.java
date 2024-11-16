@@ -7,12 +7,12 @@ import logic.viewcontroller.settings.settingscustomer.SettingsViewControllerInte
 public class SettingsChefViewControllerInterf2 extends SettingsViewControllerInterf2 {
 
     @FXML
-    protected void goEditRestaurant() {
-        //to be implemented
+    protected void goEditRestaurantInterf2() {
+        //to be implemented 
     }
 
     @FXML
-    protected void updateCity(){
+    protected void updateCityInterf2(){
         //to be implemented
     }
 }

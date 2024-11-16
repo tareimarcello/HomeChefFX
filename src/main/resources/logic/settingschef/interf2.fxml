@@ -66,7 +66,7 @@
                   <FontAwesomeIconView glyphName="CUTLERY" size="50" />
                </graphic>
             </Button>
-            <Hyperlink layoutX="79.0" layoutY="358.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Restaurant" />
+            <Hyperlink layoutX="79.0" layoutY="358.0" onAction="#goEditRestaurantInterf2" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Restaurant" />
             <TextField fx:id="restaurant" layoutX="336.0" layoutY="362.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="412.0" promptText="La Briciola" styleClass="textField" />
             <Text fx:id="errMsg" fill="#f20b0b" layoutX="103.0" layoutY="683.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error message " textAlignment="CENTER" wrappingWidth="612.6708984375">
                <font>
@@ -78,7 +78,7 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="117.0" layoutY="459.0" onAction="#updateCity" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit City" />
+            <Hyperlink layoutX="79.0" layoutY="461.0" onAction="#updateCityInterf2" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit City" />
             <Button layoutX="10.0" layoutY="453.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="HOME" size="50" />

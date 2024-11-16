@@ -13,7 +13,7 @@ public class Book {
     private String citta;
     private String via;
 
-    public Book(int idbook, int customer, int chef, String stato, Date data, String pasto, String citta, String via) {
+    public Book(int idbook, int customer, int chef, String stato, Date data, String pasto, String citta) {
         this.idBook = idbook;
         this.customer = customer;
         this.chef = chef;
@@ -21,7 +21,6 @@ public class Book {
         this.bookState = stato;
         this.meal = pasto;
         this.citta = citta;
-        this.via = via;
 
     }
 

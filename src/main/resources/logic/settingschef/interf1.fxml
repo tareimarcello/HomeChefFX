@@ -80,7 +80,7 @@
          </font>
       </Text>
       <TextField fx:id="city" layoutX="28.0" layoutY="555.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" promptText="Roma" styleClass="textField" />
-      <Button layoutX="26.0" layoutY="514.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
+      <Button layoutX="26.0" layoutY="514.0" mnemonicParsing="false" onAction="#updateCity" style="-fx-background-color: transparent;">
          <graphic>
             <FontAwesomeIconView glyphName="HOME" size="30" />
          </graphic>

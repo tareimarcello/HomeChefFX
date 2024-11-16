@@ -61,7 +61,7 @@
             <Hyperlink layoutX="77.0" layoutY="100.0" onAction="#signOut" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Sign Out" />
             <Hyperlink layoutX="80.0" layoutY="184.0" onAction="#setMail" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Mail" />
             <Hyperlink layoutX="79.0" layoutY="271.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Password" />
-            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
+            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#goEditRestaurantInterf2" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="CUTLERY" size="50" />
                </graphic>
@@ -79,7 +79,7 @@
                </font>
             </Text>
             <Hyperlink layoutX="79.0" layoutY="461.0" onAction="#updateCityInterf2" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit City" />
-            <Button layoutX="10.0" layoutY="453.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
+            <Button layoutX="10.0" layoutY="453.0" mnemonicParsing="false" onAction="#updateCityInterf2" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="HOME" size="50" />
                </graphic>

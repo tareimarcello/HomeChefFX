@@ -12,8 +12,6 @@ public  class SettingsViewControllerInterf2 extends SettingViewController {
     @FXML
     protected AnchorPane buttonBar;
 
-
-
     public SettingsViewControllerInterf2(){
         pageSwitch=new PageMenu();
     }

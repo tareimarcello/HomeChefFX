@@ -8,8 +8,7 @@ import logic.viewcontroller.settings.SettingViewController;
 public  class SettingsViewControllerInterf1 extends SettingViewController {
 
     public void initialize(){
-        errMsg.setOpacity(0.0);
-        rightMsg.setOpacity(0.0);
+      resetOpMsg();
     }
 
     public SettingsViewControllerInterf1(){

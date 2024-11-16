@@ -7,12 +7,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class ConfigFileReader {
 
     private Properties properties;
 
     private static final String CONFIG_FILE_PATH= "src/main/java/db.properties";
+    private Logger logger = Logger.getLogger(getClass().getName());
 
 
     public ConfigFileReader() throws ConnectionException {
@@ -44,7 +46,7 @@ public class ConfigFileReader {
 
         {
 
-            System.out.println(e.getMessage());
+            logger.info(e.getMessage());
 
         }
 

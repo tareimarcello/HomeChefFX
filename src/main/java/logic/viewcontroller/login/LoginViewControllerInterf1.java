@@ -34,8 +34,6 @@ public class LoginViewControllerInterf1 {
         @FXML
         private Button switchUiButton;
         @FXML
-        private Button showPasswdButton;
-        @FXML
         private Label show;
 
         public LoginViewControllerInterf1(){

@@ -1,9 +1,8 @@
-package logic.viewcontroller.settings.settingscustomer;
+package logic.viewcontroller.settings;
 
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.viewcontroller.settings.SettingViewController;
 
 public  class SettingsViewControllerInterf1 extends SettingViewController {
 

@@ -1,11 +1,10 @@
-package logic.viewcontroller.settings.settingscustomer;
+package logic.viewcontroller.settings;
 
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
-import logic.viewcontroller.settings.SettingViewController;
 
 
 public  class SettingsViewControllerInterf2 extends SettingViewController {

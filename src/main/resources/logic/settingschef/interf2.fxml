@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.settingschef.SettingsChefViewControllerInterf2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.settings.SettingsViewControllerInterf2">
     <children>
         <Line endX="350.0" endY="-154.0" layoutX="-248.0" layoutY="153.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
         <Line endX="350.0" endY="-154.0" layoutX="294.0" layoutY="151.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
@@ -61,12 +61,12 @@
             <Hyperlink layoutX="77.0" layoutY="100.0" onAction="#signOut" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Sign Out" />
             <Hyperlink layoutX="80.0" layoutY="184.0" onAction="#setMail" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Mail" />
             <Hyperlink layoutX="79.0" layoutY="271.0" onAction="#setPswd" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Password" />
-            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#goEditRestaurantInterf2" style="-fx-background-color: transparent;">
+            <Button layoutX="10.0" layoutY="356.0" mnemonicParsing="false" onAction="#goEditRestaurant" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="CUTLERY" size="50" />
                </graphic>
             </Button>
-            <Hyperlink layoutX="79.0" layoutY="358.0" onAction="#goEditRestaurantInterf2" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Restaurant" />
+            <Hyperlink layoutX="79.0" layoutY="358.0" onAction="#goEditRestaurant" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit Restaurant" />
             <TextField fx:id="restaurant" layoutX="336.0" layoutY="362.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="412.0" promptText="La Briciola" styleClass="textField" />
             <Text fx:id="errMsg" fill="#f20b0b" layoutX="103.0" layoutY="683.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error message " textAlignment="CENTER" wrappingWidth="612.6708984375">
                <font>
@@ -78,8 +78,8 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <Hyperlink layoutX="79.0" layoutY="461.0" onAction="#updateCityInterf2" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit City" />
-            <Button layoutX="10.0" layoutY="453.0" mnemonicParsing="false" onAction="#updateCityInterf2" style="-fx-background-color: transparent;">
+            <Hyperlink layoutX="79.0" layoutY="461.0" onAction="#updateCity" style="-fx-font-size: 30;" styleClass="hiperlink_signup" text="Edit City" />
+            <Button layoutX="10.0" layoutY="453.0" mnemonicParsing="false" onAction="#updateCity" style="-fx-background-color: transparent;">
                <graphic>
                   <FontAwesomeIconView glyphName="HOME" size="50" />
                </graphic>

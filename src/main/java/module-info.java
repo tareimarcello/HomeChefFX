@@ -51,10 +51,6 @@ module com.example.homechef {
     exports logic.patterns;
     opens logic.patterns to javafx.fxml;
     exports logic.dao.rowmapper;
-    exports logic.viewcontroller.settings.settingscustomer;
-    opens logic.viewcontroller.settings.settingscustomer to javafx.fxml;
-    exports logic.viewcontroller.settings.settingschef;
-    opens logic.viewcontroller.settings.settingschef to javafx.fxml;
     opens logic.beans to javafx.fxml;
     exports logic.homechefutil;
     opens logic.homechefutil to javafx.fxml;

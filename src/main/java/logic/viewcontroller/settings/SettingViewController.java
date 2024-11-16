@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.appcontroller.SettingsController;
+import logic.beans.EditChefProfileBean;
 import logic.beans.EditProfileBean;
 import logic.exceptions.*;
 import logic.homechefutil.HomeChefUtil;
@@ -24,6 +25,10 @@ public abstract class SettingViewController {
     protected Text rightMsg;
     @FXML
     protected Text errMsg;
+    @FXML
+    protected TextField restaurant;
+    @FXML
+    protected TextField city;
     protected PageMenu pageSwitch;
     @FXML
     protected abstract void goBack();
@@ -105,6 +110,58 @@ public abstract class SettingViewController {
         }else{
             rightMsg.setOpacity(0.0);
             errMsg.setOpacity(1.0);
+        }
+    }
+
+
+    @FXML
+    protected void goEditRestaurant(){
+        resetOpMsg();
+        if(restaurant.getText().equals("")) {
+            restaurant.setText("");
+            setResOpMsg(false);
+            errMsg.setText("Restaurant field is empty");
+        }else{
+            resetOpMsg();
+            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getInstance().getSessionParam().getCurrentUserId(),restaurant.getText().toUpperCase(),"");
+            restaurant.setText("");
+            SettingsController controller = new SettingsController();
+            try {
+                controller.updateRes(updateRes);
+                setResOpMsg(true);
+                rightMsg.setText("Restaurant updated");
+            } catch (ConnectionException e) {
+                Exceptions.exceptionConnectionOccurred();
+            }catch(EditProfException e){
+                setResOpMsg(false);
+                errMsg.setText(e.getMessage());
+            }
+
+        }
+    }
+    @FXML
+    protected void updateCity(){
+        resetOpMsg();
+        if(city.getText().equals("")) {
+            city.setText("");
+            setResOpMsg(false);
+            errMsg.setText("City field is empty");
+        }else{
+            resetOpMsg();
+            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getInstance().getSessionParam().getCurrentUserId(),"",city.getText().toUpperCase());
+            city.setText("");
+            SettingsController controller = new SettingsController();
+            try {
+                controller.updateCity(updateRes);
+                setResOpMsg(true);
+                rightMsg.setText("City updated");
+            } catch (ConnectionException e) {
+                Exceptions.exceptionConnectionOccurred();
+            }catch(EditProfException e){
+                setResOpMsg(false);
+                errMsg.setText(e.getMessage());
+            }
+
         }
     }
 }

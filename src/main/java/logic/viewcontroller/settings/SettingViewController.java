@@ -94,11 +94,11 @@ public abstract class SettingViewController {
 
         }
     }
-    private void resetOpMsg(){
+    protected void resetOpMsg(){
         errMsg.setOpacity(0.0);
         rightMsg.setOpacity(0.0);
     }
-    private void setResOpMsg(boolean righOrErr){
+    protected void setResOpMsg(boolean righOrErr){
         if(righOrErr){
             rightMsg.setOpacity(1.0);
             errMsg.setOpacity(0.0);

@@ -1,10 +1,7 @@
 package testlog;
 
 import logic.appcontroller.LoginController;
-import logic.appcontroller.RecPswdController;
 import logic.beans.Logbean;
-import logic.beans.RecPswdBean;
-import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
 import org.junit.jupiter.api.Test;

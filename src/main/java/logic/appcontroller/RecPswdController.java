@@ -14,10 +14,8 @@ public class RecPswdController {
         List<String> mailList= dao.getUsersMail();
         int i=0;
         while(i<mailList.size() && !mailList.get(i).equals(bean.getEmail())) {
-            System.out.println("Valore indice i :" + i);
             i++;
         }
-        System.out.println("Lunghezze lista " + mailList.size());
         if(mailList.size()==i){
             throw new MailNotInDBException("Mail not in database");
         }

@@ -38,7 +38,7 @@ public abstract class ChatViewController {
     protected ChatViewController() {
         pageswitch = new PageMenu();
         initializated = false;
-        currentChat = ViewSetter.getInstance().getOpenChat();
+        currentChat = ViewSetter.getOpenChat();
 
     }
 
@@ -52,12 +52,12 @@ public abstract class ChatViewController {
             for (Message mess : messages){
                 this.graphics.setText(mess.getText());
 
-                if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getSender()){
+                if (ViewSetter.getSessionParam().getCurrentUserId()==mess.getSender()){
 
                     /* Visualizzare il messaggio come inviato */
                     textmsg=this.graphics.getMessageSended();
 
-                }else if (ViewSetter.getInstance().getSessionParam().getCurrentUserId()==mess.getReceiver()) {
+                }else if (ViewSetter.getSessionParam().getCurrentUserId()==mess.getReceiver()) {
 
                     /* Visualizzare il messaggio come ricevuto */
 
@@ -85,7 +85,7 @@ public abstract class ChatViewController {
         recivemsgArr();
         MessageBean msgBean = new MessageBean();
         ChatController chat = new ChatController();
-        SessionParamBean sessionParam = ViewSetter.getInstance().getSessionParam();
+        SessionParamBean sessionParam = ViewSetter.getSessionParam();
         /** Creazione chat se è il primo messaggio scambiato tra chef e utente **/
 
         if (currentChat.getChat().getId()<0) {
@@ -108,7 +108,7 @@ public abstract class ChatViewController {
 
         try {
             chat.saveMessage(msgBean);
-            InitialSearchAndChatViewController.updateLastMessage();
+            InitialSearchAndChatViewController.updateLastMessage();   //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
             inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();

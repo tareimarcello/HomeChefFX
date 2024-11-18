@@ -29,7 +29,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         pageswitch = new PageMenu();
         iscBeanMap = new HashMap<>();
         subGroupMap = new HashMap<>();
-        chatList = ViewSetter.getInstance().getChatList();
+        chatList = ViewSetter.getChatList();
         g1Index=13;
         g2Index=14;
         g3Index=15;
@@ -107,7 +107,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
 
-        ViewSetter.getInstance().setOpenChat(selected);
+        ViewSetter.setOpenChat(selected);
 
     }
 

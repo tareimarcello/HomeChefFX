@@ -13,36 +13,17 @@ import logic.pageswitch.PageMenu;
 
 import java.io.IOException;
 
-public class HomepageChefViewControllerInterf2 {
-    private PageMenu pageswitch;
+public class HomepageChefViewControllerInterf2 extends HomePageChefViewController{
     @FXML
     private AnchorPane buttonBar;
-    @FXML
-    private TextField name;
-    @FXML
-    private TextField dish;
-    @FXML
-    private TextField res;
-    @FXML
-    private TextField city;
+
 
     public HomepageChefViewControllerInterf2() {
         pageswitch = new PageMenu();
     }
     public void initialize(){
 
-
-        HomeChefBean hcbean = ViewSetter.getInstance().getHcbean();
-
-        if (hcbean!=null) {
-
-            this.name.setText(hcbean.getName());
-            this.dish.setText(hcbean.getDish());
-            this.res.setText(hcbean.getRes());
-            this.city.setText(hcbean.getCity());
-
-        }
-
+        setFields();
         try {
             buttonBar.getChildren().removeAll(buttonBar.getChildren());
             buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarChefInterf2.fxml")));

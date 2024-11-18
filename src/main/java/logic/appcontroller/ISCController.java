@@ -20,7 +20,7 @@ public class ISCController {
 
         DAOChatImpl chatDao = new DAOChatImpl();
         DAOMessageImpl messDao = new DAOMessageImpl();
-        List<Chat> chatList = chatDao.getAllChatByChef(ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+        List<Chat> chatList = chatDao.getAllChatByChef(ViewSetter.getSessionParam().getCurrentUserId());
         List<ISCBean> iscBeanList = new ArrayList<>();
 
         /** Per ogni chat recupero messaggi **/
@@ -46,7 +46,7 @@ public class ISCController {
         /** Recupero chat dove il customer è l'utente corrente **/
         DAOChatImpl chatDao = new DAOChatImpl();
         DAOMessageImpl messDao = new DAOMessageImpl();
-        List<Chat> chatList = chatDao.getAllChatByCust(ViewSetter.getInstance().getSessionParam().getCurrentUserId());
+        List<Chat> chatList = chatDao.getAllChatByCust(ViewSetter.getSessionParam().getCurrentUserId());
         List<ISCBean> iscBeanList = new ArrayList<>();
 
         /** Per ogni chat recupero messaggi **/

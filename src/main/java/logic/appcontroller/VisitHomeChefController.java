@@ -20,7 +20,7 @@ public class VisitHomeChefController {
          * Verifico se ho già una chat attiva tra utente e chef **/
 
         DAOChatImpl daoChat = new DAOChatImpl();
-        List<Chat> chatList = daoChat.getChatByCustChef(ViewSetter.getInstance().getSessionParam().getCurrentUserId(),chefBean.getId());
+        List<Chat> chatList = daoChat.getChatByCustChef(ViewSetter.getSessionParam().getCurrentUserId(),chefBean.getId());
         ISCBean chatBean = new ISCBean();
         if (!chatList.isEmpty()){
             Chat currentChat = chatList.getFirst();
@@ -35,13 +35,13 @@ public class VisitHomeChefController {
             /** Se la chat è nuova sono in questo ramo. Solo l'utente può crearne una nuova quindi
              * per necessità lo user corrente è un utente e lo user destinatario della chat in questo caso è lo chef **/
 
-            Chat chat = new Chat(-1,ViewSetter.getInstance().getSessionParam().getCurrentUserId(),chefBean.getId());
+            Chat chat = new Chat(-1,ViewSetter.getSessionParam().getCurrentUserId(),chefBean.getId());
             chatBean.setChat(chat);
             chatBean.setDestUser(new DAOChefImpl().get(chefBean.getId()));
 
         }
 
-        ViewSetter.getInstance().setOpenChat(chatBean);
+        ViewSetter.setOpenChat(chatBean);
 
     }
 

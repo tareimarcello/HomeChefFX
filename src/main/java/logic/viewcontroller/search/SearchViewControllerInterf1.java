@@ -24,7 +24,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
         ISCController controller = new ISCController();
         try {
-            ViewSetter.getInstance().setChatList(controller.getISCToChef());
+            ViewSetter.setChatList(controller.getISCToChef());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

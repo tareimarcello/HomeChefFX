@@ -64,12 +64,12 @@ public class LoginViewControllerInterf1 {
                         User user = controller.loginUser(logBean).getReturnUser();
                         SessionParamBean sessionParam = new SessionParamBean();
                         sessionParam.setCurrentUserId(user.getID());
-                        ViewSetter.getInstance().setSessionParam(sessionParam);
+                        ViewSetter.setSessionParam(sessionParam);
                         user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
                         switch (user) {
                                 case Customer cu -> {
-                                        ViewSetter.getInstance().getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
+                                        ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
                                         pageSwitch.switchToHome(event);
 
                                 }
@@ -80,8 +80,8 @@ public class LoginViewControllerInterf1 {
                                         hcbean.setDish(ch.getBestDish());
                                         hcbean.setRes(ch.getRestaurant());
                                         hcbean.setId(ch.getID());
-                                        ViewSetter.getInstance().setHcbean(hcbean);
-                                        ViewSetter.getInstance().getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
+                                        ViewSetter.setHcbean(hcbean);
+                                        ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
                                         pageSwitch.switchToHomeChef(event);
                                 }
                                 default -> throw new IllegalArgumentException("User type not valid");

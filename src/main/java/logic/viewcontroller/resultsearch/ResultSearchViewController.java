@@ -101,6 +101,6 @@ public abstract class ResultSearchViewController {
         hbvisit.setName(rsb.getNameChef());
         hbvisit.setId(rsb.getIdChef());
 
-        ViewSetter.getInstance().setHcvisitbean(hbvisit);
+        ViewSetter.setHcvisitbean(hbvisit);
     }
 }

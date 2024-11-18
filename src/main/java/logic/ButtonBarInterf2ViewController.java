@@ -19,7 +19,7 @@ public class ButtonBarInterf2ViewController {
     protected void goToIsc(ActionEvent actionEvent) {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.getInstance().setChatList(controller.getISCToChef());
+            ViewSetter.setChatList(controller.getISCToChef());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
@@ -41,7 +41,7 @@ public class ButtonBarInterf2ViewController {
     protected void goToIscChef(ActionEvent actionEvent) {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.getInstance().setChatList(controller.getISCToUser());
+            ViewSetter.setChatList(controller.getISCToUser());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

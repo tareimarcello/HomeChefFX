@@ -25,9 +25,9 @@ public class ChatInterf1 extends ChatViewController{
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        SessionParamBean.UserType type = ViewSetter.getInstance().getSessionParam().getUserType();
-        if(ViewSetter.getInstance().getIsHomeVisitBean()!=null && ViewSetter.getInstance().getIsHomeVisitBean().isHome()){
-            ViewSetter.getInstance().getIsHomeVisitBean().setHome(false);
+        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
+        if(ViewSetter.getIsHomeVisitBean()!=null && ViewSetter.getIsHomeVisitBean().isHome()){
+            ViewSetter.getIsHomeVisitBean().setHome(false);
             pageswitch.backTo();
         }
         else if(type== SessionParamBean.UserType.CHEF){

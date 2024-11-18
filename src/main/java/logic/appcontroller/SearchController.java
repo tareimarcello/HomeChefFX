@@ -28,7 +28,7 @@ public class SearchController {
             chefBeanResult.add(bean);
         }
 
-        ViewSetter.getInstance().setChefList(chefBeanResult);
+        ViewSetter.setChefList(chefBeanResult);
 
     }
 

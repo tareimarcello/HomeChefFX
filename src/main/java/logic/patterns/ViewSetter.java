@@ -6,92 +6,79 @@ import java.util.List;
 
 public class ViewSetter {
 
-    private static ViewSetter setter;
 
-    private HomeChefBean hcbean;
-    private HomeChefBean hcvisitbean;
-    private List<ResultSearchBean> chefList;
-    private SessionParamBean sessionParam;
+    private static HomeChefBean hcbean;
+    private static HomeChefBean hcvisitbean;
+    private static List<ResultSearchBean> chefList;
+    private static SessionParamBean sessionParam;
 
-    private IsHomeVisitBean isHomeVisitBean;
+    private static IsHomeVisitBean isHomeVisitBean;
 
-    private ISCBean openChat;
-    private List<ISCBean> chatList;
-    private List<BookBean> bookList;
-    private ViewSetter (){
+    private static ISCBean openChat;
+    private static List<ISCBean> chatList;
+    private static List<BookBean> bookList;
 
-
-    }
-
-    public static ViewSetter getInstance(){
-
-        if (setter==null)
-           setter = new ViewSetter();
-
-        return setter;
-    }
-
-    public IsHomeVisitBean getIsHomeVisitBean() {
-        return isHomeVisitBean;
-    }
-
-    public void setIsHomeVisitBean(IsHomeVisitBean isHomeVisitBean) {
-
-        this.isHomeVisitBean = isHomeVisitBean;
-    }
-
-    public ISCBean getOpenChat() {
-        return openChat;
-    }
-
-    public void setOpenChat(ISCBean openChat) {
-        this.openChat = openChat;
-    }
-    public HomeChefBean getHcbean() {
+    public static HomeChefBean getHcbean() {
         return hcbean;
     }
 
-    public void setHcbean(HomeChefBean hcbean) {
-        this.hcbean = hcbean;
+    public static void setHcbean(HomeChefBean hcbean) {
+        ViewSetter.hcbean = hcbean;
     }
 
-    public List<ResultSearchBean> getChefList() {
-        return chefList;
-    }
-
-    public void setChefList(List<ResultSearchBean> chefList) {
-        this.chefList = chefList;
-    }
-
-    public HomeChefBean getHcvisitbean() {
+    public static HomeChefBean getHcvisitbean() {
         return hcvisitbean;
     }
 
-    public void setHcvisitbean(HomeChefBean hcvisitbean) {
-        this.hcvisitbean = hcvisitbean;
+    public static void setHcvisitbean(HomeChefBean hcvisitbean) {
+        ViewSetter.hcvisitbean = hcvisitbean;
     }
 
-    public SessionParamBean getSessionParam() {
+    public static List<ResultSearchBean> getChefList() {
+        return chefList;
+    }
+
+    public static void setChefList(List<ResultSearchBean> chefList) {
+        ViewSetter.chefList = chefList;
+    }
+
+    public static SessionParamBean getSessionParam() {
         return sessionParam;
     }
 
-    public void setSessionParam(SessionParamBean sessionParam) {
-        this.sessionParam = sessionParam;
+    public static void setSessionParam(SessionParamBean sessionParam) {
+        ViewSetter.sessionParam = sessionParam;
     }
 
-    public List<ISCBean> getChatList() {
-        return chatList;
+    public static IsHomeVisitBean getIsHomeVisitBean() {
+        return isHomeVisitBean;
     }
 
-    public void setChatList(List<ISCBean> chatList) {
-        this.chatList = chatList;
+    public static void setIsHomeVisitBean(IsHomeVisitBean isHomeVisitBean) {
+        ViewSetter.isHomeVisitBean = isHomeVisitBean;
     }
 
-    public List<BookBean> getBookList() {
+    public static ISCBean getOpenChat() {
+        return openChat;
+    }
+
+    public static void setOpenChat(ISCBean openChat) {
+        ViewSetter.openChat = openChat;
+    }
+
+    public static List<BookBean> getBookList() {
         return bookList;
     }
 
-    public void setBookList(List<BookBean> bookList) {
-        this.bookList = bookList;
+    public static void setBookList(List<BookBean> bookList) {
+        ViewSetter.bookList = bookList;
+    }
+
+    public static List<ISCBean> getChatList() {
+        return chatList;
+    }
+
+    public static void setChatList(List<ISCBean> chatList) {
+        ViewSetter.chatList = chatList;
     }
 }

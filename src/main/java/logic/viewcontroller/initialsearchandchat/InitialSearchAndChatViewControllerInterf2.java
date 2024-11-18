@@ -30,7 +30,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
             pageswitch = new PageMenu();
             iscBeanMap = new HashMap<>();
             subGroupMap = new HashMap<>();
-            chatList = ViewSetter.getInstance().getChatList();
+            chatList = ViewSetter.getChatList();
             g1Index=7;
             g2Index=8;
             g3Index=9;
@@ -61,7 +61,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
-        ViewSetter.getInstance().setOpenChat(selected);
+        ViewSetter.setOpenChat(selected);
         try {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
             anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatuser/chatVoid.fxml")));
@@ -78,7 +78,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
-        ViewSetter.getInstance().setOpenChat(selected);
+        ViewSetter.setOpenChat(selected);
         try {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
             anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatchef/chatVoid.fxml")));

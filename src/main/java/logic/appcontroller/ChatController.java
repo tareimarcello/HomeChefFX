@@ -32,24 +32,24 @@ public class ChatController {
         List<Chat> newChat = chatDao.getChatByCustChef(chatBean.getChat().getCustomer(),chatBean.getChat().getChef());
         if (!newChat.isEmpty()){
             chatBean.setChat(newChat.getFirst());
-            ViewSetter.getInstance().setOpenChat(chatBean);
+            ViewSetter.setOpenChat(chatBean);
         }
         return chatBean;
     }
 
     public void refreshISC() throws ConnectionException{
 
-        SessionParamBean.UserType type = ViewSetter.getInstance().getSessionParam().getUserType();
+        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
 
         ISCController iscController = new ISCController();
 
         if (type== SessionParamBean.UserType.CUSTOMER){
 
-            ViewSetter.getInstance().setChatList(iscController.getISCToChef());
+            ViewSetter.setChatList(iscController.getISCToChef());
 
         }else {
 
-            ViewSetter.getInstance().setChatList(iscController.getISCToUser());
+            ViewSetter.setChatList(iscController.getISCToUser());
 
         }
 

@@ -15,7 +15,7 @@ public class BookListViewControllerInterf1 extends BookListViewController{
 
     public BookListViewControllerInterf1(){
         pageSwitch = new PageMenu();
-        super.bookList = ViewSetter.getInstance().getBookList();
+        super.bookList = ViewSetter.getBookList();
         bookBeanMap = new HashMap<>();
         g1Index=10;
         g2Index=11;

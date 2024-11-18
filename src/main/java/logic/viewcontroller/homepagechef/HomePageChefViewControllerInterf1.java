@@ -10,16 +10,7 @@ import logic.patterns.ViewSetter;
 import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 
-public class HomePageChefViewControllerInterf1 {
-    private PageMenu pageswitch;
-    @FXML
-    private TextField name;
-    @FXML
-    private TextField dish;
-    @FXML
-    private TextField res;
-    @FXML
-    private TextField city;
+public class HomePageChefViewControllerInterf1 extends HomePageChefViewController{
 
     public HomePageChefViewControllerInterf1() {
         pageswitch = new PageMenu();
@@ -29,16 +20,7 @@ public class HomePageChefViewControllerInterf1 {
 
         //scrivi nei text field nome res e piatto dello chef
 
-        HomeChefBean hcbean = ViewSetter.getInstance().getHcbean();
-
-        if (hcbean!=null) {
-
-            this.name.setText(hcbean.getName());
-            this.dish.setText(hcbean.getDish());
-            this.res.setText(hcbean.getRes());
-            this.city.setText(hcbean.getCity());
-
-        }
+        setFields();
 
     }
 
@@ -55,7 +37,7 @@ public class HomePageChefViewControllerInterf1 {
 
         ISCController controller = new ISCController();
         try {
-            ViewSetter.getInstance().setChatList(controller.getISCToUser());
+            ViewSetter.setChatList(controller.getISCToUser());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

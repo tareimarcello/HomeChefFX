@@ -100,12 +100,12 @@ public  abstract class  InitialSearchAndChatViewController {
     public static void updateLastMessage(){
 
         ISCController controller = new ISCController();
-        ISCBean currentChatBean = ViewSetter.getInstance().getOpenChat();
+        ISCBean currentChatBean = ViewSetter.getOpenChat();
         try {
             Message msgLast = controller.getLastChatMessage(currentChatBean);
             currentChatBean.getChatMessages().add(msgLast);
-            Group subGroupChatSeleted = keyChatMap.get(currentChatBean.getChat().getId());
-            ObservableList<Node> paramList = subGroupChatSeleted.getChildren();
+            Group subGroupChatSelected = keyChatMap.get(currentChatBean.getChat().getId());
+            ObservableList<Node> paramList = subGroupChatSelected.getChildren();
             Text lastMsg = (Text)paramList.get(LASTMSGINDEX);
             lastMsg.setText(msgLast.getText());
         } catch (ConnectionException e) {

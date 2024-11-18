@@ -41,7 +41,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
         }
         IsHomeVisitBean ishBean = new IsHomeVisitBean();
         ishBean.setHome(true);
-        ViewSetter.getInstance().setIsHomeVisitBean(ishBean);
+        ViewSetter.setIsHomeVisitBean(ishBean);
         pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");
     }
 

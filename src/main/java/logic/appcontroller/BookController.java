@@ -15,8 +15,8 @@ public class BookController {
 
     public void loadBookList() throws ConnectionException {
 
-        long idCurrentUser = ViewSetter.getInstance().getSessionParam().getCurrentUserId();
-        SessionParamBean.UserType type = ViewSetter.getInstance().getSessionParam().getUserType();
+        long idCurrentUser = ViewSetter.getSessionParam().getCurrentUserId();
+        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
         DAOUserImpl daoUser = new DAOUserImpl();
         DAOBookImpl daoBook = new DAOBookImpl();
         List<Book> books = null;
@@ -44,14 +44,14 @@ public class BookController {
             beanBooksList.add(bean);
         }
 
-        ViewSetter.getInstance().setBookList(beanBooksList);
+        ViewSetter.setBookList(beanBooksList);
     }
 
     public void saveBook(BookBean bean) throws ConnectionException{
 
         DAOBookImpl daoBook = new DAOBookImpl();
-        long idChef=ViewSetter.getInstance().getHcvisitbean().getId();
-        long idCust=ViewSetter.getInstance().getSessionParam().getCurrentUserId();
+        long idChef=ViewSetter.getHcvisitbean().getId();
+        long idCust=ViewSetter.getSessionParam().getCurrentUserId();
         Book book = new Book(-1,idCust,idChef, Book.BookStatus.OPEN,bean.getData(),bean.getMeal(), bean.getCitta());
         book.setVia(bean.getVia());
         daoBook.save(book);

@@ -20,7 +20,7 @@ public abstract class VisitHomeChefViewController {
     protected HomeChefBean hcbean;
 
     protected void downLoadHcBean(){
-        hcbean  = ViewSetter.getInstance().getHcvisitbean();
+        hcbean  = ViewSetter.getHcvisitbean();
 
         if (hcbean!=null) {
 

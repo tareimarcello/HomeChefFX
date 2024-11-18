@@ -19,7 +19,7 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
 
     public ResultSearchViewControllerInterf1(){
         pageSwitch = new PageMenu();
-        chefList = ViewSetter.getInstance().getChefList();
+        chefList = ViewSetter.getChefList();
         chefBeanMap = new HashMap<>();
         g1Index=10;
         g2Index=11;

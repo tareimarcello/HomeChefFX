@@ -64,7 +64,7 @@ public class HomeChefUtil {
     }
 
     public static void linkButtonBarInterf2(AnchorPane buttonBar){
-        if(ViewSetter.getInstance().getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
+        if(ViewSetter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
             try {
                 buttonBar.getChildren().removeAll(buttonBar.getChildren());
                 buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));

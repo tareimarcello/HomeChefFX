@@ -2,7 +2,6 @@ package logic.dao;
 
 import logic.connection.AppDataStore;
 import logic.dao.rowmapper.BookRowMapper;
-import logic.dao.rowmapper.ChatRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;

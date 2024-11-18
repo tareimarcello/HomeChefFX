@@ -77,14 +77,10 @@ public abstract class ResultSearchViewController {
             ResultSearchBean resBean = chefList.get(lastIndexChef);
             Group current = (Group) anchorPane.getChildren().get(g1Index+index);
             this.chefBeanMap.put(current.getId(),resBean);
-            Group subGroup = (Group) current.getChildren().get(SUBGROUPINDEX);
-            ObservableList<Node> paramList = subGroup.getChildren();
-            Text specialized = (Text)paramList.get(SPECIALIZEDINDEX);
-            Text nameChef = (Text)paramList.get(CHEFNAMEINDEX);
-            Text restaurant = (Text)paramList.get(RESTAURANTINDEX);
-            specialized.setText(resBean.getBestDish());
-            nameChef.setText(resBean.getNameChef());
-            restaurant.setText(resBean.getRestaurant());
+            List<Text> textList=HomeChefUtil.getListGroup(current,SUBGROUPINDEX,SPECIALIZEDINDEX,CHEFNAMEINDEX,RESTAURANTINDEX);
+            textList.get(0).setText(resBean.getBestDish());
+            textList.get(1).setText(resBean.getNameChef());
+            textList.get(2).setText(resBean.getRestaurant());
             current.setOpacity(1.0);
             index++;
             lastIndexChef++;

@@ -2,9 +2,11 @@ package logic.homechefutil;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import logic.HomeChefApplication;
 import logic.beans.*;
 import logic.dao.DAOUserImpl;
@@ -13,6 +15,8 @@ import logic.model.User;
 import logic.patterns.ViewSetter;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -75,5 +79,17 @@ public class HomeChefUtil {
                 buttonBar.getChildren().removeAll(buttonBar.getChildren());
             }
         }
+    }
+    public static List<Text> getListGroup(Group current,int subGroupIndex,int index1,int index2,int index3 ){
+        List<Text> list = new ArrayList<>();
+        Group subGroupBook = (Group) current.getChildren().get(subGroupIndex);
+        ObservableList<Node> paramListBook = subGroupBook.getChildren();
+        Text status = (Text)paramListBook.get(index1);
+        Text nameChef = (Text)paramListBook.get(index2);
+        Text bookDate = (Text)paramListBook.get(index3);
+        list.add(status);
+        list.add(nameChef);
+        list.add(bookDate);
+        return list;
     }
 }

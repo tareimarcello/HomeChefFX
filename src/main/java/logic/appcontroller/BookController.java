@@ -5,7 +5,6 @@ import logic.beans.SessionParamBean;
 import logic.dao.DAOBookImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
 import logic.model.Book;
 import logic.patterns.ViewSetter;
 
@@ -22,17 +21,12 @@ public class BookController {
         DAOBookImpl daoBook = new DAOBookImpl();
         List<Book> books = null;
         List<BookBean> beanBooksList= new ArrayList<>();
-        if (type== SessionParamBean.UserType.CUSTOMER){
-
-            books = daoBook.getAllByCustomer(idCurrentUser);
-
-
-        }else if (type== SessionParamBean.UserType.CHEF){
-
-            books = daoBook.getAllByChef(idCurrentUser);
-
-        }else{
-            // inserire eccezione tipo non riconosciuto
+        switch(type) {
+            case SessionParamBean.UserType.CUSTOMER -> books = daoBook.getAllByCustomer(idCurrentUser);
+            case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChef(idCurrentUser);
+            default -> {
+                // inserire eccezione tipo non riconosciuto
+            }
         }
 
         assert books != null;

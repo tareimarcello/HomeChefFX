@@ -11,7 +11,7 @@ import java.util.HashMap;
 
 
 public class BookListViewControllerInterf1 extends BookListViewController{
-    private PageMenu pageswitch;
+
 
     public BookListViewControllerInterf1(){
         pageSwitch = new PageMenu();
@@ -39,35 +39,35 @@ public class BookListViewControllerInterf1 extends BookListViewController{
 
     @FXML
     protected void goToHome(ActionEvent event) {
-        pageswitch.switchToHome(event);
+        pageSwitch.switchToHome(event);
     }
     @FXML
     protected void goToBookList(ActionEvent event) {
-        pageswitch.switchToBookList(event);
+        pageSwitch.switchToBookList(event);
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-        pageswitch.switchToISCUser(event);
+        pageSwitch.switchToISCUser(event);
     }
     @FXML
     protected void goToSettings(ActionEvent event) {
-        pageswitch.switchToSettings(event);
+        pageSwitch.switchToSettings(event);
     }
     @FXML
     protected void goToHomeChef(ActionEvent event) {
-        pageswitch.switchToHomeChef(event);
+        pageSwitch.switchToHomeChef(event);
     }
     @FXML
     protected void goToBookListChef(ActionEvent event) {
-        pageswitch.switchToBookListChef(event);
+        pageSwitch.switchToBookListChef(event);
     }
     @FXML
     protected void goToISCChef(ActionEvent event) {
-        pageswitch.switchToISCChef(event);
+        pageSwitch.switchToISCChef(event);
     }
     @FXML
     protected void goToSettingsChef(ActionEvent event) {
-        pageswitch.switchToSettingsChef(event);
+        pageSwitch.switchToSettingsChef(event);
     }
 
 }

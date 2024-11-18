@@ -18,6 +18,10 @@ public class ViewSetter {
     private static List<ISCBean> chatList;
     private static List<BookBean> bookList;
 
+    private ViewSetter() {
+
+    }
+
     public static HomeChefBean getHcbean() {
         return hcbean;
     }

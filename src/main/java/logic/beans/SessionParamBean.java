@@ -2,7 +2,7 @@ package logic.beans;
 
 public class SessionParamBean {
 
-    public enum userType{
+    public enum UserType {
         CUSTOMER,
         CHEF
     }
@@ -10,7 +10,7 @@ public class SessionParamBean {
 
 
 
-    private userType userType;
+    private UserType userType;
 
 
     
@@ -22,11 +22,11 @@ public class SessionParamBean {
         this.currentUserId = currentUserId;
     }
 
-    public SessionParamBean.userType getUserType() {
+    public UserType getUserType() {
         return userType;
     }
 
-    public void setUserType(SessionParamBean.userType userType) {
+    public void setUserType(UserType userType) {
         this.userType = userType;
     }
 

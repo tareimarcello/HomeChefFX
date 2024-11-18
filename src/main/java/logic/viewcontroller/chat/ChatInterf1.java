@@ -2,18 +2,13 @@ package logic.viewcontroller.chat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 import logic.appcontroller.ChatController;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
-import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
 import logic.patterns.ViewSetter;
-
-import java.util.List;
 
 public class ChatInterf1 extends ChatViewController{
 
@@ -30,12 +25,12 @@ public class ChatInterf1 extends ChatViewController{
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
+        SessionParamBean.UserType type = ViewSetter.getInstance().getSessionParam().getUserType();
         if(ViewSetter.getInstance().getIsHomeVisitBean()!=null && ViewSetter.getInstance().getIsHomeVisitBean().isHome()){
             ViewSetter.getInstance().getIsHomeVisitBean().setHome(false);
             pageswitch.backTo();
         }
-        else if(type==SessionParamBean.userType.CHEF){
+        else if(type== SessionParamBean.UserType.CHEF){
            pageswitch.switchToISCChef(event);
        }
        else{

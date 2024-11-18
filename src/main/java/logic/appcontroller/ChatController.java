@@ -39,11 +39,11 @@ public class ChatController {
 
     public void refreshISC() throws ConnectionException{
 
-        SessionParamBean.userType type = ViewSetter.getInstance().getSessionParam().getUserType();
+        SessionParamBean.UserType type = ViewSetter.getInstance().getSessionParam().getUserType();
 
         ISCController iscController = new ISCController();
 
-        if (type==SessionParamBean.userType.CUSTOMER){
+        if (type== SessionParamBean.UserType.CUSTOMER){
 
             ViewSetter.getInstance().setChatList(iscController.getISCToChef());
 

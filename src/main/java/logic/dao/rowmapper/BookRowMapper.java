@@ -13,9 +13,9 @@ public class BookRowMapper implements RowMapper<Book> {
                 rs.getInt("idbook"),
                 rs.getInt("customer"),
                 rs.getInt("chef"),
-                rs.getString("stato"),
+                Book.BookStatus.valueOf(rs.getString("stato")),
                 rs.getDate("data"),
-                rs.getString("pasto"),
+                Book.BookMeal.valueOf(rs.getString("pasto")),
                 rs.getString("citta")
         );
         retBook.setVia(rs.getString("via"));

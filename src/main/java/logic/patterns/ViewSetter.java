@@ -17,7 +17,7 @@ public class ViewSetter {
 
     private ISCBean openChat;
     private List<ISCBean> chatList;
-
+    private List<BookBean> bookList;
     private ViewSetter (){
 
 
@@ -36,6 +36,7 @@ public class ViewSetter {
     }
 
     public void setIsHomeVisitBean(IsHomeVisitBean isHomeVisitBean) {
+
         this.isHomeVisitBean = isHomeVisitBean;
     }
 
@@ -86,5 +87,11 @@ public class ViewSetter {
         this.chatList = chatList;
     }
 
+    public List<BookBean> getBookList() {
+        return bookList;
+    }
 
+    public void setBookList(List<BookBean> bookList) {
+        this.bookList = bookList;
+    }
 }

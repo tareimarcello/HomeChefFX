@@ -1,6 +1,5 @@
 package logic.model;
 
-
 import java.util.Date;
 
 public class Book {
@@ -8,12 +7,18 @@ public class Book {
     private long customer;
     private long chef;
     private Date data;
-    private String bookState;
-    private String meal;
+    private BookStatus bookState;
+    private BookMeal meal;
     private String citta;
     private String via;
 
-    public Book(int idbook, int customer, int chef, String stato, Date data, String pasto, String citta) {
+    public enum BookStatus{
+        OPEN,REJECTED,APPROVED
+    }
+    public enum BookMeal{
+        LUNCH,DINNER
+    }
+    public Book(int idbook, long customer, long chef, BookStatus stato, Date data, BookMeal pasto, String citta) {
         this.idBook = idbook;
         this.customer = customer;
         this.chef = chef;
@@ -71,16 +76,16 @@ public class Book {
     public void setVia(String via) {
         this.via = via;
     }
-    public void setBookState(String bookState) {
+    public void setBookState(BookStatus bookState) {
         this.bookState = bookState;     //passare l'enum con il tostring
     }
-    public String getBookState(){
+    public BookStatus getBookState(){
         return this.bookState;
     }
-    public void setMeal(String meal) {
+    public void setMeal(BookMeal meal) {
         this.meal=meal;
     }
-    public String getMeal(){
+    public BookMeal getMeal(){
         return this.meal;
     }
 }

@@ -19,5 +19,5 @@ public abstract class SearchViewController {
         searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
         return searchBean;
     }
-    //NOn è questa la soluzione al problema della ricerca per nome
+
 }

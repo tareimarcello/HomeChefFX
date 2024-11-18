@@ -1,5 +1,6 @@
 package logic.viewcontroller.search;
 
+import logic.appcontroller.BookController;
 import logic.appcontroller.ISCController;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
@@ -32,6 +33,15 @@ public class SearchViewControllerInterf1 extends SearchViewController{
     }
     @FXML
     protected void goToBook(ActionEvent event){
+
+        BookController controller = new BookController();
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+
+            Exceptions.exceptionConnectionOccurred();
+        }
+
         pageSwitch.switchToBookList(event);
     }
     @FXML

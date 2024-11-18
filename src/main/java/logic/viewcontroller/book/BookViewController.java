@@ -7,7 +7,19 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import logic.appcontroller.BookController;
+import logic.beans.BookBean;
+import logic.beans.HomeChefBean;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
+import logic.model.Book;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ViewSetter;
+
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public abstract  class BookViewController {
     protected PageMenu pageSwitch;
@@ -20,6 +32,8 @@ public abstract  class BookViewController {
     @FXML
     protected TextField bookPlace;
     @FXML
+    protected TextField bookCity;
+    @FXML
     protected ComboBox<String> whenBook;
 
     @FXML
@@ -29,11 +43,34 @@ public abstract  class BookViewController {
 
     public void initialize(){
         ObservableList<String> comboItems = FXCollections.observableArrayList(
-                "Lunch",
-                "Dinner"
+                "LUNCH",
+                "DINNER"
         );
         whenBook.setItems(comboItems);
         bookDone.setOpacity(0.0);
         bookFail.setOpacity(0.0);
+    }
+    @FXML
+    protected void confirmBook(){
+
+        BookController controller = new BookController();
+        LocalDate bookDate = dateRes.getValue();
+        Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
+        Date date = Date.from(instant);
+        String typeOfMeal = this.whenBook.getValue();
+        String city = this.bookCity.getText();
+        String place = this.bookPlace.getText();
+        BookBean bean = new BookBean();
+        bean.setVia(place);
+        bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
+        bean.setIdBook(-1);
+        bean.setData(date);
+        bean.setCitta(city);
+        try {
+            controller.saveBook(bean);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+
     }
 }

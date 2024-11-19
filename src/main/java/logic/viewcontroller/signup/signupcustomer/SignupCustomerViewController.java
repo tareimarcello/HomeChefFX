@@ -11,10 +11,7 @@ import logic.pageswitch.Page;
 import logic.viewcontroller.signup.SignupViewController;
 
 public class SignupCustomerViewController extends SignupViewController {
-    @FXML
-    protected Label rghtMsg;
-    @FXML
-    protected Label errMsg;
+
     public void initialize(){
         rghtMsg.setOpacity(0.0);
         errMsg.setOpacity(0.0);
@@ -32,21 +29,9 @@ public class SignupCustomerViewController extends SignupViewController {
     @FXML
     protected void save() {
 
-        // Controllo valori
-
-        // In caso di errore set opacity label
         rghtMsg.setOpacity(0.0);
         errMsg.setOpacity(0.0);
-        if(namesign.getText().equals("") || surnamesign.getText().equals("")){
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Name or surname missing");
-        }else if(!HomeChefUtil.isValidEmail(email.getText())) {
-            errMsg.setText("Please enter a valid email address");
-            errMsg.setOpacity(1.0);
-        }else if(pswd.getText().isEmpty() || confirmpswd.getText().isEmpty() || !pswd.getText().equals(confirmpswd.getText())){
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Password must match");
-        }else {
+        if(checkValid()){
             Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(), surnamesign.getText().toUpperCase(), email.getText(), pswd.getText());
             try {
                 controller.signup(cBean);

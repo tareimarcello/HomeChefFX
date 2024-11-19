@@ -68,7 +68,7 @@ public abstract class BookListViewController {
             textList.get(0).setText(bookBean.getBookState().toString());
             textList.get(1).setText(bookBean.getChef().getName()+" "+bookBean.getChef().getSurname());
             DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
-            textList.get(2).setText(df.format(bookBean.getData()));
+            textList.get(2).setText(df.format(bookBean.getData()) + "-" + bookBean.getMeal());
             current.setOpacity(1.0);
             index++;
             lastIndexBook++;

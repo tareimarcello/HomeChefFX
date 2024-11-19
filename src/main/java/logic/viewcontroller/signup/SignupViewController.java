@@ -6,6 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import logic.appcontroller.SignupController;
+import logic.beans.Userbean;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
+import logic.exceptions.MailAlreadyUsed;
 import logic.homechefutil.HomeChefUtil;
 
 
@@ -34,6 +38,11 @@ public abstract class SignupViewController {
 
     protected abstract void save();
 
+    public void initialize(){
+        rghtMsg.setOpacity(0.0);
+        errMsg.setOpacity(0.0);
+    }
+
     protected boolean checkValid() {
         if (namesign.getText().equals("") || surnamesign.getText().equals("")) {
             errMsg.setOpacity(1.0);
@@ -49,6 +58,19 @@ public abstract class SignupViewController {
             return false;
         }else {
             return true;
+        }
+    }
+
+    protected void launchController(Userbean bean){
+        try {
+            controller.signup(bean);
+            rghtMsg.setOpacity(1.0);
+            rghtMsg.setText("Signup successful");
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        } catch (MailAlreadyUsed e) {
+            errMsg.setOpacity(1.0);
+            errMsg.setText(e.getMessage());
         }
     }
 }

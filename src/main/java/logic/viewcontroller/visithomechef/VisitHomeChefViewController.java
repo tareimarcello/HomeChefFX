@@ -2,11 +2,13 @@ package logic.viewcontroller.visithomechef;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.appcontroller.VisitHomeChefController;
 import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
 public abstract class VisitHomeChefViewController {
+    protected  static final VisitHomeChefController controller = new VisitHomeChefController();
     protected PageMenu pageSwitch;
     @FXML
     protected TextField chefName;

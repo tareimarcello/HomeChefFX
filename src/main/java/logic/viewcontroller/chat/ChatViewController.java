@@ -20,6 +20,7 @@ import logic.patterns.ViewSetter;
 import java.util.List;
 
 public abstract class ChatViewController {
+    protected static final ChatController controller = new ChatController();
     protected PageMenu pageswitch;
     @FXML
     private TextArea inputmsg;
@@ -83,7 +84,6 @@ public abstract class ChatViewController {
 
         recivemsgArr();
         MessageBean msgBean = new MessageBean();
-        ChatController chat = new ChatController();
         SessionParamBean sessionParam = ViewSetter.getSessionParam();
         /** Creazione chat se è il primo messaggio scambiato tra chef e utente **/
 
@@ -91,7 +91,7 @@ public abstract class ChatViewController {
 
             try{
 
-                currentChat=chat.createChat(this.currentChat);
+                currentChat=controller.createChat(this.currentChat);
 
             }catch (ConnectionException e){
 
@@ -106,7 +106,7 @@ public abstract class ChatViewController {
         msgBean.setText(inputmsg.getText());
 
         try {
-            chat.saveMessage(msgBean);
+            controller.saveMessage(msgBean);
             ViewSetter.getObserver().notifyMsgISC();  //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
             inputmsg.setText("");
         } catch (ConnectionException e) {

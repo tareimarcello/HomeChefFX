@@ -20,7 +20,6 @@ public class ChatInterf1 extends ChatViewController{
 
     @FXML
     protected void goBack(ActionEvent event) {
-        ChatController controller = new ChatController();
         try {
             controller.refreshISC();
         } catch (ConnectionException e) {

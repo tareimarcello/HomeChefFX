@@ -23,16 +23,12 @@ import logic.pageswitch.PageMenu;
 import java.util.NoSuchElementException;
 
 public class LoginViewControllerInterf1 {
-
+        private static final LoginController controller = new LoginController();
         private final PageMenu pageSwitch;
-        @FXML
-        private Button loginButton;
         @FXML
         private TextField labUser;
         @FXML
         private PasswordField labPassword;
-        @FXML
-        private Button switchUiButton;
         @FXML
         private Label show;
 
@@ -56,8 +52,6 @@ public class LoginViewControllerInterf1 {
                 // - Creazione bean utente
                 logBean.setEmail(this.labUser.getText());
                 logBean.setPassword(this.labPassword.getText());
-
-                LoginController controller = new LoginController();
 
                 try {
                         // - Invocazione check sul controller utenza.

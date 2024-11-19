@@ -22,6 +22,7 @@ import java.time.ZoneId;
 import java.util.Date;
 
 public abstract  class BookViewController {
+    protected static final BookController controller = new BookController();
     protected PageMenu pageSwitch;
     @FXML
     protected Text bookDone;
@@ -53,7 +54,6 @@ public abstract  class BookViewController {
     @FXML
     protected void confirmBook(){
 
-        BookController controller = new BookController();
         LocalDate bookDate = dateRes.getValue();
         Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
         Date date = Date.from(instant);

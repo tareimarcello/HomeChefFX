@@ -57,7 +57,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-        ISCController controller = new ISCController();
         try {
             ViewSetter.setChatList(controller.getISCToChef());
         } catch (ConnectionException e) {

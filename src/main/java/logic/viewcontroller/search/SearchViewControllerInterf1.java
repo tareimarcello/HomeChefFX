@@ -42,7 +42,6 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
         /* Invocazione back end recupero lista chef */
 
-        SearchController controller = new SearchController();
 
         try {
             controller.searchChefList(searchBean);

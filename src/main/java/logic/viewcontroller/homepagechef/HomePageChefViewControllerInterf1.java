@@ -18,7 +18,6 @@ public class HomePageChefViewControllerInterf1 extends HomePageChefViewControlle
 
     public void initialize() {
 
-        //scrivi nei text field nome res e piatto dello chef
 
         setFields();
 

@@ -13,7 +13,7 @@ import logic.pageswitch.Page;
 import javafx.fxml.FXML;
 
 public class RecoverPswdViewController {
-
+    protected static final RecPswdController controller = new RecPswdController();
     @FXML
     protected Label show;
     @FXML
@@ -27,7 +27,6 @@ public class RecoverPswdViewController {
             show.setText("The email format is incorrect");
         }else{
             RecPswdBean bean = new RecPswdBean(email.getText());
-            RecPswdController controller = new RecPswdController();
             try{
                 controller.checkEmail(bean);
             }catch(ConnectionException e){

@@ -35,7 +35,6 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     @FXML
     protected void goToChefChat(ActionEvent event){
 
-        VisitHomeChefController controller = new VisitHomeChefController();
         try {
             controller.loadChat(this.hcbean);
         } catch (ConnectionException e) {

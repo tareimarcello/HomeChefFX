@@ -15,6 +15,7 @@ import logic.patterns.ViewSetter;
 import java.util.Objects;
 
 public abstract class SettingViewController {
+    protected static final SettingsController controller = new SettingsController();
     @FXML
     protected TextField email;
     @FXML
@@ -55,7 +56,6 @@ public abstract class SettingViewController {
             EditProfileBean bean = new EditProfileBean("",pswd.getText(), ViewSetter.getSessionParam().getCurrentUserId());
             pswd.setText("");
             confirmpswd.setText("");
-            SettingsController controller = new SettingsController();
             try {
                 controller.updatePswd(bean);
                 setResOpMsg(true);
@@ -85,7 +85,6 @@ public abstract class SettingViewController {
             resetOpMsg();
             EditProfileBean updateEmail = new EditProfileBean(email.getText(), "", ViewSetter.getSessionParam().getCurrentUserId());
             email.setText("");
-            SettingsController controller = new SettingsController();
             try {
                 controller.updateMail(updateEmail);
                 setResOpMsg(true);
@@ -125,7 +124,6 @@ public abstract class SettingViewController {
             resetOpMsg();
             EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),restaurant.getText().toUpperCase(),"");
             restaurant.setText("");
-            SettingsController controller = new SettingsController();
             try {
                 controller.updateRes(updateRes);
                 setResOpMsg(true);
@@ -150,7 +148,6 @@ public abstract class SettingViewController {
             resetOpMsg();
             EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"",city.getText().toUpperCase());
             city.setText("");
-            SettingsController controller = new SettingsController();
             try {
                 controller.updateCity(updateRes);
                 setResOpMsg(true);

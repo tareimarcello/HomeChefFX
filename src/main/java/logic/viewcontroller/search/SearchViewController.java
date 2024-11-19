@@ -2,9 +2,11 @@ package logic.viewcontroller.search;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 
 public abstract class SearchViewController {
+    protected static final SearchController controller = new SearchController();
     @FXML
     protected TextField eatName;
     @FXML

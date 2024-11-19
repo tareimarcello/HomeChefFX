@@ -12,10 +12,6 @@ import logic.viewcontroller.signup.SignupViewController;
 
 public class SignupCustomerViewController extends SignupViewController {
 
-    public void initialize(){
-        rghtMsg.setOpacity(0.0);
-        errMsg.setOpacity(0.0);
-    }
 
     @FXML
     @Override
@@ -33,16 +29,7 @@ public class SignupCustomerViewController extends SignupViewController {
         errMsg.setOpacity(0.0);
         if(checkValid()){
             Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(), surnamesign.getText().toUpperCase(), email.getText(), pswd.getText());
-            try {
-                controller.signup(cBean);
-                rghtMsg.setOpacity(1.0);
-                rghtMsg.setText("Signup successful");
-            } catch (ConnectionException e) {
-                Exceptions.exceptionConnectionOccurred();
-            } catch (MailAlreadyUsed e) {
-                errMsg.setOpacity(1.0);
-                errMsg.setText(e.getMessage());
-            }
+            launchController(cBean);
         }
     }
 

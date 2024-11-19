@@ -17,8 +17,6 @@ import java.util.Locale;
 import java.util.Map;
 
 public abstract class BookListViewController {
-
-
     @FXML
     protected AnchorPane anchorPane;
     @FXML

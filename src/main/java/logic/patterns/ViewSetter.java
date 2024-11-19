@@ -21,7 +21,8 @@ public class ViewSetter {
     public enum Mode{
         SMARTPHONE,
         DESKTOP
-    };
+    }
+
     private static Mode mode;
 
     private ViewSetter() {

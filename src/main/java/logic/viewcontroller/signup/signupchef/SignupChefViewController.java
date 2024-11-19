@@ -33,11 +33,9 @@ public class SignupChefViewController extends SignupViewController {
         errMsg.setOpacity(0.0);
         rghtMsg.setOpacity(0.0);
         // Controllo valori
-        if(checkValid()) {
-            if (checkValidChef()) {
+        if(checkValid() && checkValidChef()) {
                 Chefbean chBean = new Chefbean(super.namesign.getText().toUpperCase(), super.surnamesign.getText().toUpperCase(), super.email.getText(), super.pswd.getText(), this.citysign.getText().toUpperCase(), this.restaurant.getText().toUpperCase(), this.bestDish.getText().toUpperCase());
                 launchController(chBean);
-            }
         }
     }
 

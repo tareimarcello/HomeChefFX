@@ -47,7 +47,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="num1" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" wrappingWidth="86.78515625" />
+                  <Text fx:id="dat1" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
                   <Text fx:id="chef1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -68,7 +68,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="num2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number" />
+                  <Text fx:id="dat2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                   <Text fx:id="chef2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -79,17 +79,17 @@
             <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="12.0" layoutY="54.0" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
          </children>
       </Group>
-      <Group fx:id="group4" layoutX="154.0" layoutY="352.0">
+      <Group fx:id="group3" layoutX="154.0" layoutY="352.0">
          <children>
             <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
-            <Group fx:id="group8" layoutX="-18.0">
+            <Group fx:id="group7" layoutX="-18.0">
                <children>
                   <Text fx:id="stat3" layoutX="92.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Status:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="num3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" />
+                  <Text fx:id="dat3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                   <Text fx:id="chef3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -100,17 +100,17 @@
             <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="12.0" layoutY="54.0" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
          </children>
       </Group>
-      <Group fx:id="group3" layoutX="154.0" layoutY="474.0">
+      <Group fx:id="group4" layoutX="154.0" layoutY="474.0">
          <children>
             <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
-            <Group fx:id="group7" layoutX="-18.0">
+            <Group fx:id="group8" layoutX="-18.0">
                <children>
                   <Text fx:id="stat4" layoutX="91.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Status:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="num4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Number:" />
+                  <Text fx:id="dat4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
                   <Text fx:id="chef4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -121,13 +121,13 @@
             <FontAwesomeIconView fill="WHITE" glyphName="BOOK" layoutX="13.0" layoutY="55.0" size="40" strokeWidth="0.5" wrappingWidth="29.942844480276108" />
          </children>
       </Group>
-      <Button layoutX="198.0" layoutY="632.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
+      <Button fx:id="loadNext" layoutX="198.0" layoutY="632.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
       <Text layoutX="278.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 30;" styleClass="textSubTitle" text="Book List" wrappingWidth="146.0000003894288">
          <font>
             <Font size="36.0" />
          </font>
       </Text>
-      <Button layoutX="198.0" layoutY="704.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load prevoius" textFill="WHITE" />
+      <Button fx:id="loadPrevious" layoutX="198.0" layoutY="704.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load prevoius" textFill="WHITE" />
 
     </children>
 </AnchorPane>

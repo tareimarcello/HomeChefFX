@@ -48,24 +48,10 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     @FXML
     protected void goToBookList(ActionEvent event) {
 
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageSwitch.switchToBookList(event);
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-
         pageSwitch.switchToISCUser(event);
     }
     @FXML
@@ -82,13 +68,6 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     }
     @FXML
     protected void goToISCChef(ActionEvent event) {
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-
         pageSwitch.switchToISCChef(event);
     }
     @FXML

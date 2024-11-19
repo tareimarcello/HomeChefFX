@@ -22,25 +22,11 @@ public class SearchViewControllerInterf1 extends SearchViewController{
     @FXML
     protected void goToISC(ActionEvent event){
 
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
 
         pageSwitch.switchToISCUser(event);
     }
     @FXML
     protected void goToBook(ActionEvent event){
-
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
 
         pageSwitch.switchToBookList(event);
     }

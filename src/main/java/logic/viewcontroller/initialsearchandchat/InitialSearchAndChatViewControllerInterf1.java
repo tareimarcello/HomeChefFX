@@ -83,13 +83,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected  void goToBook(ActionEvent event) {
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageswitch.switchToBookList(event);
     }
     @FXML
@@ -105,12 +98,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected void goToISCChef(ActionEvent event) {
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageswitch.switchToISCChef(event);
     }
     @FXML

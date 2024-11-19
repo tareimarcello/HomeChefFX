@@ -21,13 +21,6 @@ public class BookViewControllerInterf1 extends BookViewController{
     }
     @FXML
     protected  void goToBook(ActionEvent event) {
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageSwitch.switchToBookList(event);
     }
     @FXML

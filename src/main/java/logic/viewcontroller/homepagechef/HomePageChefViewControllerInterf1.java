@@ -34,13 +34,6 @@ public class HomePageChefViewControllerInterf1 extends HomePageChefViewControlle
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToUser());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageswitch.switchToISCChef(event);
     }
     @FXML

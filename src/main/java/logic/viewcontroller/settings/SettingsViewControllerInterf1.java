@@ -21,12 +21,6 @@ public  class SettingsViewControllerInterf1 extends SettingViewController {
     @FXML
     protected void goToChat(ActionEvent event){
 
-        ISCController controller = new ISCController();
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageSwitch.switchToISCUser(event);
     }
     @FXML

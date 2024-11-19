@@ -46,13 +46,6 @@ public class ChatInterf1 extends ChatViewController{
     }
     @FXML
     protected void goToBook(ActionEvent event) {
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageswitch.switchToBookList(event);
     }
     @FXML

@@ -53,13 +53,6 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
     @FXML
     protected void goToBook(ActionEvent event){
-        BookController controller = new BookController();
-        try {
-            controller.loadBookList();
-        } catch (ConnectionException e) {
-
-            Exceptions.exceptionConnectionOccurred();
-        }
         pageSwitch.switchToBookList(event);
     }
     @FXML

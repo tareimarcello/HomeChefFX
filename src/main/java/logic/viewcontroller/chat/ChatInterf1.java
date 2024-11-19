@@ -2,6 +2,7 @@ package logic.viewcontroller.chat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.appcontroller.BookController;
 import logic.appcontroller.ChatController;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
@@ -45,6 +46,13 @@ public class ChatInterf1 extends ChatViewController{
     }
     @FXML
     protected void goToBook(ActionEvent event) {
+        BookController controller = new BookController();
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageswitch.switchToBookList(event);
     }
     @FXML

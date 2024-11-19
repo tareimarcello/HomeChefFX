@@ -4,9 +4,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import logic.appcontroller.BookController;
+import logic.appcontroller.ISCController;
 import logic.beans.HomeChefBean;
 import logic.beans.ResultSearchBean;
 import logic.beans.SessionParamBean;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -29,6 +33,14 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
 
     @FXML
     protected void goToBook(ActionEvent event){
+
+        BookController controller = new BookController();
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchToBookList(event);
     }
     @FXML
@@ -48,6 +60,12 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
     }
     @FXML
     protected void goToISC(ActionEvent event){
+        ISCController controller = new ISCController();
+        try {
+            ViewSetter.setChatList(controller.getISCToChef());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchToISCUser(event);
     }
 

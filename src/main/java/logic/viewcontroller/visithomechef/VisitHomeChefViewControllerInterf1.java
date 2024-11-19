@@ -2,6 +2,8 @@ package logic.viewcontroller.visithomechef;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.appcontroller.BookController;
+import logic.appcontroller.ISCController;
 import logic.appcontroller.VisitHomeChefController;
 import logic.beans.IsHomeVisitBean;
 import logic.exceptions.ConnectionException;
@@ -51,10 +53,24 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
     @FXML
     protected void goToBook(ActionEvent event){
+        BookController controller = new BookController();
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchToBookList(event);
     }
     @FXML
     protected void goToISC(ActionEvent event){
+
+        ISCController controller = new ISCController();
+        try {
+            ViewSetter.setChatList(controller.getISCToChef());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchToISCUser(event);
     }
     @FXML

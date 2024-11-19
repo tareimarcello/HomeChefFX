@@ -16,7 +16,6 @@ import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
 import logic.patterns.ViewSetter;
-import logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewController;
 
 import java.util.List;
 

@@ -12,6 +12,7 @@ import logic.beans.ISCBean;
 import logic.beans.SessionParamBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ChatObserver;
 import logic.patterns.ViewSetter;
 
 import java.io.IOException;
@@ -41,6 +42,10 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     public void initialize(){
 
+        ChatObserver obs;
+        obs = new ChatObserver();
+        obs.addUpdater(this);
+        ViewSetter.setObserver(obs);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);

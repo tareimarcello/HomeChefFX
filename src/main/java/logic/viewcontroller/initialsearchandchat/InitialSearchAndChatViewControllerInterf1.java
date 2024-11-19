@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import logic.beans.ISCBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
+import logic.patterns.ChatObserver;
 import logic.patterns.ViewSetter;
 import java.util.HashMap;
 
@@ -15,7 +16,9 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
 
     public void initialize(){
 
-
+        ChatObserver obs = new ChatObserver();
+        obs.addUpdater(this);
+        ViewSetter.setObserver(obs);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);

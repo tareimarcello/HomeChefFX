@@ -108,7 +108,7 @@ public abstract class ChatViewController {
 
         try {
             chat.saveMessage(msgBean);
-            InitialSearchAndChatViewController.updateLastMessage();   //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
+            ViewSetter.getObserver().notifyMsgISC();  //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
             inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();

@@ -97,7 +97,7 @@ public  abstract class  InitialSearchAndChatViewController {
 
     }
 
-    public static void updateLastMessage(){
+    public void updateLastMessage(){
 
         ISCController controller = new ISCController();
         ISCBean currentChatBean = ViewSetter.getOpenChat();

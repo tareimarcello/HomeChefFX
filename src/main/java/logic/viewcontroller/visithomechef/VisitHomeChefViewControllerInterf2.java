@@ -29,6 +29,7 @@ public class VisitHomeChefViewControllerInterf2 extends VisitHomeChefViewControl
 
     @FXML
     protected void chat(){
+        launchController();
         try {
             chefMenu.getChildren().removeAll(chefMenu.getChildren());
             chefMenu.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatuser/chatVoid.fxml")));

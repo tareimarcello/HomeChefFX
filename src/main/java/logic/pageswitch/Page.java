@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import logic.exceptions.Exceptions;
+import logic.patterns.ViewSetter;
 
 import java.awt.*;
 import java.io.IOException;
@@ -70,10 +71,12 @@ public class Page {
         if(stage.getWidth()>500) {
             name=name.substring(0,index);
             name+="" + INTERF1+FXML;
+            ViewSetter.setMode(ViewSetter.Mode.SMARTPHONE);
         }
         else{
             name=name.substring(0,index);
             name+="" + INTERF2+FXML;
+            ViewSetter.setMode(ViewSetter.Mode.DESKTOP);
         }
         checkActive =false;
         switchTo(name,event,stage.getTitle());

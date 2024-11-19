@@ -35,14 +35,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     @FXML
     protected void goToChefChat(ActionEvent event){
 
-        try {
-            controller.loadChat(this.hcbean);
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-        IsHomeVisitBean ishBean = new IsHomeVisitBean();
-        ishBean.setHome(true);
-        ViewSetter.setIsHomeVisitBean(ishBean);
+        launchController();
         pageSwitch.switchTo("chatuser/interf1.fxml",event,"Chef Chat");
     }
 

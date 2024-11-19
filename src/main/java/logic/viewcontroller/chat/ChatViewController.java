@@ -6,6 +6,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.HomeChefApplication;
 import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
 import logic.beans.MessageBean;
@@ -107,8 +108,9 @@ public abstract class ChatViewController {
 
         try {
             controller.saveMessage(msgBean);
-            ViewSetter.getObserver().notifyMsgISC();  //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
-            inputmsg.setText("");
+            if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP) {
+                ViewSetter.getObserver().notifyMsgISC();  //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
+            }inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

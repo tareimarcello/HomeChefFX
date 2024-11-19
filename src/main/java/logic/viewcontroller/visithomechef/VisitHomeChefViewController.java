@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import logic.appcontroller.VisitHomeChefController;
 import logic.beans.HomeChefBean;
+import logic.beans.IsHomeVisitBean;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -32,5 +35,16 @@ public abstract class VisitHomeChefViewController {
             this.city.setText(hcbean.getCity());
 
         }
+    }
+
+    protected void launchController(){
+        try {
+            controller.loadChat(this.hcbean);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+        IsHomeVisitBean ishBean = new IsHomeVisitBean();
+        ishBean.setHome(true);
+        ViewSetter.setIsHomeVisitBean(ishBean);
     }
 }

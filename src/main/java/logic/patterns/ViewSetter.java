@@ -18,6 +18,11 @@ public class ViewSetter {
     private static List<ISCBean> chatList;
     private static List<BookBean> bookList;
     private static final ChatObserver observer = new ChatObserver();
+    public enum Mode{
+        SMARTPHONE,
+        DESKTOP
+    };
+    private static Mode mode;
 
     private ViewSetter() {
 
@@ -89,5 +94,13 @@ public class ViewSetter {
 
     public static ChatObserver getObserver() {
         return observer;
+    }
+
+    public static Mode getMode() {
+        return mode;
+    }
+
+    public static void setMode(Mode mode) {
+        ViewSetter.mode = mode;
     }
 }

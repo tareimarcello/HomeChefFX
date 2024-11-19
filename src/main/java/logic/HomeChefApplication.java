@@ -10,10 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import logic.patterns.ViewSetter;
 
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class HomeChefApplication extends Application {
     private enum ScreenSize{
@@ -25,8 +25,10 @@ public class HomeChefApplication extends Application {
         Parent root;
         try {
             if (size == ScreenSize.LAPTOP) {
+                ViewSetter.setMode(ViewSetter.Mode.DESKTOP);
                 root = FXMLLoader.load(HomeChefApplication.class.getResource("login/interf2.fxml"));
             } else {
+                ViewSetter.setMode(ViewSetter.Mode.SMARTPHONE);
                root = FXMLLoader.load(HomeChefApplication.class.getResource("login/interf1.fxml"));
             }
 

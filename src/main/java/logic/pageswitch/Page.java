@@ -1,5 +1,6 @@
 package logic.pageswitch;
 
+import javafx.scene.image.Image;
 import logic.HomeChefApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import logic.exceptions.Exceptions;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -51,7 +53,6 @@ public class Page {
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.show();
         } catch (IOException e) {
             Exceptions.exceptionPageOccurred();
         }

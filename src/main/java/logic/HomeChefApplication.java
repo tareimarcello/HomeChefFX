@@ -2,6 +2,7 @@ package logic;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.stage.WindowEvent;
 import logic.exceptions.Exceptions;
 import javafx.application.Application;
@@ -28,7 +29,12 @@ public class HomeChefApplication extends Application {
             } else {
                root = FXMLLoader.load(HomeChefApplication.class.getResource("login/interf1.fxml"));
             }
+
+            Image iconImage = new Image(HomeChefApplication.class.getResource("photo/logo.png").toString());
+
+            stage.getIcons().add(iconImage);
             stage.setScene(new Scene(root));
+
             stage.setTitle("Login");
             stage.setResizable(false);
             //Alert in fase di uscita dall'applicazione
@@ -37,13 +43,6 @@ public class HomeChefApplication extends Application {
                 alert.setTitle("Exit Confirmation");
                 alert.setHeaderText("Are you sure to exit program?");
                 alert.setContentText("If you want to exit you'll be logged out from application.");
-                Optional<ButtonType> result = alert.showAndWait();
-                if(result.isPresent() && result.get() == ButtonType.OK){
-                    //vediamo come chiudere la connessione
-                }
-                else{
-                    windowEvent.consume();
-                }
             });
             stage.show();
         } catch (Exception e) {

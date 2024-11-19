@@ -17,8 +17,6 @@ public class HomePageChefViewControllerInterf1 extends HomePageChefViewControlle
     }
 
     public void initialize() {
-
-
         setFields();
 
     }
@@ -37,6 +35,7 @@ public class HomePageChefViewControllerInterf1 extends HomePageChefViewControlle
     }
     @FXML
     protected void goToListBookChef(ActionEvent event) {
+        System.out.println("Click del bottone");
         pageswitch.switchToBookListChef(event);
     }
 }

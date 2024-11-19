@@ -19,7 +19,9 @@ public  class PageMenu extends Page {
         this.switchTo("booklist/interf1.fxml",event,"Book list");
     }
     public void switchToBookListChef(ActionEvent event)  {
-        this.switchTo("booklistchef/interf1.fxml",event,"Book list");
+        System.out.println("Sono nel pageMenu");
+        this.switchTo("chefbooklist/interf1.fxml",event,"Book list");
+
     }
     public void switchToHome(ActionEvent event){
         this.switchTo("search/interf1.fxml",event,"Homepage");

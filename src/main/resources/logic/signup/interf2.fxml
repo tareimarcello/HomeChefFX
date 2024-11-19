@@ -32,8 +32,10 @@
             </font>
         </Text>
         <Button layoutX="566.0" layoutY="676.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Go back" />
-      <Label fx:id="emailCheck" layoutX="125.0" layoutY="529.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="email could not be already in the sistem and must be valid " />
-      <Label fx:id="pswdCheck" layoutX="182.0" layoutY="621.0" style="-fx-text-fill: #7836ea; -fx-font-size: 20;" text="the two password must match each other  " />
+      <Label fx:id="errMsg" layoutX="182.0" layoutY="621.0" text="the two password must match each other  " textFill="#eb0909">
+         <font>
+            <Font size="22.0" />
+         </font></Label>
       <ImageView fitHeight="379.0" fitWidth="810.0" layoutX="965.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@photo/cuoco.jpg" />
@@ -51,5 +53,10 @@
       </Text>
       <TextField fx:id="surnamesign" layoutX="378.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="451.0" styleClass="textField" />
       <TextField fx:id="namesign" layoutX="378.0" layoutY="306.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="451.0" styleClass="textField" />
+      <Label fx:id="rghtMsg" layoutX="679.0" layoutY="636.0" text="save completed" textFill="#0df814">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

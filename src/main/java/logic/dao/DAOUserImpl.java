@@ -89,4 +89,8 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
             }
         });
     }
+    public User getUserBYMail(String mail){
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().query(SELECT_USER_BY_EMAIL, new UserRowMapper(), mail).getFirst();
+    }
 }

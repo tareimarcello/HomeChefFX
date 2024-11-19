@@ -26,17 +26,17 @@
       <Text fill="#243443" layoutX="138.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Chose password:" />
       <PasswordField fx:id="confirmpswd" layoutX="219.0" layoutY="186.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="confirm password" styleClass="textField" />
       <PasswordField fx:id="pswd" layoutX="24.0" layoutY="186.0" maxWidth="-Infinity" prefHeight="50.0" prefWidth="182.0" promptText="password" styleClass="textField" />
-      <Text fill="#d10000" layoutX="123.0" layoutY="257.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: red; -fx-opacity: 0.5;" styleClass="textContent_signup" text="insert your best dish" />
-      <TextField fx:id="bestDish" layoutX="22.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.33" prefHeight="42.0" prefWidth="370.0" style="-fx-opacity: 0.5; -fx-fill: red; -fx-border-color: red;" styleClass="textField" />
+      <Text fill="#d10000" layoutX="123.0" layoutY="257.0" opacity="0.5" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="insert your best dish" />
+      <TextField fx:id="bestDish" layoutX="22.0" layoutY="262.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" opacity="0.33" prefHeight="42.0" prefWidth="370.0" styleClass="textField" />
       <Button layoutX="145.0" layoutY="659.0" mnemonicParsing="false" onAction="#save" prefHeight="50.0" prefWidth="130.0" style="-fx-font-size: 18;" styleClass="Button" text="Save account" />
-      <Text layoutX="54.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-opacity: 0.5; -fx-fill: red; -fx-border-color: red;" styleClass="textContent_signup" text="insert restaurant where you work at " />
-      <TextField fx:id="restaurant" layoutX="24.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="370.0" style="-fx-opacity: 0.5; -fx-fill: red; -fx-border-color: red;" styleClass="textField" />
+      <Text layoutX="54.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="insert restaurant where you work at " />
+      <TextField fx:id="restaurant" layoutX="24.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="42.0" prefWidth="370.0" styleClass="textField" />
       <ImageView fitHeight="41.0" fitWidth="32.0" layoutX="371.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../photo/battery.png" />
          </image>
       </ImageView>
-      <Label fx:id="pswdCheck" layoutX="93.0" layoutY="241.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="the two password must match each other  " />
+      <Label fx:id="pswdCheck" layoutX="93.0" layoutY="241.0" opacity="0.0" text="the two password must match each other  " />
       <Label fx:id="emailCheck" layoutX="61.0" layoutY="220.0" opacity="0.0" style="-fx-text-fill: #7836ea;" text="email must not be already in the sistem and must be valid " />
       <Text fill="#243443" layoutX="134.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="insert your name " />
       <TextField fx:id="namesign" layoutX="23.0" layoutY="408.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="373.0" styleClass="textField" />

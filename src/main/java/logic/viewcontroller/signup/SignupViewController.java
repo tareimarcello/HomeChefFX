@@ -21,7 +21,7 @@ public abstract class SignupViewController {
     @FXML
     protected TextField email;
     @FXML
-    protected PasswordField confirmPswd;
+    protected PasswordField confirmpswd;
 
 
     protected abstract void goToLogin();

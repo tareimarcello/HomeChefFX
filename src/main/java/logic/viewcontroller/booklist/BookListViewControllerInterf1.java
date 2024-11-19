@@ -3,10 +3,6 @@ package logic.viewcontroller.booklist;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.appcontroller.BookController;
-import logic.appcontroller.ISCController;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -57,22 +53,6 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     @FXML
     protected void goToSettings(ActionEvent event) {
         pageSwitch.switchToSettings(event);
-    }
-    @FXML
-    protected void goToHomeChef(ActionEvent event) {
-        pageSwitch.switchToHomeChef(event);
-    }
-    @FXML
-    protected void goToBookListChef(ActionEvent event) {
-        pageSwitch.switchToBookListChef(event);
-    }
-    @FXML
-    protected void goToISCChef(ActionEvent event) {
-        pageSwitch.switchToISCChef(event);
-    }
-    @FXML
-    protected void goToSettingsChef(ActionEvent event) {
-        pageSwitch.switchToSettingsChef(event);
     }
 
 }

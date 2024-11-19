@@ -1,6 +1,5 @@
 package logic.patterns;
 
-import logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewController;
 
 public class ChatObserver {
     Updater updater;

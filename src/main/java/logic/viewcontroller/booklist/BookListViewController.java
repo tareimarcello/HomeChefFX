@@ -43,20 +43,20 @@ public abstract class BookListViewController {
     protected PageMenu pageSwitch;
 
     @FXML
-    protected void refBook(){
-        //metodo che rifiuta una prenotazione
-    }
-    @FXML
-    protected void acceptBook(){
-        //metodo che accetta una prenotazione
-    }
-    @FXML
     protected void outputValPrevious(){
         //to be implemented
     }
     @FXML
     protected void outputVal(){
         //To be implemented
+    }
+    @FXML
+    protected void refBook(){
+        //metodo che rifiuta una prenotazione
+    }
+    @FXML
+    protected void acceptBook(){
+        //metodo che accetta una prenotazione
     }
     protected void setNextFourBook(){
 

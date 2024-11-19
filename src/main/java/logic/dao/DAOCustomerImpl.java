@@ -63,4 +63,6 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
         getJdbcTemplate().update(DELETE_QUERY, customer.getID());
     }
 
+
+
 }

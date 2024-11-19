@@ -2,16 +2,6 @@ package logic.viewcontroller.resultsearch;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.control.Button;
-import logic.appcontroller.BookController;
-import logic.appcontroller.ISCController;
-import logic.beans.HomeChefBean;
-import logic.beans.ResultSearchBean;
-import logic.beans.SessionParamBean;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -54,6 +44,4 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
     protected void goToISC(ActionEvent event){
         pageSwitch.switchToISCUser(event);
     }
-
-
 }

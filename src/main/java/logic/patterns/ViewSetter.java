@@ -17,7 +17,7 @@ public class ViewSetter {
     private static ISCBean openChat;
     private static List<ISCBean> chatList;
     private static List<BookBean> bookList;
-    private static ChatObserver observer;
+    private static final ChatObserver observer = new ChatObserver();
 
     private ViewSetter() {
 
@@ -89,9 +89,5 @@ public class ViewSetter {
 
     public static ChatObserver getObserver() {
         return observer;
-    }
-
-    public static void setObserver(ChatObserver observer) {
-        ViewSetter.observer = observer;
     }
 }

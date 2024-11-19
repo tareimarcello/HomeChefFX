@@ -15,13 +15,14 @@ import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
+import logic.patterns.Updater;
 import logic.patterns.ViewSetter;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public  abstract class  InitialSearchAndChatViewController {
+public  abstract class  InitialSearchAndChatViewController extends Updater {
 
     protected PageMenu pageswitch;
     protected List<ISCBean> chatList;
@@ -97,7 +98,8 @@ public  abstract class  InitialSearchAndChatViewController {
 
     }
 
-    public void updateLastMessage(){
+    @Override
+    public void update(){
 
         ISCController controller = new ISCController();
         ISCBean currentChatBean = ViewSetter.getOpenChat();

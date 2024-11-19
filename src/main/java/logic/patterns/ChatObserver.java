@@ -3,9 +3,9 @@ package logic.patterns;
 import logic.viewcontroller.initialsearchandchat.InitialSearchAndChatViewController;
 
 public class ChatObserver {
-    InitialSearchAndChatViewController updater;
+    Updater updater;
 
-    public void addUpdater(InitialSearchAndChatViewController updater){
+    public void addUpdater(Updater updater){
         this.updater=updater;
     }
     public void delUpdater(){
@@ -13,6 +13,10 @@ public class ChatObserver {
     }
 
     public void notifyMsgISC(){
-        updater.updateLastMessage();
+        updater.update();
+    }
+    public void setUpdater(Updater updater){
+        delUpdater();
+        addUpdater(updater);
     }
 }

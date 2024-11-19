@@ -19,10 +19,7 @@ import java.util.HashMap;
 public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndChatViewController{
 
     public void initialize(){
-
-        ChatObserver obs = new ChatObserver();
-        obs.addUpdater(this);
-        ViewSetter.setObserver(obs);
+        ViewSetter.getObserver().setUpdater(this);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);

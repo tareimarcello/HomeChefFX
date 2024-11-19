@@ -6,7 +6,7 @@ import logic.viewcontroller.booklist.BookListViewController;
 
 public class BookListChefViewControllerInterf1 extends BookListViewController {
     public void initialize(){
-
+        //to be implemented
     }
     @FXML
     protected void goToHomeChef(ActionEvent event) {

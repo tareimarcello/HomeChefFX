@@ -8,7 +8,6 @@ import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.MailAlreadyUsed;
-import logic.exceptions.MailNotInDBException;
 import logic.model.Chef;
 import logic.model.Customer;
 

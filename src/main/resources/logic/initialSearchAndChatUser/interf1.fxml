@@ -61,7 +61,7 @@
             </Group>
          </graphic>
       </Button>
-      <Button layoutX="294.0" layoutY="93.0" mnemonicParsing="false" onAction="#searchMessage" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: transparent;">
+      <Button layoutX="294.0" layoutY="93.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: transparent;">
          <graphic>
             <FontAwesomeIconView fill="#387effb2" glyphName="SEARCH" size="20" text="" wrappingWidth="24.190460205078125" />
          </graphic>

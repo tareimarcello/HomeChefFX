@@ -57,25 +57,11 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected void goToISC(ActionEvent event) {
-        try {
-            ViewSetter.setChatList(controller.getISCToChef());
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-
         pageswitch.switchToISCUser(event);
     }
     @FXML
     protected void goToHome(ActionEvent event) {
         pageswitch.switchToHome(event);
-    }
-    @FXML
-    protected void searchMessage(){
-        //controllore per cercare messaggio tra le chat
-    }
-    @FXML
-    protected void outputValChat(){
-        //controllore per caricare altre chat
     }
     @FXML
     protected  void goToBook(ActionEvent event) {

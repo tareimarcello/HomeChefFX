@@ -72,10 +72,6 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         }
     }
     @FXML
-    protected void searchMessage(){
-        //to be implemented
-    }
-    @FXML
     protected void touchChatChef(ActionEvent event){
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();

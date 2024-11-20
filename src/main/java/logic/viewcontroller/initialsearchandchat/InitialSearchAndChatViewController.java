@@ -93,6 +93,7 @@ public  abstract class  InitialSearchAndChatViewController extends Updater {
             index++;
             lastIndexChat++;
         }
+        this.elementViewed=index;
         HomeChefUtil.disEnButtonNext(this.loadNext, lastIndexChat,chatList.size());
         HomeChefUtil.disEnButtonPrev(this.loadPrevious, lastIndexChat,MAXCHATVIEWED);
 
@@ -112,8 +113,6 @@ public  abstract class  InitialSearchAndChatViewController extends Updater {
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-
-
 
     }
 

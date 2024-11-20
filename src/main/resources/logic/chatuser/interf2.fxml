@@ -20,7 +20,7 @@
             </font>
         </Text>
         <Line endX="350.0" endY="-154.0" layoutX="195.0" layoutY="152.0" startX="350.0" startY="642.4666748046875" styleClass="line" />
-      <Button layoutX="436.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchMessage" prefHeight="33.0" prefWidth="64.0" style="-fx-background-color: transparent;">
+      <Button layoutX="436.0" layoutY="100.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="64.0" style="-fx-background-color: transparent;">
          <graphic>
               <FontAwesomeIconView fill="#387effb2" glyphName="SEARCH" size="20" text="" />
          </graphic>

@@ -10,6 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.search.SearchViewControllerInterf1">
@@ -30,7 +31,7 @@
         <Text fill="#6a94b7" layoutX="83.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: #6a94b7;" styleClass="textHomePage" />
         <Text layoutX="23.0" layoutY="460.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="What do you want to eat?" wrappingWidth="235.39027404785156" />
         <TextField fx:id="eatName" layoutX="17.0" layoutY="480.0" prefHeight="50.0" prefWidth="382.0" styleClass="textField" />
-        <Button fx:id="buttonSearch" layoutX="175.0" layoutY="566.0" mnemonicParsing="false" onAction="#search" prefHeight="60.0" prefWidth="67.0" style="-fx-font-size: 18px;" styleClass="Button">
+        <Button fx:id="buttonSearch" layoutX="177.0" layoutY="607.0" mnemonicParsing="false" onAction="#search" prefHeight="60.0" prefWidth="67.0" style="-fx-font-size: 18px;" styleClass="Button">
             <graphic>
                 <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="40" text="" wrappingWidth="40.0">
                     <effect>
@@ -74,6 +75,11 @@
          </graphic>
       </Button>
       <TextField fx:id="cityChef" layoutX="19.0" layoutY="361.0" prefHeight="50.0" prefWidth="382.0" styleClass="textField" />
+      <Label fx:id="errMsg" layoutX="23.0" layoutY="553.0" opacity="0.0" prefHeight="30.0" prefWidth="367.0" text="Label" textFill="#f50202">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
 
     </children>
 </AnchorPane>

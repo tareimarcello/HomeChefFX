@@ -10,6 +10,7 @@ import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.exceptions.NoResultFoundException;
 import logic.homechefutil.HomeChefUtil;
 
 import java.io.IOException;
@@ -25,6 +26,7 @@ public class SearchViewControllerInterf2 extends SearchViewController{
     }
     @FXML
     protected void search(){
+        errMsg.setOpacity(0.0);
         SearchBean searchBean = setBean();
 
         /* Invocazione back end recupero lista chef */
@@ -32,12 +34,14 @@ public class SearchViewControllerInterf2 extends SearchViewController{
 
         try {
             controller.searchChefList(searchBean);
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-        try {
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
             resultVisit.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("resultsearch/interf2.fxml")));
+            resultVisit.getChildren().removeAll(resultVisit.getChildren());
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }catch(NoResultFoundException ex){
+            errMsg.setOpacity(1.0);
+            errMsg.setText(ex.getMessage());
         } catch (IOException e) {
             resultVisit.getChildren().removeAll(resultVisit.getChildren());
         }

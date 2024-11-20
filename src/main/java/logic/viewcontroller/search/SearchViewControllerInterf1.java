@@ -6,6 +6,7 @@ import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.exceptions.NoResultFoundException;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,8 +22,6 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
     @FXML
     protected void goToISC(ActionEvent event){
-
-
         pageSwitch.switchToISCUser(event);
     }
     @FXML
@@ -37,7 +36,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
     @FXML
     protected void search(ActionEvent event){
-
+        errMsg.setOpacity(0.0);
         SearchBean searchBean = setBean();
 
         /* Invocazione back end recupero lista chef */
@@ -45,11 +44,13 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
         try {
             controller.searchChefList(searchBean);
+            pageSwitch.switchTo("resultsearch/interf1.fxml",event,"ResultSearch");
         } catch (ConnectionException e) {
            Exceptions.exceptionConnectionOccurred();
+        }catch(NoResultFoundException ex){
+            errMsg.setOpacity(1.0);
+            errMsg.setText(ex.getMessage());
         }
-
-        pageSwitch.switchTo("resultsearch/interf1.fxml",event,"ResultSearch");
     }
 
     @FXML

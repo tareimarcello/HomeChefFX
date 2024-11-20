@@ -30,9 +30,7 @@ public class BookController {
         switch(type) {
             case SessionParamBean.UserType.CUSTOMER -> books = daoBook.getAllByCustomer(idCurrentUser);
             case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChef(idCurrentUser);
-            default -> {
-                throw new IllegalArgumentException("User Not Valid");
-            }
+            default -> throw new IllegalArgumentException("User Not Valid");
         }
 
         assert books != null;

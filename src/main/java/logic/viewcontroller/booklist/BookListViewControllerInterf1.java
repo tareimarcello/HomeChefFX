@@ -43,7 +43,6 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     }
     @FXML
     protected void goToBookList(ActionEvent event) {
-
         pageSwitch.switchToBookList(event);
     }
     @FXML

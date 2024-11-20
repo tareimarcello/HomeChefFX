@@ -6,6 +6,7 @@ import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
+import java.util.Date;
 import java.util.List;
 
 public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
@@ -21,7 +22,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     private static final String DELETE_BOOK_QUERY= "DELETE book WHERE idbook = ?";
     private static final String SELECT_ALL_BY_CUSTOMER= "SELECT * FROM book WHERE customer = ?";
     private static final String SELECT_ALL_BY_CHEF= "SELECT * FROM book WHERE chef = ?";
-
+    private static final String SELECT_ALL_BY_CHEF_DATE= "SELECT * FROM book WHERE chef = ? && data = ? ";
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());
     }
@@ -68,5 +69,9 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
         return  getJdbcTemplate().query(SELECT_ALL_BY_CHEF, new BookRowMapper(),idChef);
     }
 
+    public Book getBookByChefDate(long idChef, Date dateBook){
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().query(SELECT_ALL_BY_CHEF_DATE, new BookRowMapper(),idChef,dateBook).getFirst();
+    }
 
 }

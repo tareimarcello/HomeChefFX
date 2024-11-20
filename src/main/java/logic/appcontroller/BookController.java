@@ -4,12 +4,14 @@ import logic.beans.BookBean;
 import logic.beans.SessionParamBean;
 import logic.dao.DAOBookImpl;
 import logic.dao.DAOUserImpl;
+import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import logic.patterns.ViewSetter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class BookController {
 
@@ -48,13 +50,19 @@ public class BookController {
     }
 
     public void saveBook(BookBean bean) throws ConnectionException{
-
-        DAOBookImpl daoBook = new DAOBookImpl();
+        DAOBookImpl dao = new DAOBookImpl();
         long idChef=ViewSetter.getHcvisitbean().getId();
-        long idCust=ViewSetter.getSessionParam().getCurrentUserId();
-        Book book = new Book(-1,idCust,idChef, Book.BookStatus.OPEN,bean.getData(),bean.getMeal(), bean.getCitta());
-        book.setVia(bean.getVia());
-        daoBook.save(book);
+        try {
+            if (dao.getBookByChefDate(idChef, bean.getData()) != null) {
+                throw new ChefNotAvailableException("Chef not available for this date");
+            }
+        }catch(NoSuchElementException e) {
+            long idCust = ViewSetter.getSessionParam().getCurrentUserId();
+            Book book = new Book(-1, idCust, idChef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta());
+            book.setVia(bean.getVia());
+            dao.save(book);
+        }
     }
+
 
 }

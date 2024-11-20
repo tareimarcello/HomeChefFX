@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import logic.appcontroller.BookController;
 import logic.beans.BookBean;
 import logic.beans.HomeChefBean;
+import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.model.Book;
@@ -79,8 +80,12 @@ public class BookViewController {
             bean.setCitta(city);
             try {
                 controller.saveBook(bean);
+                bookDone.setOpacity(1.0);
             } catch (ConnectionException e) {
                 Exceptions.exceptionConnectionOccurred();
+            }catch(ChefNotAvailableException e){
+                bookFail.setOpacity(1.0);
+                bookFail.setText(e.getMessage());
             }
         }
 

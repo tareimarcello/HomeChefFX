@@ -34,5 +34,3 @@ public class SearchController {
 
 }
 
-
-//Non funziona la search del nome se scrivo nome e cognome da rivedere bene la DAO coinvolta

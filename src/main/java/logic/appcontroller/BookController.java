@@ -31,7 +31,7 @@ public class BookController {
             case SessionParamBean.UserType.CUSTOMER -> books = daoBook.getAllByCustomer(idCurrentUser);
             case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChef(idCurrentUser);
             default -> {
-                // inserire eccezione tipo non riconosciuto
+                throw new IllegalArgumentException("User Not Valid");
             }
         }
 

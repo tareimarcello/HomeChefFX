@@ -17,7 +17,6 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
     private static final String SELECT_QUERY = "SELECT * FROM customer JOIN user ON (customer.idUser=user.iduser) WHERE customer.idUser=?";
     private static final String UPDATE_QUERY = "UPDATE customer SET idUser = ? WHERE idUser=?";
     private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
-    private static final String SELECT_LAST_INSERT_ID = "SELECT LAST_INSERT_ID()";
 
 
 
@@ -34,7 +33,7 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
 
     @Override
     public List<Customer> getAll() {
-
+        assert getJdbcTemplate() != null;
         return  getJdbcTemplate().query(SELECT_ALL_CUSTOMER, new CustomerRowMapper());
 
     }

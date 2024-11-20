@@ -23,7 +23,10 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
     private static final String UPDATE_PSWD_BY_ID = "UPDATE user SET password = ? WHERE iduser = ?";
     private static final String UPDATE_EMAIL_BY_ID = "UPDATE user SET email = ? WHERE iduser = ?";
     private static final String SELECT_LIST_MAIL =  "SELECT email FROM user";
-
+    private static final String SELECT_ALL_USER =  "SELECT * FROM user";
+    private static final String UPDATE_QUERY = "UPDATE customer SET idUser = ? WHERE idUser=?";
+    private static final String DELETE_QUERY = " DELETE FROM user WHERE iduser=?";
+    private static final String INSERT_QUERY = " INSERT INTO user VALUES(?,?,?,?,?)";
 
     public DAOUserImpl() throws ConnectionException {
 
@@ -40,22 +43,26 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     @Override
     public List<User> getAll() {
-        return List.of();
+        assert getJdbcTemplate() != null;
+        return  getJdbcTemplate().query(SELECT_ALL_USER, new UserRowMapper());
     }
 
     @Override
     public void save(User user) {
-        //to be implemented
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(INSERT_QUERY, user.getID(),user.getName(),user.getSurname(),user.getEmail(),user.getPassword());
     }
 
     @Override
     public void update(User user) {
-        //to be implemented
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_QUERY,  user.getID());
     }
 
     @Override
     public void delete(User user) {
-        //to be implemented
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(DELETE_QUERY, user.getID());
     }
 
     public User verifyLogin(Logbean logBean){

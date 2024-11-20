@@ -42,11 +42,14 @@ public abstract class BookListViewController {
 
     @FXML
     protected void outputValPrevious(){
-        //to be implemented
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        lastIndexBook-=(MAXBOOKVIEWED+elementViewed);
+        this.setNextFourBook();
     }
     @FXML
     protected void outputVal(){
-        //To be implemented
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.setNextFourBook();
     }
     @FXML
     protected void refBook(){

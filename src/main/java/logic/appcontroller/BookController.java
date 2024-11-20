@@ -9,7 +9,11 @@ import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import logic.patterns.ViewSetter;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -32,18 +36,21 @@ public class BookController {
         }
 
         assert books != null;
+        LocalDate now = LocalDate.now();
+        Instant instant = Instant.from(now.atStartOfDay(ZoneId.systemDefault()));
         for (Book book : books){
-
-            BookBean bean = new BookBean();
-            bean.setChef(daoUser.get(book.getChef()));
-            bean.setBookState(book.getBookState());
-            bean.setCitta(book.getCitta());
-            bean.setCustomer(daoUser.get(book.getCustomer()));
-            bean.setIdBook(book.getIdBook());
-            bean.setData(book.getData());
-            bean.setMeal(book.getMeal());
-            bean.setVia(book.getVia());
-            beanBooksList.add(bean);
+            if(book.getData().after(Date.from(instant)) || book.getData().equals(Date.from(instant))) {
+                BookBean bean = new BookBean();
+                bean.setChef(daoUser.get(book.getChef()));
+                bean.setBookState(book.getBookState());
+                bean.setCitta(book.getCitta());
+                bean.setCustomer(daoUser.get(book.getCustomer()));
+                bean.setIdBook(book.getIdBook());
+                bean.setData(book.getData());
+                bean.setMeal(book.getMeal());
+                bean.setVia(book.getVia());
+                beanBooksList.add(bean);
+            }
         }
 
         ViewSetter.setBookList(beanBooksList);

@@ -9,10 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.appcontroller.ISCController;
+import logic.beans.HomeChefBean;
+import logic.beans.ResultSearchBean;
+import logic.beans.ReturnChefBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
+import logic.model.Chef;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Updater;
@@ -114,6 +118,27 @@ public  abstract class  InitialSearchAndChatViewController extends Updater {
             Exceptions.exceptionConnectionOccurred();
         }
 
+    }
+
+    protected void loadHcBeanVisitChat(ActionEvent event){
+        Button clicked = (Button) event.getSource();
+        Group parentGroup = (Group) clicked.getParent();
+        ISCBean isc = this.iscBeanMap.get(parentGroup.getId());
+        ReturnChefBean bean = null;
+        try {
+            bean = controller.getChefVisit(isc);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+        HomeChefBean hbvisit = new HomeChefBean();
+        assert bean != null;
+        hbvisit.setRes(bean.getRetChef().getRestaurant());
+        hbvisit.setDish(bean.getRetChef().getBestDish());
+        hbvisit.setCity(bean.getRetChef().getCitta());
+        hbvisit.setName(bean.getRetChef().getName() + " " + bean.getRetChef().getSurname());
+        hbvisit.setId(bean.getRetChef().getID());
+
+        ViewSetter.setHcvisitbean(hbvisit);
     }
 
 }

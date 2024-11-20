@@ -42,7 +42,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected void visit(ActionEvent event) {
-        //parte di controllo
+        loadHcBeanVisitChat(event);
         pageswitch.switchTo("visithomepagechef/interf1.fxml",event,"Visit");
     }
     @FXML
@@ -90,10 +90,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     @FXML
     protected void goToHomeChef(ActionEvent event){
         pageswitch.switchToHomeChef(event);
-    }
-    @FXML
-    protected void outputValChatPrevious(){
-        //to be implemented
     }
 
     private void openChatToView(ActionEvent event){

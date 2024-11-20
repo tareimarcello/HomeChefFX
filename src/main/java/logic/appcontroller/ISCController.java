@@ -1,5 +1,7 @@
 package logic.appcontroller;
 
+import logic.beans.ReturnChefBean;
+import logic.dao.DAOChefImpl;
 import logic.exceptions.ConnectionException;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
@@ -73,6 +75,13 @@ public class ISCController {
 
         return messages.getLast();
 
+    }
+
+    public ReturnChefBean getChefVisit(ISCBean bean) throws ConnectionException {
+        DAOChefImpl dao = new DAOChefImpl();
+        ReturnChefBean retBean = new ReturnChefBean();
+        retBean.setRetChef(dao.get(bean.getDestUser().getID()));
+        return retBean;
     }
 
 }

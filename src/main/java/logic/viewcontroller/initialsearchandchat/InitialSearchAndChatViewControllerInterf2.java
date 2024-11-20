@@ -55,7 +55,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     @FXML
     protected void visit(ActionEvent event) {
-        //parte di controllo
+        loadHcBeanVisitChat(event);
         pageswitch.switchTo("visithomepagechef/interf2.fxml",event,"Visit");
     }
     @FXML

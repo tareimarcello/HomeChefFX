@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.book.BookViewControllerInterf2">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.book.BookViewController">
     <children>
       <Text fill="#377dff" layoutX="272.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textTitle" text="HomeChef" />
       <Text fill="#377dff" layoutX="150.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signupInterf2" text="Insert a date for the reservation" />

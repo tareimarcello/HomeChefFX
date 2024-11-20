@@ -2,6 +2,7 @@ package logic.viewcontroller.book;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
@@ -21,7 +22,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-public abstract  class BookViewController {
+public class BookViewController {
     protected static final BookController controller = new BookController();
     protected PageMenu pageSwitch;
     @FXML
@@ -36,6 +37,10 @@ public abstract  class BookViewController {
     protected TextField bookCity;
     @FXML
     protected ComboBox<String> whenBook;
+
+    public BookViewController(){
+        pageSwitch = new PageMenu();
+    }
 
     @FXML
     protected void backTo() {
@@ -53,24 +58,44 @@ public abstract  class BookViewController {
     }
     @FXML
     protected void confirmBook(){
-
+        bookDone.setOpacity(0.0);
+        bookFail.setOpacity(0.0);
         LocalDate bookDate = dateRes.getValue();
-        Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
-        Date date = Date.from(instant);
-        String typeOfMeal = this.whenBook.getValue();
-        String city = this.bookCity.getText();
-        String place = this.bookPlace.getText();
-        BookBean bean = new BookBean();
-        bean.setVia(place);
-        bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
-        bean.setIdBook(-1);
-        bean.setData(date);
-        bean.setCitta(city);
-        try {
-            controller.saveBook(bean);
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
+        LocalDate now = LocalDate.now();
+        if(bookDate.isBefore(now) || bookDate.isEqual(now)){
+            bookFail.setOpacity(1.0);
+            bookFail.setText("The date is before or equal to the current date. ");
+        }else {
+            Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
+            Date date = Date.from(instant);
+            String typeOfMeal = this.whenBook.getValue();
+            String city = this.bookCity.getText();
+            String place = this.bookPlace.getText();
+            BookBean bean = new BookBean();
+            bean.setVia(place);
+            bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
+            bean.setIdBook(-1);
+            bean.setData(date);
+            bean.setCitta(city);
+            try {
+                controller.saveBook(bean);
+            } catch (ConnectionException e) {
+                Exceptions.exceptionConnectionOccurred();
+            }
         }
 
+    }
+
+    @FXML
+    protected void goToSettings(ActionEvent event) {
+        pageSwitch.switchToSettings(event);
+    }
+    @FXML
+    protected  void goToBook(ActionEvent event) {
+        pageSwitch.switchToBookList(event);
+    }
+    @FXML
+    protected void goToHome(ActionEvent event) {
+        pageSwitch.switchToHome(event);
     }
 }

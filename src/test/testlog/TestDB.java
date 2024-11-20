@@ -1,9 +1,13 @@
 package testlog;
 
 import logic.appcontroller.LoginController;
+import logic.appcontroller.SearchController;
 import logic.beans.Logbean;
+import logic.beans.SearchBean;
+import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
+import logic.exceptions.NoResultFoundException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -41,7 +45,23 @@ class TestDB {
         }
         return true;
     }
-    //testare poi altri tipi di controlli che andremo a inserire, tipo un check della mail o della formattazione della mail
+
+    public boolean searchTestSucc(){
+        SearchController controller = new SearchController();
+        SearchBean search = new SearchBean();
+        search.setChefCity("Roma");
+        search.setChefName("Tarei");
+        search.setChefBestDish("Bocchettoni");
+        try {
+            controller.searchChefList(search);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }catch(NoResultFoundException e){
+            return false;
+        }
+        return true;
+    }
+
     @Test
     void testLoginSuccess(){
         assertTrue(logTestSucc());
@@ -50,5 +70,13 @@ class TestDB {
     @Test
     void testLoginFail(){
         assertFalse(logTestFailed());
+    }
+    @Test
+    void testSearchSuccess(){
+        assertTrue(searchTestSucc());
+    }
+    @Test
+    void testSearchFail(){
+        assertFalse(searchTestSucc());
     }
 }

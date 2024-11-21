@@ -17,14 +17,16 @@ import java.util.List;
 
 
 public class DAOMessageImplFileSystem implements DAOInterface<Message> {
-    private static final String CSV_FILE_NAME = "message.csv";
+    private static final String CSV_FILE_NAME = "logic/db/message.csv";
     private File fd;
     public DAOMessageImplFileSystem() {
         this.fd = new File(CSV_FILE_NAME);
 
         if (!fd.exists()) {
             try {
-                fd.createNewFile();
+                if(!fd.createNewFile()){
+                    throw new FileNotFoundException("File non creato");
+                }
             } catch (IOException e) {
                 Exceptions.exceptionConnectionOccurred();
             }
@@ -53,6 +55,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
                 Date parsedDate = dateFormat.parse(line[4]);
                 Timestamp timestamp = new Timestamp(parsedDate.getTime());
                 long idChat = Long.parseLong(line[5]);
+                System.out.println(id);
                 messages.add(new Message(id, sender, receiver, text, timestamp, idChat));
             }
 

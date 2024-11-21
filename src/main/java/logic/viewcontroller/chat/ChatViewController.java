@@ -109,7 +109,7 @@ public abstract class ChatViewController {
         try {
             controller.saveMessage(msgBean);
             if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP) {
-                ViewSetter.getObserver().notifyMsgISC();  //Non farlo lanciare quando stiamo sull'interfaccia 1 lancio solo in interf2
+                ViewSetter.getObserver().notifyMsgISC();
             }inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();

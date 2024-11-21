@@ -12,6 +12,7 @@ module com.example.homechef {
     requires java.naming;
     requires java.desktop;
     requires spring.tx;
+    requires com.opencsv;
 
     opens logic to javafx.fxml;
     exports logic;

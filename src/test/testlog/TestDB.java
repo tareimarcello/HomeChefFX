@@ -1,8 +1,10 @@
 package testlog;
 
+import logic.appcontroller.ChatController;
 import logic.appcontroller.LoginController;
 import logic.appcontroller.SearchController;
 import logic.beans.Logbean;
+import logic.beans.MessageBean;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;

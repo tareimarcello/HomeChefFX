@@ -24,6 +24,7 @@ public class ChatController {
 
     }
 
+
     public ISCBean createChat(ISCBean chatBean) throws ConnectionException{
 
         DAOChatImpl chatDao = new DAOChatImpl();

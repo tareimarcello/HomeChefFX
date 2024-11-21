@@ -3,6 +3,7 @@ package logic.dao;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+import logic.dao.rowmapper.MessageRowMapper;
 import logic.exceptions.Exceptions;
 import logic.model.Message;
 
@@ -49,7 +50,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
     @Override
     public Message get(long id) {
         return getAll().stream()
-                .filter(user -> user.getIdMsg() == id)
+                .filter(msg -> msg.getIdMsg() == id)
                 .findFirst()
                 .orElse(null);
     }
@@ -83,6 +84,24 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
         } catch (IOException e) {
             Exceptions.exceptionConnectionOccurred();
         }
+    }
+
+    public List<Message> getBySendRec(long idSend, long idRec){
+
+        return (List<Message>) getAll().stream()
+                .filter(msg -> msg.getSender() == idSend && msg.getReceiver() == idRec)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public List<Message> getAllByChat(long idChat){
+
+        List<Message> messages;
+        messages = (List<Message>) getAll().stream()
+                .filter(msg -> msg.getIdChat() == idChat)
+                .findFirst()
+                .orElse(null);
+        return messages;
     }
 }
 

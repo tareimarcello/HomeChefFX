@@ -3,7 +3,6 @@ package logic.dao;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
-import logic.dao.rowmapper.MessageRowMapper;
 import logic.exceptions.Exceptions;
 import logic.model.Message;
 

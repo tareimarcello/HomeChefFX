@@ -1,6 +1,7 @@
 package logic.model;
 
-public class Chef extends User{
+
+public class Chef extends User {
 
     private String restaurant;
     private String bestDish;

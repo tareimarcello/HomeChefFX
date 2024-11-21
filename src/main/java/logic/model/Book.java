@@ -1,8 +1,9 @@
 package logic.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Book {
+public class Book implements Serializable {
     private long idBook;
     private long customer;
     private long chef;

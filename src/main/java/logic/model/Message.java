@@ -1,8 +1,9 @@
 package logic.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Message {
+public class Message implements Serializable {
     private long idMsg;
     private long sender;
     private long receiver;

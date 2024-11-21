@@ -3,6 +3,7 @@ package logic.dao;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
+import logic.HomeChefApplication;
 import logic.exceptions.Exceptions;
 import logic.model.Message;
 
@@ -17,7 +18,7 @@ import java.util.List;
 
 
 public class DAOMessageImplFileSystem implements DAOInterface<Message> {
-    private static final String CSV_FILE_NAME = "logic/db/message.csv";
+    private static final String CSV_FILE_NAME = "message.csv";
     private File fd;
     public DAOMessageImplFileSystem() {
         this.fd = new File(CSV_FILE_NAME);

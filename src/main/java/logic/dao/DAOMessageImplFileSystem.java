@@ -55,7 +55,6 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
                 Date parsedDate = dateFormat.parse(line[4]);
                 Timestamp timestamp = new Timestamp(parsedDate.getTime());
                 long idChat = Long.parseLong(line[5]);
-                System.out.println(id);
                 messages.add(new Message(id, sender, receiver, text, timestamp, idChat));
             }
 

@@ -74,7 +74,7 @@ class TestDB {
         msgBean.setIdReceiver(7);
         msgBean.setText("Ciao sono test file system");
         DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
-        Message msg = new Message(38,msgBean.getIdSender(), msgBean.getIdReceiver(), msgBean.getText(), new Timestamp(System.currentTimeMillis()), msgBean.getIdChat());
+        Message msg = new Message(36,msgBean.getIdSender(), msgBean.getIdReceiver(), msgBean.getText(), new Timestamp(System.currentTimeMillis()), msgBean.getIdChat());
         msgDao.save(msg);
         return true;
     }

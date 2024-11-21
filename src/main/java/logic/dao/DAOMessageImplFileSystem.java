@@ -1,6 +1,7 @@
 package logic.dao;
 
 import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 import logic.exceptions.Exceptions;
 import logic.model.Message;
@@ -11,49 +12,77 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DAOMessageImplFileSystem{
-    private static final String CSV_FILE_NAME = "book.csv";
-    private File fd;
+public class DAOMessageImplFileSystem implements DAOInterface<Message> {
+    private final String filePath;
 
-    public DAOMessageImplFileSystem()  {
-        this.fd = new File(CSV_FILE_NAME);
-
-        if (!fd.exists()) {
-            try {
-                fd.createNewFile();
-            } catch (IOException e) {
-                Exceptions.exceptionConnectionOccurred();
-            }
-        }
+    public DAOMessageImplFileSystem(String filePath) {
+        this.filePath = filePath;
     }
 
-    private static synchronized Message get(long id, File fd) throws CsvValidationException, IOException {
-        CSVReader csvReader = null;
-        try {
-            csvReader = new CSVReader(new BufferedReader(new FileReader(fd)));
-        } catch (FileNotFoundException e) {
+    @Override
+    public void save(Message message) {
+        List<Message> messages = getAll();
+        messages.add(message);
+        saveAllMessages(messages);
+    }
+
+    @Override
+    public List<Message> getAll(){
+        List<Message> users = new ArrayList<>();
+        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+            String[] line;
+            while ((line = reader.readNext()) != null) {
+                long id = Integer.parseInt(line[0]);
+                long sender = Long.parseLong(line[1]);
+                long receiver = Long.parseLong(line[2]);
+                String text = line[3];
+                Timestamp timestamp = new Timestamp(Long.parseLong(line[4]));
+                long idChat = Long.parseLong(line[5]);
+                users.add(new Message(id, sender, receiver, text, timestamp, idChat));
+            }
+        } catch (CsvValidationException | IOException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        String[] record;
-        List<Message> messageList = new ArrayList<Message>();
-        while ((record = csvReader.readNext()) != null) {
-            int posId = 0;
-
-            boolean recordFound = record[posId].equals(String.valueOf(id));
-            if (recordFound) {
-                long idMsg = Integer.parseInt(record[posId]);
-                long sender = Long.parseLong(record[1]);
-                long receiver = Long.parseLong(record[2]);
-                String text = record[3];
-                Timestamp timestamp = Timestamp.valueOf(record[4]);
-                long chat = Long.parseLong(record[5]);
-
-                Message message = new Message(idMsg, sender, receiver, text, timestamp, chat);
-                messageList.add(message);
-            }
-        }
-        csvReader.close();
-        return messageList.getFirst();
+        return users;
     }
 
+    @Override
+    public Message get(long id) {
+        return getAll().stream()
+                .filter(user -> user.getIdMsg() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public void update(Message msg) {
+        List<Message> messages = getAll();
+        for (int i = 0; i < messages.size(); i++) {
+            if (messages.get(i).getIdMsg() == msg.getIdMsg()) {
+                messages.set(i, msg);
+                saveAllMessages(messages);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Message con ID " + msg.getIdMsg() + " non trovato.");
+    }
+
+    @Override
+    public void delete(Message msg) {
+        List<Message> messages = getAll();
+        messages.removeIf(message -> message.getIdMsg() == msg.getIdMsg());
+        saveAllMessages(messages);
+    }
+
+    private void saveAllMessages(List<Message> messages) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
+            for (Message msg : messages) {
+                String[] line = {String.valueOf(msg.getIdMsg()), String.valueOf(msg.getSender()), String.valueOf(msg.getReceiver()), msg.getText(), String.valueOf(msg.getTime()), String.valueOf(msg.getIdChat())};
+                writer.writeNext(line);
+            }
+        } catch (IOException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+    }
 }
+

@@ -3,12 +3,18 @@ package testlog;
 import logic.appcontroller.LoginController;
 import logic.appcontroller.SearchController;
 import logic.beans.Logbean;
+import logic.beans.MessageBean;
 import logic.beans.SearchBean;
+import logic.dao.DAOMessageImpl;
+import logic.dao.DAOMessageImplFileSystem;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
 import logic.exceptions.NoResultFoundException;
+import logic.model.Message;
 import org.junit.jupiter.api.Test;
+
+import java.sql.Timestamp;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -62,6 +68,18 @@ class TestDB {
         return true;
     }
 
+    public boolean messageDaoFsTest(){
+        MessageBean msgBean = new MessageBean();
+        msgBean.setIdChat(12);
+        msgBean.setIdSender(4);
+        msgBean.setIdReceiver(7);
+        msgBean.setText("Ciao sono test file system");
+        DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
+        Message msg = new Message(37,msgBean.getIdSender(), msgBean.getIdReceiver(), msgBean.getText(), new Timestamp(System.currentTimeMillis()), msgBean.getIdChat());
+        msgDao.save(msg);
+        return true;
+    }
+
     @Test
     void testLoginSuccess(){
         assertTrue(logTestSucc());
@@ -78,5 +96,9 @@ class TestDB {
     @Test
     void testSearchFail(){
         assertFalse(searchTestSucc());
+    }
+    @Test
+    void testMessageDaoFsTest(){
+        assertTrue(messageDaoFsTest());
     }
 }

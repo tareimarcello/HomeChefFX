@@ -8,15 +8,27 @@ import logic.model.Message;
 
 import java.io.*;
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
-public class DAOMessageImplFileSystem implements DAOInterface<Message> {
-    private final String filePath;
 
-    public DAOMessageImplFileSystem(String filePath) {
-        this.filePath = filePath;
+public class DAOMessageImplFileSystem implements DAOInterface<Message> {
+    private static final String CSV_FILE_NAME = "message.csv";
+    private File fd;
+    public DAOMessageImplFileSystem() {
+        this.fd = new File(CSV_FILE_NAME);
+
+        if (!fd.exists()) {
+            try {
+                fd.createNewFile();
+            } catch (IOException e) {
+                Exceptions.exceptionConnectionOccurred();
+            }
+        }
     }
 
     @Override
@@ -28,22 +40,27 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
 
     @Override
     public List<Message> getAll(){
-        List<Message> users = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new FileReader(filePath))) {
+        List<Message> messages = new ArrayList<>();
+        try {
+            CSVReader reader = new CSVReader(new BufferedReader(new FileReader(fd)));
             String[] line;
             while ((line = reader.readNext()) != null) {
-                long id = Integer.parseInt(line[0]);
+                long id = Long.parseLong(line[0]);
                 long sender = Long.parseLong(line[1]);
                 long receiver = Long.parseLong(line[2]);
                 String text = line[3];
-                Timestamp timestamp = new Timestamp(Long.parseLong(line[4]));
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss.SSS");
+                Date parsedDate = dateFormat.parse(line[4]);
+                Timestamp timestamp = new Timestamp(parsedDate.getTime());
                 long idChat = Long.parseLong(line[5]);
-                users.add(new Message(id, sender, receiver, text, timestamp, idChat));
+                messages.add(new Message(id, sender, receiver, text, timestamp, idChat));
             }
-        } catch (CsvValidationException | IOException e) {
+
+
+        } catch (CsvValidationException | IOException | ParseException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        return users;
+        return messages;
     }
 
     @Override
@@ -75,8 +92,9 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
     }
 
     private void saveAllMessages(List<Message> messages) {
-        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
+        try (CSVWriter writer = new CSVWriter(new FileWriter(fd))) {
             for (Message msg : messages) {
+
                 String[] line = {String.valueOf(msg.getIdMsg()), String.valueOf(msg.getSender()), String.valueOf(msg.getReceiver()), msg.getText(), String.valueOf(msg.getTime()), String.valueOf(msg.getIdChat())};
                 writer.writeNext(line);
             }

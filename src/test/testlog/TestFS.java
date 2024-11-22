@@ -27,6 +27,22 @@ class TestFS {
         return msgDao.get(20) != null;
     }
 
+    public boolean messageDaoFsUpdate(){
+        DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
+        MessageBean msgBean = new MessageBean();
+        msgBean.setIdChat(6);
+        msgBean.setIdSender(4);
+        msgBean.setIdReceiver(44);
+        msgBean.setText("Ciao sono test update file system");
+        Message msg = new Message(29, msgBean.getIdSender(), msgBean.getIdReceiver(), msgBean.getText(), new Timestamp(System.currentTimeMillis()), msgBean.getIdChat());
+        try {
+            msgDao.update(msg);
+        }catch(IllegalArgumentException e){
+            return false;
+        }
+        return true;
+    }
+
     @Test
     void testMessageDaoFsTest(){
         assertTrue(messageDaoFsTest());
@@ -35,5 +51,9 @@ class TestFS {
     @Test
     void testMessageDaoFsGet(){
         assertTrue(messageDaoFsGet());
+    }
+    @Test
+    void testMessageDaoFsUpdate(){
+        assertTrue(messageDaoFsUpdate());
     }
 }

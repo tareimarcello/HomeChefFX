@@ -1,15 +1,20 @@
 package logic.viewcontroller.booklist;
 
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.appcontroller.BookController;
 import logic.beans.BookBean;
 import logic.beans.SessionParamBean;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
+import logic.model.Book;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -19,6 +24,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public abstract class BookListViewController {
+    protected  static final BookController controller = new BookController();
     @FXML
     protected AnchorPane anchorPane;
     @FXML
@@ -60,8 +66,15 @@ public abstract class BookListViewController {
         //metodo che rifiuta una prenotazione
     }
     @FXML
-    protected void acceptBook(){
-        //metodo che accetta una prenotazione
+    protected void acceptBook(ActionEvent event){
+        Button clicked = (Button) event.getSource();
+        BookBean bean = this.bookBeanMap.get(clicked.getParent());
+        bean.setBookState(Book.BookStatus.APPROVED);
+        try {
+            controller.updateChefBook(bean);
+        }catch(ConnectionException e){
+            Exceptions.exceptionConnectionOccurred();
+        }
     }
     protected void setNextFourBook(){
 

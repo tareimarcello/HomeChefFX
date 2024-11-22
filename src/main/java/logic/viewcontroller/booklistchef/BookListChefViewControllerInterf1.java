@@ -29,7 +29,6 @@ public class BookListChefViewControllerInterf1 extends BookListViewController {
         g2Index=10;
         g3Index=11;
         g4Index=12;
-
     }
 
 

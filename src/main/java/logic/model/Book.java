@@ -19,7 +19,7 @@ public class Book implements Serializable {
     public enum BookMeal{
         LUNCH,DINNER
     }
-    public Book(int idbook, long customer, long chef, BookStatus stato, Date data, BookMeal pasto, String citta) {
+    public Book(long idbook, long customer, long chef, BookStatus stato, Date data, BookMeal pasto, String citta) {
         this.idBook = idbook;
         this.customer = customer;
         this.chef = chef;

@@ -13,7 +13,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     private static final String SELECT_OPEN_QUERY= "select * from book where chef=? && stato='OPEN'";
     private static final String SELECT_APPROVED_QUERY= "select * from book where chef=? && stato='APPROVED'";
     private static final String SELECT_ALL_QUERY= "select * from book";
-    private static final String SELECT_APPROVED_CUSTOMER_QUERY= "select from book where chef=? && customer = ? && stato='APPROVED'";
+    private static final String SELECT_APPROVED_OPEN_CHEF_QUERY= "select * from book where chef=? && (stato='APPROVED' OR stato='OPEN')";
     private static final String SELECT_OPEN_CUSTOMER_QUERY= "select from book where chef=? && customer = ? && stato='OPEN'";
     private static final String SELECT_REJECTED_CUSTOMER_QUERY= "select from book where chef=? && customer = ? && stato='REJECTED'";
     private static final String SELECT_QUERY_BY_ID= "select * from book WHERE idbook=?";
@@ -64,9 +64,9 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
         return  getJdbcTemplate().query(SELECT_ALL_BY_CUSTOMER, new BookRowMapper(),idCust);
     }
 
-    public List<Book> getAllByChef(long idChef) {
+    public List<Book> getAllByChefOpenApproved(long idChef) {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_BY_CHEF, new BookRowMapper(),idChef);
+        return  getJdbcTemplate().query(SELECT_APPROVED_OPEN_CHEF_QUERY, new BookRowMapper(),idChef);
     }
 
     public Book getBookByChefDate(long idChef, Date dateBook){

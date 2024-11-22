@@ -29,7 +29,7 @@ public class BookController {
         List<BookBean> beanBooksList= new ArrayList<>();
         switch(type) {
             case SessionParamBean.UserType.CUSTOMER -> books = daoBook.getAllByCustomer(idCurrentUser);
-            case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChef(idCurrentUser);
+            case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChefOpenApproved(idCurrentUser);
             default -> throw new IllegalArgumentException("User Not Valid");
         }
 
@@ -67,6 +67,12 @@ public class BookController {
             book.setVia(bean.getVia());
             dao.save(book);
         }
+    }
+
+    public void updateChefBook(BookBean bean) throws ConnectionException{
+        DAOBookImpl dao = new DAOBookImpl();
+        Book acceptBook = new Book(bean.getIdBook(),bean.getCustomer().getID(),bean.getChef().getID(),bean.getBookState(),bean.getData(),bean.getMeal(),bean.getCitta());
+        dao.update(acceptBook);
     }
 
 

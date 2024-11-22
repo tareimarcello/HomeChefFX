@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestFS {
+class TestFS {
     public boolean messageDaoFsTest() {
         MessageBean msgBean = new MessageBean();
         msgBean.setIdChat(12);

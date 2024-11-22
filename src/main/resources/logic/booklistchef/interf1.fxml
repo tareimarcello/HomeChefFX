@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,7 +35,7 @@
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
         <Text layoutX="35.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="hiperlink_signup" text="9.31" />
-        <Button fx:id="loadNext" layoutX="63.0" layoutY="536.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
+        <Button fx:id="loadNext" layoutX="63.0" layoutY="549.0" mnemonicParsing="false" onAction="#outputVal" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load other booking" textFill="WHITE" />
         <Group fx:id="group1" layoutX="26.0" layoutY="124.0">
             <children>
                 <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
@@ -196,6 +197,16 @@
                 <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" />
             </graphic>
         </Button>
-      <Button fx:id="loadPrevious" layoutX="63.0" layoutY="605.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
+      <Button fx:id="loadPrevious" layoutX="63.0" layoutY="616.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
+      <Label fx:id="accBook" layoutX="65.0" layoutY="511.0" prefHeight="21.0" prefWidth="282.0" text="Book Accepted" textFill="#00fc0d">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="rejBook" layoutX="65.0" layoutY="511.0" prefHeight="21.0" prefWidth="282.0" text="Book Rejected " textFill="#fa1f00">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

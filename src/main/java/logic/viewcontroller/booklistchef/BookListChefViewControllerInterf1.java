@@ -1,9 +1,8 @@
 package logic.viewcontroller.booklistchef;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
+import javafx.scene.control.Label;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -12,6 +11,7 @@ import logic.viewcontroller.booklist.BookListViewController;
 import java.util.HashMap;
 
 public class BookListChefViewControllerInterf1 extends BookListViewController {
+
 
     public void initialize() {
         lastIndexBook = 0;

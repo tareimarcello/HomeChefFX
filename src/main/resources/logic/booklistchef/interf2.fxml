@@ -43,13 +43,13 @@
                 <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
                 <Group fx:id="group5" layoutX="-18.0">
                     <children>
-                        <Text fx:id="meal1" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Meal:" wrappingWidth="297.7902374267578">
+                        <Text fx:id="route1" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Route:" wrappingWidth="297.7902374267578">
                             <font>
                                 <Font size="36.0" />
                             </font>
                         </Text>
                         <Text fx:id="dat1" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
-                        <Text fx:id="route1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Via:" wrappingWidth="415.3902130126953">
+                        <Text fx:id="city1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="City:" wrappingWidth="369.3902130126953">
                             <font>
                                 <Font size="36.0" />
                             </font>
@@ -87,13 +87,13 @@
             <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
             <Group fx:id="group6" layoutX="-18.0">
                <children>
-                  <Text fx:id="meal2" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Meal:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="route2" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Route:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
                   <Text fx:id="dat2" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
-                  <Text fx:id="route2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Via:" wrappingWidth="415.3902130126953">
+                  <Text fx:id="city2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="City:" wrappingWidth="375.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -124,13 +124,13 @@
             <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
             <Group fx:id="group7" layoutX="-18.0">
                <children>
-                  <Text fx:id="meal3" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Meal:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="route3" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Route:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
                   <Text fx:id="dat3" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
-                  <Text fx:id="route3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Via:" wrappingWidth="415.3902130126953">
+                  <Text fx:id="city3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="City:" wrappingWidth="372.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -161,13 +161,13 @@
             <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />
             <Group fx:id="group8" layoutX="-18.0">
                <children>
-                  <Text fx:id="meal4" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Meal:" wrappingWidth="297.7902374267578">
+                  <Text fx:id="route4" layoutX="90.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Route:" wrappingWidth="297.7902374267578">
                      <font>
                         <Font size="36.0" />
                      </font>
                   </Text>
                   <Text fx:id="dat4" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
-                  <Text fx:id="route4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Via:" wrappingWidth="415.3902130126953">
+                  <Text fx:id="city4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="City:" wrappingWidth="370.3902130126953">
                      <font>
                         <Font size="36.0" />
                      </font>

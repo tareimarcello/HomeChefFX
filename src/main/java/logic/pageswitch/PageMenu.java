@@ -19,6 +19,12 @@ public  class PageMenu extends Page {
         this.switchTo("booklist/interf1.fxml",event,"Book list");
     }
     public void switchToChefBookList(ActionEvent event)  {
+        BookController controller = new BookController();
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         this.switchTo("booklistchef/interf1.fxml",event,"Book list Chef");
 
     }

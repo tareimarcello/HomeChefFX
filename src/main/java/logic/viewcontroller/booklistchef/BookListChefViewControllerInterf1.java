@@ -50,7 +50,4 @@ public class BookListChefViewControllerInterf1 extends BookListViewController {
         pageSwitch.switchToSettingsChef(event);
     }
 
-    protected void setNextFourBookChef(){
-
-    }
 }

@@ -24,11 +24,7 @@ class TestFS {
 
     public boolean messageDaoFsGet(){
         DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
-        if(msgDao.get(20)!=null){
-            return true;
-        }else{
-            return false;
-        }
+        return msgDao.get(20) != null;
     }
 
     @Test

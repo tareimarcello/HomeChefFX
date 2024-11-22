@@ -198,12 +198,12 @@
             </graphic>
         </Button>
       <Button fx:id="loadPrevious" layoutX="63.0" layoutY="616.0" mnemonicParsing="false" onAction="#outputValPrevious" opacity="0.76" prefHeight="50.0" prefWidth="306.0" style="-fx-font-size: 20;" styleClass="Button" text="Load Previous" textFill="WHITE" />
-      <Label fx:id="accBook" layoutX="65.0" layoutY="511.0" prefHeight="21.0" prefWidth="282.0" text="Book Accepted" textFill="#00fc0d">
+      <Label fx:id="accBook" layoutX="65.0" layoutY="511.0" opacity="0.0" prefHeight="21.0" prefWidth="282.0" text="Book Accepted" textFill="#00fc0d">
          <font>
             <Font size="21.0" />
          </font>
       </Label>
-      <Label fx:id="rejBook" layoutX="65.0" layoutY="511.0" prefHeight="21.0" prefWidth="282.0" text="Book Rejected " textFill="#fa1f00">
+      <Label fx:id="rejBook" layoutX="65.0" layoutY="511.0" opacity="0.0" prefHeight="21.0" prefWidth="282.0" text="Book Rejected " textFill="#fa1f00">
          <font>
             <Font size="21.0" />
          </font>

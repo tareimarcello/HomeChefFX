@@ -1,11 +1,8 @@
 package logic.viewcontroller.booklist;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -47,6 +44,11 @@ public abstract class BookListViewController {
     protected static final int MEALINDEX = 0;
     protected static final int CITYROUTEINDEX = 2;
 
+    @FXML
+    protected Label accBook;
+    @FXML
+    protected Label rejBook;
+
     protected List<BookBean> bookList;
     protected Map<String, BookBean> bookBeanMap;
 
@@ -56,11 +58,19 @@ public abstract class BookListViewController {
     protected void outputValPrevious(){
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         lastIndexBook-=(MAXBOOKVIEWED+elementViewed);
+        if(ViewSetter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
+            accBook.setOpacity(0.0);
+            rejBook.setOpacity(0.0);
+        }
         this.setNextFourBook();
     }
     @FXML
     protected void outputVal(){
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        if(ViewSetter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
+            accBook.setOpacity(0.0);
+            rejBook.setOpacity(0.0);
+        }
         this.setNextFourBook();
     }
     @FXML
@@ -69,6 +79,7 @@ public abstract class BookListViewController {
     }
     @FXML
     protected void acceptBook(ActionEvent event){
+        rejBook.setOpacity(0.0);
         Button clicked = (Button) event.getSource();
         BookBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.APPROVED);
@@ -76,6 +87,7 @@ public abstract class BookListViewController {
             controller.updateChefBook(bean);
             clicked.setVisible(false);
             clicked.getParent().getChildrenUnmodifiable().get(3).setVisible(false);
+            accBook.setOpacity(1.0);
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }

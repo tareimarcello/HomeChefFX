@@ -72,6 +72,7 @@ public class BookController {
     public void updateChefBook(BookBean bean) throws ConnectionException{
         DAOBookImpl dao = new DAOBookImpl();
         Book acceptBook = new Book(bean.getIdBook(),bean.getCustomer().getID(),bean.getChef().getID(),bean.getBookState(),bean.getData(),bean.getMeal(),bean.getCitta());
+        acceptBook.setVia(bean.getVia());
         dao.update(acceptBook);
     }
 

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -68,10 +69,12 @@ public abstract class BookListViewController {
     @FXML
     protected void acceptBook(ActionEvent event){
         Button clicked = (Button) event.getSource();
-        BookBean bean = this.bookBeanMap.get(clicked.getParent());
+        BookBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.APPROVED);
         try {
             controller.updateChefBook(bean);
+            clicked.setVisible(false);
+            clicked.getParent().getChildrenUnmodifiable().get(3).setVisible(false);
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }
@@ -96,6 +99,11 @@ public abstract class BookListViewController {
                 textList.get(1).setText(bookBean.getCitta());
                 DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
                 textList.get(2).setText(df.format(bookBean.getData()) + " - " + bookBean.getMeal());
+                if(bookBean.getBookState().equals(Book.BookStatus.APPROVED)){
+                    Group subGroupBook = (Group) current.getChildren().get(SUBGROUPINDEXBOOK);
+                    subGroupBook.getChildren().get(3).setVisible(false);
+                    subGroupBook.getChildren().get(4).setVisible(false);
+                }
             }
             current.setOpacity(1.0);
             index++;

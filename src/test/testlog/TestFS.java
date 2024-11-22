@@ -6,6 +6,7 @@ import logic.model.Message;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -55,6 +56,10 @@ class TestFS {
         return msgDao.getBySendRec(4,7)!=null;
     }
 
+    public boolean getByIdChatTest(){
+        DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
+        return msgDao.getAllByChat(12)!=null;
+    }
 
 
     @Test
@@ -77,5 +82,9 @@ class TestFS {
     @Test
     void testMessageDaoFsTestGet(){
         assertTrue(getBySendRecTest());
+    }
+    @Test
+    void testMessageDaoFsTestGetByChatId(){
+        assertTrue(getByIdChatTest());
     }
 }

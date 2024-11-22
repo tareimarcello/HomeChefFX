@@ -128,10 +128,14 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
 
     public List<Message> getAllByChat(long idChat){
 
-         return Collections.singletonList(getAll().stream()
-                 .filter(msg -> msg.getIdChat() == idChat)
-                 .findFirst()
-                 .orElse(null));
+        List<Message> messages = getAll();
+        List<Message> retMessages = new ArrayList<>();
+        for (Message msg : messages) {
+            if(msg.getIdChat()==idChat){
+                retMessages.add(msg);
+            }
+        }
+        return retMessages;
     }
 }
 

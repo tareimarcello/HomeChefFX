@@ -4,14 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import logic.appcontroller.BookController;
-import logic.appcontroller.ISCController;
 import logic.beans.ISCBean;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ChatObserver;
 import logic.patterns.ViewSetter;
 import java.util.HashMap;
 
@@ -85,7 +80,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     @FXML
     protected  void goToBookListChef(ActionEvent event) {
         //metodo che va alle prenotazioni pendenti
-        pageswitch.switchToBookListChef(event);
+        pageswitch.switchToChefBookList(event);
     }
     @FXML
     protected void goToHomeChef(ActionEvent event){

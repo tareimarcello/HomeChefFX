@@ -16,6 +16,10 @@ public final class Exceptions {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Invalid resources ");
         alert.setHeaderText("we found found some trouble during the execution of the program");
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            System.exit(0);
+        }
     }
     public static void exceptionConnectionOccurred(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

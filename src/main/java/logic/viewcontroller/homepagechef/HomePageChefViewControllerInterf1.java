@@ -2,12 +2,6 @@ package logic.viewcontroller.homepagechef;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import logic.appcontroller.ISCController;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
-import logic.patterns.ViewSetter;
-import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 
 public class HomePageChefViewControllerInterf1 extends HomePageChefViewController{
@@ -35,6 +29,6 @@ public class HomePageChefViewControllerInterf1 extends HomePageChefViewControlle
     }
     @FXML
     protected void goToListBookChef(ActionEvent event) {
-        pageswitch.switchToBookListChef(event);
+        pageswitch.switchToChefBookList(event);
     }
 }

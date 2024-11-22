@@ -18,8 +18,8 @@ public  class PageMenu extends Page {
         }
         this.switchTo("booklist/interf1.fxml",event,"Book list");
     }
-    public void switchToBookListChef(ActionEvent event)  {
-        this.switchTo("chefbooklist/interf1.fxml",event,"Book list");
+    public void switchToChefBookList(ActionEvent event)  {
+        this.switchTo("booklistchef/interf1.fxml",event,"Book list Chef");
 
     }
     public void switchToHome(ActionEvent event){

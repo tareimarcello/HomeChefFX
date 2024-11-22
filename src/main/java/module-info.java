@@ -56,5 +56,8 @@ module com.example.homechef {
     exports logic.homechefutil;
     opens logic.homechefutil to javafx.fxml;
     exports logic.exceptions;
+    opens logic.viewcontroller.booklistchef to javafx.fxml;
+    exports logic.viewcontroller.booklistchef;
+
 
 }

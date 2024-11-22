@@ -1,9 +1,7 @@
 package logic.viewcontroller.booklistchef;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import logic.viewcontroller.booklist.BookListViewController;
 
 public class BookListChefViewControllerInterf1 extends BookListViewController {
@@ -16,7 +14,7 @@ public class BookListChefViewControllerInterf1 extends BookListViewController {
     }
     @FXML
     protected void goToBookListChef(ActionEvent event) {
-        pageSwitch.switchToBookListChef(event);
+        pageSwitch.switchToChefBookList(event);
     }
     @FXML
     protected void goToISCChef(ActionEvent event) {

@@ -1,6 +1,5 @@
 package logic.pageswitch;
 
-import javafx.scene.image.Image;
 import logic.HomeChefApplication;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,6 @@ import javafx.stage.Stage;
 import logic.exceptions.Exceptions;
 import logic.patterns.ViewSetter;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -50,7 +48,7 @@ public class Page {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             if(checkActive)name=check(name,stage);
             prevBack(event);
-            Parent root = FXMLLoader.load(Objects.requireNonNull(HomeChefApplication.class.getResource(name)));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(HomeChefApplication.class.getResource(name))); // Questo non mi carica la pagina in questo switch
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setTitle(title);

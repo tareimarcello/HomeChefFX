@@ -6,6 +6,7 @@ import logic.model.Message;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -50,6 +51,11 @@ class TestFS {
         return true;
     }
 
+    public boolean getBySendRecTest(){
+        DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
+        return msgDao.getBySendRec(4,7)!=null;
+    }
+
 
 
     @Test
@@ -68,5 +74,9 @@ class TestFS {
     @Test
     void testMessageDaoFsDelete(){
         assertTrue(messageDaoFsDelete());
+    }
+    @Test
+    void testMessageDaoFsTestGet(){
+        assertTrue(getBySendRecTest());
     }
 }

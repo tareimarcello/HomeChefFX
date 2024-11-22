@@ -11,6 +11,7 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -115,21 +116,22 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
     }
 
     public List<Message> getBySendRec(long idSend, long idRec){
-
-        return (List<Message>) getAll().stream()
-                .filter(msg -> msg.getSender() == idSend && msg.getReceiver() == idRec)
-                .findFirst()
-                .orElse(null);
+        List<Message> messages = getAll();
+        List<Message> retMessages = new ArrayList<>();
+        for (Message msg : messages) {
+            if(msg.getSender()==idSend && msg.getReceiver()==idRec){
+                retMessages.add(msg);
+            }
+        }
+        return retMessages;
     }
 
     public List<Message> getAllByChat(long idChat){
 
-        List<Message> messages;
-        messages = (List<Message>) getAll().stream()
-                .filter(msg -> msg.getIdChat() == idChat)
-                .findFirst()
-                .orElse(null);
-        return messages;
+         return Collections.singletonList(getAll().stream()
+                 .filter(msg -> msg.getIdChat() == idChat)
+                 .findFirst()
+                 .orElse(null));
     }
 }
 

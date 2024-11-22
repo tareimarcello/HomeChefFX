@@ -43,6 +43,15 @@ class TestFS {
         return true;
     }
 
+    public boolean messageDaoFsDelete(){
+        DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
+        Message msg = new Message(29, 0, 0, "", new Timestamp(System.currentTimeMillis()), 0);
+        msgDao.delete(msg);
+        return true;
+    }
+
+
+
     @Test
     void testMessageDaoFsTest(){
         assertTrue(messageDaoFsTest());
@@ -55,5 +64,9 @@ class TestFS {
     @Test
     void testMessageDaoFsUpdate(){
         assertTrue(messageDaoFsUpdate());
+    }
+    @Test
+    void testMessageDaoFsDelete(){
+        assertTrue(messageDaoFsDelete());
     }
 }

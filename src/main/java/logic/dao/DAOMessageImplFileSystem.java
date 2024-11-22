@@ -36,6 +36,15 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
     @Override
     public void save(Message message) {
         List<Message> messages = getAll();
+        long lastId = 0;
+        for (int i=0;i<messages.size()-1;i++) {
+            if(messages.get(i).getIdMsg() > messages.get(i+1).getIdMsg()){
+                lastId = messages.get(i).getIdMsg();
+            }else{
+                lastId = messages.get(i+1).getIdMsg();
+            }
+        }
+        message.setIdMsg(lastId+1);
         messages.add(message);
         saveAllMessages(messages);
     }

@@ -22,7 +22,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     private static final String DELETE_BOOK_QUERY= "DELETE book WHERE idbook = ?";
     private static final String SELECT_ALL_BY_CUSTOMER= "SELECT * FROM book WHERE customer = ?";
     private static final String SELECT_ALL_BY_CHEF= "SELECT * FROM book WHERE chef = ?";
-    private static final String SELECT_ALL_BY_CHEF_DATE= "SELECT * FROM book WHERE chef = ? && data = ? ";
+    private static final String SELECT_ALL_BY_CHEF_DATE= "SELECT * FROM book WHERE chef = ? && data = ? && (stato= 'OPEN' OR stato = 'APPROVED')";
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());
     }

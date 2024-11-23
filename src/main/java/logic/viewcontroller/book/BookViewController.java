@@ -61,31 +61,45 @@ public class BookViewController {
     protected void confirmBook(){
         bookDone.setOpacity(0.0);
         bookFail.setOpacity(0.0);
-        LocalDate bookDate = dateRes.getValue();
-        LocalDate now = LocalDate.now();
-        if(bookDate.isBefore(now) || bookDate.isEqual(now)){
+        if(dateRes.getValue() == null){
             bookFail.setOpacity(1.0);
-            bookFail.setText("The date is before or equal to the current date. ");
+            bookFail.setText("The field date is empty. ");
+        }else if(bookCity.getText().equals("")){
+            bookFail.setOpacity(1.0);
+            bookFail.setText("The field city is empty. ");
+        }else if(whenBook.getValue() == null){
+            bookFail.setOpacity(1.0);
+            bookFail.setText("The field meal is empty. ");
+        }else if(bookPlace.getText().equals("")){
+            bookFail.setOpacity(1.0);
+            bookFail.setText("The field route is empty. ");
         }else {
-            Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
-            Date date = Date.from(instant);
-            String typeOfMeal = this.whenBook.getValue();
-            String city = this.bookCity.getText();
-            String place = this.bookPlace.getText();
-            BookBean bean = new BookBean();
-            bean.setVia(place);
-            bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
-            bean.setIdBook(-1);
-            bean.setData(date);
-            bean.setCitta(city);
-            try {
-                controller.saveBook(bean);
-                bookDone.setOpacity(1.0);
-            } catch (ConnectionException e) {
-                Exceptions.exceptionConnectionOccurred();
-            }catch(ChefNotAvailableException e){
+            LocalDate bookDate = dateRes.getValue();
+            LocalDate now = LocalDate.now();
+            if (bookDate.isBefore(now) || bookDate.isEqual(now)) {
                 bookFail.setOpacity(1.0);
-                bookFail.setText(e.getMessage());
+                bookFail.setText("The date is before or equal to the current date. ");
+            } else {
+                Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
+                Date date = Date.from(instant);
+                String typeOfMeal = this.whenBook.getValue();
+                String city = this.bookCity.getText();
+                String place = this.bookPlace.getText();
+                BookBean bean = new BookBean();
+                bean.setVia(place);
+                bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
+                bean.setIdBook(-1);
+                bean.setData(date);
+                bean.setCitta(city);
+                try {
+                    controller.saveBook(bean);
+                    bookDone.setOpacity(1.0);
+                } catch (ConnectionException e) {
+                    Exceptions.exceptionConnectionOccurred();
+                } catch (ChefNotAvailableException e) {
+                    bookFail.setOpacity(1.0);
+                    bookFail.setText(e.getMessage());
+                }
             }
         }
 

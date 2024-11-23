@@ -28,12 +28,7 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     public void initialize(){
 
         // Inizialize first 4 chef of the result list search
-        lastIndexBook = 0;
-        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
-        this.loadNext.setVisible(false);
-        this.loadPrevious.setVisible(false);
-
-        this.setNextFourBook();
+        initList();
 
     }
 

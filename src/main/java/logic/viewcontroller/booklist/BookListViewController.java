@@ -146,4 +146,12 @@ public abstract class BookListViewController {
         HomeChefUtil.disEnButtonNext(this.loadNext,lastIndexBook,bookList.size());
         HomeChefUtil.disEnButtonPrev(this.loadPrevious,lastIndexBook,MAXBOOKVIEWED);
     }
+
+    protected void initList(){
+        lastIndexBook = 0;
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.loadNext.setVisible(false);
+        this.loadPrevious.setVisible(false);
+        this.setNextFourBook();
+    }
 }

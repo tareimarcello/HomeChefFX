@@ -2,11 +2,7 @@ package logic.viewcontroller.signup.signupchef;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import logic.appcontroller.SignupController;
 import logic.beans.Chefbean;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
-import logic.exceptions.MailAlreadyUsed;
 import logic.pageswitch.Page;
 import logic.viewcontroller.signup.SignupViewController;
 

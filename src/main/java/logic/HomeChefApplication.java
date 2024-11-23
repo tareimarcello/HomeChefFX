@@ -1,7 +1,6 @@
 package logic;
 
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.stage.WindowEvent;
 import logic.exceptions.Exceptions;

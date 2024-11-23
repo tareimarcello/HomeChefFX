@@ -1,8 +1,7 @@
 package logic.model;
 
-import java.io.Serializable;
 
-public class Chat implements Serializable {
+public class Chat {
 
     private long id;
     private long customer;

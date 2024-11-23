@@ -29,11 +29,11 @@
             </font></Text>
         <Button layoutX="267.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToISCChef" prefHeight="52.0" prefWidth="146.0" styleClass="button_bar">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" size="50" strokeMiterLimit="60.0" />
+                <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" strokeMiterLimit="60.0" />
             </graphic></Button>
         <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHomeChef" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="20" />
+                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
       <Group layoutX="29.0" layoutY="145.0" />
@@ -52,7 +52,7 @@
             </TextField>
          </content>
       </ScrollPane>
-      <Button  fx:id="loadNext" layoutX="44.0" layoutY="520.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
+      <Button fx:id="loadNext" layoutX="44.0" layoutY="520.0" mnemonicParsing="false" onAction="#outputValChat" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">
          <graphic>
             <Group>
                <children>

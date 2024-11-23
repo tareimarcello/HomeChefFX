@@ -3,7 +3,6 @@ package logic.viewcontroller.booklist;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 

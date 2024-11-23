@@ -10,13 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.appcontroller.BookController;
 import logic.beans.BookBean;
-import logic.beans.HomeChefBean;
 import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.model.Book;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -116,5 +114,9 @@ public class BookViewController {
     @FXML
     protected void goToHome(ActionEvent event) {
         pageSwitch.switchToHome(event);
+    }
+    @FXML
+    protected void goToISC(ActionEvent event) {
+        pageSwitch.switchToISCUser(event);
     }
 }

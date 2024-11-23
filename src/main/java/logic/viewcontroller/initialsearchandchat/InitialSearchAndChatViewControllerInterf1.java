@@ -79,7 +79,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
     @FXML
     protected  void goToBookListChef(ActionEvent event) {
-        //metodo che va alle prenotazioni pendenti
         pageswitch.switchToChefBookList(event);
     }
     @FXML

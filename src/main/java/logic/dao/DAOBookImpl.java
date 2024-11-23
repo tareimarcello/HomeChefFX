@@ -10,18 +10,13 @@ import java.util.Date;
 import java.util.List;
 
 public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
-    private static final String SELECT_OPEN_QUERY= "select * from book where chef=? && stato='OPEN'";
-    private static final String SELECT_APPROVED_QUERY= "select * from book where chef=? && stato='APPROVED'";
     private static final String SELECT_ALL_QUERY= "select * from book";
     private static final String SELECT_APPROVED_OPEN_CHEF_QUERY= "select * from book where chef=? && (stato='APPROVED' OR stato='OPEN')";
-    private static final String SELECT_OPEN_CUSTOMER_QUERY= "select from book where chef=? && customer = ? && stato='OPEN'";
-    private static final String SELECT_REJECTED_CUSTOMER_QUERY= "select from book where chef=? && customer = ? && stato='REJECTED'";
     private static final String SELECT_QUERY_BY_ID= "select * from book WHERE idbook=?";
     private static final String INSERT_BOOK_QUERY= "insert into book (customer,chef,stato,data,pasto,citta,via) VALUES (?,?,?,?,?,?,?)";
     private static final String UPDATE_BOOK_QUERY= "UPDATE book SET customer = ?,chef = ?, stato=?,data=?,pasto=?,citta=?,via=?  WHERE idbook = ?";
     private static final String DELETE_BOOK_QUERY= "DELETE book WHERE idbook = ?";
     private static final String SELECT_ALL_BY_CUSTOMER= "SELECT * FROM book WHERE customer = ?";
-    private static final String SELECT_ALL_BY_CHEF= "SELECT * FROM book WHERE chef = ?";
     private static final String SELECT_ALL_BY_CHEF_DATE= "SELECT * FROM book WHERE chef = ? && data = ? && (stato= 'OPEN' OR stato = 'APPROVED')";
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());

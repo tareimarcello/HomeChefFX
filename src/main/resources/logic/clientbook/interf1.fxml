@@ -40,12 +40,12 @@
             </padding>
         </Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-        <Button layoutX="-47.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button layoutX="-69.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
             </graphic>
         </Button>
-        <Button layoutX="237.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+        <Button layoutX="137.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
             </graphic>
@@ -62,12 +62,17 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="132.0" layoutY="620.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="133.0" style="-fx-font-size: 18px;" styleClass="Button" onAction="#confirmBook" text="Confirm" textFill="#f2f2f2" />
+      <Button layoutX="132.0" layoutY="620.0" mnemonicParsing="false" onAction="#confirmBook" prefHeight="52.0" prefWidth="133.0" style="-fx-font-size: 18px;" styleClass="Button" text="Confirm" textFill="#f2f2f2" />
       <Text fill="#377dff" layoutX="111.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Insert route of book" />
       <TextField fx:id="bookPlace" layoutX="25.0" layoutY="368.0" prefHeight="50.0" prefWidth="370.0" styleClass="textField" />
       <ComboBox fx:id="whenBook" layoutX="119.0" layoutY="483.0" prefWidth="150.0" />
       <Text fill="#377dff" layoutX="99.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Select lunch or dinner:" />
       <Text fill="#377dff" layoutX="111.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="Insert city of book" />
       <TextField fx:id="bookCity" layoutX="25.0" layoutY="263.0" prefHeight="50.0" prefWidth="370.0" styleClass="textField" />
+      <Button layoutX="269.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToISC" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
+         <graphic>
+            <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" />
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>

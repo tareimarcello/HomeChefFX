@@ -41,9 +41,6 @@ public class Decorator {
     public double getAumenta() {
         return aumenta;
     }
-    public void setHList(){
-        hlist=0;
-    }
     public void general(){
         label =new Label(check.check(text));// prende il testo con gli invio
         label.setFont(Font.font("Gill Sans MT", FontWeight.BOLD,18));
@@ -78,14 +75,6 @@ public class Decorator {
         label.setBackground(new Background(new BackgroundFill(Color.rgb(55, 125, 255, 0.69),new CornerRadii(18.0),new Insets(-5.0))));
         lastmessage=label;
         return label;
-    }
-    public Button getButton(String usrid) {
-        Button uid=new Button(usrid);
-        uid.setPrefWidth(125);
-        uid.setPrefHeight(75);
-        uid.setTranslateY(hlist);
-        uid.setStyle("-fx-background-color: rgb(55, 125, 255, 0.69);-fx-text-fill: white; ");
-        return uid;
     }
     public Label getLabel(String msg){
         Label lmsg;

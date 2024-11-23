@@ -1,12 +1,7 @@
 package logic.viewcontroller.signup.signupcustomer;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import logic.beans.Customerbean;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
-import logic.exceptions.MailAlreadyUsed;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.Page;
 import logic.viewcontroller.signup.SignupViewController;
 

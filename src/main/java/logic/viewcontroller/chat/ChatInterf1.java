@@ -53,6 +53,6 @@ public class ChatInterf1 extends ChatViewController{
     }
     @FXML
     protected void goToBookListChef(ActionEvent event){
-        //to be implemented
+        pageswitch.switchToChefBookList(event);
     }
 }

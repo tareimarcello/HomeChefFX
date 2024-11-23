@@ -28,7 +28,7 @@
         </Text>
         <Button layoutX="133.0" layoutY="683.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="HOME" size="55" />
+                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
             </graphic>
         </Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />

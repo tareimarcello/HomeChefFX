@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id= "anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.booklist.BookLIstViewControllerInterf2">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1440.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.booklist.BookLIstViewControllerInterf2">
     <children>
         <AnchorPane fx:id="buttonBar" layoutX="-3.0" layoutY="2.0" prefHeight="790.0" prefWidth="102.0" />
         <AnchorPane fx:id="resultVisit" layoutX="668.0" layoutY="-2.0" prefHeight="780.0" prefWidth="765.0" stylesheets="@../css.css">
@@ -47,7 +47,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dat1" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="86.78515625" />
+                  <Text fx:id="dat1" layoutX="90.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="304.78515625" />
                   <Text fx:id="chef1" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -68,7 +68,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dat2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
+                  <Text fx:id="dat2" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="328.220703125" />
                   <Text fx:id="chef2" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -89,7 +89,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dat3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
+                  <Text fx:id="dat3" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="324.220703125" />
                   <Text fx:id="chef3" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />
@@ -110,7 +110,7 @@
                         <Font size="36.0" />
                      </font>
                   </Text>
-                  <Text fx:id="dat4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" />
+                  <Text fx:id="dat4" layoutX="75.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="listUser" text="Date:" wrappingWidth="326.220703125" />
                   <Text fx:id="chef4" layoutX="90.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lastmessage" text="Chef:" wrappingWidth="307.3902130126953">
                      <font>
                         <Font size="36.0" />

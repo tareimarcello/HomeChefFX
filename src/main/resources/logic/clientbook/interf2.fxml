@@ -23,7 +23,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <Button layoutX="292.0" layoutY="677.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Confirm" textFill="#f2f2f2" />
+      <Button layoutX="292.0" layoutY="677.0" mnemonicParsing="false" onAction="#confirmBook" prefHeight="70.0" prefWidth="164.0" style="-fx-font-size: 18px;" styleClass="Button" text="Confirm" textFill="#f2f2f2" />
       <TextField fx:id="bookPlace" layoutX="134.0" layoutY="418.0" prefHeight="50.0" prefWidth="498.0" styleClass="textField" />
       <Text fill="#377dff" layoutX="228.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signupInterf2" text="Insert route of book" />
       <Text fill="#377dff" layoutX="210.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signupInterf2" text="Select lunch or dinner:" />

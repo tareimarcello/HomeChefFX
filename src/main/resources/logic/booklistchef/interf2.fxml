@@ -34,10 +34,6 @@
             </font>
         </Text>
         <ProgressBar fx:id="progressBar" layoutX="-295.0" layoutY="388.0" prefHeight="18.0" prefWidth="780.0" progress="0.0" rotate="90.0" style="-fx-accent: #377DFF; -fx-opacity: 0.7;" />
-        <Label fx:id="lb1" layoutX="625.0" layoutY="151.0" prefHeight="19.0" prefWidth="0.0" />
-        <Label fx:id="lb2" layoutX="626.0" layoutY="218.0" prefHeight="18.0" prefWidth="1.0" />
-        <Label fx:id="lb3" layoutX="626.0" layoutY="280.0" />
-        <Label fx:id="lb4" layoutX="417.0" layoutY="571.0" prefHeight="18.0" prefWidth="10.0" />
         <Group fx:id="group1" layoutX="154.0" layoutY="108.0">
             <children>
                 <Button layoutY="10.583984375" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" styleClass="Back_Row" />

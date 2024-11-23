@@ -74,8 +74,22 @@ public abstract class BookListViewController {
         this.setNextFourBook();
     }
     @FXML
-    protected void refBook(){
-        //metodo che rifiuta una prenotazione
+    protected void refBook(ActionEvent event){
+        accBook.setOpacity(0.0);
+        Button clicked = (Button) event.getSource();
+        BookBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
+        bean.setBookState(Book.BookStatus.REJECTED);
+        try {
+            controller.updateChefBook(bean);
+            clicked.setVisible(false);
+            clicked.getParent().getChildrenUnmodifiable().get(4).setVisible(false);
+            rejBook.setOpacity(1.0);
+            controller.loadBookList();
+            bookList=ViewSetter.getBookList();
+        }catch(ConnectionException e){
+            Exceptions.exceptionConnectionOccurred();
+        }
+
     }
     @FXML
     protected void acceptBook(ActionEvent event){
@@ -88,6 +102,8 @@ public abstract class BookListViewController {
             clicked.setVisible(false);
             clicked.getParent().getChildrenUnmodifiable().get(3).setVisible(false);
             accBook.setOpacity(1.0);
+            controller.loadBookList();
+            bookList=ViewSetter.getBookList();
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }
@@ -112,11 +128,15 @@ public abstract class BookListViewController {
                 textList.get(1).setText(bookBean.getCitta());
                 DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
                 textList.get(2).setText(df.format(bookBean.getData()) + " - " + bookBean.getMeal());
+                Group subGroupBook = (Group) current.getChildren().get(SUBGROUPINDEXBOOK);
                 if(bookBean.getBookState().equals(Book.BookStatus.APPROVED)){
-                    Group subGroupBook = (Group) current.getChildren().get(SUBGROUPINDEXBOOK);
                     subGroupBook.getChildren().get(3).setVisible(false);
                     subGroupBook.getChildren().get(4).setVisible(false);
+                }else{
+                    subGroupBook.getChildren().get(3).setVisible(true);
+                    subGroupBook.getChildren().get(4).setVisible(true);
                 }
+
             }
             current.setOpacity(1.0);
             index++;

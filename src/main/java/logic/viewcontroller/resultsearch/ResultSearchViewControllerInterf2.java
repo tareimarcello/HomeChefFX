@@ -2,10 +2,6 @@ package logic.viewcontroller.resultsearch;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Group;
-import javafx.scene.control.Button;
-import logic.beans.HomeChefBean;
-import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 

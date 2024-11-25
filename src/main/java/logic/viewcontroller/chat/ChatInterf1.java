@@ -55,4 +55,22 @@ public class ChatInterf1 extends ChatViewController{
     protected void goToBookListChef(ActionEvent event){
         pageswitch.switchToChefBookList(event);
     }
+    @FXML
+    protected void goToISC(ActionEvent event) {
+        try {
+            controller.refreshISC();
+            pageswitch.switchToISCUser(event);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+    }
+    @FXML
+    protected void goToISCChef(ActionEvent event) {
+        try {
+            controller.refreshISC();
+            pageswitch.switchToISCChef(event);
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+    }
 }

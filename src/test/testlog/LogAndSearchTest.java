@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-class TestDB {
+class LogAndSearchTest {
 
     public boolean logTestSucc(){
         LoginController controller = new LoginController();

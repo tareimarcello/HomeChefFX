@@ -84,11 +84,11 @@ public class BookViewController {
                 String city = this.bookCity.getText();
                 String place = this.bookPlace.getText();
                 BookBean bean = new BookBean();
-                bean.setVia(place);
+                bean.setVia(place.toUpperCase());
                 bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
                 bean.setIdBook(-1);
                 bean.setData(date);
-                bean.setCitta(city);
+                bean.setCitta(city.toUpperCase());
                 try {
                     controller.saveBook(bean);
                     bookDone.setOpacity(1.0);

@@ -76,7 +76,6 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         String condition = "";
         query.append ("SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser)");
         if (searchParam.getChefName()!= null && !searchParam.getChefName().equals("")){
-
             condition = "surname = '"+searchParam.getChefName()+"'";
 
             query.append(" ").append(condKey).append(" ").append(condition);
@@ -85,7 +84,6 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         }
 
         if (searchParam.getChefCity()!= null && !searchParam.getChefCity().equals("")){
-
             if (!first) condKey = "AND";
             else
                 first = false;
@@ -97,7 +95,6 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         }
 
         if (searchParam.getChefBestDish()!= null && !searchParam.getChefBestDish().equals("")){
-
             if (!first) condKey = "AND";
             else
                 first = false;
@@ -105,8 +102,9 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
             condition = "bestdish = '"+searchParam.getChefBestDish()+"'";
             query.append(" ").append(condKey).append(" ").append(condition);
 
-        }
 
+        }
+        System.out.println(query.toString());
         return  getJdbcTemplate().query(query.toString(), new ChefRowMapper());
     }
 

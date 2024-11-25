@@ -20,7 +20,7 @@ public abstract class SearchViewController {
     protected SearchBean setBean(){
         SearchBean searchBean = new SearchBean();
         searchBean.setChefCity(this.cityChef.getText().toUpperCase());
-        searchBean.setChefName(this.chefName.getText());
+        searchBean.setChefName(this.chefName.getText().toUpperCase());
         searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
         return searchBean;
     }

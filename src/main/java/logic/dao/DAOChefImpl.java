@@ -104,7 +104,6 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
 
 
         }
-        System.out.println(query.toString());
         return  getJdbcTemplate().query(query.toString(), new ChefRowMapper());
     }
 

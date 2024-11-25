@@ -62,11 +62,8 @@ public abstract class ChatViewController {
 
                     /* Visualizzare il messaggio come ricevuto */
 
-                    textmsg=this.graphics.getMessageRecived();
+                    textmsg = this.graphics.getMessageRecived();
 
-                }else
-                {
-                    /** EXCEPTION MESSAGGIO dove l'utente corrente non compare ne come sender, ne come receiver **/
                 }
 
                 message.getChildren().add(textmsg);

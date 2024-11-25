@@ -2,7 +2,7 @@ package logic.patterns;
 
 
 public class ChatObserver {
-    Updater updater;
+    private Updater updater;
 
     public void addUpdater(Updater updater){
         this.updater=updater;

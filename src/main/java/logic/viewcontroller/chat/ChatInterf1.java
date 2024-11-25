@@ -2,8 +2,6 @@ package logic.viewcontroller.chat;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.appcontroller.BookController;
-import logic.appcontroller.ChatController;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;

@@ -9,10 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
 import logic.beans.ISCBean;
-import logic.beans.SessionParamBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ChatObserver;
 import logic.patterns.ViewSetter;
 
 import java.io.IOException;

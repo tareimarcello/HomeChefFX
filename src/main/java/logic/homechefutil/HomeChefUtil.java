@@ -92,4 +92,15 @@ public class HomeChefUtil {
         list.add(bookDate);
         return list;
     }
+    public static List<String> setFormat(List<String> paramSearch){
+        int i=0;
+        for(String param: paramSearch) {
+            while(param.endsWith(" ")){
+                param = param.substring(0, param.length()-1);
+            }
+            paramSearch.set(i,param);
+            i++;
+        }
+        return paramSearch;
+    }
 }

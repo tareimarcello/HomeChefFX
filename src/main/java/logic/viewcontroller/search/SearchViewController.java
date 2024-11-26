@@ -5,6 +5,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
+import logic.homechefutil.HomeChefUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class SearchViewController {
     protected static final SearchController controller = new SearchController();
@@ -19,9 +23,14 @@ public abstract class SearchViewController {
 
     protected SearchBean setBean(){
         SearchBean searchBean = new SearchBean();
-        searchBean.setChefCity(this.cityChef.getText().toUpperCase());
-        searchBean.setChefName(this.chefName.getText().toUpperCase());
-        searchBean.setChefBestDish(this.eatName.getText().toUpperCase());
+        List<String> paramSearch = new ArrayList<>();
+        paramSearch.add(cityChef.getText().toUpperCase());
+        paramSearch.add(chefName.getText().toUpperCase());
+        paramSearch.add(eatName.getText().toUpperCase());
+        paramSearch = HomeChefUtil.setFormat(paramSearch);
+        searchBean.setChefCity(paramSearch.get(0));
+        searchBean.setChefName(paramSearch.get(1));
+        searchBean.setChefBestDish(paramSearch.get(2));
         return searchBean;
     }
 

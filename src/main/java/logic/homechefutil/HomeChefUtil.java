@@ -103,4 +103,17 @@ public class HomeChefUtil {
         }
         return paramSearch;
     }
+
+    public static List<String> setAp(List<String> paramSearch){
+        String newparam ;
+        int i=0;
+        for(String param : paramSearch) {
+            if(param.contains("'")){
+                newparam = param.replace("'","''");
+                paramSearch.set(i,newparam);
+            }
+            i++;
+        }
+        return paramSearch;
+    }
 }

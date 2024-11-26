@@ -28,6 +28,7 @@ public abstract class SearchViewController {
         paramSearch.add(chefName.getText().toUpperCase());
         paramSearch.add(eatName.getText().toUpperCase());
         paramSearch = HomeChefUtil.setFormat(paramSearch);
+        paramSearch = HomeChefUtil.setAp(paramSearch);
         searchBean.setChefCity(paramSearch.get(0));
         searchBean.setChefName(paramSearch.get(1));
         searchBean.setChefBestDish(paramSearch.get(2));

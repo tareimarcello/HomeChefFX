@@ -146,7 +146,11 @@ public abstract class SettingViewController {
             errMsg.setText("City field is empty");
         }else{
             resetOpMsg();
-            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"",city.getText().toUpperCase());
+            String cityEdit=city.getText().toUpperCase();
+            while(cityEdit.endsWith(" ")){
+                cityEdit =cityEdit.substring(0,cityEdit.length()-1);
+            }
+            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"",cityEdit);
             city.setText("");
             try {
                 controller.updateCity(updateRes);

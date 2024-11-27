@@ -1,5 +1,6 @@
 package logic.viewcontroller.visithomechef;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import logic.appcontroller.VisitHomeChefController;
@@ -47,4 +48,7 @@ public abstract class VisitHomeChefViewController {
         ishBean.setHome(true);
         ViewSetter.setIsHomeVisitBean(ishBean);
     }
+
+    protected abstract void goToChefChat(ActionEvent event);
+    protected abstract void goToBookChef(ActionEvent event);
 }

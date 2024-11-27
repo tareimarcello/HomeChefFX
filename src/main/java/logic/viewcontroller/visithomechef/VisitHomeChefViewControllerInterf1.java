@@ -26,6 +26,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
 
     @FXML
+    @Override
     protected void goToChefChat(ActionEvent event){
 
         launchController();
@@ -33,6 +34,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
 
     @FXML
+    @Override
     protected void goToBookChef(ActionEvent event){
         pageSwitch.switchTo("clientbook/interf1.fxml",event,"Book Chef");
     }

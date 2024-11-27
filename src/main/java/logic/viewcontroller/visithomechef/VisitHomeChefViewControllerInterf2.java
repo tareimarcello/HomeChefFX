@@ -1,5 +1,6 @@
 package logic.viewcontroller.visithomechef;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -28,7 +29,8 @@ public class VisitHomeChefViewControllerInterf2 extends VisitHomeChefViewControl
     }
 
     @FXML
-    protected void chat(){
+    @Override
+    protected void goToChefChat(ActionEvent event){
         launchController();
         try {
             chefMenu.getChildren().removeAll(chefMenu.getChildren());
@@ -39,7 +41,8 @@ public class VisitHomeChefViewControllerInterf2 extends VisitHomeChefViewControl
     }
 
     @FXML
-    protected void goToChefCalendarBook(){
+    @Override
+    protected void goToBookChef(ActionEvent event){
         try {
             chefMenu.getChildren().removeAll(chefMenu.getChildren());
             chefMenu.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("clientbook/interf2.fxml")));

@@ -1,5 +1,6 @@
 package logic.viewcontroller.search;
 
+import javafx.event.ActionEvent;
 import logic.HomeChefApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,8 @@ public class SearchViewControllerInterf2 extends SearchViewController{
         HomeChefUtil.linkButtonBarInterf2(buttonBar);
     }
     @FXML
-    protected void search(){
+    @Override
+    protected void search(ActionEvent event){
         errMsg.setOpacity(0.0);
         SearchBean searchBean = setBean();
 

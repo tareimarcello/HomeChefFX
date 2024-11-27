@@ -35,6 +35,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
     }
 
     @FXML
+    @Override
     protected void search(ActionEvent event){
         errMsg.setOpacity(0.0);
         SearchBean searchBean = setBean();

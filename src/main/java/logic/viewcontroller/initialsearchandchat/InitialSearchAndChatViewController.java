@@ -10,13 +10,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.appcontroller.ISCController;
 import logic.beans.HomeChefBean;
-import logic.beans.ResultSearchBean;
 import logic.beans.ReturnChefBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ISCBean;
-import logic.model.Chef;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Updater;
@@ -26,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public  abstract class  InitialSearchAndChatViewController extends Updater {
+public  abstract class  InitialSearchAndChatViewController implements Updater {
     protected static final ISCController controller = new ISCController();
     protected PageMenu pageswitch;
     protected List<ISCBean> chatList;

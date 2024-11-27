@@ -1,6 +1,6 @@
 package logic.patterns;
 
-public abstract class Updater {
+public interface Updater {
 
-    protected abstract void update();
+    public void update();
 }

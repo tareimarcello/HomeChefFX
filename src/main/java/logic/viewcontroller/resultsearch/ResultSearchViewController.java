@@ -101,4 +101,5 @@ public abstract class ResultSearchViewController {
 
         ViewSetter.setHcvisitbean(hbvisit);
     }
+    protected abstract void visit(ActionEvent event);
 }

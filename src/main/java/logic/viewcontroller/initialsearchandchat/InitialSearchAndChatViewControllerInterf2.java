@@ -57,6 +57,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         pageswitch.switchTo("visithomepagechef/interf2.fxml",event,"Visit");
     }
     @FXML
+    @Override
     protected void touchChat(ActionEvent event){
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
@@ -70,6 +71,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         }
     }
     @FXML
+    @Override
     protected void touchChatChef(ActionEvent event){
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();

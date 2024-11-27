@@ -6,7 +6,7 @@ import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
-public abstract class HomePageChefViewController {
+public class HomePageChefViewController {
     protected PageMenu pageswitch;
     @FXML
     protected  TextField name;

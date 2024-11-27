@@ -21,6 +21,7 @@ public class ResultSearchViewControllerInterf2 extends ResultSearchViewControlle
     }
 
     @FXML
+    @Override
     protected void visit(ActionEvent event){
         loadHcBean(event);
         pageSwitch.switchTo("visithomepagechef/interf2.fxml",event,"Homepage");

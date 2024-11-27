@@ -31,6 +31,7 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
     }
 
     @FXML
+    @Override
     protected void visit(ActionEvent event){
 
         loadHcBean(event);

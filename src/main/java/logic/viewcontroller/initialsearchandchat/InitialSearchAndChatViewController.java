@@ -140,5 +140,6 @@ public  abstract class  InitialSearchAndChatViewController extends Updater {
 
         ViewSetter.setHcvisitbean(hbvisit);
     }
-
+    protected abstract void touchChat(ActionEvent event);
+    protected abstract void touchChatChef(ActionEvent event);
 }

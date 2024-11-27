@@ -20,7 +20,7 @@ import logic.patterns.ViewSetter;
 
 import java.util.List;
 
-public abstract class ChatViewController {
+public class ChatViewController {
     protected static final ChatController controller = new ChatController();
     protected PageMenu pageswitch;
     @FXML

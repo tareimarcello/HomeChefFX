@@ -41,6 +41,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         pageswitch.switchTo("visithomepagechef/interf1.fxml",event,"Visit");
     }
     @FXML
+    @Override
     protected void touchChat(ActionEvent event){
 
         this.openChatToView(event);
@@ -63,6 +64,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         pageswitch.switchToBookList(event);
     }
     @FXML
+    @Override
     protected void touchChatChef(ActionEvent event){
 
         this.openChatToView(event);

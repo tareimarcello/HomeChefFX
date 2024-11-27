@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public abstract class BookListViewController {
+public class BookListViewController {
     protected  static final BookController controller = new BookController();
     @FXML
     protected AnchorPane anchorPane;
@@ -154,4 +154,5 @@ public abstract class BookListViewController {
         this.loadPrevious.setVisible(false);
         this.setNextFourBook();
     }
+
 }

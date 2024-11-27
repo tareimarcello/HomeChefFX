@@ -1,6 +1,6 @@
 package logic.beans;
 
-public abstract class Userbean {
+public class Userbean {
 
     private String name;
     private String surname;

@@ -106,6 +106,7 @@ public class ChatViewController {
         try {
             controller.saveMessage(msgBean);
             if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP) {
+                ViewSetter.getObserver().setChatViewController(this);
                 ViewSetter.getObserver().notifyMsgISC();
             }inputmsg.setText("");
         } catch (ConnectionException e) {

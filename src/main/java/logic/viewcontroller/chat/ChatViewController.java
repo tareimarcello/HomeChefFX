@@ -79,7 +79,13 @@ public class ChatViewController {
 
     @FXML
     protected void sendMsg(){
-
+        String text = inputmsg.getText();
+        if(text.isEmpty()){
+            return ;
+        }
+        while(text.endsWith(" ")){
+            text = text.substring(0, text.length()-1);
+        }
         recivemsgArr();
         MessageBean msgBean = new MessageBean();
         SessionParamBean sessionParam = ViewSetter.getSessionParam();
@@ -101,7 +107,7 @@ public class ChatViewController {
         msgBean.setIdChat(this.currentChat.getChat().getId());
         msgBean.setIdSender(sessionParam.getCurrentUserId());
         msgBean.setIdReceiver(this.currentChat.getDestUser().getID());
-        msgBean.setText(inputmsg.getText());
+        msgBean.setText(text);
 
         try {
             controller.saveMessage(msgBean);

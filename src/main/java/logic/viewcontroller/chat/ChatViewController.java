@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import logic.HomeChefApplication;
 import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
+import logic.beans.IsHomeVisitBean;
 import logic.beans.MessageBean;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
@@ -44,7 +45,11 @@ public class ChatViewController {
     }
 
     public void initialize() {
-
+        if(ViewSetter.getIsHomeVisitBean() == null){
+            IsHomeVisitBean bean = new IsHomeVisitBean();
+            bean.setHome(false);
+            ViewSetter.setIsHomeVisitBean(bean);
+        }
         if (this.currentChat!=null) {
             this.userName.setText(currentChat.getDestUser().getName()+" "+currentChat.getDestUser().getSurname());
             List<Message> messages = currentChat.getChatMessages();
@@ -111,7 +116,7 @@ public class ChatViewController {
 
         try {
             controller.saveMessage(msgBean);
-            if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP) {
+            if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP &&!ViewSetter.getIsHomeVisitBean().isHome()) {
                 ViewSetter.getObserver().setChatViewController(this);
                 ViewSetter.getObserver().notifyMsgISC();
             }inputmsg.setText("");

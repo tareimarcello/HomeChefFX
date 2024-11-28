@@ -1,6 +1,7 @@
 package logic;
 
 import logic.appcontroller.ISCController;
+import logic.beans.IsHomeVisitBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
@@ -20,6 +21,13 @@ public class ButtonBarInterf2ViewController {
         ISCController controller = new ISCController();
         try {
             ViewSetter.setChatList(controller.getISCToChef());
+            if(ViewSetter.getIsHomeVisitBean()==null){
+                IsHomeVisitBean bean = new IsHomeVisitBean();
+                bean.setHome(false);
+                ViewSetter.setIsHomeVisitBean(bean);
+            }else{
+                ViewSetter.getIsHomeVisitBean().setHome(false);
+            }
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

@@ -6,7 +6,6 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import logic.HomeChefApplication;
 import logic.appcontroller.ChatController;
 import logic.beans.ISCBean;
 import logic.beans.IsHomeVisitBean;

@@ -1,8 +1,5 @@
 package logic.viewcontroller.search;
 
-import logic.appcontroller.BookController;
-import logic.appcontroller.ISCController;
-import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -10,8 +7,6 @@ import logic.exceptions.NoResultFoundException;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import logic.patterns.ViewSetter;
 
 public class SearchViewControllerInterf1 extends SearchViewController{
     private PageMenu pageSwitch;

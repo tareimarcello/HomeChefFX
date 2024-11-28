@@ -12,7 +12,6 @@ import logic.exceptions.Exceptions;
 import logic.exceptions.MailAlreadyUsed;
 import logic.homechefutil.HomeChefUtil;
 
-import java.util.List;
 
 
 public abstract class SignupViewController {

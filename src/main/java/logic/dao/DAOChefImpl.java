@@ -96,8 +96,6 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
 
         if (searchParam.getChefBestDish()!= null && !searchParam.getChefBestDish().equals("")){
             if (!first) condKey = "AND";
-            else
-                first = false;
 
             condition = "bestdish = '"+searchParam.getChefBestDish()+"'";
             query.append(" ").append(condKey).append(" ").append(condition);

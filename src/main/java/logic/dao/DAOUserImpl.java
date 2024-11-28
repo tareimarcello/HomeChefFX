@@ -86,7 +86,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(SELECT_LIST_MAIL, new ResultSetExtractor<List<String>>(){
             public List<String> extractData(ResultSet rs) throws SQLException, DataAccessException {
-                List<String> mailDetailList = new ArrayList<String>();
+                List<String> mailDetailList = new ArrayList<>();
                 String mail;
                 while(rs.next()) {
                     mail=(rs.getString(1));

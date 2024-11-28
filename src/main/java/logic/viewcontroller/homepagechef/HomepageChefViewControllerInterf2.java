@@ -4,11 +4,8 @@ package logic.viewcontroller.homepagechef;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
-import logic.patterns.ViewSetter;
-import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
 
 import java.io.IOException;

@@ -14,7 +14,6 @@ import logic.model.Customer;
 import logic.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -50,6 +49,7 @@ public class LoginViewControllerInterf1 {
                         return;
                 }
                 // - Creazione bean utente
+
                 logBean.setEmail(this.labUser.getText());
                 logBean.setPassword(this.labPassword.getText());
 

@@ -70,8 +70,8 @@ class TestFS {      //Tarei Marcello
 
     public boolean messageDaoFsDelete(){
         DAOMessageImplFileSystem msgDao = new DAOMessageImplFileSystem();
-        Message msg = new Message(29, 0, 0, "", new Timestamp(System.currentTimeMillis()), 0);
-        if(msgDao.get(29)==null){
+        Message msg = new Message(43, 0, 0, "", new Timestamp(System.currentTimeMillis()), 0);
+        if(msgDao.get(43)==null){
             return false;
         }
         msgDao.delete(msg);

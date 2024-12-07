@@ -113,7 +113,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
             Exceptions.exceptionConnectionOccurred();
         }
     }
-    //METODO PER PRENDERE MESSAGGI
+
     public List<Message> getBySendRec(long idSend, long idRec){
         List<Message> messages = getAll();
         List<Message> retMessages = new ArrayList<>();

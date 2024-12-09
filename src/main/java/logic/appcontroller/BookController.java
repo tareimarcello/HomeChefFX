@@ -32,7 +32,7 @@ public class BookController {
             case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChefOpenApproved(idCurrentUser);
             default -> throw new IllegalArgumentException("User Not Valid");
         }
-
+        //Start sonar service
         assert books != null;
         LocalDate now = LocalDate.now();
         Instant instant = Instant.from(now.atStartOfDay(ZoneId.systemDefault()));

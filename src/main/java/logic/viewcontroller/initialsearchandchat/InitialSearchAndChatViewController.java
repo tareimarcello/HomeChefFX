@@ -25,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 public  abstract class  InitialSearchAndChatViewController implements Updater {
-    protected ISCController controller;
     protected PageMenu pageswitch;
     protected List<ISCBean> chatList;
     protected Map<String, ISCBean> iscBeanMap;
@@ -103,7 +102,7 @@ public  abstract class  InitialSearchAndChatViewController implements Updater {
 
     @Override
     public void update(){
-
+        ISCController controller = new ISCController();
         ISCBean currentChatBean = ViewSetter.getOpenChat();
         try {
             Message msgLast = controller.getLastChatMessage(currentChatBean);
@@ -122,6 +121,7 @@ public  abstract class  InitialSearchAndChatViewController implements Updater {
         Button clicked = (Button) event.getSource();
         Group parentGroup = (Group) clicked.getParent();
         ISCBean isc = this.iscBeanMap.get(parentGroup.getId());
+        ISCController controller = new ISCController();
         ReturnChefBean bean = null;
         try {
             bean = controller.getChefVisit(isc);

@@ -16,10 +16,6 @@ import logic.exceptions.Exceptions;
 import logic.model.Book;
 import logic.pageswitch.PageMenu;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 
 public class BookViewController {
     protected static final BookController controller = new BookController();
@@ -37,7 +33,7 @@ public class BookViewController {
     @FXML
     protected ComboBox<String> whenBook;
 
-    public BookViewController(){
+    public BookViewController() {
         pageSwitch = new PageMenu();
     }
 
@@ -46,7 +42,7 @@ public class BookViewController {
         pageSwitch.backTo();
     }
 
-    public void initialize(){
+    public void initialize() {
         ObservableList<String> comboItems = FXCollections.observableArrayList(
                 "LUNCH",
                 "DINNER"
@@ -55,52 +51,37 @@ public class BookViewController {
         bookDone.setOpacity(0.0);
         bookFail.setOpacity(0.0);
     }
+
     @FXML
-    protected void confirmBook(){
+    protected void confirmBook() {
         bookDone.setOpacity(0.0);
         bookFail.setOpacity(0.0);
-        if(dateRes.getValue() == null){
+        BookBean bean = new BookBean();
+        if (!bean.setDataIn(dateRes.getValue())) {
             bookFail.setOpacity(1.0);
-            bookFail.setText("The field date is empty. ");
-        }else if(bookCity.getText().equals("")){
+            bookFail.setText("The field date is empty or date is equal or before today. ");
+        } else if (!bean.setCityIn(bookCity.getText().toUpperCase())) {
             bookFail.setOpacity(1.0);
             bookFail.setText("The field city is empty. ");
-        }else if(whenBook.getValue() == null){
+        } else if (whenBook.getValue() == null) {
             bookFail.setOpacity(1.0);
             bookFail.setText("The field meal is empty. ");
-        }else if(bookPlace.getText().equals("")){
+        } else if (!bean.setViaIn(bookPlace.getText().toUpperCase())) {
             bookFail.setOpacity(1.0);
             bookFail.setText("The field route is empty. ");
-        }else {
-            LocalDate bookDate = dateRes.getValue();
-            LocalDate now = LocalDate.now();
-            if (bookDate.isBefore(now) || bookDate.isEqual(now)) {
+        } else {
+            bean.setIdBook(-1);
+            bean.setMeal(Book.BookMeal.valueOf(whenBook.getValue()));
+            try {
+                controller.saveBook(bean);
+                bookDone.setOpacity(1.0);
+            } catch (ConnectionException e) {
+                Exceptions.exceptionConnectionOccurred();
+            } catch (ChefNotAvailableException e) {
                 bookFail.setOpacity(1.0);
-                bookFail.setText("The date is before or equal to the current date. ");
-            } else {
-                Instant instant = Instant.from(bookDate.atStartOfDay(ZoneId.systemDefault()));
-                Date date = Date.from(instant);
-                String typeOfMeal = this.whenBook.getValue();
-                String city = this.bookCity.getText();
-                String place = this.bookPlace.getText();
-                BookBean bean = new BookBean();
-                bean.setVia(place.toUpperCase());
-                bean.setMeal(Book.BookMeal.valueOf(typeOfMeal));
-                bean.setIdBook(-1);
-                bean.setData(date);
-                bean.setCitta(city.toUpperCase());
-                try {
-                    controller.saveBook(bean);
-                    bookDone.setOpacity(1.0);
-                } catch (ConnectionException e) {
-                    Exceptions.exceptionConnectionOccurred();
-                } catch (ChefNotAvailableException e) {
-                    bookFail.setOpacity(1.0);
-                    bookFail.setText(e.getMessage());
-                }
+                bookFail.setText(e.getMessage());
             }
         }
-
     }
 
     @FXML

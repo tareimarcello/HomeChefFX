@@ -26,7 +26,6 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
 
     public InitialSearchAndChatViewControllerInterf1() {
-        controller = new ISCController();
         pageswitch = new PageMenu();
         iscBeanMap = new HashMap<>();
         subGroupMap = new HashMap<>();

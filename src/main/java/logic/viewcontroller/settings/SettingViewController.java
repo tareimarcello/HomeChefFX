@@ -15,7 +15,7 @@ import logic.patterns.ViewSetter;
 import java.util.Objects;
 
 public abstract class SettingViewController {
-    protected static final SettingsController controller = new SettingsController();
+    protected SettingsController controller;
     @FXML
     protected TextField email;
     @FXML

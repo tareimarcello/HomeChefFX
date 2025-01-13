@@ -1,5 +1,6 @@
 package logic.viewcontroller.settings;
 
+import logic.appcontroller.SettingsController;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ public  class SettingsViewControllerInterf1 extends SettingViewController {
 
     public SettingsViewControllerInterf1(){
         pageSwitch=new PageMenu();
+        controller = new SettingsController();
     }
 
     @FXML

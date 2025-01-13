@@ -1,5 +1,6 @@
 package logic.viewcontroller.settings;
 
+import logic.appcontroller.SettingsController;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ public  class SettingsViewControllerInterf2 extends SettingViewController {
 
     public SettingsViewControllerInterf2(){
         pageSwitch=new PageMenu();
+        controller = new SettingsController();
     }
 
     public void initialize(){

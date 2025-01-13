@@ -12,7 +12,7 @@ import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
 public abstract class VisitHomeChefViewController {
-    protected  static final VisitHomeChefController controller = new VisitHomeChefController();
+    protected  VisitHomeChefController controller;
     protected PageMenu pageSwitch;
     @FXML
     protected TextField chefName;

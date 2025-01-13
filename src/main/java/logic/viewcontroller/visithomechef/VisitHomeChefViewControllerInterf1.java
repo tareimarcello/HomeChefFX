@@ -2,6 +2,7 @@ package logic.viewcontroller.visithomechef;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.appcontroller.VisitHomeChefController;
 import logic.pageswitch.PageMenu;
 
 public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewController{
@@ -9,6 +10,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
 
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();
+        controller = new VisitHomeChefController();
     }
 
     public void initialize(){

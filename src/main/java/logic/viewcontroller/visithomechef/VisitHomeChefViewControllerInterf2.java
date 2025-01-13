@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
+import logic.appcontroller.VisitHomeChefController;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 
@@ -21,6 +22,7 @@ public class VisitHomeChefViewControllerInterf2 extends VisitHomeChefViewControl
 
     public VisitHomeChefViewControllerInterf2(){
         pageSwitch = new PageMenu();
+        controller = new VisitHomeChefController();
     }
 
     public void initialize(){

@@ -23,7 +23,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class BookListViewController {
-    protected  static final BookController controller = new BookController();
+    protected BookController controller;
     @FXML
     protected AnchorPane anchorPane;
     @FXML

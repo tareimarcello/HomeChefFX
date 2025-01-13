@@ -3,6 +3,7 @@ package logic.viewcontroller.booklist;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.appcontroller.BookController;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -13,6 +14,7 @@ public class BookListViewControllerInterf1 extends BookListViewController{
 
 
     public BookListViewControllerInterf1(){
+        controller = new BookController();
         pageSwitch = new PageMenu();
         super.bookList = ViewSetter.getBookList();
         bookBeanMap = new HashMap<>();

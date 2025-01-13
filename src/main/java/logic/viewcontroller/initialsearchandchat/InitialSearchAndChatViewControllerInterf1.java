@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import logic.appcontroller.ISCController;
 import logic.beans.ISCBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
@@ -25,6 +26,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
     }
 
     public InitialSearchAndChatViewControllerInterf1() {
+        controller = new ISCController();
         pageswitch = new PageMenu();
         iscBeanMap = new HashMap<>();
         subGroupMap = new HashMap<>();

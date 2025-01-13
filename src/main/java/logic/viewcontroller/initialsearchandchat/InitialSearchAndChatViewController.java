@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Map;
 
 public  abstract class  InitialSearchAndChatViewController implements Updater {
-    protected static final ISCController controller = new ISCController();
+    protected ISCController controller;
     protected PageMenu pageswitch;
     protected List<ISCBean> chatList;
     protected Map<String, ISCBean> iscBeanMap;

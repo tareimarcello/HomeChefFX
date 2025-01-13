@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
+import logic.appcontroller.ISCController;
 import logic.beans.ISCBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
@@ -25,7 +26,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     //vedere bene come fa apparire la lista degli utenti, messo un solo gruppo di prova
     public InitialSearchAndChatViewControllerInterf2(){
-
+            controller = new ISCController();
             pageswitch = new PageMenu();
             iscBeanMap = new HashMap<>();
             subGroupMap = new HashMap<>();

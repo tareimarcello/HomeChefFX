@@ -21,7 +21,7 @@ import logic.patterns.ViewSetter;
 import java.util.List;
 
 public class ChatViewController {
-    protected static final ChatController controller = new ChatController();
+    protected ChatController controller;
     protected PageMenu pageswitch;
     @FXML
     private TextArea inputmsg;
@@ -40,6 +40,7 @@ public class ChatViewController {
         pageswitch = new PageMenu();
         initializated = false;
         currentChat = ViewSetter.getOpenChat();
+        controller = new ChatController();
 
     }
 

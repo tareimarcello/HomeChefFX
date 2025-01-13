@@ -1,5 +1,7 @@
 package logic.beans;
 
+import logic.homechefutil.HomeChefUtil;
+
 public class EditProfileBean {
 
     private String pswd;
@@ -18,8 +20,12 @@ public class EditProfileBean {
         return pswd;
     }
 
-    public void setPswd(String pswd) {
+    public boolean setPswd(String pswd) {
+        if(pswd.isEmpty()){
+            return false;
+        }
         this.pswd = pswd;
+        return true;
     }
 
     public long getUserId() {
@@ -34,7 +40,11 @@ public class EditProfileBean {
         return email;
     }
 
-    public void setEmail(String email) {
+    public boolean setEmail(String email) {
+        if(email.isEmpty() || HomeChefUtil.isValidEmail(email)){
+            return false;
+        }
         this.email = email;
+        return true;
     }
 }

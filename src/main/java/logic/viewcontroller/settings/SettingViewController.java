@@ -37,53 +37,37 @@ public abstract class SettingViewController {
     @FXML
     protected void setPswd(){
         resetOpMsg();
-        if(pswd.getText().equals("")){
-            pswd.setText("");
-            confirmpswd.setText("");
+
+        EditProfileBean bean = new EditProfileBean("","",ViewSetter.getSessionParam().getCurrentUserId());
+        if(!bean.setPswd(pswd.getText())){
             setResOpMsg(false);
             errMsg.setText("Password is empty");
-        }else if (confirmpswd.getText().equals("")){
             pswd.setText("");
             confirmpswd.setText("");
-            setResOpMsg(false);
-            errMsg.setText("ConfirmPassword is empty");
-        }else if(!Objects.equals(pswd.getText(), confirmpswd.getText())){
-            pswd.setText("");
-            confirmpswd.setText("");
-            setResOpMsg(false);
-            errMsg.setText("Passwords don't match");
-        }else{
-            EditProfileBean bean = new EditProfileBean("",pswd.getText(), ViewSetter.getSessionParam().getCurrentUserId());
-            pswd.setText("");
-            confirmpswd.setText("");
+        }else {
             try {
                 controller.updatePswd(bean);
                 setResOpMsg(true);
                 rightMsg.setText("Password updated");
             } catch (ConnectionException e) {
                 Exceptions.exceptionConnectionOccurred();
-            }catch(EditProfException e){
+            } catch (EditProfException e) {
                 setResOpMsg(false);
                 errMsg.setText(e.getMessage());
             }
         }
-
     }
     @FXML
     protected abstract void signOut(ActionEvent event);
     @FXML
     protected void setMail() {
-        if (email.getText().equals("")) {
+        EditProfileBean updateEmail = new EditProfileBean("", "", ViewSetter.getSessionParam().getCurrentUserId());
+        if (!updateEmail.setEmail(email.getText())) {
             email.setText("");
             setResOpMsg(false);
-            errMsg.setText("Email is empty");
-        } else if (!HomeChefUtil.isValidEmail(email.getText())) {
-            email.setText("");
-            setResOpMsg(false);
-            errMsg.setText("Email format is not valid");
+            errMsg.setText("Email is empty or Invalid Format");
         } else {
             resetOpMsg();
-            EditProfileBean updateEmail = new EditProfileBean(email.getText(), "", ViewSetter.getSessionParam().getCurrentUserId());
             email.setText("");
             try {
                 controller.updateMail(updateEmail);
@@ -116,13 +100,13 @@ public abstract class SettingViewController {
     @FXML
     protected void goEditRestaurant(){
         resetOpMsg();
-        if(restaurant.getText().equals("")) {
+        EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"","");
+        if(!updateRes.setRes(restaurant.getText().toUpperCase())){
             restaurant.setText("");
             setResOpMsg(false);
             errMsg.setText("Restaurant field is empty");
         }else{
             resetOpMsg();
-            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),restaurant.getText().toUpperCase(),"");
             restaurant.setText("");
             try {
                 controller.updateRes(updateRes);
@@ -140,20 +124,16 @@ public abstract class SettingViewController {
     @FXML
     protected void updateCity(){
         resetOpMsg();
-        if(city.getText().equals("")) {
+        EditChefProfileBean updateCity = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"","");
+        if(!updateCity.setCity(city.getText().toUpperCase())) {
             city.setText("");
             setResOpMsg(false);
             errMsg.setText("City field is empty");
         }else{
             resetOpMsg();
-            String cityEdit=city.getText().toUpperCase();
-            while(cityEdit.endsWith(" ")){
-                cityEdit =cityEdit.substring(0,cityEdit.length()-1);
-            }
-            EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"",cityEdit);
             city.setText("");
             try {
-                controller.updateCity(updateRes);
+                controller.updateCity(updateCity);
                 setResOpMsg(true);
                 rightMsg.setText("City updated");
             } catch (ConnectionException e) {

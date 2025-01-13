@@ -41,4 +41,11 @@ public class Chefbean extends Userbean{
     public void setBestDish(String bestDish) {
         this.bestDish = bestDish;
     }
+
+    public boolean checkValidChef(String city, String restaurant, String bestDish){
+        if(restaurant.isEmpty() || bestDish.isEmpty() || city.isEmpty()){
+            return false;
+        }
+        return true;
+    }
 }

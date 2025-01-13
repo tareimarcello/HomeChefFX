@@ -1,5 +1,7 @@
 package logic.beans;
 
+import logic.homechefutil.HomeChefUtil;
+
 public class Userbean {
 
     private String name;
@@ -48,5 +50,13 @@ public class Userbean {
 
     public void setPasswordBean(String password) {
         this.password = password;
+    }
+
+    public boolean checkValid(String name, String surname, String email, String password) {
+        if (name.isEmpty() || surname.isEmpty() || !HomeChefUtil.isValidEmail(email) || password.isEmpty()) {
+            return false;
+        }else {
+            return true;
+        }
     }
 }

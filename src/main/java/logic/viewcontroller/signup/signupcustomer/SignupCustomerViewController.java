@@ -22,9 +22,12 @@ public class SignupCustomerViewController extends SignupViewController {
 
         rghtMsg.setOpacity(0.0);
         errMsg.setOpacity(0.0);
-        if(checkValid()){
-            Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(), surnamesign.getText().toUpperCase(), email.getText(), pswd.getText());
+        Customerbean cBean = new Customerbean(namesign.getText().toUpperCase(), surnamesign.getText().toUpperCase(), email.getText(), pswd.getText());
+        if(cBean.checkValid(namesign.getText().toUpperCase(), surnamesign.getText().toUpperCase(), email.getText(), pswd.getText())){
             launchController(cBean);
+        }else{
+            errMsg.setOpacity(0.0);
+            errMsg.setText("Missing date");
         }
     }
 

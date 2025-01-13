@@ -23,16 +23,17 @@ public class SignupChefViewController extends SignupViewController {
     @FXML
     @Override
     protected void goToLogin() {
-        Page pageSwitch=new Page();
+        Page pageSwitch = new Page();
         pageSwitch.backTo();
     }
 
     @FXML
     @Override
-    protected void save(){
+    protected void save() {
         errMsg.setOpacity(0.0);
         rghtMsg.setOpacity(0.0);
-        List<String> paramSave = new ArrayList<String>() {};
+        List<String> paramSave = new ArrayList<String>() {
+        };
         paramSave.add(namesign.getText().toUpperCase());
         paramSave.add(surnamesign.getText().toUpperCase());
         paramSave.add(email.getText());
@@ -40,27 +41,13 @@ public class SignupChefViewController extends SignupViewController {
         paramSave.add(restaurant.getText().toUpperCase());
         paramSave.add(bestDish.getText().toUpperCase());
         // Controllo valori
-        if(checkValid() && checkValidChef()) {
-            paramSave = HomeChefUtil.setFormat(paramSave);
-            Chefbean chBean = new Chefbean(paramSave.get(0), paramSave.get(1), paramSave.get(2), super.pswd.getText().toUpperCase(), paramSave.get(3), paramSave.get(4), paramSave.get(5));
+        paramSave = HomeChefUtil.setFormat(paramSave);
+        Chefbean chBean = new Chefbean(paramSave.get(0), paramSave.get(1), paramSave.get(2), super.pswd.getText(), paramSave.get(3), paramSave.get(4), paramSave.get(5));
+        if (chBean.checkValidChef(paramSave.get(3), paramSave.get(4), paramSave.get(5)) && chBean.checkValid(paramSave.get(0), paramSave.get(1), paramSave.get(2),super.pswd.getText())) {
             launchController(chBean);
+        } else {
+            errMsg.setOpacity(1.0);
+            errMsg.setText("Missing date");
         }
-    }
-
-    private boolean checkValidChef(){
-        if((restaurant.getText().equals(""))){
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Restaurant missing");
-            return false;
-        }else if (citysign.getText().equals("")){
-            errMsg.setOpacity(1.0);
-            errMsg.setText("City missing");
-            return false;
-        }else if (bestDish.getText().equals("")){
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Best Dish missing");
-            return false;
-        }
-        return true;
     }
 }

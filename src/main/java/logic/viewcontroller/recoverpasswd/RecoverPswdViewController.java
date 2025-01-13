@@ -7,25 +7,27 @@ import logic.beans.RecPswdBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.MailNotInDBException;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.Page;
 import javafx.fxml.FXML;
 
 public class RecoverPswdViewController {
-    protected static final RecPswdController controller = new RecPswdController();
+    protected RecPswdController controller ;
     @FXML
     protected Label show;
     @FXML
     protected TextField email;
 
+    public RecoverPswdViewController() {
+        controller = new RecPswdController();
+    }
+
     @FXML
     protected void sendMail(){
-        if(email.getText().equals("")){
-            show.setText("The field is empty");
-        }else if(!HomeChefUtil.isValidEmail(email.getText())) {
-            show.setText("The email format is incorrect");
+        RecPswdBean bean = new RecPswdBean("");
+        if(!bean.setEmail(email.getText())){
+            show.setText("The field is empty or \n Invalid Format");
+            show.setOpacity(1.0);
         }else{
-            RecPswdBean bean = new RecPswdBean(email.getText());
             try{
                 controller.checkEmail(bean);
                 show.setText("Password sended via mail");

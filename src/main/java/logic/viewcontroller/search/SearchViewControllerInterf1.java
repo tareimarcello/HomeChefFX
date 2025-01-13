@@ -1,5 +1,6 @@
 package logic.viewcontroller.search;
 
+import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -13,6 +14,7 @@ public class SearchViewControllerInterf1 extends SearchViewController{
 
     public SearchViewControllerInterf1(){
         pageSwitch=new PageMenu();
+        controller = new SearchController();
     }
 
     @FXML

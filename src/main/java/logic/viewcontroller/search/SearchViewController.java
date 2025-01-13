@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class SearchViewController {
-    protected static final SearchController controller = new SearchController();
+    protected SearchController controller ;
     @FXML
     protected TextField eatName;
     @FXML

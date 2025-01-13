@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
+import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -22,6 +23,10 @@ public class SearchViewControllerInterf2 extends SearchViewController{
 
     public void initialize(){
         HomeChefUtil.linkButtonBarInterf2(buttonBar);
+    }
+
+    public SearchViewControllerInterf2(){
+        controller = new SearchController();
     }
     @FXML
     @Override

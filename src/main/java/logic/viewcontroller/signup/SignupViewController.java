@@ -10,14 +10,13 @@ import logic.beans.Userbean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.MailAlreadyUsed;
-import logic.homechefutil.HomeChefUtil;
 
 
 
 public abstract class SignupViewController {
 
 
-    protected static final SignupController controller = new SignupController();
+    protected SignupController controller;
 
     @FXML
     protected TextField namesign;
@@ -42,24 +41,6 @@ public abstract class SignupViewController {
     public void initialize(){
         rghtMsg.setOpacity(0.0);
         errMsg.setOpacity(0.0);
-    }
-
-    protected boolean checkValid() {
-        if (namesign.getText().equals("") || surnamesign.getText().equals("")) {
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Name or surname missing");
-            return false;
-        } else if (!HomeChefUtil.isValidEmail(email.getText())) {
-            errMsg.setText("Please enter a valid email address");
-            errMsg.setOpacity(1.0);
-            return false;
-        } else if (pswd.getText().isEmpty() || confirmpswd.getText().isEmpty() || !pswd.getText().equals(confirmpswd.getText())) {
-            errMsg.setOpacity(1.0);
-            errMsg.setText("Password must match");
-            return false;
-        }else {
-            return true;
-        }
     }
 
     protected void launchController(Userbean bean){

@@ -2,6 +2,7 @@ package logic.viewcontroller.signup.signupchef;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import logic.appcontroller.SignupController;
 import logic.beans.Chefbean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.Page;
@@ -19,6 +20,9 @@ public class SignupChefViewController extends SignupViewController {
     @FXML
     private TextField restaurant;
 
+    public SignupChefViewController() {
+        controller = new SignupController();
+    }
 
     @FXML
     @Override

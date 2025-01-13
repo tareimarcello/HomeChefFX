@@ -53,10 +53,6 @@ public class Userbean {
     }
 
     public boolean checkValid(String name, String surname, String email, String password) {
-        if (name.isEmpty() || surname.isEmpty() || !HomeChefUtil.isValidEmail(email) || password.isEmpty()) {
-            return false;
-        }else {
-            return true;
-        }
+        return !name.isEmpty() && !surname.isEmpty() && HomeChefUtil.isValidEmail(email) && !password.isEmpty();
     }
 }

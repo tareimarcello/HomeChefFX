@@ -8,7 +8,6 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
 import logic.model.Chef;
 import logic.model.Customer;
@@ -34,10 +33,7 @@ public class LoginController {
         user = this.checkType(user.getID());
         // - aprire la pagina corretta
         switch (user) {
-            case Customer cu -> {
-                ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
-
-            }
+            case Customer cu -> ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
             case Chef ch -> {
                 HomeChefBean hcbean = new HomeChefBean();
                 hcbean.setName(user.getName() + " " + user.getSurname());

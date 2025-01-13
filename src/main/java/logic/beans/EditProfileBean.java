@@ -41,7 +41,7 @@ public class EditProfileBean {
     }
 
     public boolean setEmail(String email) {
-        if(email.isEmpty() || HomeChefUtil.isValidEmail(email)){
+        if(email.isEmpty() || !HomeChefUtil.isValidEmail(email)){
             return false;
         }
         this.email = email;

@@ -10,15 +10,23 @@ public class Logbean {
         return email;
     }
 
-    public void setEmail(String email) {
+    public boolean setEmail(String email) {
+        if (email == null || email.equals("")) {
+            return false;
+        }
         this.email = email;
+        return true;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public boolean setPassword(String password) {
+        if (password == null || password.equals("")) {
+            return false;
+        }
         this.password = password;
+        return true;
     }
 }

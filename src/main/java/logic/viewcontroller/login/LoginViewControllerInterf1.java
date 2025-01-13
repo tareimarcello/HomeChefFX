@@ -1,13 +1,10 @@
 package logic.viewcontroller.login;
 
 import javafx.scene.control.Label;
-import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
-import logic.patterns.ViewSetter;
 import logic.appcontroller.LoginController;
-import logic.beans.HomeChefBean;
 import logic.beans.Logbean;
 import logic.model.Chef;
 import logic.model.Customer;
@@ -22,7 +19,7 @@ import logic.pageswitch.PageMenu;
 import java.util.NoSuchElementException;
 
 public class LoginViewControllerInterf1 {
-        private static final LoginController controller = new LoginController();
+        private LoginController controller ;
         private final PageMenu pageSwitch;
         @FXML
         private TextField labUser;
@@ -33,6 +30,7 @@ public class LoginViewControllerInterf1 {
 
         public LoginViewControllerInterf1(){
             pageSwitch =new PageMenu();
+            controller= new LoginController();
         }
         @FXML
         protected void switchToHomePage(ActionEvent event) {
@@ -40,44 +38,20 @@ public class LoginViewControllerInterf1 {
                 // - prende le credenziali
 
                 Logbean logBean = new Logbean();
-                if (this.labUser.getText() == null
-                        || this.labUser.getText().equals("")
-                        || this.labPassword.getText() == null
-                        || this.labPassword.getText().equals("")) {
-
+                if (!logBean.setEmail(this.labUser.getText()) || !logBean.setPassword(this.labPassword.getText())) {
                         this.show.setText("EMAIL e PASSWORD obbligatorie");
                         return;
                 }
                 // - Creazione bean utente
 
-                logBean.setEmail(this.labUser.getText());
-                logBean.setPassword(this.labPassword.getText());
 
                 try {
                         // - Invocazione check sul controller utenza.
                         User user = controller.loginUser(logBean).getReturnUser();
-                        SessionParamBean sessionParam = new SessionParamBean();
-                        sessionParam.setCurrentUserId(user.getID());
-                        ViewSetter.setSessionParam(sessionParam);
-                        user = controller.checkType(user.getID()).getReturnUser();
                         // - aprire la pagina corretta
                         switch (user) {
-                                case Customer cu -> {
-                                        ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
-                                        pageSwitch.switchToHome(event);
-
-                                }
-                                case Chef ch -> {
-                                        HomeChefBean hcbean = new HomeChefBean();
-                                        hcbean.setName(user.getName() + " " + user.getSurname());
-                                        hcbean.setCity(ch.getCitta());
-                                        hcbean.setDish(ch.getBestDish());
-                                        hcbean.setRes(ch.getRestaurant());
-                                        hcbean.setId(ch.getID());
-                                        ViewSetter.setHcbean(hcbean);
-                                        ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
-                                        pageSwitch.switchToHomeChef(event);
-                                }
+                                case Customer cu -> pageSwitch.switchToHome(event);
+                                case Chef ch ->pageSwitch.switchToHomeChef(event);
                                 default -> throw new IllegalArgumentException("User type not valid");
                         }
                 } catch (ConnectionException e) {

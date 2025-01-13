@@ -1,13 +1,19 @@
 package logic.appcontroller;
 
+import logic.beans.HomeChefBean;
 import logic.beans.Logbean;
 import logic.beans.ReturnLoginBean;
+import logic.beans.SessionParamBean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.exceptions.LoginErrorException;
+import logic.model.Chef;
+import logic.model.Customer;
 import logic.model.User;
+import logic.patterns.ViewSetter;
 
 import java.util.NoSuchElementException;
 
@@ -18,16 +24,39 @@ public class LoginController {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
-        if (!user.getPassword().equals(userBean.getPassword())){
+        if (!user.getPassword().equals(userBean.getPassword())) {
 
             throw new LoginErrorException(" password is not valid");
         }
+        SessionParamBean sessionParam = new SessionParamBean();
+        sessionParam.setCurrentUserId(user.getID());
+        ViewSetter.setSessionParam(sessionParam);
+        user = this.checkType(user.getID());
+        // - aprire la pagina corretta
+        switch (user) {
+            case Customer cu -> {
+                ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
+
+            }
+            case Chef ch -> {
+                HomeChefBean hcbean = new HomeChefBean();
+                hcbean.setName(user.getName() + " " + user.getSurname());
+                hcbean.setCity(ch.getCitta());
+                hcbean.setDish(ch.getBestDish());
+                hcbean.setRes(ch.getRestaurant());
+                hcbean.setId(ch.getID());
+                ViewSetter.setHcbean(hcbean);
+                ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
+            }
+            default -> throw new IllegalArgumentException("User type not valid");
+        }
         ReturnLoginBean retBean = new ReturnLoginBean();
+
         retBean.setReturnUser(user);
         return retBean;
     }
 
-    public ReturnLoginBean checkType(long id) throws ConnectionException {
+    public User checkType(long id) throws ConnectionException {
 
         DAOCustomerImpl cDAO = new DAOCustomerImpl();
         DAOChefImpl chDAO = new DAOChefImpl();
@@ -37,8 +66,6 @@ public class LoginController {
         }catch(NoSuchElementException e){
             user = chDAO.get(id);
         }
-        ReturnLoginBean retBean = new ReturnLoginBean();
-        retBean.setReturnUser(user);
-        return retBean;
+        return user;
     }
 }

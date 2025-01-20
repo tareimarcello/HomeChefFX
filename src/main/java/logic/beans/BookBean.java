@@ -3,7 +3,6 @@ package logic.beans;
 import logic.model.Book;
 import logic.model.Chef;
 import logic.model.Customer;
-import logic.model.User;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -29,19 +28,19 @@ public class BookBean {
         this.idBook = idBook;
     }
 
-    public Customer getCustomer() {
+    public Customer getCustomerBean() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomerBean(Customer customer) {
         this.customer = customer;
     }
 
-    public Chef getChef() {
+    public Chef getChefBean() {
         return chef;
     }
 
-    public void setChef(Chef chef) {
+    public void setChefBean(Chef chef) {
         this.chef = chef;
     }
 

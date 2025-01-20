@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import logic.appcontroller.BookController;
 import logic.appcontroller.BookListController;
 import logic.beans.BookBean;
 import logic.beans.SessionParamBean;
@@ -120,7 +119,7 @@ public class BookListViewController {
             if(ViewSetter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
                 List<Text> textList = HomeChefUtil.getListGroup(current, SUBGROUPINDEXBOOK, STATUSINDEX, CHEFNAMEINDEX, DATEINDEX);
                 textList.get(0).setText(bookBean.getBookState().toString());
-                textList.get(1).setText(bookBean.getChef().getName() + " " + bookBean.getChef().getSurname());
+                textList.get(1).setText(bookBean.getChefBean().getName() + " " + bookBean.getChefBean().getSurname());
                 DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
                 textList.get(2).setText(df.format(bookBean.getData()) + " - " + bookBean.getMeal());
             }else{

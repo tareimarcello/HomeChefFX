@@ -21,7 +21,7 @@ public class BookRowMapper implements RowMapper<Book> {
             daoChef = new DAOChefImpl();
             daoCustomer = new DAOCustomerImpl();
         } catch (ConnectionException e) {
-            throw new RuntimeException(e);
+            Exceptions.exceptionConnectionOccurred();
         }
         Chef chef = daoChef.get(rs.getInt("chef"));
         Customer cust = daoCustomer.get(rs.getInt("customer"));

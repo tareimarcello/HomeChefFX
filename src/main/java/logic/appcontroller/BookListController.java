@@ -5,11 +5,8 @@ import logic.beans.SessionParamBean;
 import logic.dao.DAOBookImpl;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
-import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
-import logic.model.Chef;
-import logic.model.Customer;
 import logic.patterns.ViewSetter;
 
 import java.time.Instant;
@@ -42,10 +39,10 @@ public class BookListController {
         for (Book book : books){
             if(book.getData().after(Date.from(instant)) || book.getData().equals(Date.from(instant))) {
                 BookBean bean = new BookBean();
-                bean.setChef(daoChef.get(book.getChef().getID()));
+                bean.setChefBean(daoChef.get(book.getChef().getID()));
                 bean.setBookState(book.getBookState());
                 bean.setCitta(book.getCitta());
-                bean.setCustomer(daoUser.get(book.getCustomer().getID()));
+                bean.setCustomerBean(daoUser.get(book.getCustomer().getID()));
                 bean.setIdBook(book.getIdBook());
                 bean.setData(book.getData());
                 bean.setMeal(book.getMeal());
@@ -59,7 +56,7 @@ public class BookListController {
 
     public void updateChefBook(BookBean bean) throws ConnectionException {
         DAOBookImpl dao = new DAOBookImpl();
-        Book acceptBook = new Book(bean.getIdBook(),bean.getCustomer(),bean.getChef(),bean.getBookState(),bean.getData(),bean.getMeal(),bean.getCitta());
+        Book acceptBook = new Book(bean.getIdBook(),bean.getCustomerBean(),bean.getChefBean(),bean.getBookState(),bean.getData(),bean.getMeal(),bean.getCitta());
         acceptBook.setVia(bean.getVia());
         dao.update(acceptBook);
     }

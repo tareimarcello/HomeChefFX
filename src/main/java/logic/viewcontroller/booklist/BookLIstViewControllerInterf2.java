@@ -2,7 +2,7 @@ package logic.viewcontroller.booklist;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
-import logic.appcontroller.BookController;
+import logic.appcontroller.BookListController;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -24,7 +24,7 @@ public class BookLIstViewControllerInterf2 extends BookListViewController{
         pageSwitch = new PageMenu();
         super.bookList = ViewSetter.getBookList();
         bookBeanMap = new HashMap<>();
-        controller = new BookController();
+        controller = new BookListController();
         g1Index=13;
         g2Index=14;
         g3Index=15;

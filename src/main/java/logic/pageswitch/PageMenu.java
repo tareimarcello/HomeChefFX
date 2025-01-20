@@ -1,7 +1,7 @@
 package logic.pageswitch;
 
 import javafx.event.ActionEvent;
-import logic.appcontroller.BookController;
+import logic.appcontroller.BookListController;
 import logic.appcontroller.ISCController;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -9,7 +9,7 @@ import logic.patterns.ViewSetter;
 
 public  class PageMenu extends Page {
     public void switchToBookList(ActionEvent event)  {
-        BookController controller = new BookController();
+        BookListController controller = new BookListController();
         try {
             controller.loadBookList();
         } catch (ConnectionException e) {
@@ -19,7 +19,7 @@ public  class PageMenu extends Page {
         this.switchTo("booklist/interf1.fxml",event,"Book list");
     }
     public void switchToChefBookList(ActionEvent event)  {
-        BookController controller = new BookController();
+        BookListController controller = new BookListController();
         try {
             controller.loadBookList();
         } catch (ConnectionException e) {

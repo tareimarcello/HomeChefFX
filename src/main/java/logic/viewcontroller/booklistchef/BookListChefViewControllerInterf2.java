@@ -2,6 +2,7 @@ package logic.viewcontroller.booklistchef;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
+import logic.appcontroller.BookListController;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
@@ -19,6 +20,7 @@ public class BookListChefViewControllerInterf2 extends BookListViewController {
     }
 
     public BookListChefViewControllerInterf2(){
+        controller = new BookListController();
         pageSwitch = new PageMenu();
         super.bookList = ViewSetter.getBookList();
         bookBeanMap = new HashMap<>();

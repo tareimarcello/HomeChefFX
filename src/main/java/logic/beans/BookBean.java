@@ -1,6 +1,8 @@
 package logic.beans;
 
 import logic.model.Book;
+import logic.model.Chef;
+import logic.model.Customer;
 import logic.model.User;
 
 import java.time.Instant;
@@ -11,8 +13,8 @@ import java.util.Date;
 public class BookBean {
 
     private long idBook;
-    private User customer;
-    private User chef;
+    private Customer customer;
+    private Chef chef;
     private Date data;
     private Book.BookStatus bookState;
     private Book.BookMeal meal;
@@ -27,19 +29,19 @@ public class BookBean {
         this.idBook = idBook;
     }
 
-    public User getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(User customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 
-    public User getChef() {
+    public Chef getChef() {
         return chef;
     }
 
-    public void setChef(User chef) {
+    public void setChef(Chef chef) {
         this.chef = chef;
     }
 

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.appcontroller.BookController;
+import logic.appcontroller.BookListController;
 import logic.beans.BookBean;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
@@ -23,7 +24,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public class BookListViewController {
-    protected BookController controller;
+    protected BookListController controller;
     @FXML
     protected AnchorPane anchorPane;
     @FXML

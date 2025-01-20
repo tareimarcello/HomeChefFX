@@ -40,13 +40,13 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     @Override
     public void save(Book book) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(INSERT_BOOK_QUERY, book.getCustomer(),book.getChef(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia());
+        getJdbcTemplate().update(INSERT_BOOK_QUERY, book.getCustomer().getID(),book.getChef().getID(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia());
     }
 
     @Override
     public void update(Book book) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_BOOK_QUERY, book.getCustomer(),book.getChef(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia(), book.getIdBook());
+        getJdbcTemplate().update(UPDATE_BOOK_QUERY, book.getCustomer().getID(),book.getChef().getID(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia(), book.getIdBook());
     }
     @Override
     public void delete(Book book) {

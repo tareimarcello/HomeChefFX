@@ -26,9 +26,9 @@ public class BookController {
         } catch (NoSuchElementException e) {
             DAOCustomerImpl daoCust = new DAOCustomerImpl();
             DAOChefImpl daoChef = new DAOChefImpl();
-            Customer cust = daoCust.get(ViewSetter.getSessionParam().getCurrentUserId());
+            long cust = ViewSetter.getSessionParam().getCurrentUserId();
             Chef chef = daoChef.get(idChef);
-            Book book = new Book(-1, cust, chef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta());
+            Book book = new Book(-1, cust, idChef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta());
             book.setVia(bean.getVia());
             dao.save(book);
         }

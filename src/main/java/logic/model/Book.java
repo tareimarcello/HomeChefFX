@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Book {
     private long idBook;
-    private Customer customer;
-    private Chef chef;
+    private long customer;
+    private long chef;
     private Date data;
     private BookStatus bookState;
     private BookMeal meal;
@@ -18,7 +18,7 @@ public class Book {
     public enum BookMeal{
         LUNCH,DINNER
     }
-    public Book(long idbook, Customer customer, Chef chef, BookStatus stato, Date data, BookMeal pasto, String citta) {
+    public Book(long idbook, long customer, long chef, BookStatus stato, Date data, BookMeal pasto, String citta) {
         this.idBook = idbook;
         this.customer = customer;
         this.chef = chef;
@@ -37,19 +37,19 @@ public class Book {
         this.idBook = idBook;
     }
 
-    public Customer getCustomer() {
+    public long getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(long customer) {
         this.customer = customer;
     }
 
-    public Chef getChef() {
+    public long getChef() {
         return chef;
     }
 
-    public void setChef(Chef chef) {
+    public void setChef(long chef) {
         this.chef = chef;
     }
 

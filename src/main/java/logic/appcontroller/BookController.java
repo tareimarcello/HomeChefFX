@@ -1,7 +1,6 @@
 package logic.appcontroller;
 
 import logic.beans.BookBean;
-import logic.beans.BookListBean;
 import logic.dao.DAOBookImpl;
 import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;

@@ -1,8 +1,6 @@
 package logic.beans;
 
 import logic.model.Book;
-import logic.model.Chef;
-import logic.model.Customer;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -22,16 +20,9 @@ public class BookBean {
         return data;
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
 
     public Book.BookStatus getBookState() {
         return bookState;
-    }
-
-    public void setBookState(Book.BookStatus bookState) {
-        this.bookState = bookState;
     }
 
     public Book.BookMeal getMeal() {
@@ -46,17 +37,11 @@ public class BookBean {
         return citta;
     }
 
-    public void setCitta(String citta) {
-        this.citta = citta;
-    }
 
     public String getVia() {
         return via;
     }
 
-    public void setVia(String via) {
-        this.via = via;
-    }
 
     public boolean setDataIn(LocalDate data) {
         LocalDate now = LocalDate.now();

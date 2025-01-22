@@ -12,7 +12,7 @@ import logic.exceptions.LoginErrorException;
 import logic.model.Chef;
 import logic.model.Customer;
 import logic.model.User;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.NoSuchElementException;
 
@@ -29,11 +29,11 @@ public class LoginController {
         }
         SessionParamBean sessionParam = new SessionParamBean();
         sessionParam.setCurrentUserId(user.getID());
-        ViewSetter.setSessionParam(sessionParam);
+        Setter.setSessionParam(sessionParam);
         user = this.checkType(user.getID());
         // - aprire la pagina corretta
         switch (user) {
-            case Customer cu -> ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
+            case Customer cu -> Setter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
             case Chef ch -> {
                 HomeChefBean hcbean = new HomeChefBean();
                 hcbean.setName(user.getName() + " " + user.getSurname());
@@ -41,8 +41,8 @@ public class LoginController {
                 hcbean.setDish(ch.getBestDish());
                 hcbean.setRes(ch.getRestaurant());
                 hcbean.setId(ch.getID());
-                ViewSetter.setHcbean(hcbean);
-                ViewSetter.getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
+                Setter.setHcbean(hcbean);
+                Setter.getSessionParam().setUserType(SessionParamBean.UserType.CHEF);
             }
             default -> throw new IllegalArgumentException("User type not valid");
         }

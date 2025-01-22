@@ -4,7 +4,7 @@ import logic.beans.*;
 
 import java.util.List;
 
-public class ViewSetter {
+public class Setter {
 
 
     private static HomeChefBean hcbean;
@@ -25,7 +25,7 @@ public class ViewSetter {
 
     private static Mode mode;
 
-    private ViewSetter() {
+    private Setter() {
 
     }
 
@@ -34,7 +34,7 @@ public class ViewSetter {
     }
 
     public static void setHcbean(HomeChefBean hcbean) {
-        ViewSetter.hcbean = hcbean;
+        Setter.hcbean = hcbean;
     }
 
     public static HomeChefBean getHcvisitbean() {
@@ -42,7 +42,7 @@ public class ViewSetter {
     }
 
     public static void setHcvisitbean(HomeChefBean hcvisitbean) {
-        ViewSetter.hcvisitbean = hcvisitbean;
+        Setter.hcvisitbean = hcvisitbean;
     }
 
     public static List<ResultSearchBean> getChefList() {
@@ -50,7 +50,7 @@ public class ViewSetter {
     }
 
     public static void setChefList(List<ResultSearchBean> chefList) {
-        ViewSetter.chefList = chefList;
+        Setter.chefList = chefList;
     }
 
     public static SessionParamBean getSessionParam() {
@@ -58,7 +58,7 @@ public class ViewSetter {
     }
 
     public static void setSessionParam(SessionParamBean sessionParam) {
-        ViewSetter.sessionParam = sessionParam;
+        Setter.sessionParam = sessionParam;
     }
 
     public static IsHomeVisitBean getIsHomeVisitBean() {
@@ -66,7 +66,7 @@ public class ViewSetter {
     }
 
     public static void setIsHomeVisitBean(IsHomeVisitBean isHomeVisitBean) {
-        ViewSetter.isHomeVisitBean = isHomeVisitBean;
+        Setter.isHomeVisitBean = isHomeVisitBean;
     }
 
     public static ISCBean getOpenChat() {
@@ -74,7 +74,7 @@ public class ViewSetter {
     }
 
     public static void setOpenChat(ISCBean openChat) {
-        ViewSetter.openChat = openChat;
+        Setter.openChat = openChat;
     }
 
     public static List<BookListBean> getBookList() {
@@ -82,7 +82,7 @@ public class ViewSetter {
     }
 
     public static void setBookList(List<BookListBean> bookList) {
-        ViewSetter.bookList = bookList;
+        Setter.bookList = bookList;
     }
 
     public static List<ISCBean> getChatList() {
@@ -90,7 +90,7 @@ public class ViewSetter {
     }
 
     public static void setChatList(List<ISCBean> chatList) {
-        ViewSetter.chatList = chatList;
+        Setter.chatList = chatList;
     }
 
     public static ChatObserver getObserver() {
@@ -102,6 +102,6 @@ public class ViewSetter {
     }
 
     public static void setMode(Mode mode) {
-        ViewSetter.mode = mode;
+        Setter.mode = mode;
     }
 }

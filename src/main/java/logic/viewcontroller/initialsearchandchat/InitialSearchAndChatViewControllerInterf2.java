@@ -8,11 +8,10 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import logic.HomeChefApplication;
-import logic.appcontroller.ISCController;
 import logic.beans.ISCBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -29,7 +28,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
             pageswitch = new PageMenu();
             iscBeanMap = new HashMap<>();
             subGroupMap = new HashMap<>();
-            chatList = ViewSetter.getChatList();
+            chatList = Setter.getChatList();
             g1Index=7;
             g2Index=8;
             g3Index=9;
@@ -40,7 +39,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
 
     public void initialize(){
 
-        ViewSetter.getObserver().setUpdater(this);
+        Setter.getObserver().setUpdater(this);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);
@@ -62,7 +61,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
-        ViewSetter.setOpenChat(selected);
+        Setter.setOpenChat(selected);
         try {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
             anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatuser/chatVoid.fxml")));
@@ -76,7 +75,7 @@ public class InitialSearchAndChatViewControllerInterf2 extends InitialSearchAndC
         Button clicked = (Button)event.getSource();
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
-        ViewSetter.setOpenChat(selected);
+        Setter.setOpenChat(selected);
         try {
             anchorChat.getChildren().removeAll(anchorChat.getChildren());
             anchorChat.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("chatchef/chatVoid.fxml")));

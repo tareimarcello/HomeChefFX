@@ -12,7 +12,7 @@ import logic.beans.*;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -64,7 +64,7 @@ public class HomeChefUtil {
     }
 
     public static void linkButtonBarInterf2(AnchorPane buttonBar){
-        if(ViewSetter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
+        if(Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
             try {
                 buttonBar.getChildren().removeAll(buttonBar.getChildren());
                 buttonBar.getChildren().add((Node) FXMLLoader.load(HomeChefApplication.class.getResource("buttonBarInterf2.fxml")));

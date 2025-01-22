@@ -7,7 +7,7 @@ import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 public class ChatInterf1 extends ChatViewController{
 
@@ -23,9 +23,9 @@ public class ChatInterf1 extends ChatViewController{
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
-        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
-        if(ViewSetter.getIsHomeVisitBean()!=null && ViewSetter.getIsHomeVisitBean().isHome()){
-            ViewSetter.getIsHomeVisitBean().setHome(false);
+        SessionParamBean.UserType type = Setter.getSessionParam().getUserType();
+        if(Setter.getIsHomeVisitBean()!=null && Setter.getIsHomeVisitBean().isHome()){
+            Setter.getIsHomeVisitBean().setHome(false);
             pageswitch.backTo();
         }
         else if(type== SessionParamBean.UserType.CHEF){

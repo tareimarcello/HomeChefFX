@@ -8,11 +8,8 @@ import logic.appcontroller.SettingsController;
 import logic.beans.EditChefProfileBean;
 import logic.beans.EditProfileBean;
 import logic.exceptions.*;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
-
-import java.util.Objects;
+import logic.patterns.Setter;
 
 public abstract class SettingViewController {
     protected SettingsController controller;
@@ -38,7 +35,7 @@ public abstract class SettingViewController {
     protected void setPswd(){
         resetOpMsg();
 
-        EditProfileBean bean = new EditProfileBean("","",ViewSetter.getSessionParam().getCurrentUserId());
+        EditProfileBean bean = new EditProfileBean("","", Setter.getSessionParam().getCurrentUserId());
         if(!bean.setPswd(pswd.getText())){
             setResOpMsg(false);
             errMsg.setText("Password is empty");
@@ -61,7 +58,7 @@ public abstract class SettingViewController {
     protected abstract void signOut(ActionEvent event);
     @FXML
     protected void setMail() {
-        EditProfileBean updateEmail = new EditProfileBean("", "", ViewSetter.getSessionParam().getCurrentUserId());
+        EditProfileBean updateEmail = new EditProfileBean("", "", Setter.getSessionParam().getCurrentUserId());
         if (!updateEmail.setEmail(email.getText())) {
             email.setText("");
             setResOpMsg(false);
@@ -100,7 +97,7 @@ public abstract class SettingViewController {
     @FXML
     protected void goEditRestaurant(){
         resetOpMsg();
-        EditChefProfileBean updateRes = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"","");
+        EditChefProfileBean updateRes = new EditChefProfileBean("", "", Setter.getSessionParam().getCurrentUserId(),"","");
         if(!updateRes.setRes(restaurant.getText().toUpperCase())){
             restaurant.setText("");
             setResOpMsg(false);
@@ -124,7 +121,7 @@ public abstract class SettingViewController {
     @FXML
     protected void updateCity(){
         resetOpMsg();
-        EditChefProfileBean updateCity = new EditChefProfileBean("", "",ViewSetter.getSessionParam().getCurrentUserId(),"","");
+        EditChefProfileBean updateCity = new EditChefProfileBean("", "", Setter.getSessionParam().getCurrentUserId(),"","");
         if(!updateCity.setCity(city.getText().toUpperCase())) {
             city.setText("");
             setResOpMsg(false);

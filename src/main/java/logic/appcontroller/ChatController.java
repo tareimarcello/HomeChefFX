@@ -8,7 +8,7 @@ import logic.dao.DAOMessageImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Chat;
 import logic.model.Message;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -33,24 +33,24 @@ public class ChatController {
         List<Chat> newChat = chatDao.getChatByCustChef(chatBean.getChat().getCustomer(),chatBean.getChat().getChef());
         if (!newChat.isEmpty()){
             chatBean.setChat(newChat.getFirst());
-            ViewSetter.setOpenChat(chatBean);
+            Setter.setOpenChat(chatBean);
         }
         return chatBean;
     }
 
     public void refreshISC() throws ConnectionException{
 
-        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
+        SessionParamBean.UserType type = Setter.getSessionParam().getUserType();
 
         ISCController iscController = new ISCController();
 
         if (type== SessionParamBean.UserType.CUSTOMER){
 
-            ViewSetter.setChatList(iscController.getISCToChef());
+            Setter.setChatList(iscController.getISCToChef());
 
         }else {
 
-            ViewSetter.setChatList(iscController.getISCToUser());
+            Setter.setChatList(iscController.getISCToUser());
 
         }
 

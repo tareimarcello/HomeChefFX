@@ -4,18 +4,17 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
-import logic.appcontroller.ISCController;
 import logic.beans.ISCBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 import java.util.HashMap;
 
 
 public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndChatViewController{
 
     public void initialize(){
-        ViewSetter.getObserver().setUpdater(this);
+        Setter.getObserver().setUpdater(this);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
         subGroupMap.put(2,this.group3);
@@ -29,7 +28,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         pageswitch = new PageMenu();
         iscBeanMap = new HashMap<>();
         subGroupMap = new HashMap<>();
-        chatList = ViewSetter.getChatList();
+        chatList = Setter.getChatList();
         g1Index=13;
         g2Index=14;
         g3Index=15;
@@ -95,7 +94,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
         Group parent = (Group) clicked.getParent();
         ISCBean selected = this.iscBeanMap.get(parent.getId());
 
-        ViewSetter.setOpenChat(selected);
+        Setter.setOpenChat(selected);
 
     }
 

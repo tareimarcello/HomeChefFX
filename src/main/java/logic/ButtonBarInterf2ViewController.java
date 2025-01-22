@@ -7,7 +7,7 @@ import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 public class ButtonBarInterf2ViewController {
     private PageMenu pageSwitch;
@@ -20,13 +20,13 @@ public class ButtonBarInterf2ViewController {
     protected void goToIsc(ActionEvent actionEvent) {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.setChatList(controller.getISCToChef());
-            if(ViewSetter.getIsHomeVisitBean()==null){
+            Setter.setChatList(controller.getISCToChef());
+            if(Setter.getIsHomeVisitBean()==null){
                 IsHomeVisitBean bean = new IsHomeVisitBean();
                 bean.setHome(false);
-                ViewSetter.setIsHomeVisitBean(bean);
+                Setter.setIsHomeVisitBean(bean);
             }else{
-                ViewSetter.getIsHomeVisitBean().setHome(false);
+                Setter.getIsHomeVisitBean().setHome(false);
             }
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
@@ -49,7 +49,7 @@ public class ButtonBarInterf2ViewController {
     protected void goToIscChef(ActionEvent actionEvent) {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.setChatList(controller.getISCToUser());
+            Setter.setChatList(controller.getISCToUser());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

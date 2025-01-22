@@ -15,7 +15,7 @@ import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.model.Book;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.text.DateFormat;
 import java.util.List;
@@ -58,7 +58,7 @@ public class BookListViewController {
     protected void outputValPrevious(){
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         lastIndexBook-=(MAXBOOKVIEWED+elementViewed);
-        if(ViewSetter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
+        if(Setter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
             accBook.setOpacity(0.0);
             rejBook.setOpacity(0.0);
         }
@@ -67,7 +67,7 @@ public class BookListViewController {
     @FXML
     protected void outputVal(){
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
-        if(ViewSetter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
+        if(Setter.getSessionParam().getUserType() == SessionParamBean.UserType.CHEF){
             accBook.setOpacity(0.0);
             rejBook.setOpacity(0.0);
         }
@@ -85,7 +85,7 @@ public class BookListViewController {
             clicked.getParent().getChildrenUnmodifiable().get(4).setVisible(false);
             rejBook.setOpacity(1.0);
             controller.loadBookList();
-            bookList=ViewSetter.getBookList();
+            bookList= Setter.getBookList();
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }
@@ -103,7 +103,7 @@ public class BookListViewController {
             clicked.getParent().getChildrenUnmodifiable().get(3).setVisible(false);
             accBook.setOpacity(1.0);
             controller.loadBookList();
-            bookList=ViewSetter.getBookList();
+            bookList= Setter.getBookList();
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }
@@ -116,7 +116,7 @@ public class BookListViewController {
             BookListBean bookBean = bookList.get(lastIndexBook);
             Group current = (Group) anchorPane.getChildren().get(g1Index+index);
             this.bookBeanMap.put(current.getId(),bookBean);
-            if(ViewSetter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
+            if(Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
                 List<Text> textList = HomeChefUtil.getListGroup(current, SUBGROUPINDEXBOOK, STATUSINDEX, CHEFNAMEINDEX, DATEINDEX);
                 textList.get(0).setText(bookBean.getBookState().toString());
                 textList.get(1).setText(bookBean.getChefBean().getName() + " " + bookBean.getChefBean().getSurname());

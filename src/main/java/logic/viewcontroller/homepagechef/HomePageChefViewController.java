@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import logic.beans.HomeChefBean;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 public class HomePageChefViewController {
     protected PageMenu pageswitch;
@@ -18,7 +18,7 @@ public class HomePageChefViewController {
     protected TextField city;
 
     protected void setFields(){
-        HomeChefBean hcbean = ViewSetter.getHcbean();
+        HomeChefBean hcbean = Setter.getHcbean();
 
         if (hcbean!=null) {
 

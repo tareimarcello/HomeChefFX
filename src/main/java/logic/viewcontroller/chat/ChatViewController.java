@@ -16,7 +16,7 @@ import logic.exceptions.Exceptions;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Decorator;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.List;
 
@@ -39,16 +39,16 @@ public class ChatViewController {
     protected ChatViewController() {
         pageswitch = new PageMenu();
         initializated = false;
-        currentChat = ViewSetter.getOpenChat();
+        currentChat = Setter.getOpenChat();
         controller = new ChatController();
 
     }
 
     public void initialize() {
-        if(ViewSetter.getIsHomeVisitBean() == null){
+        if(Setter.getIsHomeVisitBean() == null){
             IsHomeVisitBean bean = new IsHomeVisitBean();
             bean.setHome(false);
-            ViewSetter.setIsHomeVisitBean(bean);
+            Setter.setIsHomeVisitBean(bean);
         }
         if (this.currentChat!=null) {
             this.userName.setText(currentChat.getDestUser().getName()+" "+currentChat.getDestUser().getSurname());
@@ -58,12 +58,12 @@ public class ChatViewController {
             for (Message mess : messages){
                 this.graphics.setText(mess.getText());
 
-                if (ViewSetter.getSessionParam().getCurrentUserId()==mess.getSender()){
+                if (Setter.getSessionParam().getCurrentUserId()==mess.getSender()){
 
                     /* Visualizzare il messaggio come inviato */
                     textmsg=this.graphics.getMessageSended();
 
-                }else if (ViewSetter.getSessionParam().getCurrentUserId()==mess.getReceiver()) {
+                }else if (Setter.getSessionParam().getCurrentUserId()==mess.getReceiver()) {
 
                     /* Visualizzare il messaggio come ricevuto */
 
@@ -93,7 +93,7 @@ public class ChatViewController {
         }
         recivemsgArr();
         MessageBean msgBean = new MessageBean();
-        SessionParamBean sessionParam = ViewSetter.getSessionParam();
+        SessionParamBean sessionParam = Setter.getSessionParam();
         /** Creazione chat se è il primo messaggio scambiato tra chef e utente **/
 
         if (currentChat.getChat().getId()<0) {
@@ -116,9 +116,9 @@ public class ChatViewController {
 
         try {
             controller.saveMessage(msgBean);
-            if(ViewSetter.getMode()== ViewSetter.Mode.DESKTOP &&!ViewSetter.getIsHomeVisitBean().isHome()) {
-                ViewSetter.getObserver().setChatViewController(this);
-                ViewSetter.getObserver().notifyMsgISC();
+            if(Setter.getMode()== Setter.Mode.DESKTOP &&!Setter.getIsHomeVisitBean().isHome()) {
+                Setter.getObserver().setChatViewController(this);
+                Setter.getObserver().notifyMsgISC();
             }inputmsg.setText("");
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();

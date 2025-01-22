@@ -3,7 +3,7 @@ package logic.viewcontroller.resultsearch;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.HashMap;
 
@@ -12,7 +12,7 @@ public class ResultSearchViewControllerInterf2 extends ResultSearchViewControlle
 
     public ResultSearchViewControllerInterf2(){
         pageSwitch = new PageMenu();
-        chefList = ViewSetter.getChefList();
+        chefList = Setter.getChefList();
         chefBeanMap = new HashMap<>();
         g1Index=2;
         g2Index=3;

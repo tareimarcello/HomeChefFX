@@ -7,7 +7,7 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.time.Instant;
 import java.time.LocalDate;
@@ -18,10 +18,10 @@ import java.util.List;
 
 public class BookListController {
 
-    public void loadBookList() throws ConnectionException {
+    public List<BookListBean> loadBookList() throws ConnectionException {
 
-        long idCurrentUser = ViewSetter.getSessionParam().getCurrentUserId();
-        SessionParamBean.UserType type = ViewSetter.getSessionParam().getUserType();
+        long idCurrentUser = Setter.getSessionParam().getCurrentUserId();
+        SessionParamBean.UserType type = Setter.getSessionParam().getUserType();
         DAOCustomerImpl daoUser = new DAOCustomerImpl();
         DAOChefImpl daoChef = new DAOChefImpl();
         DAOBookImpl daoBook = new DAOBookImpl();
@@ -51,7 +51,7 @@ public class BookListController {
             }
         }
 
-        ViewSetter.setBookList(beanBooksList);
+        return beanBooksList;
     }
 
     public void updateChefBook(BookListBean bean) throws ConnectionException {

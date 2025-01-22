@@ -18,7 +18,7 @@ import logic.beans.ISCBean;
 import logic.model.Message;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Updater;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.HashMap;
 import java.util.List;
@@ -103,7 +103,7 @@ public  abstract class  InitialSearchAndChatViewController implements Updater {
     @Override
     public void update(){
         ISCController controller = new ISCController();
-        ISCBean currentChatBean = ViewSetter.getOpenChat();
+        ISCBean currentChatBean = Setter.getOpenChat();
         try {
             Message msgLast = controller.getLastChatMessage(currentChatBean);
             currentChatBean.getChatMessages().add(msgLast);
@@ -136,7 +136,7 @@ public  abstract class  InitialSearchAndChatViewController implements Updater {
         hbvisit.setName(bean.getRetChef().getName() + " " + bean.getRetChef().getSurname());
         hbvisit.setId(bean.getRetChef().getID());
 
-        ViewSetter.setHcvisitbean(hbvisit);
+        Setter.setHcvisitbean(hbvisit);
     }
     protected abstract void touchChat(ActionEvent event);
     protected abstract void touchChatChef(ActionEvent event);

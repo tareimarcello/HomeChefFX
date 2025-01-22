@@ -7,7 +7,7 @@ import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.HashMap;
 
@@ -18,7 +18,7 @@ public class BookLIstViewControllerInterf2 extends BookListViewController{
 
     public void initialize(){
         try {
-            controller.loadBookList();
+            super.bookList = controller.loadBookList();
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
@@ -28,7 +28,7 @@ public class BookLIstViewControllerInterf2 extends BookListViewController{
 
     public BookLIstViewControllerInterf2(){
         pageSwitch = new PageMenu();
-        super.bookList = ViewSetter.getBookList();
+        super.bookList = Setter.getBookList();
         bookBeanMap = new HashMap<>();
         controller = new BookListController();
         g1Index=13;

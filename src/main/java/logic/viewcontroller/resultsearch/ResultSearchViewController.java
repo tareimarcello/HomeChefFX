@@ -10,7 +10,7 @@ import logic.beans.HomeChefBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.beans.ResultSearchBean;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -99,7 +99,7 @@ public abstract class ResultSearchViewController {
         hbvisit.setName(rsb.getNameChef());
         hbvisit.setId(rsb.getIdChef());
 
-        ViewSetter.setHcvisitbean(hbvisit);
+        Setter.setHcvisitbean(hbvisit);
     }
     protected abstract void visit(ActionEvent event);
 }

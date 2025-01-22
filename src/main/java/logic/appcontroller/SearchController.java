@@ -6,7 +6,7 @@ import logic.dao.DAOChefImpl;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.NoResultFoundException;
 import logic.model.Chef;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class SearchController {
                 chefBeanResult.add(bean);
             }
 
-            ViewSetter.setChefList(chefBeanResult);
+            Setter.setChefList(chefBeanResult);
         }
 
     }

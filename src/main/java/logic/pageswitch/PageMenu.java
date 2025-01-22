@@ -5,7 +5,7 @@ import logic.appcontroller.BookListController;
 import logic.appcontroller.ISCController;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 public  class PageMenu extends Page {
     public void switchToBookList(ActionEvent event)  {
@@ -35,7 +35,7 @@ public  class PageMenu extends Page {
     public void switchToISCUser(ActionEvent event)  {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.setChatList(controller.getISCToChef());
+            Setter.setChatList(controller.getISCToChef());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
@@ -44,7 +44,7 @@ public  class PageMenu extends Page {
     public void switchToISCChef(ActionEvent event)  {
         ISCController controller = new ISCController();
         try {
-            ViewSetter.setChatList(controller.getISCToUser());
+            Setter.setChatList(controller.getISCToUser());
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

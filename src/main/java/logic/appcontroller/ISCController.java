@@ -9,7 +9,7 @@ import logic.dao.DAOChatImpl;
 import logic.dao.DAOMessageImpl;
 import logic.model.Chat;
 import logic.model.Message;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +22,7 @@ public class ISCController {
 
         DAOChatImpl chatDao = new DAOChatImpl();
         DAOMessageImpl messDao = new DAOMessageImpl();
-        List<Chat> chatList = chatDao.getAllChatByChef(ViewSetter.getSessionParam().getCurrentUserId());
+        List<Chat> chatList = chatDao.getAllChatByChef(Setter.getSessionParam().getCurrentUserId());
         List<ISCBean> iscBeanList = new ArrayList<>();
 
         /** Per ogni chat recupero messaggi **/
@@ -48,7 +48,7 @@ public class ISCController {
         /** Recupero chat dove il customer è l'utente corrente **/
         DAOChatImpl chatDao = new DAOChatImpl();
         DAOMessageImpl messDao = new DAOMessageImpl();
-        List<Chat> chatList = chatDao.getAllChatByCust(ViewSetter.getSessionParam().getCurrentUserId());
+        List<Chat> chatList = chatDao.getAllChatByCust(Setter.getSessionParam().getCurrentUserId());
         List<ISCBean> iscBeanList = new ArrayList<>();
 
         /** Per ogni chat recupero messaggi **/

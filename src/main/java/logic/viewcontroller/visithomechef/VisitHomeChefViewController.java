@@ -9,7 +9,7 @@ import logic.beans.IsHomeVisitBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 public abstract class VisitHomeChefViewController {
     protected  VisitHomeChefController controller;
@@ -26,7 +26,7 @@ public abstract class VisitHomeChefViewController {
     protected HomeChefBean hcbean;
 
     protected void downLoadHcBean(){
-        hcbean  = ViewSetter.getHcvisitbean();
+        hcbean  = Setter.getHcvisitbean();
 
         if (hcbean!=null) {
 
@@ -46,7 +46,7 @@ public abstract class VisitHomeChefViewController {
         }
         IsHomeVisitBean ishBean = new IsHomeVisitBean();
         ishBean.setHome(true);
-        ViewSetter.setIsHomeVisitBean(ishBean);
+        Setter.setIsHomeVisitBean(ishBean);
     }
 
     protected abstract void goToChefChat(ActionEvent event);

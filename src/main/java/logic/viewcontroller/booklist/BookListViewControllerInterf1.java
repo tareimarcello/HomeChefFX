@@ -7,7 +7,7 @@ import logic.appcontroller.BookListController;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
-import logic.patterns.ViewSetter;
+import logic.patterns.Setter;
 
 import java.util.HashMap;
 
@@ -18,7 +18,6 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     public BookListViewControllerInterf1(){
         controller = new BookListController();
         pageSwitch = new PageMenu();
-        super.bookList = ViewSetter.getBookList();
         bookBeanMap = new HashMap<>();
         g1Index=10;
         g2Index=11;
@@ -33,7 +32,7 @@ public class BookListViewControllerInterf1 extends BookListViewController{
 
         // Inizialize first 4 chef of the result list search
         try {
-            controller.loadBookList();
+            super.bookList = controller.loadBookList();
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

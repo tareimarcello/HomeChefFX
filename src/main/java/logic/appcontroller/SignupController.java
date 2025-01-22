@@ -28,7 +28,7 @@ public class SignupController {
                     DAOCustomerImpl cuDao = new DAOCustomerImpl();
 
                     Customer cu = new Customer(-1, cb.getNameBean().toUpperCase(), cb.getSurnameBean().toUpperCase(),
-                            cb.getEmailBean(), cb.getPasswordBean());
+                            cb.getEmailBean(), cb.getPasswordBean(),false);
                     cuDao.save(cu);
                 }
                 case Chefbean chB -> {

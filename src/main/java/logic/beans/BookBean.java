@@ -10,7 +10,6 @@ import java.util.Date;
 public class BookBean {
 
     private Date data;
-    private Book.BookStatus bookState;
     private Book.BookMeal meal;
     private String citta;
     private String via;
@@ -20,10 +19,6 @@ public class BookBean {
         return data;
     }
 
-
-    public Book.BookStatus getBookState() {
-        return bookState;
-    }
 
     public Book.BookMeal getMeal() {
         return meal;

@@ -2,13 +2,9 @@ package logic.appcontroller;
 
 import logic.beans.BookBean;
 import logic.dao.DAOBookImpl;
-import logic.dao.DAOChefImpl;
-import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
-import logic.model.Chef;
-import logic.model.Customer;
 import logic.patterns.ViewSetter;
 
 import java.util.NoSuchElementException;
@@ -24,10 +20,7 @@ public class BookController {
                 throw new ChefNotAvailableException("Chef not available for this date");
             }
         } catch (NoSuchElementException e) {
-            DAOCustomerImpl daoCust = new DAOCustomerImpl();
-            DAOChefImpl daoChef = new DAOChefImpl();
             long cust = ViewSetter.getSessionParam().getCurrentUserId();
-            Chef chef = daoChef.get(idChef);
             Book book = new Book(-1, cust, idChef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta());
             book.setVia(bean.getVia());
             dao.save(book);

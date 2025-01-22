@@ -1,12 +1,6 @@
 package logic.dao.rowmapper;
 
-import logic.dao.DAOChefImpl;
-import logic.dao.DAOCustomerImpl;
-import logic.exceptions.ConnectionException;
-import logic.exceptions.Exceptions;
 import logic.model.Book;
-import logic.model.Chef;
-import logic.model.Customer;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

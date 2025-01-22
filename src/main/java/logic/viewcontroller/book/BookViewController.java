@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.appcontroller.BookController;
 import logic.beans.BookBean;
+import logic.beans.BookListBean;
 import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -70,7 +71,6 @@ public class BookViewController {
             bookFail.setOpacity(1.0);
             bookFail.setText("The field route is empty. ");
         } else {
-            bean.setIdBook(-1);
             bean.setMeal(Book.BookMeal.valueOf(whenBook.getValue()));
             try {
                 controller.saveBook(bean);

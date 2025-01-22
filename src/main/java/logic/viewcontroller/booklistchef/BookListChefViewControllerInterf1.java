@@ -3,6 +3,8 @@ package logic.viewcontroller.booklistchef;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.appcontroller.BookListController;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 import logic.viewcontroller.booklist.BookListViewController;
@@ -13,6 +15,11 @@ public class BookListChefViewControllerInterf1 extends BookListViewController {
 
 
     public void initialize() {
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         initList();
     }
 

@@ -16,7 +16,7 @@ public class ViewSetter {
 
     private static ISCBean openChat;
     private static List<ISCBean> chatList;
-    private static List<BookBean> bookList;
+    private static List<BookListBean> bookList;
     private static final ChatObserver observer = new ChatObserver();
     public enum Mode{
         SMARTPHONE,
@@ -77,11 +77,11 @@ public class ViewSetter {
         ViewSetter.openChat = openChat;
     }
 
-    public static List<BookBean> getBookList() {
+    public static List<BookListBean> getBookList() {
         return bookList;
     }
 
-    public static void setBookList(List<BookBean> bookList) {
+    public static void setBookList(List<BookListBean> bookList) {
         ViewSetter.bookList = bookList;
     }
 

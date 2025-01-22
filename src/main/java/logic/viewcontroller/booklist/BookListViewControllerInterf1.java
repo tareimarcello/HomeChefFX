@@ -4,6 +4,8 @@ package logic.viewcontroller.booklist;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import logic.appcontroller.BookListController;
+import logic.exceptions.ConnectionException;
+import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
 import logic.patterns.ViewSetter;
 
@@ -26,9 +28,15 @@ public class BookListViewControllerInterf1 extends BookListViewController{
     }
 
 
+
     public void initialize(){
 
         // Inizialize first 4 chef of the result list search
+        try {
+            controller.loadBookList();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         initList();
 
     }

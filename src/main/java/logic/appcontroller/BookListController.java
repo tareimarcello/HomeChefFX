@@ -1,6 +1,6 @@
 package logic.appcontroller;
 
-import logic.beans.BookBean;
+import logic.beans.BookListBean;
 import logic.beans.SessionParamBean;
 import logic.dao.DAOBookImpl;
 import logic.dao.DAOChefImpl;
@@ -26,7 +26,7 @@ public class BookListController {
         DAOChefImpl daoChef = new DAOChefImpl();
         DAOBookImpl daoBook = new DAOBookImpl();
         List<Book> books = null;
-        List<BookBean> beanBooksList= new ArrayList<>();
+        List<BookListBean> beanBooksList= new ArrayList<>();
         switch(type) {
             case SessionParamBean.UserType.CUSTOMER -> books = daoBook.getAllByCustomer(idCurrentUser);
             case SessionParamBean.UserType.CHEF -> books = daoBook.getAllByChefOpenApproved(idCurrentUser);
@@ -38,7 +38,7 @@ public class BookListController {
         Instant instant = Instant.from(now.atStartOfDay(ZoneId.systemDefault()));
         for (Book book : books){
             if(book.getData().after(Date.from(instant)) || book.getData().equals(Date.from(instant))) {
-                BookBean bean = new BookBean();
+                BookListBean bean = new BookListBean();
                 bean.setChefBean(daoChef.get(book.getChef()));
                 bean.setBookState(book.getBookState());
                 bean.setCitta(book.getCitta());
@@ -54,7 +54,7 @@ public class BookListController {
         ViewSetter.setBookList(beanBooksList);
     }
 
-    public void updateChefBook(BookBean bean) throws ConnectionException {
+    public void updateChefBook(BookListBean bean) throws ConnectionException {
         DAOBookImpl dao = new DAOBookImpl();
         Book acceptBook = new Book(bean.getIdBook(),bean.getCustomerBean().getID(),bean.getChefBean().getID(),bean.getBookState(),bean.getData(),bean.getMeal(),bean.getCitta());
         acceptBook.setVia(bean.getVia());

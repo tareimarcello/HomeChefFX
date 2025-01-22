@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.appcontroller.BookListController;
-import logic.beans.BookBean;
+import logic.beans.BookListBean;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -49,8 +49,8 @@ public class BookListViewController {
     @FXML
     protected Label rejBook;
 
-    protected List<BookBean> bookList;
-    protected Map<String, BookBean> bookBeanMap;
+    protected List<BookListBean> bookList;
+    protected Map<String, BookListBean> bookBeanMap;
 
     protected PageMenu pageSwitch;
 
@@ -77,7 +77,7 @@ public class BookListViewController {
     protected void refBook(ActionEvent event){
         accBook.setOpacity(0.0);
         Button clicked = (Button) event.getSource();
-        BookBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
+        BookListBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.REJECTED);
         try {
             controller.updateChefBook(bean);
@@ -95,7 +95,7 @@ public class BookListViewController {
     protected void acceptBook(ActionEvent event){
         rejBook.setOpacity(0.0);
         Button clicked = (Button) event.getSource();
-        BookBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
+        BookListBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.APPROVED);
         try {
             controller.updateChefBook(bean);
@@ -113,7 +113,7 @@ public class BookListViewController {
         int index = 0;
         while (index < MAXBOOKVIEWED && lastIndexBook < bookList.size()) {
 
-            BookBean bookBean = bookList.get(lastIndexBook);
+            BookListBean bookBean = bookList.get(lastIndexBook);
             Group current = (Group) anchorPane.getChildren().get(g1Index+index);
             this.bookBeanMap.put(current.getId(),bookBean);
             if(ViewSetter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {

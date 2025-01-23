@@ -5,7 +5,6 @@ import logic.viewcontroller.chat.ChatViewController;
 
 public class ChatObserver {
     private Updater updater;
-    private ChatViewController chatViewController;
 
     public void addUpdater(Updater updater){
         this.updater=updater;
@@ -22,11 +21,4 @@ public class ChatObserver {
         addUpdater(updater);
     }
 
-    public ChatViewController getChatViewController() {
-        return chatViewController;
-    }
-
-    public void setChatViewController(ChatViewController chatViewController) {
-        this.chatViewController = chatViewController;
-    }
 }

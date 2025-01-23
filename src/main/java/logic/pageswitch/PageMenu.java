@@ -25,6 +25,7 @@ public  class PageMenu extends Page {
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }
+
         this.switchTo("booklistchef/interf1.fxml",event,"Book list Chef");
 
     }

@@ -117,7 +117,6 @@ public class ChatViewController {
         try {
             controller.saveMessage(msgBean);
             if(Setter.getMode()== Setter.Mode.DESKTOP &&!Setter.getIsHomeVisitBean().isHome()) {
-                Setter.getObserver().setChatViewController(this);
                 Setter.getObserver().notifyMsgISC();
             }inputmsg.setText("");
         } catch (ConnectionException e) {

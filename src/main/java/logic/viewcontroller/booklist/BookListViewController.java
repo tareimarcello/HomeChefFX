@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import logic.appcontroller.AcceptBookController;
 import logic.appcontroller.BookListController;
 import logic.beans.BookListBean;
 import logic.beans.SessionParamBean;
@@ -80,12 +81,12 @@ public class BookListViewController {
         BookListBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.REJECTED);
         try {
-            controller.updateChefBook(bean);
+            AcceptBookController accCtrl= new AcceptBookController(bean);
+            accCtrl.updateChefBook(bean);
             clicked.setVisible(false);
             clicked.getParent().getChildrenUnmodifiable().get(4).setVisible(false);
             rejBook.setOpacity(1.0);
-            controller.loadBookList();
-            bookList= Setter.getBookList();
+            bookList = controller.loadBookList();
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }
@@ -98,12 +99,12 @@ public class BookListViewController {
         BookListBean bean = this.bookBeanMap.get(clicked.getParent().getParent().getId());
         bean.setBookState(Book.BookStatus.APPROVED);
         try {
-            controller.updateChefBook(bean);
+            AcceptBookController accCtrl= new AcceptBookController(bean);
+            accCtrl.updateChefBook(bean);
             clicked.setVisible(false);
             clicked.getParent().getChildrenUnmodifiable().get(3).setVisible(false);
             accBook.setOpacity(1.0);
-            controller.loadBookList();
-            bookList= Setter.getBookList();
+            bookList=controller.loadBookList();
         }catch(ConnectionException e){
             Exceptions.exceptionConnectionOccurred();
         }

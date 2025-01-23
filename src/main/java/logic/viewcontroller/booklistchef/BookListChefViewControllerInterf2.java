@@ -18,7 +18,7 @@ public class BookListChefViewControllerInterf2 extends BookListViewController {
 
     public void initialize(){
         try {
-            controller.loadBookList();
+            super.bookList=controller.loadBookList();
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

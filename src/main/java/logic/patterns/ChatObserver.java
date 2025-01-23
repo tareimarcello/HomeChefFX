@@ -1,7 +1,6 @@
 package logic.patterns;
 
 
-import logic.viewcontroller.chat.ChatViewController;
 
 public class ChatObserver {
     private Updater updater;

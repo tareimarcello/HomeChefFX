@@ -53,8 +53,7 @@ public class Page {
             stage.setScene(scene);
             stage.setTitle(title);
         } catch (IOException e) {
-            e.printStackTrace();
-            //Exceptions.exceptionPageOccurred();
+            Exceptions.exceptionPageOccurred();
         }
     }
     public void backTo(){

@@ -1,6 +1,8 @@
 package logic.model;
 
-public class Customer extends User{
+import logic.patterns.observer.ObserverNotification;
+
+public class Customer extends User implements ObserverNotification {
 
     private boolean bookNot;
 
@@ -16,5 +18,10 @@ public class Customer extends User{
 
     public void setBookNot(boolean bookNot) {
         this.bookNot = bookNot;
+    }
+
+    @Override
+    public void update() {
+        setBookNot(true);
     }
 }

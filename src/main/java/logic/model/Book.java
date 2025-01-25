@@ -1,8 +1,10 @@
 package logic.model;
 
+import logic.patterns.observer.AbstractBook;
+
 import java.util.Date;
 
-public class Book {
+public class Book extends AbstractBook {
     private long idBook;
     private long customer;
     private long chef;
@@ -77,7 +79,8 @@ public class Book {
         this.via = via;
     }
     public void setBookState(BookStatus bookState) {
-        this.bookState = bookState;     //passare l'enum con il tostring
+        this.bookState = bookState;
+        this.notifyCustomer();
     }
     public BookStatus getBookState(){
         return this.bookState;

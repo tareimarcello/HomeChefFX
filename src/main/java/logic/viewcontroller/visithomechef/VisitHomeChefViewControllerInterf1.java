@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import logic.appcontroller.VisitHomeChefController;
-import logic.beans.SessionParamBean;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
 

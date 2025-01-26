@@ -30,7 +30,7 @@
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" size="25" />
             </graphic></Button>
-        <Button layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button fx:id="book" layoutX="-83.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="BOOK" size="25" />
             </graphic></Button>

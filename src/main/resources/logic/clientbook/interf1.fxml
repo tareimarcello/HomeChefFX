@@ -40,7 +40,7 @@
             </padding>
         </Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-        <Button layoutX="-69.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button fx:id="book" layoutX="-69.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
             <graphic>
                 <FontAwesomeIconView fill="#377dff" glyphName="BOOK" size="25" />
             </graphic>

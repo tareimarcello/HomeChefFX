@@ -19,6 +19,7 @@ public class ChatInterf1 extends ChatViewController{
         graphics = new Decorator(true);
     }
 
+    @Override
     public void initialize(){
         if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
             book.setOpacity(1.0);

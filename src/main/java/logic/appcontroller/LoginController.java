@@ -33,7 +33,10 @@ public class LoginController {
         user = this.checkType(user.getID());
         // - aprire la pagina corretta
         switch (user) {
-            case Customer cu -> Setter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
+            case Customer cu -> {
+                Setter.getSessionParam().setUserType(SessionParamBean.UserType.CUSTOMER);
+                Setter.getSessionParam().setBookNot(cu.getBookNot());
+            }
             case Chef ch -> {
                 HomeChefBean hcbean = new HomeChefBean();
                 hcbean.setName(user.getName() + " " + user.getSurname());

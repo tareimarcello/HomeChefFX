@@ -19,7 +19,6 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
     private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
 
 
-
     public DAOCustomerImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
@@ -62,6 +61,10 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
         getJdbcTemplate().update(DELETE_QUERY, customer.getID());
     }
 
+    public void setCustomerNot(long id, boolean bookNot){
+        assert getJdbcTemplate() != null;
+        getJdbcTemplate().update(UPDATE_QUERY, bookNot,id);
+    }
 
 
 }

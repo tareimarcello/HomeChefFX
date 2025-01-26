@@ -8,11 +8,9 @@ public class SessionParamBean {
     }
     private long currentUserId;
 
-
-
     private UserType userType;
 
-
+    private boolean bookNot;
     
     public long getCurrentUserId() {
         return currentUserId;
@@ -30,4 +28,11 @@ public class SessionParamBean {
         this.userType = userType;
     }
 
+    public boolean getBookNot() {
+        return bookNot;
+    }
+
+    public void setBookNot(boolean bookNot) {
+        this.bookNot = bookNot;
+    }
 }

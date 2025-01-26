@@ -1,7 +1,10 @@
 package logic;
 
+import javafx.scene.control.Button;
+import logic.appcontroller.ButtonBarController;
 import logic.appcontroller.ISCController;
 import logic.beans.IsHomeVisitBean;
+import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
@@ -11,9 +14,18 @@ import logic.patterns.Setter;
 
 public class ButtonBarInterf2ViewController {
     private PageMenu pageSwitch;
-
+    @FXML
+    protected Button book;
     public ButtonBarInterf2ViewController(){
         pageSwitch=new PageMenu();
+    }
+
+    public void initialize(){
+        if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
+            book.setOpacity(1.0);
+        }else{
+            book.setOpacity(0.5);
+        }
     }
 
     @FXML
@@ -43,6 +55,12 @@ public class ButtonBarInterf2ViewController {
     }
     @FXML
     protected void goToBookList(ActionEvent actionEvent) {
+        ButtonBarController controller = new ButtonBarController();
+        try {
+            controller.changeNot();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
         pageSwitch.switchToBookList(actionEvent);
     }
     @FXML

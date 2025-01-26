@@ -3,8 +3,6 @@ package logic.viewcontroller.resultsearch;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import logic.beans.SessionParamBean;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
 

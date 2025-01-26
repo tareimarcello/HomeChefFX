@@ -2,7 +2,6 @@ package logic.viewcontroller.resultsearch;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
 

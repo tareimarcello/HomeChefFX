@@ -2,11 +2,16 @@ package logic.viewcontroller.visithomechef;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import logic.appcontroller.VisitHomeChefController;
+import logic.beans.SessionParamBean;
 import logic.pageswitch.PageMenu;
+import logic.patterns.Setter;
 
 public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewController{
 
+    @FXML
+    protected Button buttonBook;
 
     public VisitHomeChefViewControllerInterf1() {
         pageSwitch = new PageMenu();
@@ -14,6 +19,11 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
 
     public void initialize(){
+        if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
+            buttonBook.setOpacity(1.0);
+        }else{
+            buttonBook.setOpacity(0.5);
+        }
         downLoadHcBean();
     }
 

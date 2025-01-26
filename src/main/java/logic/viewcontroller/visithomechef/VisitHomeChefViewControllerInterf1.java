@@ -19,7 +19,7 @@ public class VisitHomeChefViewControllerInterf1 extends VisitHomeChefViewControl
     }
 
     public void initialize(){
-        if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
+        if(Setter.getSessionParam().getBookNot()){
             buttonBook.setOpacity(1.0);
         }else{
             buttonBook.setOpacity(0.5);

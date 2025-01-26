@@ -27,12 +27,7 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
     }
 
     public void initialize(){
-        lastIndexChef = 0;
-        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
-        this.loadNext.setVisible(false);
-        this.loadPrevious.setVisible(false);
-
-        this.setNextFourChef();
+        initResSearch();
         if(Setter.getSessionParam().getBookNot()){
             book.setOpacity(1.0);
         }else{

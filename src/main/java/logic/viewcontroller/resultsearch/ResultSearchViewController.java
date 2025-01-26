@@ -89,5 +89,15 @@ public abstract class ResultSearchViewController {
 
         Setter.setHcvisitbean(hbvisit);
     }
+
+    protected void initResSearch(){
+        lastIndexChef = 0;
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.loadNext.setVisible(false);
+        this.loadPrevious.setVisible(false);
+
+        this.setNextFourChef();
+    }
+
     protected abstract void visit(ActionEvent event);
 }

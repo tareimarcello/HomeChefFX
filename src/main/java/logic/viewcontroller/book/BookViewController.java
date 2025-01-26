@@ -10,7 +10,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import logic.appcontroller.BookController;
 import logic.beans.BookBean;
-import logic.beans.BookListBean;
 import logic.exceptions.ChefNotAvailableException;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
@@ -19,7 +18,7 @@ import logic.pageswitch.PageMenu;
 
 
 public class BookViewController {
-    protected static final BookController controller = new BookController();
+    protected BookController controller ;
     protected PageMenu pageSwitch;
     @FXML
     protected Text bookDone;
@@ -35,7 +34,9 @@ public class BookViewController {
     protected ComboBox<String> whenBook;
 
     public BookViewController() {
+        controller = new BookController();
         pageSwitch = new PageMenu();
+
     }
 
     @FXML

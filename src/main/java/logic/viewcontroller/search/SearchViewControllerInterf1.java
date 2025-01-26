@@ -1,20 +1,32 @@
 package logic.viewcontroller.search;
 
+import javafx.scene.control.Button;
 import logic.appcontroller.SearchController;
 import logic.beans.SearchBean;
+import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.exceptions.NoResultFoundException;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import logic.patterns.Setter;
 
 public class SearchViewControllerInterf1 extends SearchViewController{
     private PageMenu pageSwitch;
-
+    @FXML
+    protected Button book;
     public SearchViewControllerInterf1(){
         pageSwitch=new PageMenu();
         controller = new SearchController();
+    }
+
+    public void initialize(){
+        if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
+            book.setOpacity(1.0);
+        }else{
+            book.setOpacity(0.5);
+        }
     }
 
     @FXML

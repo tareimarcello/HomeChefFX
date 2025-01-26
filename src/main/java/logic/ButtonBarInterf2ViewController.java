@@ -1,12 +1,12 @@
 package logic;
 
 import javafx.scene.control.Button;
-import logic.appcontroller.ButtonBarController;
 import logic.appcontroller.ISCController;
 import logic.beans.IsHomeVisitBean;
 import logic.beans.SessionParamBean;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,9 +55,8 @@ public class ButtonBarInterf2ViewController {
     }
     @FXML
     protected void goToBookList(ActionEvent actionEvent) {
-        ButtonBarController controller = new ButtonBarController();
         try {
-            controller.changeNot();
+            HomeChefUtil.changeNot();
         } catch (ConnectionException e) {
             Exceptions.exceptionConnectionOccurred();
         }

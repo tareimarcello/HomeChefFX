@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.HomeChefApplication;
 import logic.beans.*;
+import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
@@ -116,4 +117,11 @@ public class HomeChefUtil {
         }
         return paramSearch;
     }
+
+    public static void changeNot() throws ConnectionException {
+        DAOCustomerImpl dao = new DAOCustomerImpl();
+        dao.setCustomerNot(Setter.getSessionParam().getCurrentUserId(),false);
+        Setter.getSessionParam().setBookNot(false);
+    }
+
 }

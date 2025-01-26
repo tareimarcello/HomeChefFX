@@ -59,19 +59,19 @@
       <Button layoutX="63.0" layoutY="595.0" mnemonicParsing="false" onAction="#goToChefChat" prefHeight="35.0" prefWidth="97.0" style="-fx-font-size: 18;" styleClass="Button" text="Chat" />
       <Button layoutX="229.0" layoutY="594.0" mnemonicParsing="false" onAction="#goToBookChef" prefHeight="40.0" prefWidth="146.0" style="-fx-font-size: 18;" styleClass="Button" text="Book the chef" />
       <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-      <Button layoutX="-75.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+      <Button layoutX="-75.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
          <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
+            <FontAwesomeIconView fill="#377dff" glyphName="BOOK" size="25" />
          </graphic>
       </Button>
-      <Button layoutX="137.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+      <Button layoutX="137.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" opacity="0.5" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
+            <FontAwesomeIconView fill="#377dff" glyphName="HOME" size="25" />
          </graphic>
       </Button>
-      <Button layoutX="269.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToISC" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
+      <Button layoutX="269.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToISC" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" />
+            <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" size="25" />
          </graphic>
       </Button>
       <Text fill="#377dff" layoutX="35.0" layoutY="505.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContent_signup" text="City:">

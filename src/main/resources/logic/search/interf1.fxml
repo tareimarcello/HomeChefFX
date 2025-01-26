@@ -16,13 +16,13 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="736.0" prefWidth="414.0" stylesheets="@../css.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="logic.viewcontroller.search.SearchViewControllerInterf1">
     <children>
         <FontAwesomeIconView glyphName="SIGNAL" layoutX="290.0" layoutY="18.0" size="20" />
-        <Button layoutX="-75.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" translateX="75.0" translateY="692.0">
+        <Button fx:id="book" layoutX="-75.0" layoutY="-10.0" mnemonicParsing="false" onAction="#goToBook" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar" textFill="WHITE" translateX="75.0" translateY="692.0">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
+                <FontAwesomeIconView fill="#377dff" glyphName="BOOK" size="25" />
             </graphic></Button>
-        <Button layoutX="137.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
+        <Button layoutX="137.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToHome" opacity="0.5" prefHeight="52.0" prefWidth="142.0" styleClass="button_bar">
             <graphic>
-                <FontAwesomeIconView fill="#377dff" glyphName="HOME" opacity="0.5" size="25" />
+                <FontAwesomeIconView fill="#377dff" glyphName="HOME" size="25" />
             </graphic></Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
         <Text fill="#243443" layoutX="-56.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textSubTitle" text="What do you need ?" translateX="170.0" translateY="-10.0" />
@@ -69,9 +69,9 @@
                 <Insets top="2.0" />
             </padding>
         </Button>
-      <Button layoutX="269.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToISC" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
+      <Button layoutX="269.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToISC" opacity="0.5" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" opacity="0.5" size="25" />
+            <FontAwesomeIconView fill="#377dff" glyphName="PAPER_PLANE" size="25" />
          </graphic>
       </Button>
       <TextField fx:id="cityChef" layoutX="19.0" layoutY="361.0" prefHeight="50.0" prefWidth="382.0" styleClass="textField" />

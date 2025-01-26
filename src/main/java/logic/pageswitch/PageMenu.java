@@ -5,12 +5,14 @@ import logic.appcontroller.BookListController;
 import logic.appcontroller.ISCController;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
+import logic.homechefutil.HomeChefUtil;
 import logic.patterns.Setter;
 
 public  class PageMenu extends Page {
     public void switchToBookList(ActionEvent event)  {
         BookListController controller = new BookListController();
         try {
+            HomeChefUtil.changeNot();
             controller.loadBookList();
         } catch (ConnectionException e) {
 

@@ -2,6 +2,9 @@ package logic.viewcontroller.resultsearch;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import logic.beans.SessionParamBean;
+import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
 
@@ -10,6 +13,8 @@ import java.util.HashMap;
 
 public class ResultSearchViewControllerInterf1 extends ResultSearchViewController{
 
+    @FXML
+    protected Button book;
 
     public ResultSearchViewControllerInterf1(){
         pageSwitch = new PageMenu();
@@ -19,6 +24,20 @@ public class ResultSearchViewControllerInterf1 extends ResultSearchViewControlle
         g2Index=11;
         g3Index=12;
         g4Index=13;
+    }
+
+    public void initialize(){
+        lastIndexChef = 0;
+        HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
+        this.loadNext.setVisible(false);
+        this.loadPrevious.setVisible(false);
+
+        this.setNextFourChef();
+        if(Setter.getSessionParam().getBookNot()){
+            book.setOpacity(1.0);
+        }else{
+            book.setOpacity(0.5);
+        }
     }
 
     @FXML

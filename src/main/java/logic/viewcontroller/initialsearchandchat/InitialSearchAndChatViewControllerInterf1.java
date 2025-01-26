@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import logic.beans.ISCBean;
+import logic.beans.SessionParamBean;
 import logic.homechefutil.HomeChefUtil;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
@@ -12,8 +13,15 @@ import java.util.HashMap;
 
 
 public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndChatViewController{
+    @FXML
+    protected Button book;
 
     public void initialize(){
+        if(Setter.getSessionParam().getBookNot() && Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER){
+            book.setOpacity(1.0);
+        }else{
+            book.setOpacity(0.5);
+        }
         Setter.getObserver().setUpdater(this);
         subGroupMap.put(0,this.group1);
         subGroupMap.put(1,this.group2);
@@ -22,6 +30,7 @@ public class InitialSearchAndChatViewControllerInterf1 extends InitialSearchAndC
 
         HomeChefUtil.resetGroupOpacity(this.anchorPane,this.g1Index,this.g2Index,this.g3Index,this.g4Index);
         this.setNextFourChat();
+
     }
 
     public InitialSearchAndChatViewControllerInterf1() {

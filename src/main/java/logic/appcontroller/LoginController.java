@@ -55,7 +55,7 @@ public class LoginController {
         return retBean;
     }
 
-    public User checkType(long id) throws ConnectionException {
+    private User checkType(long id) throws ConnectionException {
 
         DAOCustomerImpl cDAO = new DAOCustomerImpl();
         DAOChefImpl chDAO = new DAOChefImpl();

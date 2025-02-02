@@ -32,6 +32,7 @@ public class LoginViewControllerInterf1 {
             pageSwitch =new PageMenu();
             controller= new LoginController();
         }
+
         @FXML
         protected void switchToHomePage(ActionEvent event) {
 
@@ -84,5 +85,4 @@ public class LoginViewControllerInterf1 {
         protected void resize(ActionEvent event) {
             pageSwitch.setSize("login/interf1.fxml",event);
         }
-
 }

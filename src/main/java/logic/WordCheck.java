@@ -79,4 +79,5 @@ public class WordCheck {
             return inputText.substring(0,lenMax)+"...";
         }
     }
+    //ciao
 }

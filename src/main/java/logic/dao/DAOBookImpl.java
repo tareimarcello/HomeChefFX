@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     private final BookQuery query;
-    private static final String pattern = "yyyy/MM/dd";
+    private static final String PATTERN = "yyyy/MM/dd";
 
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());
@@ -38,7 +38,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
 
     @Override
     public void save(Book book) {
-        DateFormat df = new SimpleDateFormat(pattern);
+        DateFormat df = new SimpleDateFormat(PATTERN);
         String date = df.format(book.getData());
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(query.insertQuery(book.getCustomer(),book.getChef(),
@@ -47,7 +47,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
 
     @Override
     public void update(Book book) {
-        DateFormat df = new SimpleDateFormat(pattern);
+        DateFormat df = new SimpleDateFormat(PATTERN);
         String date = df.format(book.getData());
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(query.updateQuery(book,date, book.getIdBook()));
@@ -69,7 +69,7 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     }
 
     public Book getBookByChefDate(long idChef, Date dateBook){
-        DateFormat df = new SimpleDateFormat(pattern);
+        DateFormat df = new SimpleDateFormat(PATTERN);
         String date = df.format(dateBook);
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(query.getAllByChefDate(idChef, date), new BookRowMapper()).getFirst();

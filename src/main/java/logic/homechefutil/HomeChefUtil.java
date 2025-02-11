@@ -12,6 +12,7 @@ import logic.beans.*;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
+import logic.model.Customer;
 import logic.model.User;
 import logic.patterns.Setter;
 

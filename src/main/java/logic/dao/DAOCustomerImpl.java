@@ -1,6 +1,7 @@
 package logic.dao;
 
 import logic.connection.AppDataStore;
+import logic.dao.query.CustomerQuery;
 import logic.dao.rowmapper.CustomerRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Customer;
@@ -12,27 +13,24 @@ import java.util.List;
 import java.util.Objects;
 
 public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Customer>{
-
-    private static final String SELECT_ALL_CUSTOMER = "SELECT * FROM customer";
-    private static final String SELECT_QUERY = "SELECT * FROM customer JOIN user ON (customer.idUser=user.iduser) WHERE customer.idUser=?";
-    private static final String UPDATE_QUERY = "UPDATE customer SET bookNot = ? WHERE idUser=?";
-    private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
+    private final CustomerQuery query;
 
     public DAOCustomerImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
+        query = new CustomerQuery();
     }
 
     @Override
     public Customer get(long id) {
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_QUERY, new CustomerRowMapper(), id).getFirst();
+        return getJdbcTemplate().query(query.selectCustomerQuery(id), new CustomerRowMapper()).getFirst();
     }
 
     @Override
     public List<Customer> getAll() {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_CUSTOMER, new CustomerRowMapper());
+        return  getJdbcTemplate().query(query.selectAllCustomersQuery(), new CustomerRowMapper());
 
     }
 
@@ -51,18 +49,18 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
     @Override
     public void update(Customer customer) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_QUERY,  customer.getBookNot(),customer.getID());
+        getJdbcTemplate().update(query.updateCustomerQuery(customer.getID(),customer.getBookNot()));
     }
 
     @Override
     public void delete(Customer customer) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(DELETE_QUERY, customer.getID());
+        getJdbcTemplate().update(query.deleteCustomerQuery(customer.getID()));
     }
 
     public void setCustomerNot(long id, boolean bookNot){
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_QUERY, bookNot,id);
+        getJdbcTemplate().update(query.updateCustomerQuery(id, bookNot));
     }
 
 

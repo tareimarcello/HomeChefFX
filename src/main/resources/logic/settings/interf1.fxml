@@ -32,7 +32,7 @@
             </graphic>
         </Button>
         <Line endX="349.9999694824219" endY="13.999998092651367" layoutX="64.0" layoutY="-14.0" startX="-64.0000228881836" startY="13.999998092651367" styleClass="line" translateY="682.0" />
-        <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
+        <Button layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#goToHome" prefHeight="30.0" prefWidth="35.0" styleClass="Back_Row">
             <graphic>
                 <FontAwesomeIconView fill="WHITE" glyphName="ARROW_LEFT" onDragDetected="#goBack" size="20" />
             </graphic>

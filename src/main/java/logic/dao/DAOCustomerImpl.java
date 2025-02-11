@@ -18,7 +18,6 @@ public class DAOCustomerImpl extends JdbcDaoSupport implements DAOInterface<Cust
     private static final String UPDATE_QUERY = "UPDATE customer SET bookNot = ? WHERE idUser=?";
     private static final String DELETE_QUERY = "DELETE FROM customer WHERE idUser=?";
 
-
     public DAOCustomerImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());

@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import logic.appcontroller.SettingsController;
+import logic.appcontroller.EditProfileController;
 import logic.beans.EditChefProfileBean;
 import logic.beans.EditProfileBean;
 import logic.exceptions.*;
@@ -12,7 +12,7 @@ import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
 
 public abstract class SettingViewController {
-    protected SettingsController controller;
+    protected EditProfileController controller;
     @FXML
     protected TextField email;
     @FXML

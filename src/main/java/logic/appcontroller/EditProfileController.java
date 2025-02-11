@@ -7,10 +7,11 @@ import logic.dao.DAOUserImpl;
 import logic.exceptions.*;
 import logic.model.Chef;
 import logic.model.User;
+import logic.patterns.Setter;
 
 import java.util.List;
 
-public class SettingsController {
+public class EditProfileController {
 
     public void updatePswd(EditProfileBean bean) throws ConnectionException, EditProfException {
         DAOUserImpl dao = new DAOUserImpl();
@@ -44,6 +45,7 @@ public class SettingsController {
         }
         chef.setRestaurant(bean.getRes());
         dao.update(chef);
+        Setter.getHcbean().setRes(bean.getRes());
     }
 
     public void updateCity(EditChefProfileBean bean) throws ConnectionException, EditProfException{
@@ -54,5 +56,6 @@ public class SettingsController {
         }
         chef.setCitta(bean.getCity());
         dao.update(chef);
+        Setter.getHcbean().setRes(bean.getCity());
     }
 }

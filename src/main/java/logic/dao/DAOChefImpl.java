@@ -2,6 +2,7 @@ package logic.dao;
 
 import logic.beans.SearchBean;
 import logic.connection.AppDataStore;
+import logic.dao.query.ChefQuery;
 import logic.dao.rowmapper.ChefRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Chef;
@@ -13,28 +14,26 @@ import java.util.List;
 import java.util.Objects;
 
 public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
-    private static final String SELECT_ALL_CHEF = "SELECT * FROM chef";
-    private static final String SELECT_QUERY = "SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser) WHERE chef.iduser=?";
-    private static final String UPDATE_QUERY = "UPDATE chef SET iduser = ?, restaurant = ?,bestdish = ?, city = ? WHERE iduser=?";
-    private static final String DELETE_QUERY = "DELETE FROM chef WHERE iduser=?";
 
+    private final ChefQuery query;
 
     public DAOChefImpl() throws ConnectionException {
 
         this.setDataSource(new AppDataStore().dataSource());
+        query = new ChefQuery();
     }
 
     @Override
     public Chef get(long id) {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_QUERY, new ChefRowMapper(), id).getFirst();
+        return  getJdbcTemplate().query(query.selectChefQuery(id), new ChefRowMapper()).getFirst();
     }
 
     @Override
     public List<Chef> getAll() {
 
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_CHEF, new ChefRowMapper());
+        return  getJdbcTemplate().query(query.selectAllChefQuery(), new ChefRowMapper());
     }
 
     @Override
@@ -56,55 +55,20 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
     @Override
     public void update(Chef chef) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_QUERY,  chef.getID(), chef.getRestaurant(),
-                chef.getBestDish(),chef.getCitta(), chef.getID());
+        getJdbcTemplate().update(query.updateChefQuery(chef.getID(), chef.getRestaurant(),
+                        chef.getBestDish(),chef.getCitta()));
     }
 
     @Override
     public void delete(Chef chef) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(DELETE_QUERY, chef.getID());
+        getJdbcTemplate().update(query.deleteChefQuery(chef.getID()));
     }
 
 
     public List<Chef> getChefByParam(SearchBean searchParam) {
 
         assert getJdbcTemplate() != null;
-        StringBuilder query = new StringBuilder();
-        boolean first = true;
-        String condKey = "WHERE";
-        String condition = "";
-        query.append ("SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser)");
-        if (searchParam.getChefName()!= null && !searchParam.getChefName().equals("")){
-            condition = "surname = '"+searchParam.getChefName()+"'";
-
-            query.append(" ").append(condKey).append(" ").append(condition);
-
-            first = false;
-        }
-
-        if (searchParam.getChefCity()!= null && !searchParam.getChefCity().equals("")){
-            if (!first) condKey = "AND";
-            else
-                first = false;
-
-            condition = "city = '"+searchParam.getChefCity()+"'";
-            query.append(" ").append(condKey).append(" ").append(condition);
-
-
-        }
-
-        if (searchParam.getChefBestDish()!= null && !searchParam.getChefBestDish().equals("")){
-            if (!first) condKey = "AND";
-
-            condition = "bestdish = '"+searchParam.getChefBestDish()+"'";
-            query.append(" ").append(condKey).append(" ").append(condition);
-
-
-        }
-        return  getJdbcTemplate().query(query.toString(), new ChefRowMapper());
+        return  getJdbcTemplate().query(query.getChefBYParamQuery(searchParam), new ChefRowMapper());
     }
-
-
-
 }

@@ -4,6 +4,7 @@ package logic.dao;
 import logic.beans.Logbean;
 import logic.beans.EditProfileBean;
 import logic.connection.AppDataStore;
+import logic.dao.query.UserQuery;
 import logic.dao.rowmapper.UserRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.User;
@@ -18,73 +19,65 @@ import java.util.List;
 
 public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
-    private static final String SELECT_USER_BY_EMAIL = "SELECT * FROM user WHERE email = ?";
-    private static final String SELECT_USER_BY_ID = "SELECT * FROM user WHERE iduser = ?";
-    private static final String UPDATE_PSWD_BY_ID = "UPDATE user SET password = ? WHERE iduser = ?";
-    private static final String UPDATE_EMAIL_BY_ID = "UPDATE user SET email = ? WHERE iduser = ?";
-    private static final String SELECT_LIST_MAIL =  "SELECT email FROM user";
-    private static final String SELECT_ALL_USER =  "SELECT * FROM user";
-    private static final String UPDATE_QUERY = "UPDATE customer SET idUser = ? WHERE idUser=?";
-    private static final String DELETE_QUERY = " DELETE FROM user WHERE iduser=?";
-    private static final String INSERT_QUERY = " INSERT INTO user VALUES(?,?,?,?,?)";
+    private final UserQuery query;
 
     public DAOUserImpl() throws ConnectionException {
-
         this.setDataSource(new AppDataStore().dataSource());
+        query = new UserQuery();
     }
 
     @Override
     public User get(long id) {
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_USER_BY_ID, new UserRowMapper(), id).getFirst();
+        return getJdbcTemplate().query(query.selectUserById(id), new UserRowMapper()).getFirst();
 
     }
 
     @Override
     public List<User> getAll() {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_USER, new UserRowMapper());
+        return  getJdbcTemplate().query(query.selectAllUserQuery(), new UserRowMapper());
     }
 
     @Override
     public void save(User user) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(INSERT_QUERY, user.getID(),user.getName(),user.getSurname(),user.getEmail(),user.getPassword());
+        getJdbcTemplate().update(query.insertQuery(user.getName(),user.getSurname(),user.getEmail(),user.getPassword(),user.getID()));
     }
 
     @Override
     public void update(User user) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_QUERY,  user.getID());
+        getJdbcTemplate().update(query.updateQuery(user.getEmail(),user.getPassword(), user.getID()));
     }
 
     @Override
     public void delete(User user) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(DELETE_QUERY, user.getID());
+        getJdbcTemplate().update(query.deleteQuery(user.getID()));
     }
 
     public User verifyLogin(Logbean logBean){
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_USER_BY_EMAIL, new UserRowMapper(), logBean.getEmail()).getFirst();
+        return getJdbcTemplate().query(query.selectUserByEmailQuery(logBean.getEmail()), new UserRowMapper()).getFirst();
 
     }
 
     public void updatePswd(EditProfileBean updatePswdBean){
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_PSWD_BY_ID, updatePswdBean.getPswd(),updatePswdBean.getUserId());
+        getJdbcTemplate().update(query.updatePswdById(updatePswdBean.getPswd(),updatePswdBean.getUserId()));
     }
 
     public void updateMail(EditProfileBean updateMailBean){
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_EMAIL_BY_ID, updateMailBean.getEmail(),updateMailBean.getUserId());
+        getJdbcTemplate().update(query.updateEmailByIdQuery(updateMailBean.getEmail(),updateMailBean.getUserId()));
     }
 
     public List<String> getUsersMail(){
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_LIST_MAIL, new ResultSetExtractor<List<String>>(){
+        return getJdbcTemplate().query(query.selectListMailQuery(), new ResultSetExtractor<List<String>>(){
             public List<String> extractData(ResultSet rs) throws SQLException, DataAccessException {
                 List<String> mailDetailList = new ArrayList<>();
                 String mail;
@@ -98,7 +91,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
     }
     public User getUserBYMail(String mail){
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_USER_BY_EMAIL, new UserRowMapper(), mail).getFirst();
+        return getJdbcTemplate().query(query.selectUserByEmailQuery(mail), new UserRowMapper()).getFirst();
     }
 
 

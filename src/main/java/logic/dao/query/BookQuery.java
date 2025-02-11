@@ -1,6 +1,8 @@
 package logic.dao.query;
 
 
+import logic.model.Book;
+
 public class BookQuery {
     public String selectQueryBYId(long idBook){
         return String.format("select * from book WHERE idbook= %d", idBook);
@@ -20,10 +22,8 @@ public class BookQuery {
                 state,data, meal ,citta,via);
     }
 
-    public String updateQuery(long customer,long chef,
-                              String state, String meal,String citta,String via, String data, long idBook){
-        return String.format("UPDATE book SET customer = %d,chef = %d, stato='%s',data='%s',pasto='%s',citta='%s',via='%s'  WHERE idbook = %d", customer,chef,
-                state,data, meal ,citta,via, idBook);
+    public String updateQuery(Book book, String data, long idBook){
+        return String.format("UPDATE book SET customer = %d,chef = %d, stato='%s',data='%s',pasto='%s',citta='%s',via='%s'  WHERE idbook = %d", book.getCustomer(),book.getChef(),book.getBookState().toString(),data,book.getMeal().toString(),book.getCitta(),book.getVia(), idBook);
     }
 
     public String deleteQuery(long id){

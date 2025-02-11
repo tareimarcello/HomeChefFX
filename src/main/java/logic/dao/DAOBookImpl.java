@@ -1,32 +1,30 @@
 package logic.dao;
 
 import logic.connection.AppDataStore;
+import logic.dao.query.BookQuery;
 import logic.dao.rowmapper.BookRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
-    private static final String SELECT_ALL_QUERY= "select * from book";
-    private static final String SELECT_APPROVED_OPEN_CHEF_QUERY= "select * from book where chef=? && (stato='APPROVED' OR stato='OPEN')";
-    private static final String SELECT_QUERY_BY_ID= "select * from book WHERE idbook=?";
-    private static final String INSERT_BOOK_QUERY= "insert into book (customer,chef,stato,data,pasto,citta,via) VALUES (?,?,?,?,?,?,?)";
-    private static final String UPDATE_BOOK_QUERY= "UPDATE book SET customer = ?,chef = ?, stato=?,data=?,pasto=?,citta=?,via=?  WHERE idbook = ?";
-    private static final String DELETE_BOOK_QUERY= "DELETE book WHERE idbook = ?";
-    private static final String SELECT_ALL_BY_CUSTOMER= "SELECT * FROM book WHERE customer = ?";
-    private static final String SELECT_ALL_BY_CHEF_DATE= "SELECT * FROM book WHERE chef = ? && data = ? && (stato= 'OPEN' OR stato = 'APPROVED')";
+    private final BookQuery query;
+
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());
+        query = new BookQuery();
     }
 
     @Override
     public Book get(long id) {
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_QUERY_BY_ID, new BookRowMapper(), id).getFirst();
+        return getJdbcTemplate().query(query.selectQueryBYId(id), new BookRowMapper()).getFirst();
 
     }
 
@@ -34,39 +32,46 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     public List<Book> getAll() {
 
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_QUERY, new BookRowMapper());
+        return  getJdbcTemplate().query(query.selectAllQuery(), new BookRowMapper());
     }
 
     @Override
     public void save(Book book) {
+        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        String date = df.format(book.getData());
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(INSERT_BOOK_QUERY, book.getCustomer(),book.getChef(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia());
+        getJdbcTemplate().update(query.insertQuery(book.getCustomer(),book.getChef(),
+                book.getBookState().toString(), book.getMeal().toString(),book.getCitta(),book.getVia(),date));
     }
 
     @Override
     public void update(Book book) {
+        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        String date = df.format(book.getData());
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_BOOK_QUERY, book.getCustomer(),book.getChef(),book.getBookState().toString(),book.getData(),book.getMeal().toString(),book.getCitta(),book.getVia(), book.getIdBook());
+        getJdbcTemplate().update(query.updateQuery( book.getCustomer(),book.getChef(),book.getBookState().toString(),book.getMeal().toString(),book.getCitta(),book.getVia(),date, book.getIdBook()));
     }
     @Override
     public void delete(Book book) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(DELETE_BOOK_QUERY, book.getIdBook());
+        getJdbcTemplate().update(query.deleteQuery(book.getIdBook()));
     }
 
     public List<Book> getAllByCustomer(long idCust) {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_BY_CUSTOMER, new BookRowMapper(),idCust);
+        return  getJdbcTemplate().query(query.selectAllByCustQuery(idCust), new BookRowMapper());
     }
 
     public List<Book> getAllByChefOpenApproved(long idChef) {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_APPROVED_OPEN_CHEF_QUERY, new BookRowMapper(),idChef);
+        return  getJdbcTemplate().query(query.selectAllByOPenApproved(idChef), new BookRowMapper());
     }
 
     public Book getBookByChefDate(long idChef, Date dateBook){
+        DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+        String date = df.format(dateBook);
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_ALL_BY_CHEF_DATE, new BookRowMapper(),idChef,dateBook).getFirst();
+        return getJdbcTemplate().query(query.getAllByChefDate(idChef, date), new BookRowMapper()).getFirst();
     }
 
 }

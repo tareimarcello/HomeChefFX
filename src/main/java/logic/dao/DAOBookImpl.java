@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
     private final BookQuery query;
-    private final String pattern = "yyyy/MM/dd";
+    private static final String pattern = "yyyy/MM/dd";
 
     public DAOBookImpl() throws ConnectionException {
         this.setDataSource(new AppDataStore().dataSource());

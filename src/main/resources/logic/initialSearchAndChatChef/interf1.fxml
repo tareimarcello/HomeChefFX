@@ -161,9 +161,9 @@
             </Button>
          </children>
       </Group>
-      <Button layoutX="2.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToBookListChef" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
+      <Button fx:id="book" layoutX="2.0" layoutY="682.0" mnemonicParsing="false" onAction="#goToBookListChef" prefHeight="44.0" prefWidth="146.0" styleClass="button_bar">
          <graphic>
-            <FontAwesomeIconView fill="#377dff" glyphName="BOOK" opacity="0.5" size="25" />
+            <FontAwesomeIconView fill="#377dff" glyphName="BOOK" size="25" />
          </graphic>
       </Button>
       <Button fx:id="loadPrevious" layoutX="44.0" layoutY="601.0" mnemonicParsing="false" onAction="#outputValChatPrevious" opacity="0.76" prefHeight="73.0" prefWidth="305.0" style="-fx-font-size: 20;" styleClass="Button" textFill="WHITE">

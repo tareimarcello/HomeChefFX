@@ -1,6 +1,7 @@
 package logic.dao;
 
 import logic.connection.AppDataStore;
+import logic.dao.query.ChatQuery;
 import logic.dao.rowmapper.ChatRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Chat;
@@ -10,55 +11,49 @@ import java.util.List;
 
 public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
 
-    private static final String SELECT_ALL_CHAT = "SELECT * FROM chat";
-    private static final String SELECT_QUERY_BY_CUST= "SELECT * FROM chat WHERE customer=?";
-    private static final String SELECT_QUERY_BY_CHEF= "SELECT * FROM chat WHERE chef=?";
-    private static final String SELECT_QUERY_BY_ID = "SELECT * FROM chat WHERE idchat=?";
-    private static final String INSERT_CHAT_QUERY = "INSERT INTO chat (customer,chef) VALUES (?,?)";
-    private static final String UPDATE_CHAT_QUERY = "UPDATE chat SET customer = ?,chef = ?  WHERE idchat = ?";
-    private static final String DELETE_QUERY = "DELETE FROM chat WHERE idchat=?";
-    private static final String SELECT_CHAT_BY_CHEFCUST = "SELECT * FROM chat WHERE customer = ? && chef = ?";
+    private final ChatQuery query;
 
     public DAOChatImpl() throws ConnectionException {
             this.setDataSource(new AppDataStore().dataSource());
+            query=new ChatQuery();
     }
 
     public List<Chat> getAllChatByCust(long idCustomer){
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_QUERY_BY_CUST, new ChatRowMapper(), idCustomer);
+        return getJdbcTemplate().query(query.selectQueryByCustomer(idCustomer), new ChatRowMapper());
     }
 
     public List<Chat> getChatByCustChef(long idCustomer, long idChef){
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_CHAT_BY_CHEFCUST, new ChatRowMapper(), idCustomer, idChef);
+        return getJdbcTemplate().query(query.getSelectChatByChefcust(idCustomer,idChef), new ChatRowMapper());
     }
 
 
     public List<Chat> getAllChatByChef(long idChef){
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_QUERY_BY_CHEF, new ChatRowMapper(),idChef);
+        return getJdbcTemplate().query(query.selectQueryByChef(idChef), new ChatRowMapper());
     }
 
     @Override
     public Chat get(long id) {
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(SELECT_QUERY_BY_ID, new ChatRowMapper(), id).getFirst();
+        return getJdbcTemplate().query(query.selectChat(id), new ChatRowMapper()).getFirst();
     }
 
     @Override
     public List<Chat> getAll() {
         assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(SELECT_ALL_CHAT, new ChatRowMapper());
+        return  getJdbcTemplate().query(query.selectAllChatQuery(), new ChatRowMapper());
     }
 
     @Override
     public void save(Chat chat) {
 
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(INSERT_CHAT_QUERY, chat.getCustomer(),chat.getChef());
+        getJdbcTemplate().update(query.insertQuery(chat.getChef(), chat.getCustomer()));
 
     }
 
@@ -66,7 +61,7 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
     public void update(Chat chat) {
 
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(UPDATE_CHAT_QUERY, chat.getCustomer(),chat.getChef(),chat.getId());
+        getJdbcTemplate().update(query.updateChatQuery(chat.getCustomer(),chat.getChef(),chat.getId()));
 
     }
 
@@ -74,7 +69,7 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
     public void delete(Chat chat) {
 
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(DELETE_QUERY, chat.getId());
+        getJdbcTemplate().update(query.deleteQuery(chat.getId()));
 
     }
 }

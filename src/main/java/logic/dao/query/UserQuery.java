@@ -35,6 +35,6 @@ public class UserQuery {
     }
 
     public String insertQuery(String name, String surname, String email, String password, long id){
-        return String.format(" INSERT INTO user VALUES(%d,'%s','%s','%s','%s')");
+        return String.format(" INSERT INTO user VALUES(%d,'%s','%s','%s','%s')", id, name, surname, email, password);
     }
 }

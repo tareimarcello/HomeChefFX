@@ -7,7 +7,7 @@ public class CustomerQuery {
     }
 
     public String selectAllCustomersQuery(){
-        return String.format("SELECT * FROM customer");
+        return ("SELECT * FROM customer");
     }
 
     public String updateCustomerQuery(long id, boolean bookNot){

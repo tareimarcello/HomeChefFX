@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 import java.util.List;
 
-public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
+public class DAOChatImpl extends JdbcDaoSupport{
 
     private final ChatQuery query;
 
@@ -37,19 +37,7 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
         return getJdbcTemplate().query(query.selectQueryByChef(idChef), new ChatRowMapper());
     }
 
-    @Override
-    public Chat get(long id) {
-        assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(query.selectChat(id), new ChatRowMapper()).getFirst();
-    }
 
-    @Override
-    public List<Chat> getAll() {
-        assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(query.selectAllChatQuery(), new ChatRowMapper());
-    }
-
-    @Override
     public void save(Chat chat) {
 
         assert getJdbcTemplate() != null;
@@ -57,19 +45,4 @@ public class DAOChatImpl extends JdbcDaoSupport implements DAOInterface<Chat>{
 
     }
 
-    @Override
-    public void update(Chat chat) {
-
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.updateChatQuery(chat.getCustomer(),chat.getChef(),chat.getId()));
-
-    }
-
-    @Override
-    public void delete(Chat chat) {
-
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.deleteQuery(chat.getId()));
-
-    }
 }

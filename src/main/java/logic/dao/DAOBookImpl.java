@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
+public class DAOBookImpl extends JdbcDaoSupport{
     private final BookQuery query;
     private static final String PATTERN = "yyyy/MM/dd";
 
@@ -21,7 +21,6 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
         query = new BookQuery();
     }
 
-    @Override
     public Book get(long id) {
 
         assert getJdbcTemplate() != null;
@@ -29,14 +28,6 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
 
     }
 
-    @Override
-    public List<Book> getAll() {
-
-        assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(query.selectAllQuery(), new BookRowMapper());
-    }
-
-    @Override
     public void save(Book book) {
         DateFormat df = new SimpleDateFormat(PATTERN);
         String date = df.format(book.getData());
@@ -45,14 +36,13 @@ public class DAOBookImpl extends JdbcDaoSupport implements DAOInterface<Book>{
                 book.getBookState().toString(), book.getMeal().toString(),book.getCitta(),book.getVia(),date));
     }
 
-    @Override
     public void update(Book book) {
         DateFormat df = new SimpleDateFormat(PATTERN);
         String date = df.format(book.getData());
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(query.updateQuery(book,date, book.getIdBook()));
     }
-    @Override
+
     public void delete(Book book) {
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(query.deleteQuery(book.getIdBook()));

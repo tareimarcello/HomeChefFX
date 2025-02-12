@@ -8,9 +8,6 @@ public class BookQuery {
         return String.format("select * from book WHERE idbook= %d", idBook);
     }
 
-    public String selectAllQuery(){
-        return "select * from book";
-    }
 
     public String selectAllByOPenApproved(long idChef){
         return String.format("select * from book where chef= %d && (stato='APPROVED' OR stato='OPEN')", idChef);

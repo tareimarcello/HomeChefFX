@@ -10,12 +10,14 @@ import logic.exceptions.ConnectionException;
 import logic.exceptions.MailAlreadyUsed;
 import logic.model.Chef;
 import logic.model.Customer;
+import logic.patterns.factory.FactoryUser;
 
 import java.util.NoSuchElementException;
 
 public class SignupController {
 
     public void signup(Userbean user) throws ConnectionException, MailAlreadyUsed {
+        FactoryUser factory = new FactoryUser();
         DAOUserImpl dao = new DAOUserImpl();
         try {
             if (dao.getUserBYMail(user.getEmailBean()) != null) {
@@ -26,18 +28,17 @@ public class SignupController {
             switch (user) {
                 case Customerbean cb -> {
                     DAOCustomerImpl cuDao = new DAOCustomerImpl();
-
-                    Customer cu = new Customer(-1, cb.getNameBean().toUpperCase(), cb.getSurnameBean().toUpperCase(),
-                            cb.getEmailBean(), cb.getPasswordBean(),false);
-                    cuDao.save(cu);
+                    Customer cu = factory.createCustomer(-1, cb.getNameBean().toUpperCase(), cb.getSurnameBean().toUpperCase()
+                            ,false);
+                    cuDao.save(cu,cb.getEmailBean(),cb.getPasswordBean());
                 }
                 case Chefbean chB -> {
                     DAOChefImpl chDao = new DAOChefImpl();
-                    Chef ch = new Chef(-1, chB.getNameBean().toUpperCase(), chB.getSurnameBean().toUpperCase(),
-                            chB.getEmailBean(), chB.getPasswordBean(), chB.getRestaurant().toUpperCase(),
-                            chB.getBestDish().toUpperCase());
-                    ch.setCitta(chB.getCitta().toUpperCase());
-                    chDao.save(ch);
+                    Chef ch = factory.createChef(-1, chB.getNameBean().toUpperCase(), chB.getSurnameBean().toUpperCase(),
+                            chB.getRestaurant().toUpperCase(),
+                            chB.getBestDish().toUpperCase(),
+                            chB.getCitta().toUpperCase());
+                    chDao.save(ch,chB.getEmailBean(),chB.getPasswordBean());
                 }
                 default -> throw new IllegalArgumentException("User type not valid");
             }

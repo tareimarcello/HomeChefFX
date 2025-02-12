@@ -16,7 +16,7 @@ import java.util.List;
 
 
 
-public class DAOMessageImplFileSystem implements DAOInterface<Message> {
+public class DAOMessageImplFileSystem {
     private static final String CSV_FILE_NAME = "message.csv";
     private File fd;
     public DAOMessageImplFileSystem() {
@@ -33,7 +33,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
         }
     }
 
-    @Override
+
     public void save(Message message) {
         List<Message> messages = getAll();
         long lastId = 0;
@@ -49,7 +49,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
         saveAllMessages(messages);
     }
 
-    @Override
+
     public List<Message> getAll(){
         List<Message> messages = new ArrayList<>();
         try {
@@ -74,7 +74,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
         return messages;
     }
 
-    @Override
+
     public Message get(long id) {
         return getAll().stream()
                 .filter(msg -> msg.getIdMsg() == id)
@@ -82,7 +82,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
                 .orElse(null);
     }
 
-    @Override
+
     public void update(Message msg) {
         List<Message> messages = getAll();
         for (int i = 0; i < messages.size(); i++) {
@@ -95,7 +95,7 @@ public class DAOMessageImplFileSystem implements DAOInterface<Message> {
         throw new IllegalArgumentException("Message con ID " + msg.getIdMsg() + " non trovato.");
     }
 
-    @Override
+
     public void delete(Message msg) {
         List<Message> messages = getAll();
         messages.removeIf(message -> message.getIdMsg() == msg.getIdMsg());

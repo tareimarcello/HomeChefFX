@@ -4,9 +4,6 @@ import logic.beans.SearchBean;
 
 public class ChefQuery {
 
-    public String selectAllChefQuery(){
-        return "SELECT * FROM chef";
-    }
 
     public String selectChefQuery(long id){
         return String.format("SELECT * FROM chef JOIN user ON (chef.iduser=user.iduser) WHERE chef.iduser=%d", id);
@@ -16,9 +13,7 @@ public class ChefQuery {
         return String.format("UPDATE chef SET restaurant = '%s',bestdish = '%s', city = '%s' WHERE iduser=%d" ,restaurant,bestDish,citta, id);
     }
 
-    public String deleteChefQuery(long id){
-        return String.format("DELETE FROM chef WHERE iduser=%d", id);
-    }
+
 
     public String getChefBYParamQuery(SearchBean searchParam){
 

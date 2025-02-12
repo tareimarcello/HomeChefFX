@@ -6,9 +6,9 @@ public class Customer extends User implements ObserverNotification {
 
     private boolean bookNot;
 
-    public Customer (long id, String name, String surname, String email, String password, boolean bookNot) {
+    public Customer (long id, String name, String surname, boolean bookNot) {
 
-        super(id,name,surname,email,password);
+        super(id,name,surname);
         this.bookNot = bookNot;
     }
 

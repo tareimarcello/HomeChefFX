@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import java.util.List;
 import java.util.Objects;
 
-public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
+public class DAOChefImpl extends JdbcDaoSupport {
 
     private final ChefQuery query;
 
@@ -23,28 +23,21 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
         query = new ChefQuery();
     }
 
-    @Override
+
     public Chef get(long id) {
         assert getJdbcTemplate() != null;
         return  getJdbcTemplate().query(query.selectChefQuery(id), new ChefRowMapper()).getFirst();
     }
 
-    @Override
-    public List<Chef> getAll() {
 
-        assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(query.selectAllChefQuery(), new ChefRowMapper());
-    }
-
-    @Override
-    public void save(Chef chef) {
+    public void save(Chef chef, String email, String password) {
         assert getJdbcTemplate() != null;
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(Objects.requireNonNull(getDataSource())).withProcedureName("insert_chef");
         MapSqlParameterSource in = new MapSqlParameterSource();
         in.addValue("var_name", chef.getName());
         in.addValue("var_surname", chef.getSurname());
-        in.addValue("var_email", chef.getEmail());
-        in.addValue("var_passwd", chef.getPassword());
+        in.addValue("var_email", email);
+        in.addValue("var_passwd", password);
         in.addValue("var_res", chef.getRestaurant());
         in.addValue("var_dish", chef.getBestDish());
         in.addValue("var_citta", chef.getCitta());
@@ -52,17 +45,11 @@ public class DAOChefImpl extends JdbcDaoSupport implements DAOInterface<Chef> {
 
     }
 
-    @Override
+
     public void update(Chef chef) {
         assert getJdbcTemplate() != null;
         getJdbcTemplate().update(query.updateChefQuery(chef.getID(), chef.getRestaurant(),
                         chef.getBestDish(),chef.getCitta()));
-    }
-
-    @Override
-    public void delete(Chef chef) {
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.deleteChefQuery(chef.getID()));
     }
 
 

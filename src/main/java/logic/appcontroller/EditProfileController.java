@@ -15,8 +15,8 @@ public class EditProfileController {
 
     public void updatePswd(EditProfileBean bean) throws ConnectionException, EditProfException {
         DAOUserImpl dao = new DAOUserImpl();
-        User user = dao.get(bean.getUserId());
-        if(bean.getPswd().equals(user.getPassword())){
+        String pswd = dao.getPswd(bean.getUserId());
+        if(bean.getPswd().equals(pswd)){
             throw new EditProfException("The password cannot be the same ");
         }
         dao.updatePswd(bean);
@@ -24,10 +24,6 @@ public class EditProfileController {
 
     public void updateMail(EditProfileBean bean) throws ConnectionException,EditProfException {
         DAOUserImpl dao = new DAOUserImpl();
-        User user = dao.get(bean.getUserId());
-        if(bean.getEmail().equals(user.getEmail())){
-            throw new EditProfException("The email cannot be the same ");
-        }
         List<String> mailList = dao.getUsersMail();
         for(String index : mailList){
             if(index.equals(bean.getEmail())){

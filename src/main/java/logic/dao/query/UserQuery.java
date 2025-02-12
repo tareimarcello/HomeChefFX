@@ -22,19 +22,11 @@ public class UserQuery {
         return "SELECT email FROM user";
     }
 
-    public String selectAllUserQuery(){
-        return "SELECT * FROM user";
+    public String selectPswdQuery(long id){
+        return String.format("SELECT password FROM user WHERE iduser = %d",id);
     }
 
-    public String updateQuery(String email, String password, long id){
-        return String.format("UPDATE user SET email = '%s', password = '%s' WHERE iduser = %d", email, password, id);
-    }
-
-    public String deleteQuery(long id){
-        return String.format("DELETE FROM user WHERE iduser = %d", id);
-    }
-
-    public String insertQuery(String name, String surname, String email, String password, long id){
-        return String.format(" INSERT INTO user VALUES(%d,'%s','%s','%s','%s')", id, name, surname, email, password);
+    public String selectUsersByMailAndPswd(String email, String pswd){
+        return String.format("SELECT * FROM user WHERE email = '%s' AND password='%s'", email,pswd);
     }
 }

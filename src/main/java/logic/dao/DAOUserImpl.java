@@ -17,7 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
+public class DAOUserImpl extends JdbcDaoSupport {
 
     private final UserQuery query;
 
@@ -26,7 +26,7 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
         query = new UserQuery();
     }
 
-    @Override
+
     public User get(long id) {
 
         assert getJdbcTemplate() != null;
@@ -34,34 +34,10 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
 
     }
 
-    @Override
-    public List<User> getAll() {
-        assert getJdbcTemplate() != null;
-        return  getJdbcTemplate().query(query.selectAllUserQuery(), new UserRowMapper());
-    }
-
-    @Override
-    public void save(User user) {
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.insertQuery(user.getName(),user.getSurname(),user.getEmail(),user.getPassword(),user.getID()));
-    }
-
-    @Override
-    public void update(User user) {
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.updateQuery(user.getEmail(),user.getPassword(), user.getID()));
-    }
-
-    @Override
-    public void delete(User user) {
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.deleteQuery(user.getID()));
-    }
-
     public User verifyLogin(Logbean logBean){
 
         assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(query.selectUserByEmailQuery(logBean.getEmail()), new UserRowMapper()).getFirst();
+        return getJdbcTemplate().query(query.selectUsersByMailAndPswd(logBean.getEmail(), logBean.getPassword()), new UserRowMapper()).getFirst();
 
     }
 
@@ -94,5 +70,9 @@ public class DAOUserImpl extends JdbcDaoSupport implements DAOInterface<User> {
         return getJdbcTemplate().query(query.selectUserByEmailQuery(mail), new UserRowMapper()).getFirst();
     }
 
+    public String getPswd(long id){
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().queryForObject(query.selectPswdQuery(id),String.class);
+    }
 
 }

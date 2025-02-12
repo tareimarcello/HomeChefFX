@@ -40,7 +40,7 @@ public class LoginViewControllerInterf1 {
 
                 Logbean logBean = new Logbean();
                 if (!logBean.setEmail(this.labUser.getText()) || !logBean.setPassword(this.labPassword.getText())) {
-                        this.show.setText("EMAIL e PASSWORD obbligatorie");
+                        this.show.setText("EMAIL e PASSWORD missing");
                         return;
                 }
                 // - Creazione bean utente
@@ -58,7 +58,7 @@ public class LoginViewControllerInterf1 {
                 } catch (ConnectionException e) {
                         Exceptions.exceptionConnectionOccurred();
                 }catch(NoSuchElementException ex) {
-                        this.show.setText("Email is incorrect");
+                        this.show.setText("Email or password is incorrect");
                         this.show.setOpacity(1.0);
                 }catch(LoginErrorException ex) {
                         this.show.setText(ex.getMessage());

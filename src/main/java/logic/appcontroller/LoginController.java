@@ -23,9 +23,8 @@ public class LoginController {
 
         DAOUserImpl userDao = new DAOUserImpl();
         User user = userDao.verifyLogin(userBean);
-        if (!user.getPassword().equals(userBean.getPassword())) {
-
-            throw new LoginErrorException(" password is not valid");
+        if (user == null) {
+            throw new LoginErrorException(" password or email is not valid");
         }
         SessionParamBean sessionParam = new SessionParamBean();
         sessionParam.setCurrentUserId(user.getID());

@@ -6,7 +6,6 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.*;
 import logic.model.Chef;
-import logic.model.User;
 import logic.patterns.Setter;
 
 import java.util.List;

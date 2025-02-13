@@ -43,10 +43,6 @@ public class DAOBookImpl extends JdbcDaoSupport{
         getJdbcTemplate().update(query.updateQuery(book,date, book.getIdBook()));
     }
 
-    public void delete(Book book) {
-        assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.deleteQuery(book.getIdBook()));
-    }
 
     public List<Book> getAllByCustomer(long idCust) {
         assert getJdbcTemplate() != null;

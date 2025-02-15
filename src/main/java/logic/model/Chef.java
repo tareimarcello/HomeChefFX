@@ -59,18 +59,10 @@ public class Chef extends User {
     @Override
     public void setInfo(Object info, int type) {
         switch(type){
-            case (0) -> {
-                 restaurant= (String)info;
-            }
-            case (1)->{
-                 bestDish=(String)info;
-            }
-            case (2)->{
-                citta=(String)info;
-            }
-            default->{
-                throw new IllegalArgumentException();
-            }
+            case (0) ->restaurant= (String)info;
+            case (1)->bestDish=(String)info;
+            case (2)-> citta=(String)info;
+            default-> throw new IllegalArgumentException();
         }
     }
 }

@@ -8,7 +8,7 @@ public abstract class User {
     private String surname;
 
 
-    public User (long id, String name, String surname){
+    protected User (long id, String name, String surname){
 
         this.id = id;
         this.name = name;

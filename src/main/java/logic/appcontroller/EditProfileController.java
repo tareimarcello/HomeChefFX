@@ -5,7 +5,6 @@ import logic.beans.EditProfileBean;
 import logic.dao.DAOChefImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.*;
-import logic.model.Chef;
 import logic.model.User;
 import logic.patterns.Setter;
 

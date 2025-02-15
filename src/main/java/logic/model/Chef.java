@@ -52,9 +52,7 @@ public class Chef extends User {
             case (2)->{
                 return citta;
             }
-            default->{
-                throw new IllegalArgumentException();
-            }
+            default-> throw new IllegalArgumentException();
         }
     }
 

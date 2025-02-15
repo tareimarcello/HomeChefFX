@@ -1,6 +1,5 @@
 package logic.dao.rowmapper;
 
-import logic.model.Chef;
 import logic.model.User;
 import logic.patterns.factory.FactoryUser;
 import org.springframework.jdbc.core.RowMapper;

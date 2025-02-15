@@ -1,6 +1,5 @@
 package logic.beans;
 
-import logic.model.Chef;
 import logic.model.User;
 
 public class ReturnChefBean {

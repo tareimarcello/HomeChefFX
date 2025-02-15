@@ -1,16 +1,15 @@
 package logic.beans;
 
 import logic.model.Book;
-import logic.model.Chef;
-import logic.model.Customer;
+import logic.model.User;
 
 import java.util.Date;
 
 public class BookListBean {
 
     private long idBook;
-    private Customer customer;
-    private Chef chef;
+    private User customer;
+    private User chef;
     private Date data;
     private Book.BookStatus bookState;
     private Book.BookMeal meal;
@@ -25,19 +24,19 @@ public class BookListBean {
         this.idBook = idBook;
     }
 
-    public Customer getCustomerBean() {
+    public User getCustomerBean() {
         return customer;
     }
 
-    public void setCustomerBean(Customer customer) {
+    public void setCustomerBean(User customer) {
         this.customer = customer;
     }
 
-    public Chef getChefBean() {
+    public User getChefBean() {
         return chef;
     }
 
-    public void setChefBean(Chef chef) {
+    public void setChefBean(User chef) {
         this.chef = chef;
     }
 

@@ -1,13 +1,10 @@
 package logic.dao;
 
 
-import logic.beans.Logbean;
 import logic.beans.EditProfileBean;
 import logic.connection.AppDataStore;
 import logic.dao.query.UserQuery;
-import logic.dao.rowmapper.UserRowMapper;
 import logic.exceptions.ConnectionException;
-import logic.model.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -26,20 +23,6 @@ public class DAOUserImpl extends JdbcDaoSupport {
         query = new UserQuery();
     }
 
-
-    public User get(long id) {
-
-        assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(query.selectUserById(id), new UserRowMapper()).getFirst();
-
-    }
-
-    public User verifyLogin(Logbean logBean){
-
-        assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(query.selectUsersByMailAndPswd(logBean.getEmail(), logBean.getPassword()), new UserRowMapper()).getFirst();
-
-    }
 
     public void updatePswd(EditProfileBean updatePswdBean){
         assert getJdbcTemplate() != null;
@@ -65,14 +48,16 @@ public class DAOUserImpl extends JdbcDaoSupport {
             }
         });
     }
-    public User getUserBYMail(String mail){
-        assert getJdbcTemplate() != null;
-        return getJdbcTemplate().query(query.selectUserByEmailQuery(mail), new UserRowMapper()).getFirst();
-    }
 
     public String getPswd(long id){
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().queryForObject(query.selectPswdQuery(id),String.class);
     }
+
+    public long getId(String email, String pswd){
+        assert getJdbcTemplate() != null;
+        return getJdbcTemplate().queryForObject(query.selectIdUsers(email, pswd),long.class);
+    }
+
 
 }

@@ -1,7 +1,7 @@
 package logic.model;
 
 
-public class User {
+public abstract class User {
 
     private long id;
     private String name;
@@ -40,4 +40,6 @@ public class User {
         this.surname = surname;
     }
 
+    public abstract Object getInfo(int type);
+    public abstract void setInfo(Object info, int type);
 }

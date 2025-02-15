@@ -130,9 +130,9 @@ public  abstract class  InitialSearchAndChatViewController implements Updater {
         }
         HomeChefBean hbvisit = new HomeChefBean();
         assert bean != null;
-        hbvisit.setRes(bean.getRetChef().getRestaurant());
-        hbvisit.setDish(bean.getRetChef().getBestDish());
-        hbvisit.setCity(bean.getRetChef().getCitta());
+        hbvisit.setRes((String) bean.getRetChef().getInfo(0));
+        hbvisit.setDish((String) bean.getRetChef().getInfo(1));
+        hbvisit.setCity((String) bean.getRetChef().getInfo(2));
         hbvisit.setName(bean.getRetChef().getName() + " " + bean.getRetChef().getSurname());
         hbvisit.setId(bean.getRetChef().getID());
 

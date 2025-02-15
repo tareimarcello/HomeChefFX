@@ -5,6 +5,7 @@ import logic.dao.query.CustomerQuery;
 import logic.dao.rowmapper.CustomerRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Customer;
+import logic.model.User;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -21,7 +22,7 @@ public class DAOCustomerImpl extends JdbcDaoSupport{
     }
 
 
-    public Customer get(long id) {
+    public User get(long id) {
         assert getJdbcTemplate() != null;
         return getJdbcTemplate().query(query.selectCustomerQuery(id), new CustomerRowMapper()).getFirst();
     }
@@ -39,9 +40,9 @@ public class DAOCustomerImpl extends JdbcDaoSupport{
     }
 
 
-    public void update(Customer customer) {
+    public void update(User customer) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.updateCustomerQuery(customer.getID(),customer.getBookNot()));
+        getJdbcTemplate().update(query.updateCustomerQuery(customer.getID(), (Boolean) customer.getInfo(0)));
     }
 
 

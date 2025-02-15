@@ -6,6 +6,7 @@ import logic.dao.query.ChefQuery;
 import logic.dao.rowmapper.ChefRowMapper;
 import logic.exceptions.ConnectionException;
 import logic.model.Chef;
+import logic.model.User;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -24,7 +25,7 @@ public class DAOChefImpl extends JdbcDaoSupport {
     }
 
 
-    public Chef get(long id) {
+    public User get(long id) {
         assert getJdbcTemplate() != null;
         return  getJdbcTemplate().query(query.selectChefQuery(id), new ChefRowMapper()).getFirst();
     }
@@ -46,14 +47,14 @@ public class DAOChefImpl extends JdbcDaoSupport {
     }
 
 
-    public void update(Chef chef) {
+    public void update(User chef) {
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.updateChefQuery(chef.getID(), chef.getRestaurant(),
-                        chef.getBestDish(),chef.getCitta()));
+        getJdbcTemplate().update(query.updateChefQuery(chef.getID(), (String) chef.getInfo(0),
+                (String) chef.getInfo(1), (String) chef.getInfo(2)));
     }
 
 
-    public List<Chef> getChefByParam(SearchBean searchParam) {
+    public List<User> getChefByParam(SearchBean searchParam) {
 
         assert getJdbcTemplate() != null;
         return  getJdbcTemplate().query(query.getChefBYParamQuery(searchParam), new ChefRowMapper());

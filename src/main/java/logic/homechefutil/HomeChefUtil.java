@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import logic.HomeChefApplication;
 import logic.beans.*;
+import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
@@ -51,8 +52,13 @@ public class HomeChefUtil {
         return matcher.matches();
     }
 
-    public static User getUserByID (long id) throws ConnectionException {
-        DAOUserImpl userDao = new DAOUserImpl();
+    public static User getCustByID (long id) throws ConnectionException {
+        DAOCustomerImpl userDao = new DAOCustomerImpl();
+        return userDao.get(id);
+    }
+
+    public static User getChefById(long id) throws ConnectionException {
+        DAOChefImpl userDao = new DAOChefImpl();
         return userDao.get(id);
     }
 

@@ -20,16 +20,21 @@ public class LoginController {
 
 
     public ReturnLoginBean loginUser(Logbean userBean) throws ConnectionException,LoginErrorException {
-
+        /*
         DAOUserImpl userDao = new DAOUserImpl();
+
         User user = userDao.verifyLogin(userBean);
         if (user == null) {
             throw new LoginErrorException(" password or email is not valid");
         }
+
+         */
+        DAOUserImpl daoUser = new DAOUserImpl();
+        long id = daoUser.getId(userBean.getEmail(), userBean.getPassword());
         SessionParamBean sessionParam = new SessionParamBean();
-        sessionParam.setCurrentUserId(user.getID());
+        sessionParam.setCurrentUserId(id);
         Setter.setSessionParam(sessionParam);
-        user = this.checkType(user.getID());
+        User user = this.checkType(id);
         // - aprire la pagina corretta
         switch (user) {
             case Customer cu -> {

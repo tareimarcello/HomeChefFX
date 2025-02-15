@@ -6,10 +6,11 @@ import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import logic.model.Customer;
+import logic.model.User;
 
 public class AcceptBookController {
 
-    private Customer cust;
+    private User cust;
     private Book book;
 
    public AcceptBookController(BookListBean bean) throws ConnectionException {
@@ -28,10 +29,10 @@ public class AcceptBookController {
     private void loadCurrBook(long idBook) throws ConnectionException {
        DAOBookImpl dao = new DAOBookImpl();
        this.book = dao.get(idBook);
-       book.attach(cust);
+       book.attach((Customer)cust);
     }
 
-    public Customer getCust() {
+    public User getCust() {
         return cust;
     }
 

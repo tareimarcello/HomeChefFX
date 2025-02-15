@@ -1,15 +1,15 @@
 package logic.dao.rowmapper;
 
-import logic.model.Customer;
+import logic.model.User;
 import logic.patterns.factory.FactoryUser;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CustomerRowMapper implements RowMapper<Customer> {
+public class CustomerRowMapper implements RowMapper<User> {
     @Override
-    public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
+    public User mapRow(ResultSet rs, int rowNum) throws SQLException {
         FactoryUser factory = new FactoryUser();
         return factory.createCustomer(rs.getInt("iduser"),
                 rs.getString("name"),

@@ -24,4 +24,14 @@ public class Customer extends User implements ObserverNotification {
     public void update() {
         setBookNot(true);
     }
+
+    @Override
+    public Object getInfo(int type) {
+        return bookNot;
+    }
+
+    @Override
+    public void setInfo(Object info, int type) {
+        bookNot=(boolean)info;
+    }
 }

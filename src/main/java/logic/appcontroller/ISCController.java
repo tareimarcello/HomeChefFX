@@ -33,7 +33,7 @@ public class ISCController {
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);
-            iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getCustomer()));
+            iscBean.setDestUser(HomeChefUtil.getCustByID(chat.getCustomer()));
             iscBean.getChatMessages().addAll(messages);
             iscBeanList.add(iscBean);
 
@@ -58,7 +58,7 @@ public class ISCController {
             List<Message> messages = messDao.getAllByChat(chat.getId());
             ISCBean iscBean = new ISCBean();
             iscBean.setChat(chat);
-            iscBean.setDestUser(HomeChefUtil.getUserByID(chat.getChef()));
+            iscBean.setDestUser(HomeChefUtil.getChefById(chat.getChef()));
             iscBean.getChatMessages().addAll(messages);
             iscBeanList.add(iscBean);
 

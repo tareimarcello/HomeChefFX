@@ -1,15 +1,16 @@
 package logic.beans;
 
 import logic.model.Chef;
+import logic.model.User;
 
 public class ReturnChefBean {
-    private Chef retChef;
+    private User retChef;
 
-    public Chef getRetChef() {
+    public User getRetChef() {
         return retChef;
     }
 
-    public void setRetChef(Chef retChef) {
+    public void setRetChef(User retChef) {
         this.retChef = retChef;
     }
 }

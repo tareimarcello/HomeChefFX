@@ -6,6 +6,7 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.*;
 import logic.model.Chef;
+import logic.model.User;
 import logic.patterns.Setter;
 
 import java.util.List;
@@ -34,22 +35,22 @@ public class EditProfileController {
 
     public void updateRes(EditChefProfileBean bean) throws ConnectionException, EditProfException {
         DAOChefImpl dao = new DAOChefImpl();
-        Chef chef = dao.get(bean.getUserId());
-        if(bean.getRes().equals(chef.getRestaurant())){
+        User chef = dao.get(bean.getUserId());
+        if(bean.getRes().equals(chef.getInfo(0))){
             throw new EditProfException("The restaurant cannot be the same ");
         }
-        chef.setRestaurant(bean.getRes());
+        chef.setInfo(bean.getRes(),0);
         dao.update(chef);
         Setter.getHcbean().setRes(bean.getRes());
     }
 
     public void updateCity(EditChefProfileBean bean) throws ConnectionException, EditProfException{
         DAOChefImpl dao = new DAOChefImpl();
-        Chef chef = dao.get(bean.getUserId());
-        if(bean.getCity().equals(chef.getCitta())){
+        User chef = dao.get(bean.getUserId());
+        if(bean.getCity().equals(chef.getInfo(2))){
             throw new EditProfException("The city cannot be the same ");
         }
-        chef.setCitta(bean.getCity());
+        chef.setInfo(bean.getCity(),2);
         dao.update(chef);
         Setter.getHcbean().setRes(bean.getCity());
     }

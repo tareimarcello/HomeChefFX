@@ -21,9 +21,7 @@ public class BookController {
             }
         } catch (NoSuchElementException e) {
             long cust = Setter.getSessionParam().getCurrentUserId();
-            Book book = new Book(-1, cust, idChef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta());
-            book.setVia(bean.getVia());
-            dao.save(book);
+            dao.save(cust, idChef, Book.BookStatus.OPEN, bean.getData(), bean.getMeal(), bean.getCitta(),bean.getVia());
         }
     }
 }

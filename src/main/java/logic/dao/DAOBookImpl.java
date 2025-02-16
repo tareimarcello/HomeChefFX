@@ -28,12 +28,12 @@ public class DAOBookImpl extends JdbcDaoSupport{
 
     }
 
-    public void save(Book book) {
+    public void save(long cust, long chef,Book.BookStatus status,Date data,Book.BookMeal meal,String city, String via) {
         DateFormat df = new SimpleDateFormat(PATTERN);
-        String date = df.format(book.getData());
+        String date = df.format(data);
         assert getJdbcTemplate() != null;
-        getJdbcTemplate().update(query.insertQuery(book.getCustomer(),book.getChef(),
-                book.getBookState().toString(), book.getMeal().toString(),book.getCitta(),book.getVia(),date));
+        getJdbcTemplate().update(query.insertQuery(cust,chef,
+                status.toString(), meal.toString(),city,via,date));
     }
 
     public void update(Book book) {

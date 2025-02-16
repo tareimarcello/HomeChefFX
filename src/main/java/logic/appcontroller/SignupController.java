@@ -33,17 +33,14 @@ public class SignupController {
             switch (user) {
                 case Customerbean cb -> {
                     DAOCustomerImpl cuDao = new DAOCustomerImpl();
-                    User cu = factory.createCustomer(-1, cb.getNameBean().toUpperCase(), cb.getSurnameBean().toUpperCase()
-                            ,false);
-                    cuDao.save((Customer)cu,cb.getEmailBean(),cb.getPasswordBean());
+                    cuDao.save(cb.getNameBean().toUpperCase(), cb.getSurnameBean().toUpperCase(),cb.getEmailBean(),cb.getPasswordBean());
                 }
                 case Chefbean chB -> {
                     DAOChefImpl chDao = new DAOChefImpl();
-                   User ch = factory.createChef(-1, chB.getNameBean().toUpperCase(), chB.getSurnameBean().toUpperCase(),
+                    chDao.save(chB.getNameBean().toUpperCase(), chB.getSurnameBean().toUpperCase(),
                             chB.getRestaurant().toUpperCase(),
                             chB.getBestDish().toUpperCase(),
-                            chB.getCitta().toUpperCase());
-                    chDao.save((Chef)ch,chB.getEmailBean(),chB.getPasswordBean());
+                            chB.getCitta().toUpperCase(),chB.getEmailBean(),chB.getPasswordBean());
                 }
                 default -> throw new IllegalArgumentException("User type not valid");
             }

@@ -28,12 +28,12 @@ public class DAOCustomerImpl extends JdbcDaoSupport{
     }
 
 
-    public void save(Customer customer, String email, String password) {
+    public void save(String name, String surname, String email, String password) {
         assert getJdbcTemplate() != null;
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(Objects.requireNonNull(getDataSource())).withProcedureName("insert_customer");
         MapSqlParameterSource in = new MapSqlParameterSource();
-        in.addValue("var_name", customer.getName());
-        in.addValue("var_surname", customer.getSurname());
+        in.addValue("var_name", name);
+        in.addValue("var_surname", surname);
         in.addValue("var_email", email);
         in.addValue("var_passwd", password);
         jdbcCall.execute(in);

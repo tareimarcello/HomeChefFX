@@ -31,17 +31,17 @@ public class DAOChefImpl extends JdbcDaoSupport {
     }
 
 
-    public void save(Chef chef, String email, String password) {
+    public void save(String name,String surname, String res,String bestDish, String citta, String email, String password) {
         assert getJdbcTemplate() != null;
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(Objects.requireNonNull(getDataSource())).withProcedureName("insert_chef");
         MapSqlParameterSource in = new MapSqlParameterSource();
-        in.addValue("var_name", chef.getName());
-        in.addValue("var_surname", chef.getSurname());
+        in.addValue("var_name", name);
+        in.addValue("var_surname", surname);
         in.addValue("var_email", email);
         in.addValue("var_passwd", password);
-        in.addValue("var_res", chef.getRestaurant());
-        in.addValue("var_dish", chef.getBestDish());
-        in.addValue("var_citta", chef.getCitta());
+        in.addValue("var_res", res);
+        in.addValue("var_dish", bestDish);
+        in.addValue("var_citta", citta);
         jdbcCall.execute(in);
 
     }

@@ -5,7 +5,6 @@ import logic.connection.AppDataStore;
 import logic.dao.query.ChefQuery;
 import logic.dao.rowmapper.ChefRowMapper;
 import logic.exceptions.ConnectionException;
-import logic.model.Chef;
 import logic.model.User;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;

@@ -4,7 +4,6 @@ import logic.connection.AppDataStore;
 import logic.dao.query.CustomerQuery;
 import logic.dao.rowmapper.CustomerRowMapper;
 import logic.exceptions.ConnectionException;
-import logic.model.Customer;
 import logic.model.User;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;

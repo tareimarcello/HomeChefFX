@@ -8,10 +8,6 @@ import logic.dao.DAOCustomerImpl;
 import logic.dao.DAOUserImpl;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.MailAlreadyUsed;
-import logic.model.Chef;
-import logic.model.Customer;
-import logic.model.User;
-import logic.patterns.factory.FactoryUser;
 
 import java.util.List;
 
@@ -19,7 +15,6 @@ import java.util.List;
 public class SignupController {
 
     public void signup(Userbean user) throws ConnectionException, MailAlreadyUsed {
-        FactoryUser factory = new FactoryUser();
         DAOUserImpl dao = new DAOUserImpl();
         int i=0;
             List<String> mail = dao.getUsersMail();

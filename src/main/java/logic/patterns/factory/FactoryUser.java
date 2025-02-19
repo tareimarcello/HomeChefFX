@@ -14,5 +14,5 @@ public class FactoryUser {
     public User createCustomer(long id,String name, String surname,boolean bookNot){
         return new Customer(id, name, surname,bookNot);
     }
-
+        //ciao
 }

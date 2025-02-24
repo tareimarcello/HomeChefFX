@@ -7,7 +7,7 @@ import logic.appcontroller.BookListController;
 import logic.exceptions.ConnectionException;
 import logic.exceptions.Exceptions;
 import logic.pageswitch.PageMenu;
-import logic.patterns.Setter;
+
 
 import java.util.HashMap;
 

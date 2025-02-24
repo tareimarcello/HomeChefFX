@@ -7,7 +7,6 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
-import logic.model.Chef;
 import logic.model.User;
 import logic.patterns.Setter;
 
@@ -24,7 +23,6 @@ public class BookListController {
 
         long idCurrentUser = Setter.getSessionParam().getCurrentUserId();
         SessionParamBean.UserType type = Setter.getSessionParam().getUserType();
-        DAOCustomerImpl daoUser = new DAOCustomerImpl();
         DAOChefImpl daoChef = new DAOChefImpl();
         DAOBookImpl daoBook = new DAOBookImpl();
         List<Book> books = null;

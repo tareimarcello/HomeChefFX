@@ -4,7 +4,6 @@ import logic.beans.BookListBean;
 import logic.beans.SessionParamBean;
 import logic.dao.DAOBookImpl;
 import logic.dao.DAOChefImpl;
-import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
 import logic.model.User;

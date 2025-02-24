@@ -7,6 +7,8 @@ import logic.dao.DAOChefImpl;
 import logic.dao.DAOCustomerImpl;
 import logic.exceptions.ConnectionException;
 import logic.model.Book;
+import logic.model.Chef;
+import logic.model.User;
 import logic.patterns.Setter;
 
 import java.time.Instant;
@@ -39,10 +41,12 @@ public class BookListController {
         for (Book book : books){
             if(book.getData().after(Date.from(instant)) || book.getData().equals(Date.from(instant))) {
                 BookListBean bean = new BookListBean();
-                bean.setChefBean(daoChef.get(book.getChef()));
+                User ch = daoChef.get(book.getChef());
+                bean.setNameChef(ch.getName());
+                bean.setSurnameChef(ch.getSurname());
                 bean.setBookState(book.getBookState());
                 bean.setCitta(book.getCitta());
-                bean.setCustomerBean(daoUser.get(book.getCustomer()));
+                bean.setIdCust(book.getCustomer());
                 bean.setIdBook(book.getIdBook());
                 bean.setData(book.getData());
                 bean.setMeal(book.getMeal());

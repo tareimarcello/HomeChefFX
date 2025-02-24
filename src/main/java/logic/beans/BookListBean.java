@@ -1,15 +1,15 @@
 package logic.beans;
 
 import logic.model.Book;
-import logic.model.User;
 
 import java.util.Date;
 
 public class BookListBean {
 
     private long idBook;
-    private User customer;
-    private User chef;
+    private long idCust;
+    private String nameChef;
+    private String surnameChef;
     private Date data;
     private Book.BookStatus bookState;
     private Book.BookMeal meal;
@@ -24,21 +24,14 @@ public class BookListBean {
         this.idBook = idBook;
     }
 
-    public User getCustomerBean() {
-        return customer;
+    public long getIdCust() {
+        return idCust;
     }
 
-    public void setCustomerBean(User customer) {
-        this.customer = customer;
+    public void setIdCust(long idCust) {
+        this.idCust = idCust;
     }
 
-    public User getChefBean() {
-        return chef;
-    }
-
-    public void setChefBean(User chef) {
-        this.chef = chef;
-    }
 
     public Date getData() {
         return data;
@@ -78,5 +71,21 @@ public class BookListBean {
 
     public void setVia(String via) {
         this.via = via;
+    }
+
+    public String getNameChef() {
+        return nameChef;
+    }
+
+    public void setNameChef(String nameChef) {
+        this.nameChef = nameChef;
+    }
+
+    public String getSurnameChef() {
+        return surnameChef;
+    }
+
+    public void setSurnameChef(String surnameChef) {
+        this.surnameChef = surnameChef;
     }
 }

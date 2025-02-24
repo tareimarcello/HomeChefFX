@@ -14,7 +14,7 @@ public class AcceptBookController {
     private Book book;
 
    public AcceptBookController(BookListBean bean) throws ConnectionException {
-        this.cust=bean.getCustomerBean();
+        loadCustomer(bean.getIdCust());
         loadCurrBook(bean.getIdBook());
     }
 
@@ -30,6 +30,11 @@ public class AcceptBookController {
        DAOBookImpl dao = new DAOBookImpl();
        this.book = dao.get(idBook);
        book.attach((Customer)cust);
+    }
+
+    private void loadCustomer(long idCust) throws ConnectionException {
+       DAOCustomerImpl dao = new DAOCustomerImpl();
+       this.cust = dao.get(idCust);
     }
 
     public User getCust() {

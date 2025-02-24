@@ -120,7 +120,7 @@ public class BookListViewController {
             if(Setter.getSessionParam().getUserType()== SessionParamBean.UserType.CUSTOMER) {
                 List<Text> textList = HomeChefUtil.getListGroup(current, SUBGROUPINDEXBOOK, STATUSINDEX, CHEFNAMEINDEX, DATEINDEX);
                 textList.get(0).setText(bookBean.getBookState().toString());
-                textList.get(1).setText(bookBean.getChefBean().getName() + " " + bookBean.getChefBean().getSurname());
+                textList.get(1).setText(bookBean.getNameChef() + " " + bookBean.getSurnameChef());
                 DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, Locale.ITALY);
                 textList.get(2).setText(df.format(bookBean.getData()) + " - " + bookBean.getMeal());
             }else{

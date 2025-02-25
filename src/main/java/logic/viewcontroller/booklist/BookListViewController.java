@@ -17,7 +17,6 @@ import logic.homechefutil.HomeChefUtil;
 import logic.model.Book;
 import logic.pageswitch.PageMenu;
 import logic.patterns.Setter;
-
 import java.text.DateFormat;
 import java.util.List;
 import java.util.Locale;
@@ -54,6 +53,18 @@ public class BookListViewController {
     protected Map<String, BookListBean> bookBeanMap;
 
     protected PageMenu pageSwitch;
+
+    public void initialize(){
+
+        // Inizialize first 4 chef of the result list search
+        try {
+            bookList = controller.loadBookList();
+        } catch (ConnectionException e) {
+            Exceptions.exceptionConnectionOccurred();
+        }
+        initList();
+
+    }
 
     @FXML
     protected void outputValPrevious(){

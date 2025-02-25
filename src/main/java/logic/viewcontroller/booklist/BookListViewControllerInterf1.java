@@ -28,18 +28,6 @@ public class BookListViewControllerInterf1 extends BookListViewController{
 
 
 
-    public void initialize(){
-
-        // Inizialize first 4 chef of the result list search
-        try {
-            super.bookList = controller.loadBookList();
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-        initList();
-
-    }
-
     @FXML
     protected void goToHome(ActionEvent event) {
         pageSwitch.switchToHome(event);

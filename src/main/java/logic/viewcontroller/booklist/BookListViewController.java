@@ -54,18 +54,6 @@ public class BookListViewController {
 
     protected PageMenu pageSwitch;
 
-    public void initialize(){
-
-        // Inizialize first 4 chef of the result list search
-        try {
-            bookList = controller.loadBookList();
-        } catch (ConnectionException e) {
-            Exceptions.exceptionConnectionOccurred();
-        }
-        initList();
-
-    }
-
     @FXML
     protected void outputValPrevious(){
         HomeChefUtil.resetGroupOpacity(this.anchorPane, this.g1Index,this.g2Index,this.g3Index,this.g4Index);
